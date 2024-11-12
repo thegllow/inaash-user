@@ -1,13 +1,19 @@
 import { nextui } from "@nextui-org/theme"
+import fluid, { extract, fontSize, screens } from "fluid-tailwind" // Tailwind's default screens, in `rem`
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: {
+    files: [
+      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+      "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    ],
+    extract,
+  },
   theme: {
+    screens, // Tailwind's default screens, in `rem`
+    fontSize,
     extend: {
       container: {
         center: true,
@@ -26,6 +32,7 @@ module.exports = {
   },
   darkMode: "class",
   plugins: [
+    fluid(),
     nextui({
       layout: {
         radius: {
