@@ -1,7 +1,9 @@
 import "@/styles/globals.css"
 
 import { Metadata, Viewport } from "next"
+import Image from "next/image"
 import { notFound } from "next/navigation"
+import { background } from "@/assets"
 import { Link } from "@nextui-org/link"
 import clsx from "clsx"
 import { NextIntlClientProvider } from "next-intl"
@@ -10,6 +12,7 @@ import { getMessages, setRequestLocale } from "next-intl/server"
 import { fontSans } from "@/config/fonts"
 import { siteConfig } from "@/config/site"
 import { routing } from "@/lib/i18n/navigation"
+import Header from "@/components/common/header"
 import { Navbar } from "@/components/navbar"
 
 import { Providers } from "./providers"
@@ -49,16 +52,17 @@ export default async function RootLayout({
 
   // Enable static rendering
   setRequestLocale(locale)
-  
+
   const messages = await getMessages()
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html suppressHydrationWarning lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className="dark">
       <head />
       <NextIntlClientProvider messages={messages}>
-        <body className={clsx("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+        <body className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+            <Image className="fixed inset-0 object-contain" src={background} alt="inaash background" />
             <div className="relative flex h-screen flex-col">
-              <Navbar />
+              <Header />
               <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
               <footer className="flex w-full items-center justify-center py-3">
                 <Link
