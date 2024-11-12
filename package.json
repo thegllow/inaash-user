@@ -11,7 +11,9 @@
 	"dependencies": {
 		"@mantine/hooks": "^7.13.5",
 		"@nextui-org/button": "2.0.38",
+		"@nextui-org/card": "^2.0.34",
 		"@nextui-org/code": "2.0.33",
+		"@nextui-org/divider": "^2.0.32",
 		"@nextui-org/input": "2.2.5",
 		"@nextui-org/kbd": "2.0.34",
 		"@nextui-org/link": "2.0.35",
@@ -20,6 +22,7 @@
 		"@nextui-org/snippet": "2.0.43",
 		"@nextui-org/switch": "2.0.34",
 		"@nextui-org/system": "2.2.6",
+		"@nextui-org/tabs": "^2.0.37",
 		"@nextui-org/theme": "2.2.11",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
@@ -32,6 +35,7 @@
 		"next": "14.2.4",
 		"next-intl": "^3.25.0",
 		"next-themes": "^0.2.1",
+		"nuqs": "^2.1.1",
 		"react": "18.3.1",
 		"react-dom": "18.3.1"
 	},

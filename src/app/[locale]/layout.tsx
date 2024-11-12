@@ -8,6 +8,7 @@ import { Link } from "@nextui-org/link"
 import clsx from "clsx"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, setRequestLocale } from "next-intl/server"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { fontSans } from "@/config/fonts"
 import { siteConfig } from "@/config/site"
@@ -57,17 +58,19 @@ export default async function RootLayout({
     <html suppressHydrationWarning lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className="dark">
       <head />
       <NextIntlClientProvider messages={messages}>
-        <body className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
-          <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-            <div className="fixed inset-0 flex items-center justify-center">
-              <Image className="object-contain" src={background} alt="inaash background" />
-            </div>
-            <div className="relative flex h-screen flex-col">
-              <Header />
-              <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
-            </div>
-          </Providers>
-        </body>
+        <NuqsAdapter>
+          <body className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
+            <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+              <div className="fixed inset-0 flex items-center justify-center">
+                <Image className="object-contain" src={background} alt="inaash background" />
+              </div>
+              <div className="relative flex h-screen flex-col">
+                <Header />
+                <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
+              </div>
+            </Providers>
+          </body>
+        </NuqsAdapter>
       </NextIntlClientProvider>
     </html>
   )

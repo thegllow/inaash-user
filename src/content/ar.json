@@ -3,8 +3,13 @@
     "full-screen": "ملء الشاشة"
   },
   "choose-language": {
-    "title": "مرحبا بك في انعاش",
-    "description": ""
+    "title": "أختر اللغة",
+    "tabs": {
+      "ar": "العربية",
+      "en": "English",
+      "fr": "Français"
+    },
+    "nextButton": "التالي"
   },
   "login": {
     "title": "مرحبا بك في انعاش"

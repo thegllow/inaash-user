@@ -5,10 +5,10 @@ import { horizontalLogo, logo } from "@/assets"
 import { Link } from "@/lib/i18n/navigation"
 
 type Props = Omit<ImageProps, "src" | "alt"> & {
-  variant: "horizontal" | "vertical"
+  variant?: "horizontal" | "vertical"
 }
 
-const Logo = ({ variant, ...props }: Props) => {
+const Logo = ({ variant = "vertical", ...props }: Props) => {
   return (
     <Link href={"/"}>
       <Image src={variant === "horizontal" ? horizontalLogo : logo} alt="inaash logo" {...props} />
