@@ -15,7 +15,7 @@ const ChooseLanguageButton = (props: Props) => {
   return (
     <Button
       as={Link}
-      href={`/${language || "ar"}/course`}
+      href={`/${language || "ar"}/start`}
       size="lg"
       radius="md"
       color="primary"
