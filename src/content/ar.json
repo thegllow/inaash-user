@@ -1,6 +1,11 @@
 {
   "header": {
-    "full-screen": "ملء الشاشة"
+    "full-screen": "ملء الشاشة",
+    "home": "الرئيسية",
+    "about": "عن إنعاش",
+    "information-center": "مركز المعلومات",
+    "contact": "تواصل معنا",
+    "faqs": "الاسئلة الشائعة"
   },
   "choose-language": {
     "title": "أختر اللغة",
