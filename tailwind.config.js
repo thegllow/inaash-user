@@ -39,9 +39,9 @@ module.exports = {
     nextui({
       layout: {
         radius: {
-          small: "6px", // rounded-small
-          medium: "16px", // rounded-medium
-          large: "24px", // rounded-large
+          small: "4px", // rounded-small
+          medium: "12px", // rounded-medium
+          large: "16px", // rounded-large
         },
         borderWidth: {
           small: "1px", // border-small

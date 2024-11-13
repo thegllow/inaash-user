@@ -12,7 +12,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { fontSans } from "@/config/fonts"
 import { siteConfig } from "@/config/site"
-import { routing } from "@/lib/i18n/navigation"
+import { routing } from "@/lib/i18n/routing"
 import Header from "@/components/common/header"
 
 import { Providers } from "./providers"
