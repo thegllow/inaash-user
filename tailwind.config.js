@@ -4,7 +4,7 @@ import fluid, { extract, fontSize, screens } from "fluid-tailwind" // Tailwind's
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./node_modules/@nextui-org/theme/dist/components/(button|card|code|divider|image|input|kbd|link|listbox|navbar|snippet|toggle|tabs|ripple|spinner|popover).js",
+    "./node_modules/@nextui-org/theme/dist/components/(button|card|chip|code|divider|image|input|kbd|link|listbox|navbar|snippet|toggle|tabs|ripple|spinner|popover).js",
   ],
   content: {
     files: [

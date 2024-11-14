@@ -11,6 +11,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { fontSans } from "@/config/fonts"
 import { siteConfig } from "@/config/site"
+import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 import Header from "@/components/common/header"
 
@@ -58,17 +59,20 @@ export default async function RootLayout({
       <head />
       <NextIntlClientProvider messages={messages}>
         <NuqsAdapter>
-          <body className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
-            <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-              <div className="fixed inset-0 flex items-center justify-center">
-                <Image className="object-contain" src={background} alt="inaash background" />
-              </div>
-              <div className="relative flex h-screen flex-col">
-                <Header />
-                <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
-              </div>
-            </Providers>
-          </body>
+          <NySessionProvider>
+            <body
+              className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
+              <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+                <div className="fixed inset-0 flex items-center justify-center">
+                  <Image className="object-contain" src={background} alt="inaash background" />
+                </div>
+                <div className="relative flex h-screen flex-col">
+                  <Header />
+                  <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
+                </div>
+              </Providers>
+            </body>
+          </NySessionProvider>
         </NuqsAdapter>
       </NextIntlClientProvider>
     </html>
