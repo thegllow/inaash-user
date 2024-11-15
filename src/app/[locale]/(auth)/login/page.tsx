@@ -1,20 +1,22 @@
+"use client"
+
 import React from "react"
+import { useSearchParams } from "next/navigation"
 import { Card, CardBody } from "@nextui-org/card"
 
 import SendOTP from "./components/send-otp"
+import VerifyOTP from "./components/verify-opt"
 
-type Props = {}
-
-const page = (props: Props) => {
+const Page = () => {
+  const searchParams = useSearchParams()
+  const mobile = searchParams.get("mobile")
   return (
     <section className="flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
       <Card className="w-full max-w-sm border-none bg-[#0A090959] backdrop-blur-md">
-        <CardBody className="p-8 rtl:text-right">
-          <SendOTP />
-        </CardBody>
+        <CardBody className="p-8 rtl:text-right">{mobile ? <VerifyOTP /> : <SendOTP />}</CardBody>
       </Card>
     </section>
   )
 }
 
-export default page
+export default Page

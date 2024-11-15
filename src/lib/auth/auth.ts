@@ -1,5 +1,6 @@
 import InaashApi from "@/services/inaash"
 import { User as ApiUserType, LoginResponse } from "@/services/types/login"
+import axios from "axios"
 import type { DefaultSession, NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
@@ -30,24 +31,30 @@ export const authOptions: NextAuthOptions = {
 
       // @ts-ignore
       async authorize(credentials, req) {
-        const { phonenumber, country_code, otp } = credentials as {
-          phonenumber: string
-          country_code: string
+        console.log("🚀 ~ authorize ~ credentials:", credentials)
+        const { mobile, otp } = credentials as {
+          mobile: string
           otp: string
         }
-        const response = await InaashApi.post<LoginResponse>("/user/otpVerify", {
-          phonenumber,
-
-          otp,
-        })
-
-        const user = { ...response.data.data.item, token: response.data.data.token }
+        try {
+          const response = await InaashApi.post<LoginResponse>("/guest/user/otpVerify", {
+            mobile,
+            otp,
+          })
+          console.log("🚀 ~ authorize ~ response:", response)
+          const user = { ...response.data.data.item, token: response.data.data.token }
+          if (user) {
+            return { ...user }
+          }
+        } catch (error) {
+          if (axios.isAxiosError(error)) {
+            console.log("🚀 ~ authorize ~ error:", error.response?.data)
+          }
+        }
 
         // If no error and we have user data, return it
-        if (user) {
-          return { ...user }
-        }
-        if (!user) return null
+
+        return null
       },
     }),
   ],

@@ -6,7 +6,7 @@ import phoneNumberSchema from "@/validation/phone-number"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "@nextui-org/input"
 import { useTranslations } from "next-intl"
-import { useQueryState } from "nuqs"
+import { parseAsInteger, parseAsIsoDate, parseAsString, useQueryState, useQueryStates } from "nuqs"
 import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 
@@ -28,12 +28,12 @@ const SendOTP = (props: Props) => {
     },
   })
 
-  const [_, setMobileNumber] = useQueryState("mobile")
+  const [_, setQueries] = useQueryStates({ mobile: parseAsString.withDefault(""), date: parseAsInteger })
   const onSubmit = form.handleSubmit(async (data) => {
     try {
       const response = await PostSendOTP(data)
       console.log("🚀 ~ onSubmit ~ response:", response)
-      setMobileNumber(data.mobile)
+      setQueries({ mobile: data.mobile, date: Date.now() })
     } catch (error) {
       form.setError("root", { message: "serverError" })
     }
@@ -69,14 +69,16 @@ const SendOTP = (props: Props) => {
         }}
       />
 
-      <Button isLoading={form.formState.isSubmitting} type="submit">
-        {t("button")}
-      </Button>
-      {form.formState.errors.root ? (
-        <p className="text-sm font-semibold text-danger">{t("errors.serverError")}</p>
-      ) : (
-        ""
-      )}
+      <div>
+        <Button isLoading={form.formState.isSubmitting} type="submit">
+          {t("button")}
+        </Button>
+        {form.formState.errors.root ? (
+          <p className="mt-3 text-sm font-semibold text-danger">{t("errors.serverError")}</p>
+        ) : (
+          ""
+        )}
+      </div>
     </form>
   )
 }

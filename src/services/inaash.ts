@@ -2,7 +2,7 @@ import axios from "axios"
 import { type Session } from "next-auth"
 import { getSession } from "next-auth/react"
 
-const baseURL = "https://api-inaash.glow-host.com/"
+const baseURL = "https://api-inaash.glow-host.com"
 
 // Create an Axios instance
 const InaashApi = axios.create({

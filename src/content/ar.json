@@ -34,6 +34,20 @@
         "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
         "serverError": "حصل خطأ في الاتصال بالسيرفر"
       }
+    },
+    "verify-opt": {
+      "title": "متابعة تسجيل الدخول",
+      "description": "الرجاء إدخال كلمة المرور المؤقتة المكونة من 4 أرقام المرسلة إلى رقم هاتفك المحمول",
+      "input-label": "أدخل رمز التحقق",
+      "button": "تأكيد الرمز",
+      "change-number-button": "تعديل الرقم",
+      "resendCode": "إعادة الإرسال",
+      "errors": {
+        "serverError": "حصل خطأ في الاتصال بالسيرفر",
+        "unauthorized": "كود غير صالح",
+        "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
+        "ryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+      }
     }
   }
 }
