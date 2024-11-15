@@ -10,7 +10,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Comp({ 
       fullWidth
       radius="md"
       color="primary"
-      className={cn("font-semibold text-black", className)}
+      className={cn("font-bold text-black", className)}
       {...props}
       ref={ref}
     />
