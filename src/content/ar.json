@@ -22,6 +22,17 @@
     "startCourseButton": "بدء البرنامج"
   },
   "login": {
-    "title": "مرحبا بك في انعاش"
+    "title": "مرحبا بك في انعاش",
+    "send-opt": {
+      "title": "متابعة تسجيل الدخول",
+      "description": "الرجاء إدخال رقم هاتفك المحمول للمتابعة ",
+      "input-label": "رقم الهاتف المحمول",
+      "input-placeholder": "أدخل الرقم",
+      "button": "أرسل رمز التحقق",
+      "errors": {
+        "required": "رقم الهاتف مطلوب",
+        "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'."
+      }
+    }
   }
 }

@@ -40,7 +40,7 @@ module.exports = {
       layout: {
         radius: {
           small: "4px", // rounded-small
-          medium: "12px", // rounded-medium
+          medium: "8px", // rounded-medium
           large: "16px", // rounded-large
         },
         borderWidth: {

@@ -2,7 +2,6 @@
 
 import React from "react"
 import { firstCourse, secondCourse } from "@/assets"
-import { Button } from "@nextui-org/button"
 import { Card, CardHeader } from "@nextui-org/card"
 import { Chip } from "@nextui-org/chip"
 import { Image } from "@nextui-org/image"
@@ -11,6 +10,8 @@ import { useTranslations } from "next-intl"
 import { useQueryState } from "nuqs"
 
 import { cn } from "@/lib/cn"
+import { Link } from "@/lib/i18n/navigation"
+import Button from "@/components/ui/button"
 
 type Props = {}
 
@@ -84,11 +85,9 @@ const ChooseCourse = (props: Props) => {
                     {course.estimatedTime}
                   </Chip>
                   <Button
-                    size="lg"
-                    fullWidth
-                    radius="md"
-                    color="primary"
-                    className="text-semibold mt-auto text-black"
+                    as={Link}
+                    href={`/course/${course.id}`}
+                    className="mt-auto"
                     startContent={<PlayCircle />}>
                     {t("startCourseButton")}
                   </Button>
