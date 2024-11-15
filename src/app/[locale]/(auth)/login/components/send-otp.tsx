@@ -1,12 +1,11 @@
 "use client"
 
-import React, { ElementRef, useRef } from "react"
 import PostSendOTP from "@/services/helpers/post-send-opt"
 import phoneNumberSchema from "@/validation/phone-number"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "@nextui-org/input"
 import { useTranslations } from "next-intl"
-import { parseAsInteger, parseAsIsoDate, parseAsString, useQueryState, useQueryStates } from "nuqs"
+import { parseAsInteger, parseAsString, useQueryStates } from "nuqs"
 import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 
