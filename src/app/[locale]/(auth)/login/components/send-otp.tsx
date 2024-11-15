@@ -1,6 +1,5 @@
 "use client"
 
-import PostSendOTP from "@/services/helpers/post-send-opt"
 import phoneNumberSchema from "@/validation/phone-number"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "@nextui-org/input"
@@ -10,6 +9,8 @@ import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 
 import Button from "@/components/ui/button"
+
+import PostSendOTP from "../post-send-opt"
 
 type Props = {}
 

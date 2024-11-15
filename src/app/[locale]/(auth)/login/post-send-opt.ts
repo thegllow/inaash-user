@@ -1,6 +1,5 @@
 import React from "react"
-
-import InaashApi from "../inaash"
+import InaashApi from "@/services/inaash"
 
 type Args = {
   mobile: string

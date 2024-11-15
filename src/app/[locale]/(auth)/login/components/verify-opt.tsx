@@ -1,16 +1,17 @@
 "use client"
 
-import PostSendOTP from "@/services/helpers/post-send-opt"
+import React, { useState } from "react"
 import { Input } from "@nextui-org/input"
 import axios from "axios"
 import { signIn } from "next-auth/react"
 import { useTranslations } from "next-intl"
 import { parseAsInteger, parseAsString, useQueryStates } from "nuqs"
-import React, { useState } from "react"
 import OtpInput from "react-otp-input"
 
-import CountDown from "@/components/common/count-down"
 import Button from "@/components/ui/button"
+import CountDown from "@/components/common/count-down"
+
+import PostSendOTP from "../post-send-opt"
 
 type Props = {}
 

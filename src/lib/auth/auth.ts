@@ -1,8 +1,9 @@
 import InaashApi from "@/services/inaash"
-import { User as ApiUserType, LoginResponse } from "@/services/types/login"
 import axios from "axios"
 import type { DefaultSession, NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
+
+import { User as ApiUserType, LoginResponse } from "@/types/login"
 
 declare module "next-auth" {
   /**
