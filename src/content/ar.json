@@ -31,7 +31,8 @@
       "button": "أرسل رمز التحقق",
       "errors": {
         "required": "رقم الهاتف مطلوب",
-        "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'."
+        "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
+        "serverError": "حصل خطأ في الاتصال بالسيرفر"
       }
     }
   }

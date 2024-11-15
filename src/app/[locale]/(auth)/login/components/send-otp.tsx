@@ -1,6 +1,7 @@
 "use client"
 
 import React, { ElementRef, useRef } from "react"
+import PostSendOTP from "@/services/helpers/post-send-opt"
 import phoneNumberSchema from "@/validation/phone-number"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "@nextui-org/input"
@@ -29,14 +30,20 @@ const SendOTP = (props: Props) => {
 
   const [_, setMobileNumber] = useQueryState("mobile")
   const onSubmit = form.handleSubmit(async (data) => {
-    setMobileNumber(data.mobile)
+    try {
+      const response = await PostSendOTP(data)
+      console.log("🚀 ~ onSubmit ~ response:", response)
+      setMobileNumber(data.mobile)
+    } catch (error) {
+      form.setError("root", { message: "serverError" })
+    }
   })
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-20">
       <div>
         <h2 className="text-xl font-semibold">{t("title")}</h2>
-        <p className="text-sm text-gray-600">{t("description")}</p>
+        <p className="text-sm text-default-500">{t("description")}</p>
       </div>
       <Controller
         control={form.control}
@@ -62,7 +69,14 @@ const SendOTP = (props: Props) => {
         }}
       />
 
-      <Button type="submit">{t("button")}</Button>
+      <Button isLoading={form.formState.isSubmitting} type="submit">
+        {t("button")}
+      </Button>
+      {form.formState.errors.root ? (
+        <p className="text-sm font-semibold text-danger">{t("errors.serverError")}</p>
+      ) : (
+        ""
+      )}
     </form>
   )
 }
