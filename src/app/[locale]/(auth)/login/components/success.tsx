@@ -17,7 +17,7 @@ const Success = (props: Props) => {
   return (
     <div className="flex flex-col gap-20">
       <div>
-        <Image className="mx-auto w-32" removeWrapper src={successLogin.src} alt="sucess" />
+        <Image className="mx-auto w-32" removeWrapper src={successLogin.src} alt="success" />
         <h2 className="text-center text-xl font-semibold">{t("title")}</h2>
       </div>
 

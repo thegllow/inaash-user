@@ -2,9 +2,10 @@
 
 import React from "react"
 import Link from "next/link"
-import { Button } from "@nextui-org/button"
 import { useTranslations } from "next-intl"
 import { useQueryState } from "nuqs"
+
+import Button from "@/components/ui/button"
 
 type Props = {}
 

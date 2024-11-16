@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card"
+import { Card, CardBody } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
 import { getTranslations } from "next-intl/server"
 
@@ -10,7 +10,7 @@ import ChooseLanguageButton from "../components/choose-language-button"
 export default async function Home() {
   const t = await getTranslations("choose-language")
   return (
-    <section className="~/md:~py-8/10 flex items-center justify-center gap-4">
+    <section className="flex items-center justify-center gap-4 ~/md:~py-8/10">
       <div className="flex w-1/2 flex-col items-center gap-10">
         <div className="flex justify-center">
           <Logo className="size-36" />

@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation"
 import { Card, CardBody } from "@nextui-org/card"
 
 import SendOTP from "./components/send-otp"
-import Success from "./components/sucess"
+import Success from "./components/success"
 import VerifyOTP from "./components/verify-opt"
 
 const Page = () => {
