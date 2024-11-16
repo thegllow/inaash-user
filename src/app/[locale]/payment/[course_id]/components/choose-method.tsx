@@ -7,6 +7,7 @@ import { Radio, RadioGroup, type RadioProps } from "@nextui-org/radio"
 import { useTranslations } from "next-intl"
 
 import { cn } from "@/lib/cn"
+import { Link, usePathname, useRouter } from "@/lib/i18n/navigation"
 import Button from "@/components/ui/button"
 
 type Props = {}
@@ -40,7 +41,16 @@ const ChooseMethod = (props: Props) => {
   const keys = ["card", "apple"] as const
 
   const [method, setMethod] = useState("")
-
+  const Router = useRouter()
+  const pathname = usePathname()
+  const handlePayment = () => {
+    Router.push({
+      pathname,
+      query: {
+        success: true,
+      },
+    })
+  }
   return (
     <div className="flex w-full flex-col justify-between gap-20">
       <RadioGroup
@@ -59,7 +69,9 @@ const ChooseMethod = (props: Props) => {
           </CustomRadio>
         ))}
       </RadioGroup>
-      <Button isDisabled={!method}>{t("nextButton")}</Button>
+      <Button isDisabled={!method} onClick={handlePayment}>
+        {t("nextButton")}
+      </Button>
     </div>
   )
 }
