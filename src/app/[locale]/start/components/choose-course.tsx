@@ -1,7 +1,6 @@
 "use client"
 
-import React from "react"
-import { firstCourse, secondCourse } from "@/assets"
+import { DummyCoursesData } from "@/data/dummy-courses"
 import { Card, CardHeader } from "@nextui-org/card"
 import { Chip } from "@nextui-org/chip"
 import { Image } from "@nextui-org/image"
@@ -15,23 +14,6 @@ import Button from "@/components/ui/button"
 
 type Props = {}
 
-const Courses = [
-  {
-    id: "first",
-    image: firstCourse.src,
-    title: "الحالات الطبية الطارئة",
-    description: "يوفر التدريب الأساسي على الاستجابة للحالات الطبية الحرجة في الحياة اليومية.",
-    estimatedTime: "12 mins",
-  },
-  {
-    id: "second",
-    image: secondCourse.src,
-    title: "الحالات الرياضية الطارئة",
-    description: "يوفر التدريب الأساسي على الاستجابة للحالات الرياضية الحرجة في الحياة اليومية.",
-    estimatedTime: "13 mins",
-  },
-]
-
 const ChooseCourse = (props: Props) => {
   const [selectedCourse, setSelectedCourse] = useQueryState("course")
   const t = useTranslations("start")
@@ -39,7 +21,7 @@ const ChooseCourse = (props: Props) => {
   return (
     <div
       className={cn("flex w-full justify-center gap-4", selectedCourse === "second" && "flex-row-reverse")}>
-      {Courses.map((course) => {
+      {DummyCoursesData.map((course) => {
         if (!selectedCourse)
           return (
             <Card
@@ -86,7 +68,7 @@ const ChooseCourse = (props: Props) => {
                   </Chip>
                   <Button
                     as={Link}
-                    href={`/course/${course.id}`}
+                    href={`/payment/${course.id}`}
                     className="mt-auto"
                     startContent={<PlayCircle />}>
                     {t("startCourseButton")}

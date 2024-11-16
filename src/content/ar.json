@@ -53,5 +53,19 @@
       "title": "تم تسجيل الدخول بنجاح!",
       "button": "التالي"
     }
+  },
+  "payment": {
+    "choose-method": "حدد خيار الدفع",
+    "options": {
+      "card": {
+        "value": "بطاقة إئتمان",
+        "description": "ادفع بشكل آمن باستخدام بطاقة فيزا, ماستر كارد، أو مدى."
+      },
+      "apple": {
+        "value": "Apple Pay",
+        "description": ""
+      }
+    },
+    "nextButton": "التالي"
   }
 }
