@@ -7,6 +7,7 @@ export const DummyCoursesData = [
     title: "الحالات الطبية الطارئة",
     description: "يوفر التدريب الأساسي على الاستجابة للحالات الطبية الحرجة في الحياة اليومية.",
     estimatedTime: "12 mins",
+    price: "100.00 SAR",
   },
   {
     id: "second",
@@ -14,5 +15,6 @@ export const DummyCoursesData = [
     title: "الحالات الرياضية الطارئة",
     description: "يوفر التدريب الأساسي على الاستجابة للحالات الرياضية الحرجة في الحياة اليومية.",
     estimatedTime: "13 mins",
+    price: "100.00 SAR",
   },
 ]

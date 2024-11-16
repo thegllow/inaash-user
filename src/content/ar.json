@@ -66,6 +66,16 @@
         "description": ""
       }
     },
-    "nextButton": "التالي"
+    "nextButton": "التالي",
+    "selected-course": "البرنامج المحدد",
+    "price": {
+      "original": "سعر البرنامج",
+      "discount": "سعر الخصم",
+      "total": "السعر الإجمالي"
+    },
+    "coupon": {
+      "input-placeholder": "أدخل رمز الخصم الخاص بك",
+      "coupon-button": "تطبيق"
+    }
   }
 }

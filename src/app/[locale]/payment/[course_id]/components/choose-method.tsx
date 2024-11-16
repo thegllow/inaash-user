@@ -59,7 +59,7 @@ const ChooseMethod = (props: Props) => {
           </CustomRadio>
         ))}
       </RadioGroup>
-      <Button>{t("nextButton")}</Button>
+      <Button isDisabled={!method}>{t("nextButton")}</Button>
     </div>
   )
 }
