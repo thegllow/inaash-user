@@ -4,7 +4,6 @@ import { successLogin } from "@/assets"
 import { Image } from "@nextui-org/image"
 import { useTranslations } from "next-intl"
 
-import { Link } from "@/lib/i18n/navigation"
 import Button from "@/components/ui/button"
 
 type Props = {}
