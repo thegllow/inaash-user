@@ -1,6 +1,5 @@
 "use client"
 
-import React, { ElementRef, useRef, useState } from "react"
 import { Input } from "@nextui-org/input"
 import { useTranslations } from "next-intl"
 import { parseAsString, useQueryState } from "nuqs"

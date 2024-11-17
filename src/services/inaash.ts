@@ -1,6 +1,7 @@
 import axios from "axios"
 import { type Session } from "next-auth"
 import { getSession } from "next-auth/react"
+import { getLocale } from "next-intl/server"
 
 const baseURL = "https://api-inaash.glow-host.com"
 
@@ -12,12 +13,15 @@ const InaashApi = axios.create({
 // Add a request interceptor to include the authentication token
 InaashApi.interceptors.request.use(
   async (config) => {
+    console.log("🚀 ~ config:", config.baseURL, config.url, config.data)
     let session: null | Session = null
     if (typeof window === "undefined") {
       // Server-side
       const { getServerSession } = await import("next-auth")
       const { authOptions } = await import("@/lib/auth/auth")
       session = await getServerSession(authOptions)
+      const locale = await getLocale()
+      config.headers["Accept-language"] = locale
     } else {
       // Client-side
       session = await getSession()

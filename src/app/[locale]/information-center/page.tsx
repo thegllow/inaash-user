@@ -1,6 +1,8 @@
 import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
-import List from "./components/list"
+import Search from "./components/search"
+import SearchResults from "./components/search-results"
+import { Divider } from "@nextui-org/divider"
 
 export default async function Page() {
   const t = await getTranslations("faqs")
@@ -11,7 +13,11 @@ export default async function Page() {
           <h1 className="text-2xl">{t("title")}</h1>
           <p className="text-sm text-default-500">{t("description")}</p>
         </div>
-        <List />
+        <div className="space-y-8 ~px-10/16 ~py-5/7">
+          <Search />
+          <Divider />
+          <SearchResults />
+        </div>
       </Card>
     </section>
   )

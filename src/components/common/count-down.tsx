@@ -17,8 +17,8 @@ const Countdown = ({ date, result }: Props) => {
       } else {
         // Render a countdown
         return (
-          <Chip className="rounded-xl" size="lg" color="primary" variant="bordered">
-            <div className="flex items-center gap-2">
+          <Chip className="rounded-lg" size="lg" color="primary" variant="bordered">
+            <div className="flex items-center gap-3">
               <Timer className="size-5" strokeWidth={1.4} />
               <span>{zeroPad(seconds)}</span>
             </div>
