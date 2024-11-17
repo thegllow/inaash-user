@@ -8,9 +8,9 @@ type Props = {}
 
 const Header = async (props: Props) => {
   return (
-    <header className="fixed inset-x-0 top-0 bg-default-100">
-      <div className="flex items-center justify-between px-6">
-        <div className="flex items-center gap-10">
+    <header className="fixed inset-x-0 top-0 z-50 bg-default-100">
+      <div className="flex items-center justify-between ~px-4/6">
+        <div className="flex items-center ~gap-4/10">
           <Logo variant="horizontal" />
           <NavBar />
         </div>
