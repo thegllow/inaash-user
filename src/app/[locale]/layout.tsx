@@ -66,7 +66,7 @@ export default async function RootLayout({
                 <div className="fixed inset-0 flex items-center justify-center">
                   <Image className="object-contain" src={background} alt="inaash background" />
                 </div>
-                <div className="relative flex h-screen flex-col">
+                <div className="relative flex min-h-screen flex-col">
                   <Header />
                   <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
                 </div>
