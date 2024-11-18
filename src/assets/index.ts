@@ -7,6 +7,8 @@ import logo from "./logo.svg"
 import secondCourse from "./second-course.png"
 import successLogin from "./success-login.svg"
 import noResults from "./no-results.svg"
+import startBackground from "./start-background.png"
+import loginBackground from "./login-background.png"
 
 export {
   background,
@@ -18,4 +20,6 @@ export {
   cardsLogo,
   appleLogo,
   noResults,
+  startBackground,
+  loginBackground,
 }

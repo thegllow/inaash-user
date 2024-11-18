@@ -1,8 +1,8 @@
 import { Card } from "@nextui-org/card"
+import { Divider } from "@nextui-org/divider"
 import { getTranslations } from "next-intl/server"
 import Search from "./components/search"
 import SearchResults from "./components/search-results"
-import { Divider } from "@nextui-org/divider"
 
 export default async function Page() {
   const t = await getTranslations("information-center")
