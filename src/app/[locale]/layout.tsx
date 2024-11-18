@@ -55,7 +55,11 @@ export default async function RootLayout({
 
   const messages = await getMessages()
   return (
-    <html suppressHydrationWarning lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className="dark">
+    <html
+      suppressHydrationWarning
+      lang={locale}
+      dir={["ar", "ur"].includes(locale) ? "rtl" : "ltr"}
+      className="dark">
       <head />
       <NextIntlClientProvider messages={messages}>
         <NuqsAdapter>
