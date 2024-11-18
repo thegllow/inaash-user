@@ -8,13 +8,27 @@ import { redirect } from "@/lib/i18n/navigation"
 import ChooseMethod from "./components/choose-method"
 import CourseDetails from "./components/course-details"
 import Success from "./components/success"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/lib/auth/auth"
 
 type Props = {
   params: { course_id: string; locale: string }
   searchParams: Record<string, string>
 }
 
-const Page = ({ params: { course_id, locale }, searchParams }: Props) => {
+const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
+  const session = await getServerSession(authOptions)
+  if (!session) {
+    redirect({
+      href: {
+        pathname: "/login",
+        query: {
+          callbackUrl: `/payment/${course_id}`,
+        },
+      },
+      locale: locale,
+    })
+  }
   // TODO: fetch course data from api
   const course = DummyCoursesData.find((course) => course.id === course_id)
   if (!course) redirect({ href: "/course", locale: locale })

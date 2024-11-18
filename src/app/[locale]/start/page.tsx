@@ -10,7 +10,7 @@ const Page = async (props: Props) => {
   return (
     <section className="flex items-center justify-center gap-4 ~/md:~py-16/24">
       <div className="w-full space-y-10">
-        <div className="mx-auto max-w-[39rem] space-y-5 text-center">
+        <div className="mx-auto max-w-[35rem] space-y-5 text-center">
           <h1 className="text-6xl text-foreground">
             {t.rich("title", {
               span: (chunks) => <span className="text-primary">{chunks}</span>,

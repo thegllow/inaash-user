@@ -8,9 +8,9 @@ import { PlayCircle, Timer } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useQueryState } from "nuqs"
 
+import Button from "@/components/ui/button"
 import { cn } from "@/lib/cn"
 import { Link } from "@/lib/i18n/navigation"
-import Button from "@/components/ui/button"
 
 type Props = {}
 

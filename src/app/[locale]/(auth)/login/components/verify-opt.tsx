@@ -1,15 +1,15 @@
 "use client"
 
-import React, { useState } from "react"
 import { Input } from "@nextui-org/input"
 import axios from "axios"
 import { signIn } from "next-auth/react"
 import { useTranslations } from "next-intl"
-import { parseAsInteger, parseAsString, useQueryStates } from "nuqs"
+import { parseAsInteger, parseAsString, useQueryState, useQueryStates } from "nuqs"
+import React, { useState } from "react"
 import OtpInput from "react-otp-input"
 
-import Button from "@/components/ui/button"
 import CountDown from "@/components/common/count-down"
+import Button from "@/components/ui/button"
 
 import PostSendOTP from "../post-send-opt"
 
@@ -24,6 +24,7 @@ const VerifyOTP = (props: Props) => {
     tries: parseAsInteger.withDefault(0),
     date: parseAsInteger,
   })
+  const [_, setSuccess] = useQueryState("success")
 
   // handle change mobile
   const handleChangeMobileNumber = () => {
@@ -58,6 +59,10 @@ const VerifyOTP = (props: Props) => {
       if (!data?.ok) {
         setError(t(`errors.unauthorized`))
         return
+      }
+
+      if (data.ok) {
+        setSuccess("true")
       }
     } catch (error) {
       console.log("🚀 ~ handleVerifyTOP ~ error:", error)
