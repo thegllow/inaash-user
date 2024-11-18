@@ -30,26 +30,26 @@ const Header = () => {
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
         className="bg-default-100"
-        classNames={{ wrapper: "max-lg:flex-row-reverse " }}
+        classNames={{ wrapper: "max-md:flex-row-reverse " }}
         maxWidth="xl"
         position="sticky">
-        <NavbarContent className="item1 flex items-center !justify-end lg:hidden">
+        <NavbarContent className="item1 flex items-center !justify-end md:hidden">
           <NavbarItem>
             <UserButton />
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarContent className="basis-1/5 max-lg:!grow-0 sm:basis-full" justify="start">
-          <NavbarBrand as="li" className="min-w-28 shrink-0 lg:min-w-36">
+        <NavbarContent className="basis-1/5 max-md:!grow-0 sm:basis-full" justify="start">
+          <NavbarBrand as="li" className="min-w-28 shrink-0 md:min-w-36">
             {/* <NextLink className="shrink-0" href="/"> */}
             <Logo variant="horizontal" />
             {/* </NextLink> */}
           </NavbarBrand>
-          <ul className="mx-2 hidden justify-start gap-5 font-medium lg:flex lg:gap-8 rtl:grow">
+          <ul className="mx-2 hidden justify-start gap-5 font-medium md:flex md:gap-8 rtl:grow">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
                 <NextLink
-                  className="text-white duration-150 hover:text-[#f1f1f1b9] max-lg:text-sm"
+                  className="text-white duration-150 hover:text-[#f1f1f1b9] max-md:text-sm"
                   href={item.href}>
                   {/*  @ts-ignore */}
                   {t(item.label)}
@@ -59,13 +59,13 @@ const Header = () => {
           </ul>
         </NavbarContent>
 
-        <NavbarContent className="hidden basis-1/5 lg:flex lg:basis-full" justify="end">
-          <NavbarItem className="hidden lg:flex">
+        <NavbarContent className="hidden basis-1/5 md:flex md:basis-full" justify="end">
+          <NavbarItem className="hidden md:flex">
             <UserButton />
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarContent className="basis-1 !gap-2 max-lg:flex-row-reverse lg:hidden" justify="end">
+        <NavbarContent className="basis-1 !gap-2 max-md:flex-row-reverse md:hidden" justify="end">
           <NavbarMenuToggle className="text-white" />
         </NavbarContent>
 
