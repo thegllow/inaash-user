@@ -10,13 +10,13 @@ const Page = async (props: Props) => {
   return (
     <section className="flex items-center justify-center gap-4 ~/md:~py-16/24">
       <div className="w-full space-y-10">
-        <div className="mx-auto max-w-[35rem] space-y-5 text-center">
-          <h1 className="text-6xl text-foreground">
+        <div className="mx-auto space-y-5 text-center ~md/lg:~max-w-[21rem]/[35rem]">
+          <h1 className="text-foreground ~md/lg:~text-4xl/6xl">
             {t.rich("title", {
               span: (chunks) => <span className="text-primary">{chunks}</span>,
             })}
           </h1>
-          <p className="text-justify text-foreground">{t("description")}</p>
+          <p className="text-justify text-foreground ~md/lg:~text-sm/base">{t("description")}</p>
         </div>
         <ChooseCourse />
       </div>

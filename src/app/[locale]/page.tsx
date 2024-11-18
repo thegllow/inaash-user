@@ -11,7 +11,7 @@ export default async function Home() {
   const t = await getTranslations("choose-language")
   return (
     <section className="flex items-center justify-center gap-4 ~/md:~py-8/10">
-      <div className="flex w-1/2 flex-col items-center gap-10">
+      <div className="flex w-full flex-col items-center gap-10 md:w-1/2">
         <div className="flex justify-center">
           <Logo className="size-36" />
         </div>
@@ -24,7 +24,7 @@ export default async function Home() {
         </Card>
         <ChooseLanguageButton />
       </div>
-      <div className="w-1/2"></div>
+      <div className="hidden w-1/2 md:block"></div>
     </section>
   )
 }

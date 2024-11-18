@@ -1,10 +1,9 @@
-import { Card, CardBody } from "@nextui-org/card"
-import { Suspense } from "react"
-import Wrapper from "./components/wrapper"
-import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
-import { LocaleType } from "@/lib/i18n/types"
+import { Card, CardBody } from "@nextui-org/card"
+import { getServerSession } from "next-auth"
+import { Suspense } from "react"
+import Wrapper from "./components/wrapper"
 
 const Page = async ({
   searchParams,

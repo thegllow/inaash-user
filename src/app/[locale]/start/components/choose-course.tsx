@@ -20,7 +20,10 @@ const ChooseCourse = (props: Props) => {
 
   return (
     <div
-      className={cn("flex w-full justify-center gap-4", selectedCourse === "second" && "flex-row-reverse")}>
+      className={cn(
+        "flex w-full flex-col justify-center gap-4 lg:flex-row",
+        selectedCourse === "second" && "flex-col-reverse lg:flex-row-reverse",
+      )}>
       {DummyCoursesData.map((course) => {
         if (!selectedCourse)
           return (
@@ -31,7 +34,7 @@ const ChooseCourse = (props: Props) => {
                 setSelectedCourse(course.id)
               }}
               radius="lg"
-              className="w-1/2 max-w-[390px] flex-grow border-none">
+              className="max-w-[390px] flex-grow border-none lg:w-1/2">
               <Image
                 alt="first-course"
                 className="h-full w-full object-cover"
@@ -50,7 +53,7 @@ const ChooseCourse = (props: Props) => {
                   setSelectedCourse(null)
                 }}
                 radius="lg"
-                className="aspect-video w-1/2 max-w-[390px] border-none">
+                className="aspect-video max-w-[390px] border-none lg:w-1/2">
                 <Image
                   alt="first-course"
                   className="h-full w-full object-cover"
@@ -58,7 +61,7 @@ const ChooseCourse = (props: Props) => {
                   removeWrapper
                 />
               </Card>
-              <Card key={course.id + "selected"} radius="lg" className="w-1/2 max-w-[390px] border-none">
+              <Card key={course.id + "selected"} radius="lg" className="max-w-[390px] border-none lg:w-1/2">
                 {/* <Image alt="first-course" className="object-cover" src={course.image} removeWrapper /> */}
                 <CardHeader className="absolute inset-0 z-10 flex-col !items-start gap-3 bg-[#272525E5] p-5">
                   <h4 className="text-xl font-semibold text-foreground">{course.title}</h4>
