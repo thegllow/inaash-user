@@ -39,7 +39,7 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
       <>
         <BackgroundImage src={loginBackground} />
         <section className="flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
-          <Card className="w-full max-w-sm border-none bg-[#0A090959] backdrop-blur-md">
+          <Card shadow={"none"} className="w-full max-w-sm border-none bg-[#0A090959] backdrop-blur-md">
             <CardBody className="p-8 rtl:text-right">
               <Success />
             </CardBody>
@@ -52,7 +52,7 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
     <>
       <BackgroundImage src={loginBackground} />
       <section className="flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
-        <Card className="w-full max-w-4xl border-none bg-[#0A090959] backdrop-blur-md">
+        <Card shadow={"none"} className="w-full max-w-4xl border-none bg-[#0A090959] backdrop-blur-md">
           <CardBody className="border-none px-8 ~/md:~py-8/12 rtl:text-right">
             <div className="flex gap-4">
               <div className="w-1/2">

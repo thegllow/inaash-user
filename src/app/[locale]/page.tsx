@@ -18,7 +18,7 @@ export default async function Home() {
           <div className="flex justify-center">
             <Logo className="size-36" />
           </div>
-          <Card className="w-full shrink-0 bg-[#211E24] px-8 py-6">
+          <Card shadow={"none"} className="w-full shrink-0 bg-[#211E24] px-8 py-6">
             <CardBody>
               <h1 className="text-center text-lg text-white">{t("title")}</h1>
               <Divider className="mx-auto my-6 w-1/2" />

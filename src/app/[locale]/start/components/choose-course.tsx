@@ -28,6 +28,7 @@ const ChooseCourse = (props: Props) => {
         if (!selectedCourse)
           return (
             <Card
+              shadow={"none"}
               key={course.id}
               isPressable
               onClick={() => {
@@ -47,6 +48,7 @@ const ChooseCourse = (props: Props) => {
           return (
             <>
               <Card
+                shadow={"none"}
                 key={course.id}
                 isPressable
                 onClick={() => {
@@ -61,7 +63,11 @@ const ChooseCourse = (props: Props) => {
                   removeWrapper
                 />
               </Card>
-              <Card key={course.id + "selected"} radius="lg" className="max-w-[390px] border-none lg:w-1/2">
+              <Card
+                shadow={"none"}
+                key={course.id + "selected"}
+                radius="lg"
+                className="max-w-[390px] border-none lg:w-1/2">
                 {/* <Image alt="first-course" className="object-cover" src={course.image} removeWrapper /> */}
                 <CardHeader className="absolute inset-0 z-10 flex-col !items-start gap-3 bg-[#272525E5] p-5">
                   <h4 className="text-xl font-semibold text-foreground">{course.title}</h4>

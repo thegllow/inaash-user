@@ -9,7 +9,7 @@ type Props = {}
 const Price = (props: Props) => {
   const t = useTranslations("payment.price")
   return (
-    <Card className="bg-content2">
+    <Card shadow={"none"} className="bg-content2">
       <CardBody className="flex flex-col gap-4 px-4 py-5 rtl:text-right">
         <div className="flex items-center justify-between gap-4 text-green-600">
           <span>{t("discount")}</span>

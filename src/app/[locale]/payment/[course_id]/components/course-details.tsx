@@ -17,6 +17,7 @@ const CourseDetails = async ({ course }: Props) => {
   return (
     <div className="flex w-full flex-col justify-between gap-5">
       <Card
+        shadow={"none"}
         key={course.id + "selected"}
         className="mx-auto max-w-[390px] overflow-hidden rounded-[21px] border border-[#5A4A73]">
         <CardBody className="relative overflow-hidden p-1 rtl:text-right">
