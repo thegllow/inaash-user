@@ -24,7 +24,7 @@ const ChooseLanguage = (props: Props) => {
         variant={"underlined"}
         aria-label="Tabs variants">
         {LOCALES.map((element) => {
-          return <Tab key={element} value={element} className="text-xl" title={t(element)} />
+          return <Tab key={element} value={element} className="text-base" title={t(element)} />
         })}
       </Tabs>
     </div>

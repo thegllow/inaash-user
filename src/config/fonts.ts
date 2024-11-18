@@ -1,9 +1,35 @@
-import { Fira_Code as FontMono, Cairo as FontSans } from "next/font/google"
+import { Fira_Code as FontMono } from "next/font/google"
+import localFont from "next/font/local"
+export const fontSans = localFont({
+  src: [
+    {
+      path: "../fonts/IBMPlexSansArabic-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/IBMPlexSansArabic-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
+    {
+      path: "../fonts/IBMPlexSansArabic-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/IBMPlexSansArabic-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/IBMPlexSansArabic-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-sans",
-  weight: ["300", "400", "500", "600", "700"],
 })
 
 export const fontMono = FontMono({
