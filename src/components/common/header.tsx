@@ -3,6 +3,7 @@ import React from "react"
 import FullScreenButton from "./full-screen-button"
 import Logo from "./logo"
 import NavBar from "./navbar"
+import UserButton from "./user-button"
 
 type Props = {}
 
@@ -15,7 +16,8 @@ const Header = async (props: Props) => {
           <NavBar />
         </div>
 
-        <div>
+        <div className="flex items-center gap-2">
+          <UserButton />
           <FullScreenButton />
         </div>
       </div>
