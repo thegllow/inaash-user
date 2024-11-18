@@ -96,5 +96,30 @@
       "search-button": "بحث",
       "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى."
     }
+  },
+  "contact-us": {
+    "title": "تواصل معنا",
+    "description": " املأ النموذج أدناه، وسنقوم بالرد عليك في اقرب وقت ممكن",
+    "form": {
+      "type-label": "حدد نوع الرسالة",
+      "tabs": {
+        "info": "استفسار",
+        "suggestion": "اقتراح",
+        "complain": "شكوى"
+      },
+      "email-input-label": "أدخل عنوان بريدك الإلكتروني",
+      "email-input-placeholder": "Example@example.co",
+      "name-input-label": "أدخل اسمك الكامل",
+      "name-input-placeholder": "Ahamad Alyounis",
+      "message-input-label": "الموضوع",
+      "message-input-placeholder": "أدخل الموضوع هنا!",
+      "subject-input-label": "الرسالة",
+      "subject-input-placeholder": "أدخل الموضوع هنا!",
+      "submit-button": "ارسال",
+      "errors": {
+        "required": "هذا الحقل مطلوب",
+        "invalidEmail": "إيميل غير صالح"
+      }
+    }
   }
 }

@@ -1,11 +1,9 @@
 import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
-import Search from "./components/search"
-import SearchResults from "./components/search-results"
-import { Divider } from "@nextui-org/divider"
+import ContactForm from "./components/form"
 
 export default async function Page() {
-  const t = await getTranslations("information-center")
+  const t = await getTranslations("contact-us")
   return (
     <section className="flex items-center justify-center gap-4 ~/md:~py-16/24">
       <Card className="w-full max-w-3xl shrink-0 rounded-xl bg-[#0A090959] p-1">
@@ -14,9 +12,7 @@ export default async function Page() {
           <p className="text-default-500 ~text-xs/sm">{t("description")}</p>
         </div>
         <div className="~space-y-4/8 ~px-6/16 ~py-5/7">
-          <Search />
-          <Divider />
-          <SearchResults />
+          <ContactForm />
         </div>
       </Card>
     </section>
