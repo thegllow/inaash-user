@@ -108,9 +108,9 @@
     "form": {
       "type-label": "حدد نوع الرسالة",
       "tabs": {
-        "info": "استفسار",
+        "inquiry": "استفسار",
         "suggestion": "اقتراح",
-        "complain": "شكوى"
+        "complaint": "شكوى"
       },
       "email-input-label": "أدخل عنوان بريدك الإلكتروني",
       "email-input-placeholder": "Example@example.co",
@@ -121,9 +121,11 @@
       "subject-input-label": "الرسالة",
       "subject-input-placeholder": "أدخل الموضوع هنا!",
       "submit-button": "ارسال",
+      "success": "تم استلام رسالتك بنجاح, سيتم الرد عليك في اقرب وقت ممكن.",
       "errors": {
         "required": "هذا الحقل مطلوب",
-        "invalidEmail": "إيميل غير صالح"
+        "invalidEmail": "إيميل غير صالح",
+        "serverError": "حصل خطأ في الاتصال بالسيرفر"
       }
     }
   },

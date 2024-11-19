@@ -1,23 +1,27 @@
 "use client"
 import Button from "@/components/ui/button"
+import InaashApi from "@/services/inaash"
+import { ErrorResponse } from "@/types"
 import { contactSchema } from "@/validation/contact-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input, Textarea } from "@nextui-org/input"
 import { Tab, Tabs } from "@nextui-org/tabs"
+import axios from "axios"
 import { useTranslations } from "next-intl"
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
+import { z } from "zod"
 
 type Props = {}
 
-const type = ["info", "complain", "suggestion"] as const
+const type = ["inquiry", "complaint", "suggestion"] as const
 
 const ContactForm = (props: Props) => {
   const t = useTranslations("contact-us.form")
   const { control, ...form } = useForm({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      type: "information",
+      type: "inquiry",
       name: "",
       email: "",
       message: "",
@@ -26,7 +30,27 @@ const ContactForm = (props: Props) => {
   })
 
   const onSubmit = form.handleSubmit(async (data) => {
-    console.log(data)
+    try {
+      const response = await InaashApi.post("/guest/contacts", data)
+      console.log("🚀 ~ onSubmit ~ response:", response)
+      form.reset()
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response?.status === 422) {
+        const responseError = error.response.data as ErrorResponse<z.infer<typeof contactSchema>>
+        form.setError("root", { message: responseError.message })
+        if (responseError.errors) {
+          for (let key in responseError.errors) {
+            form.setError(key as keyof typeof responseError.errors, {
+              message: responseError.errors![key as keyof typeof responseError.errors]![0],
+            })
+          }
+        }
+
+        return
+      }
+
+      form.setError("root", { message: t("errors.serverError") })
+    }
   })
   return (
     <form onSubmit={onSubmit} className="block space-y-5 md:space-y-10">
@@ -167,10 +191,15 @@ const ContactForm = (props: Props) => {
           />
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center justify-center gap-4">
         <Button isLoading={form.formState.isSubmitting} type="submit" className="mx-auto max-w-sm">
           {t("submit-button")}
         </Button>
+        {form.formState.isSubmitted ? (
+          <p className="text-sm font-semibold text-success-500">{t("success")}</p>
+        ) : (
+          ""
+        )}
       </div>
     </form>
   )
