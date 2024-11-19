@@ -51,17 +51,18 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
   return (
     <>
       <BackgroundImage src={loginBackground} />
-      <section className="flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
+      <section className="relative flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
         <Card shadow={"none"} className="w-full max-w-4xl border-none bg-[#0A090959] backdrop-blur-md">
-          <CardBody className="border-none px-8 ~/md:~py-8/12 rtl:text-right">
-            <div className="flex gap-4">
-              <div className="w-1/2">
+          <CardBody className="border-none px-4 ~/md:~py-8/12 md:px-8 rtl:text-right">
+            <div className="flex flex-col gap-4 md:flex-row">
+              <div className="w-full md:w-1/2">
                 <CourseDetails course={course} />
               </div>
               <div>
-                <Divider orientation="vertical" />
+                <Divider className="hidden md:block" orientation="vertical" />
+                <Divider className="md:hidden" />
               </div>
-              <div className="w-1/2">
+              <div className="w-full md:w-1/2">
                 <ChooseMethod />
               </div>
             </div>

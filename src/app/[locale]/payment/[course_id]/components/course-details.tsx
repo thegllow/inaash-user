@@ -19,7 +19,7 @@ const CourseDetails = async ({ course }: Props) => {
       <Card
         shadow={"none"}
         key={course.id + "selected"}
-        className="mx-auto max-w-[390px] overflow-hidden rounded-[21px] border border-[#5A4A73]">
+        className="mx-auto overflow-hidden rounded-[21px] border border-[#5A4A73] md:max-w-[390px]">
         <CardBody className="relative overflow-hidden p-1 rtl:text-right">
           <div className="relative overflow-hidden">
             <CardHeader className="relative z-10 flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] p-5">

@@ -21,7 +21,7 @@ const ChooseCourse = (props: Props) => {
   return (
     <div
       className={cn(
-        "flex w-full flex-col justify-center gap-4 lg:flex-row",
+        "flex w-full flex-col items-center justify-center gap-4 lg:flex-row",
         selectedCourse === "second" && "flex-col-reverse lg:flex-row-reverse",
       )}>
       {DummyCoursesData.map((course) => {
