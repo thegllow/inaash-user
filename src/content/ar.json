@@ -97,7 +97,9 @@
       "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى."
     },
     "result": {
-      "start-course-button": "ابدأ البرنامج"
+      "start-course-button": "ابدأ البرنامج",
+      "answers": "الإجابات",
+      "avarage-answer-time": "متوسط ​​سرعة الاجابة"
     }
   },
   "contact-us": {
@@ -124,5 +126,18 @@
         "invalidEmail": "إيميل غير صالح"
       }
     }
+  },
+  "footer": {
+    "important-links": "روابط مهمة",
+    "contact-us": "اتصل بنا",
+    "full-screen": "ملء الشاشة",
+    "home": "الرئيسية",
+    "about": "عن إنعاش",
+    "information-center": "مركز المعلومات",
+    "contact": "تواصل معنا",
+    "faqs": "الاسئلة الشائعة",
+    "email": "بريد إلكتروني",
+    "phonenumber": "رقم",
+    "socials": "وسائل التواصل الاجتماعي"
   }
 }

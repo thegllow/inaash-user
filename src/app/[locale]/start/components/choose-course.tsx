@@ -72,7 +72,7 @@ const ChooseCourse = (props: Props) => {
                 <CardHeader className="absolute inset-0 z-10 flex-col !items-start gap-3 bg-[#272525E5] p-5">
                   <h4 className="text-xl font-semibold text-foreground">{course.title}</h4>
                   <p className="text-sm text-foreground">{course.description}</p>
-                  <Chip startContent={<Timer size={18} />} radius="sm">
+                  <Chip className="bg-[#27252570]" startContent={<Timer size={18} />} radius="sm">
                     {course.estimatedTime}
                   </Chip>
                   <Button
