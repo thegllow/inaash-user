@@ -14,14 +14,14 @@ import { z } from "zod"
 
 type Props = {}
 
-const type = ["inquiry", "complaint", "suggestion"] as const
+const type = ["Inquiry", "Complaint", "Suggestion"] as const
 
 const ContactForm = (props: Props) => {
   const t = useTranslations("contact-us.form")
   const { control, ...form } = useForm({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      type: "inquiry",
+      type: "Inquiry",
       name: "",
       email: "",
       message: "",
@@ -70,7 +70,13 @@ const ContactForm = (props: Props) => {
                 aria-label="Tabs variants">
                 {type.map((element) => {
                   return (
-                    <Tab key={element} value={element} className="text-lg" title={t(`tabs.${element}`)} />
+                    <Tab
+                      key={element}
+                      value={element}
+                      className="text-lg"
+                      // @ts-ignore
+                      title={t(`tabs.${element.toLocaleLowerCase()}`)}
+                    />
                   )
                 })}
               </Tabs>
@@ -195,7 +201,12 @@ const ContactForm = (props: Props) => {
         <Button isLoading={form.formState.isSubmitting} type="submit" className="mx-auto max-w-sm">
           {t("submit-button")}
         </Button>
-        {form.formState.isSubmitted ? (
+        {form.formState.errors.root ? (
+          <p className="text-sm font-semibold text-danger-500">{form.formState.errors.root.message}</p>
+        ) : (
+          ""
+        )}
+        {form.formState.isSubmitSuccessful ? (
           <p className="text-sm font-semibold text-success-500">{t("success")}</p>
         ) : (
           ""
