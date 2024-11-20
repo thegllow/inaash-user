@@ -11,7 +11,8 @@ import OtpInput from "react-otp-input"
 import CountDown from "@/components/common/count-down"
 import Button from "@/components/ui/button"
 
-import PostSendOTP from "../post-send-opt"
+import PostSendOTP from "@/services/utils/post-send-opt"
+import { ErrorResponse } from "@/types"
 
 type Props = {}
 
@@ -86,15 +87,17 @@ const VerifyOTP = (props: Props) => {
       )
       console.log("🚀 ~ handleResendCode ~ response:", response)
     } catch (error) {
-      if (axios.isAxiosError(error) && error.response?.status === 422) {
-        setError(t(`errors.ryAgainAfter`))
+      if (axios.isAxiosError(error) && error.response?.data) {
+        const responseError = error.response.data as ErrorResponse<{}>
+        setError(responseError.message)
+        return
       }
       setError(t("errors.serverError"))
     }
   }
   return (
     <form onSubmit={handleVerifyTOP} className="flex flex-col gap-20">
-      <div>
+      <div className="space-y-2">
         <h2 className="text-xl font-semibold">{t("title")}</h2>
         <p className="text-sm text-default-500">{t("description")}</p>
       </div>

@@ -10,7 +10,9 @@ import { z } from "zod"
 
 import Button from "@/components/ui/button"
 
-import PostSendOTP from "../post-send-opt"
+import PostSendOTP from "@/services/utils/post-send-opt"
+import axios from "axios"
+import { ErrorResponse } from "@/types"
 
 type Props = {}
 
@@ -35,13 +37,18 @@ const SendOTP = (props: Props) => {
       console.log("🚀 ~ onSubmit ~ response:", response)
       setQueries({ mobile: data.mobile, date: Date.now() })
     } catch (error) {
+      if (axios.isAxiosError(error) && error.response?.data) {
+        const responseError = error.response.data as ErrorResponse<{}>
+        form.setError("root", { message: responseError.message })
+        return
+      }
       form.setError("root", { message: "serverError" })
     }
   })
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-20">
-      <div>
+      <div className="space-y-2">
         <h2 className="text-xl font-semibold">{t("title")}</h2>
         <p className="text-sm text-default-500">{t("description")}</p>
       </div>
