@@ -5,8 +5,8 @@ import { getTranslations } from "next-intl/server"
 import Logo from "@/components/common/logo"
 
 import BackgroundImage from "@/components/common/background-image"
-import ChooseLanguage from "../components/choose-language"
-import ChooseLanguageButton from "../components/choose-language-button"
+import ChooseLanguage from "./components/choose-language"
+import ChooseLanguageButton from "./components/choose-language-button"
 
 export default async function Home() {
   const t = await getTranslations("choose-language")

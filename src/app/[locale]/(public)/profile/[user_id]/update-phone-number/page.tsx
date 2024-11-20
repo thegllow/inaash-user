@@ -1,5 +1,3 @@
-import { loginBackground } from "@/assets"
-import BackgroundImage from "@/components/common/background-image"
 import { Card, CardBody } from "@nextui-org/card"
 import { Suspense } from "react"
 import Wrapper from "./components/wrapper"

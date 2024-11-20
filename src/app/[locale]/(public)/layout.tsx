@@ -1,11 +1,9 @@
 import "@/styles/globals.css"
 
-import { background } from "@/assets"
 import clsx from "clsx"
 import { Metadata, Viewport } from "next"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages, setRequestLocale } from "next-intl/server"
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
