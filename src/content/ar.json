@@ -34,7 +34,8 @@
       "errors": {
         "required": "رقم الهاتف مطلوب",
         "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر"
+        "serverError": "حصل خطأ في الاتصال بالسيرفر",
+        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
       }
     },
     "verify-opt": {
@@ -48,7 +49,7 @@
         "serverError": "حصل خطأ في الاتصال بالسيرفر",
         "unauthorized": "كود غير صالح",
         "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-        "ryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
       }
     },
     "success": {
@@ -100,6 +101,64 @@
       "start-course-button": "ابدأ البرنامج",
       "answers": "الإجابات",
       "avarage-answer-time": "متوسط ​​سرعة الاجابة"
+    }
+  },
+  "profile": {
+    "edit-button": "تحرير",
+    "mobile": "رقم الهاتف المحمول",
+    "email": "البريد الإلكتروني",
+    "name": "الاسم",
+    "first_name": "الاسم الاول",
+    "last_name": "اسم العائلة",
+    "name-input-placeholder": "Ahamad Alyounis",
+    "first_name-input-placeholder": "Ahamad",
+    "last_name-input-placeholder": "Alyounis ",
+    "email-input-placeholder": "Example@example.co",
+    "certificates": "الشهادات التي تم الحصول عليها",
+    "save-button": "حفظ",
+    "change-mobile-button": "تغيير",
+    "success": "تم تعديل بياناتك الشخصية بنجاح",
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "إيميل غير صالح",
+      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+    },
+    "edit": {
+      "title": "تحرير",
+      "description": "قم بتحديث معلوماتك الشخصية، وتفاصيل الاتصالs"
+    },
+    "update-mobile": {
+      "send-opt": {
+        "title": "تحديث رقم الهاتف",
+        "description": "الرجاء إدخال رقم هاتفك المحمول للحصول على رمز التحقق",
+        "input-label": "أدخل رقم الهاتف الجديد*",
+        "input-placeholder": "أدخل الرقم",
+        "button": "أرسل رمز التحقق",
+        "errors": {
+          "required": "رقم الهاتف مطلوب",
+          "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
+          "serverError": "حصل خطأ في الاتصال بالسيرفر",
+          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        }
+      },
+      "verify-opt": {
+        "title": "تحديث رقم الجوال",
+        "description": "الرجاء إدخال رمز التحقق المرسل الى رقم هاتفك والمكون من 4 أرقام ",
+        "input-label": "أدخل رمز التحقق",
+        "button": "تأكيد الرمز",
+        "change-number-button": "تعديل الرقم",
+        "resendCode": "إعادة الإرسال",
+        "errors": {
+          "serverError": "حصل خطأ في الاتصال بالسيرفر",
+          "unauthorized": "كود غير صالح",
+          "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
+          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        }
+      },
+      "success": {
+        "title": "تم تحديث رقم الجوال بنجاح!",
+        "button": "عودة"
+      }
     }
   },
   "contact-us": {

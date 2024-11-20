@@ -9,7 +9,7 @@ import successLogin from "./success-login.svg"
 import noResults from "./no-results.svg"
 import startBackground from "./start-background.png"
 import loginBackground from "./login-background.png"
-
+import profilePlaceholder from "./profile-placeholder.png"
 export {
   background,
   logo,
@@ -22,4 +22,5 @@ export {
   noResults,
   startBackground,
   loginBackground,
+  profilePlaceholder,
 }

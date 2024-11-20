@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 export const contactSchema = z.object({
-  type: z.enum(["inquiry", "complaint", "suggestion"]),
+  type: z.enum(["Inquiry", "Complaint", "Suggestion"]),
   email: z.string({ required_error: "required" }).min(1, "required").email({ message: "invalidEmail" }),
   name: z.string({ required_error: "required" }).min(1, "required"),
   message: z.string({ required_error: "required" }).min(1, "required"),
