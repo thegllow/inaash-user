@@ -25,7 +25,11 @@ const CourseDetails = async ({ course }: Props) => {
             <CardHeader className="relative z-10 flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] p-5">
               <h4 className="text-xl font-bold text-foreground">{course.title}</h4>
               <p className="text-sm text-foreground">{course.description}</p>
-              <Chip startContent={<Timer size={18} />} radius="sm">
+
+              <Chip
+                startContent={<Timer size={18} />}
+                className="bg-[#3C3C3C] px-2 py-1 backdrop-blur-xl"
+                radius="sm">
                 {course.estimatedTime}
               </Chip>
               <div></div>

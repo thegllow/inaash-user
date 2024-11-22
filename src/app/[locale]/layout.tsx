@@ -13,6 +13,8 @@ import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 
 import { Providers } from "./providers"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/lib/auth/auth"
 
 export const metadata: Metadata = {
   title: {

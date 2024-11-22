@@ -216,5 +216,14 @@
     "email": "بريد إلكتروني",
     "phonenumber": "رقم",
     "socials": "وسائل التواصل الاجتماعي"
+  },
+  "course": {
+    "course-header": {
+      "score": {
+        "total": "إجمالي الأسئلة",
+        "right-answers": "الإجابات الصحيحة"
+      },
+      "average-answer-time": "متوسط سرعة الاجابة"
+    }
   }
 }
