@@ -118,6 +118,11 @@
     "save-button": "حفظ",
     "change-mobile-button": "تغيير",
     "success": "تم تعديل بياناتك الشخصية بنجاح",
+    "dropdown": {
+      "profile": "الملف الشخصي",
+      "change-lang": "تغير اللغة",
+      "logout": "تسجيل الخروج"
+    },
     "errors": {
       "required": "هذا الحقل مطلوب",
       "invalidEmail": "إيميل غير صالح",

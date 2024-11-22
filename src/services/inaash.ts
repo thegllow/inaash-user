@@ -1,7 +1,9 @@
+import { getLocaleFromUrl } from "@/utils/get-locale"
 import axios from "axios"
 import { type Session } from "next-auth"
 import { getSession } from "next-auth/react"
 import { getLocale } from "next-intl/server"
+import { Router } from "next/router"
 
 const baseURL = "https://api-inaash.glow-host.com"
 
@@ -25,6 +27,8 @@ InaashApi.interceptors.request.use(
     } else {
       // Client-side
       session = await getSession()
+      const locale = getLocaleFromUrl()
+      config.headers["Accept-language"] = locale
     }
 
     if (session && session?.user?.token) {
