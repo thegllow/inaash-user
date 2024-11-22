@@ -16,12 +16,12 @@
       "fil": "Tagalog",
       "ur": "اُردُو"
     },
-    "nextButton": "التالي"
+    "next-button": "التالي"
   },
   "start": {
     "title": " عيشها، تعلمها،<span> كن منقذًا</span> ",
     "description": "استكشف الفيديوهات التفاعلية واحصل التدريب المناسب حول الاستجابة للإصابات الصحية والرياضية من خلال اكتساب المهارات الأساسية للتعامل مع حالات الطوارئ بشكل صحيح وسريع",
-    "startCourseButton": "بدء البرنامج"
+    "start-course-button": "بدء البرنامج"
   },
   "login": {
     "title": "مرحبا بك في انعاش",
@@ -44,7 +44,7 @@
       "input-label": "أدخل رمز التحقق",
       "button": "تأكيد الرمز",
       "change-number-button": "تعديل الرقم",
-      "resendCode": "إعادة الإرسال",
+      "resend-code": "إعادة الإرسال",
       "errors": {
         "serverError": "حصل خطأ في الاتصال بالسيرفر",
         "unauthorized": "كود غير صالح",
@@ -69,7 +69,7 @@
         "description": ""
       }
     },
-    "nextButton": "التالي",
+    "next-button": "التالي",
     "selected-course": "البرنامج المحدد",
     "price": {
       "original": "سعر البرنامج",
@@ -121,7 +121,18 @@
     "dropdown": {
       "profile": "الملف الشخصي",
       "change-lang": "تغير اللغة",
-      "logout": "تسجيل الخروج"
+      "logout": "تسجيل الخروج",
+      "change-language": {
+        "title": "تغيير اللغة",
+        "tabs": {
+          "ar": "العربية",
+          "en": "English",
+          "fr": "Français",
+          "fil": "Tagalog",
+          "ur": "اُردُو"
+        },
+        "update-button": "تعديل اللغة"
+      }
     },
     "errors": {
       "required": "هذا الحقل مطلوب",
@@ -152,7 +163,7 @@
         "input-label": "أدخل رمز التحقق",
         "button": "تأكيد الرمز",
         "change-number-button": "تعديل الرقم",
-        "resendCode": "إعادة الإرسال",
+        "resend-code": "إعادة الإرسال",
         "errors": {
           "serverError": "حصل خطأ في الاتصال بالسيرفر",
           "unauthorized": "كود غير صالح",

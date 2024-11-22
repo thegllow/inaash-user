@@ -80,7 +80,7 @@ const ChooseCourse = (props: Props) => {
                     href={`/payment/${course.id}`}
                     className="mt-auto"
                     startContent={<PlayCircle />}>
-                    {t("startCourseButton")}
+                    {t("start-course-button")}
                   </Button>
                 </CardHeader>
                 <Image

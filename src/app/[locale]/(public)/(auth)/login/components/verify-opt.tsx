@@ -130,7 +130,7 @@ const VerifyOTP = (props: Props) => {
             date={(date ? date : Date.now()) + 60000}
             result={
               <p className="cursor-pointer text-secondary underline" onClick={handleResendCode}>
-                {t("resendCode")}
+                {t("resend-code")}
               </p>
             }
           />

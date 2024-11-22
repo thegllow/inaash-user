@@ -70,7 +70,7 @@ const ChooseMethod = (props: Props) => {
         ))}
       </RadioGroup>
       <Button isDisabled={!method} onClick={handlePayment}>
-        {t("nextButton")}
+        {t("next-button")}
       </Button>
     </div>
   )

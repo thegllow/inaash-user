@@ -5,10 +5,17 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-o
 import { UserCircle2 } from "lucide-react"
 import { signOut, useSession } from "next-auth/react"
 import { useTranslations } from "next-intl"
+import { parseAsBoolean, useQueryState } from "nuqs"
+import ChangeLanguage from "./change-language"
 
 type Props = {}
 export function UserDropdown() {
   const t = useTranslations("profile.dropdown")
+
+  const [_, seChangeLang] = useQueryState("change_lang", parseAsBoolean.withDefault(false))
+  const handleChangeLang = () => {
+    seChangeLang(true)
+  }
 
   return (
     <div className="flex items-center lg:gap-4">
@@ -22,7 +29,9 @@ export function UserDropdown() {
           <DropdownItem key="profile">
             <Link href={"/profile"}>{t("profile")}</Link>
           </DropdownItem>
-          <DropdownItem key="lang">{t("change-lang")}</DropdownItem>
+          <DropdownItem key="lang" onClick={handleChangeLang}>
+            {t("change-lang")}
+          </DropdownItem>
 
           <DropdownItem
             onClick={() => {
@@ -35,6 +44,7 @@ export function UserDropdown() {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
+      <ChangeLanguage />
     </div>
   )
 }

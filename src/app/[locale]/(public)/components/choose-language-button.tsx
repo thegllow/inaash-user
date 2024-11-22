@@ -22,7 +22,7 @@ const ChooseLanguageButton = (props: Props) => {
       color="primary"
       fullWidth
       className="mx-auto max-w-72 text-black">
-      {t("nextButton")}
+      {t("next-button")}
     </Button>
   )
 }
