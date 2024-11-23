@@ -3,6 +3,7 @@ import VideoHeader from "./components/video-header"
 import React from "react"
 import { authOptions } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
+import VideoFooter from "./components/video-footer"
 
 type Props = {
   params: {
@@ -26,6 +27,7 @@ const Page = async ({ params }: Props) => {
   return (
     <div className="relative flex min-h-screen flex-col">
       <VideoHeader />
+      <VideoFooter />
     </div>
   )
 }

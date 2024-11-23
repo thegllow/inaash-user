@@ -224,6 +224,12 @@
         "right-answers": "الإجابات الصحيحة"
       },
       "average-answer-time": "متوسط سرعة الاجابة"
+    },
+    "course-footer": {
+      "subtitle-tooltip": "الترجمة",
+      "sound-tooltip": "الصوت",
+      "change-program-button": "جميع البرامج",
+      "select-scene-button": "محدد المشهد"
     }
   }
 }
