@@ -3,11 +3,13 @@ import { getTranslations } from "next-intl/server"
 import { startBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
 import ChooseCourse from "./components/choose-course"
+import { getVideos } from "./get-videos"
 
 type Props = {}
 
 const Page = async (props: Props) => {
   const t = await getTranslations("start")
+  const videos = await getVideos()
   return (
     <>
       <BackgroundImage src={startBackground} />
@@ -22,7 +24,7 @@ const Page = async (props: Props) => {
             </h1>
             <p className="text-justify text-foreground ~md/lg:~text-sm/base">{t("description")}</p>
           </div>
-          <ChooseCourse />
+          <ChooseCourse videos={videos} />
         </div>
       </section>
     </>

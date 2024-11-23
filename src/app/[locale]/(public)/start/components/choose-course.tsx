@@ -1,6 +1,5 @@
 "use client"
 
-import { DummyCoursesData } from "@/data/dummy-courses"
 import { Card, CardHeader } from "@nextui-org/card"
 import { Chip } from "@nextui-org/chip"
 import { Image } from "@nextui-org/image"
@@ -11,8 +10,11 @@ import { useQueryState } from "nuqs"
 import Button from "@/components/ui/button"
 import { cn } from "@/lib/cn"
 import { Link } from "@/lib/i18n/navigation"
+import { Video } from "../type"
 
-type Props = {}
+type Props = {
+  videos: Video[]
+}
 
 const ChooseCourse = (props: Props) => {
   const [selectedCourse, setSelectedCourse] = useQueryState("course")
@@ -22,9 +24,9 @@ const ChooseCourse = (props: Props) => {
     <div
       className={cn(
         "flex w-full flex-col items-center justify-center gap-4 lg:flex-row",
-        selectedCourse === "second" && "flex-col-reverse lg:flex-row-reverse",
+        selectedCourse === props.videos[1].id && "flex-col-reverse lg:flex-row-reverse",
       )}>
-      {DummyCoursesData.map((course) => {
+      {props.videos.map((course) => {
         if (!selectedCourse)
           return (
             <Card
@@ -39,12 +41,12 @@ const ChooseCourse = (props: Props) => {
               <Image
                 alt="first-course"
                 className="h-full w-full object-cover"
-                src={course.image}
+                src={course.logo}
                 removeWrapper
               />
             </Card>
           )
-        if (course.id === selectedCourse) {
+        if (course.id == selectedCourse) {
           return (
             <>
               <Card
@@ -59,7 +61,7 @@ const ChooseCourse = (props: Props) => {
                 <Image
                   alt="first-course"
                   className="h-full w-full object-cover"
-                  src={course.image}
+                  src={course.logo}
                   removeWrapper
                 />
               </Card>
@@ -73,7 +75,7 @@ const ChooseCourse = (props: Props) => {
                   <h4 className="text-xl font-semibold text-foreground">{course.title}</h4>
                   <p className="text-sm text-foreground">{course.description}</p>
                   <Chip className="bg-[#27252570]" startContent={<Timer size={18} />} radius="sm">
-                    {course.estimatedTime}
+                    {course.length}
                   </Chip>
                   <Button
                     as={Link}
@@ -86,7 +88,7 @@ const ChooseCourse = (props: Props) => {
                 <Image
                   removeWrapper
                   className="z-0 h-full w-full object-cover"
-                  src={course.image}
+                  src={course.logo}
                   alt={course.title}
                 />
               </Card>
