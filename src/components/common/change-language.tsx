@@ -36,7 +36,7 @@ const ChangeLanguage = (props: Props) => {
     try {
       setError("")
       setIsLoading(true)
-      const response = await InaashApi.put<SuccessResponse<User>>(`/user/users/${user.id}`, {
+      const response = await InaashApi.patch<SuccessResponse<User>>(`/user/users/set-lang`, {
         lang: language,
       })
       Router.push({ pathname }, { locale: language })
