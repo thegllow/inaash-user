@@ -19,11 +19,11 @@ export default async function Home() {
     <>
       <BackgroundImage />
       <section className="flex items-center justify-center gap-4 ~/md:~py-8/10">
-        <div className="flex w-full flex-col items-center gap-10 md:w-1/2">
+        <div className="flex w-full max-w-lg shrink-0 flex-col items-center gap-10 md:w-full lg:w-1/2">
           <div className="flex justify-center">
             <Logo className="size-36" />
           </div>
-          <Card shadow={"none"} className="w-full shrink-0 bg-[#211E24] px-8 py-6">
+          <Card shadow={"none"} className="w-full shrink-0 bg-[#211E24] py-6 ~md/lg:~px-3/8">
             <CardBody>
               <h1 className="text-center text-lg text-white">{t("title")}</h1>
               <Divider className="mx-auto my-6 w-1/2" />
