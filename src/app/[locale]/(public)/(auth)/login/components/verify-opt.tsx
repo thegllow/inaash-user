@@ -20,9 +20,8 @@ const VerifyOTP = (props: Props) => {
   const t = useTranslations("login.verify-opt")
 
   // state
-  const [{ mobile, tries, date }, setQueries] = useQueryStates({
+  const [{ mobile, date }, setQueries] = useQueryStates({
     mobile: parseAsString,
-    tries: parseAsInteger.withDefault(0),
     date: parseAsInteger,
   })
   const [_, setSuccess] = useQueryState("success")
@@ -31,7 +30,6 @@ const VerifyOTP = (props: Props) => {
   const handleChangeMobileNumber = () => {
     setQueries({
       mobile: null,
-      tries: 0,
       date: null,
     })
   }
@@ -43,28 +41,16 @@ const VerifyOTP = (props: Props) => {
   const handleVerifyTOP: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
     try {
-      setQueries(
-        (pre) => {
-          return {
-            tries: ++pre.tries,
-          }
-        },
-        { shallow: true },
-      )
-      if (tries > 3) {
-        setError(t(`errors.overuse`))
-        return
-      }
+ 
       setIsLoading(true)
       const data = await signIn("credentials", { mobile, otp, redirect: false })
-      if (!data?.ok) {
+      console.log("🚀 ~ consthandleVerifyTOP:React.FormEventHandler<HTMLFormElement>= ~ data:", data)
+      if (data?.error) {
         setError(t(`errors.unauthorized`))
         return
       }
 
-      if (data.ok) {
-        setSuccess("true")
-      }
+      setSuccess("true")
     } catch (error) {
       console.log("🚀 ~ handleVerifyTOP ~ error:", error)
       setError(t(`errors.serverError`))
@@ -79,7 +65,6 @@ const VerifyOTP = (props: Props) => {
       setQueries(
         {
           date: Date.now(),
-          tries: 0,
         },
         {
           shallow: true,

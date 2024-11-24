@@ -6,8 +6,7 @@ import { redirect } from "@/lib/i18n/navigation"
 
 import { loginBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
-import { authOptions } from "@/lib/auth/auth"
-import { getServerSession } from "next-auth"
+import { auth } from "@/lib/auth/auth"
 import ChooseMethod from "./components/choose-method"
 import CourseDetails from "./components/course-details"
 import Success from "./components/success"
@@ -18,7 +17,7 @@ type Props = {
 }
 
 const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
-  const session = await getServerSession(authOptions)
+  const session = await auth()
   if (!session) {
     redirect({
       href: {

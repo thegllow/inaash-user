@@ -1,9 +1,8 @@
-import { authOptions } from "@/lib/auth/auth"
+import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
-import { getServerSession } from "next-auth"
-import { UserProvider } from "./context/user-context"
-import { UserResponse } from "../types"
 import InaashApi from "@/services/inaash"
+import { UserResponse } from "../types"
+import { UserProvider } from "./context/user-context"
 
 export default async function Layout({
   children,
@@ -15,7 +14,7 @@ export default async function Layout({
     locale: string
   }
 }) {
-  const session = await getServerSession(authOptions)
+  const session = await auth()
   if (!session || session.user.id != user_id) redirect({ href: "/login", locale })
 
   const response = await InaashApi.get<UserResponse>(`/user/users/${user_id}`)

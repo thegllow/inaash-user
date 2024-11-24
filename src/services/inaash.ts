@@ -1,3 +1,4 @@
+import { signOut } from "@/lib/auth/auth"
 import { getLocaleFromUrl } from "@/utils/get-locale"
 import axios from "axios"
 import { type Session } from "next-auth"
@@ -15,16 +16,14 @@ const InaashApi = axios.create({
 InaashApi.interceptors.request.use(
   async (config) => {
     console.log("🚀 ~ config:", config.baseURL, config.url, config.data)
-    if (config.url?.includes("/guest")) return config
     let session: null | Session = null
     if (typeof window === "undefined") {
       const locale = await getLocale()
       config.headers["Accept-language"] = locale
 
       // Server-side
-      const { getServerSession } = await import("next-auth")
-      const { authOptions } = await import("@/lib/auth/auth")
-      session = await getServerSession(authOptions)
+      const { auth } = await import("@/lib/auth/auth")
+      session = await auth()
     } else {
       // Client-side
       session = await getSession()
@@ -40,8 +39,12 @@ InaashApi.interceptors.request.use(
 
     return config
   },
-  (error) => {
+  async(error) => {
     // Do something with request error
+    if(axios.isAxiosError(error) && error.response?.status === 401){
+      await signOut({redirectTo:'/'})
+      return
+    }
     return Promise.reject(error)
   },
 )

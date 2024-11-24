@@ -1,11 +1,10 @@
 import { loginBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
-import { authOptions } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import { Card, CardBody } from "@nextui-org/card"
-import { getServerSession } from "next-auth"
 import { Suspense } from "react"
 import Wrapper from "./components/wrapper"
+import { auth } from "@/lib/auth/auth"
 
 const Page = async ({
   searchParams,
@@ -14,7 +13,8 @@ const Page = async ({
   searchParams: { [key: string]: string }
   params: { locale: string }
 }) => {
-  const session = await getServerSession(authOptions)
+  const session = await auth()
+  console.log("🚀 ~ session:", session)
   if (session) {
     redirect({ href: searchParams.callbackUrl ? searchParams.callbackUrl : "/start", locale: params.locale })
   }

@@ -1,9 +1,12 @@
 import InaashApi from "@/services/inaash"
 import axios from "axios"
-import type { DefaultSession, NextAuthOptions } from "next-auth"
+import type { DefaultSession } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
+import NextAuth from "next-auth"
+
 import { User as ApiUserType, LoginResponse } from "@/types/login"
+import { ErrorResponse } from "@/types"
 
 declare module "next-auth" {
   /**
@@ -18,13 +21,13 @@ declare module "next-auth" {
   }
 }
 
-declare module "next-auth/jwt" {
-  interface JWT extends ApiUserType {
-    token: string
-  }
-}
+// declare module "next-auth/jwt" {
+//   interface JWT extends ApiUserType {
+//     token: string
+//   }
+// }
 
-export const authOptions: NextAuthOptions = {
+export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -48,18 +51,27 @@ export const authOptions: NextAuthOptions = {
             return { ...user }
           }
         } catch (error) {
-          if (axios.isAxiosError(error)) {
-            console.log("🚀 ~ authorize ~ error:", error.response?.data)
+          if (axios.isAxiosError(error) && error.response?.data) {
+            const responseError = error.response.data as ErrorResponse<{}>
+            return {
+              error: responseError.message,
+            }
           }
         }
 
         // If no error and we have user data, return it
-
         return null
       },
     }),
   ],
   callbacks: {
+    async signIn({ user }) {
+      console.log("🚀 ~ signIn ~ user:", user)
+      if ((user as any)?.error) {
+        throw new Error((user as any).error)
+      }
+      return true
+    },
     async jwt({ trigger, token, user }) {
       // if (trigger === "update") {
       //   try {
@@ -70,6 +82,7 @@ export const authOptions: NextAuthOptions = {
       //     return { ...user, ...token }
       //   }
       // }
+
       return { ...user, ...token }
     },
     async session({ session, token }) {
@@ -81,4 +94,4 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-}
+})

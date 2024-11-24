@@ -3,5 +3,5 @@ import { VideosResponse } from "./type"
 
 export const getVideos = async () => {
   const response = await InaashApi.get<VideosResponse>("/guest/videos")
-  return response.data.data.items.data
+  return {videos:response.data.data.items.data, content:response.data.data.helpers.introduction}
 }

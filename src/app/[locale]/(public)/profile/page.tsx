@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { profilePlaceholder } from "@/assets"
-import { authOptions } from "@/lib/auth/auth"
+import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import InaashApi from "@/services/inaash"
 import { Card } from "@nextui-org/card"
 import { Input } from "@nextui-org/input"
-import { getServerSession } from "next-auth"
 import { getTranslations } from "next-intl/server"
 import EditProfileButton from "./components/edit-button"
 import { UserResponse } from "./types"
@@ -13,7 +12,7 @@ import { UserResponse } from "./types"
 export default async function Page({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations("profile")
 
-  const session = await getServerSession(authOptions)
+  const session = await auth()
   if (!session) redirect({ href: "/login", locale })
 
   const response = await InaashApi.get<UserResponse>(`/user/users/${session.user.id}`)

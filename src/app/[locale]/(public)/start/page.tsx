@@ -9,7 +9,8 @@ type Props = {}
 
 const Page = async (props: Props) => {
   const t = await getTranslations("start")
-  const videos = await getVideos()
+  const {videos,content} = await getVideos()
+
   return (
     <>
       <BackgroundImage src={startBackground} />
