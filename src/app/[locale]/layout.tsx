@@ -13,8 +13,6 @@ import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 
 import { Providers } from "./providers"
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/lib/auth/auth"
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +35,8 @@ export const viewport: Viewport = {
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
+
+export const dynamicParams = false
 
 export default async function RootLayout({
   children,

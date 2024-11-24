@@ -4,6 +4,7 @@ import React from "react"
 import { authOptions } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import VideoFooter from "./components/video-footer"
+import { getVideos } from "@/app/[locale]/(public)/start/get-videos"
 
 type Props = {
   params: {
@@ -12,6 +13,10 @@ type Props = {
   }
 }
 
+export async function generateStaticParams() {
+  const videos = await getVideos()
+  return videos.map((video) => video.id)
+}
 const Page = async ({ params }: Props) => {
   const session = await getServerSession(authOptions)
   if (!session)

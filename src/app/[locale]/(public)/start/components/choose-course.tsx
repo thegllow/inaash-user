@@ -79,7 +79,7 @@ const ChooseCourse = (props: Props) => {
                   </Chip>
                   <Button
                     as={Link}
-                    href={`/payment/${course.id}`}
+                    href={`/course/${course.id}`}
                     className="mt-auto"
                     startContent={<PlayCircle />}>
                     {t("start-course-button")}

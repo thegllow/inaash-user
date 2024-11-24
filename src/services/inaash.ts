@@ -15,14 +15,16 @@ const InaashApi = axios.create({
 InaashApi.interceptors.request.use(
   async (config) => {
     console.log("🚀 ~ config:", config.baseURL, config.url, config.data)
+    if (config.url?.includes("/guest")) return config
     let session: null | Session = null
     if (typeof window === "undefined") {
+      const locale = await getLocale()
+      config.headers["Accept-language"] = locale
+
       // Server-side
       const { getServerSession } = await import("next-auth")
       const { authOptions } = await import("@/lib/auth/auth")
       session = await getServerSession(authOptions)
-      const locale = await getLocale()
-      config.headers["Accept-language"] = locale
     } else {
       // Client-side
       session = await getSession()
