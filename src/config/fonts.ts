@@ -3,28 +3,28 @@ import localFont from "next/font/local"
 export const fontSans = localFont({
   src: [
     {
-      path: "../fonts/IBMPlexSansArabic-Light.ttf",
+      path: "../assets/fonts/IBMPlexSansArabic-Light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../fonts/IBMPlexSansArabic-Regular.ttf",
+      path: "../assets/fonts/IBMPlexSansArabic-Regular.ttf",
       weight: "400",
       style: "normal",
     },
 
     {
-      path: "../fonts/IBMPlexSansArabic-Medium.ttf",
+      path: "../assets/fonts/IBMPlexSansArabic-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../fonts/IBMPlexSansArabic-SemiBold.ttf",
+      path: "../assets/fonts/IBMPlexSansArabic-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../fonts/IBMPlexSansArabic-Bold.ttf",
+      path: "../assets/fonts/IBMPlexSansArabic-Bold.ttf",
       weight: "700",
       style: "normal",
     },

@@ -1,9 +1,235 @@
 {
+  "header": {
+    "full-screen": "ملء الشاشة",
+    "home": "الرئيسية",
+    "about": "عن إنعاش",
+    "information-center": "مركز المعلومات",
+    "contact": "تواصل معنا",
+    "faqs": "الاسئلة الشائعة"
+  },
   "choose-language": {
-    "title": "مرحبا بك في انعاش",
-    "description": ""
+    "title": "أختر اللغة",
+    "tabs": {
+      "ar": "العربية",
+      "en": "English",
+      "fr": "Français",
+      "fil": "Tagalog",
+      "ur": "اُردُو"
+    },
+    "next-button": "التالي"
+  },
+  "start": {
+    "title": " عيشها، تعلمها،<span> كن منقذًا</span> ",
+    "description": "استكشف الفيديوهات التفاعلية واحصل التدريب المناسب حول الاستجابة للإصابات الصحية والرياضية من خلال اكتساب المهارات الأساسية للتعامل مع حالات الطوارئ بشكل صحيح وسريع",
+    "start-course-button": "بدء البرنامج"
   },
   "login": {
-    "title": "مرحبا بك في انعاش"
+    "title": "مرحبا بك في انعاش",
+    "send-opt": {
+      "title": "متابعة تسجيل الدخول",
+      "description": "الرجاء إدخال رقم هاتفك المحمول للمتابعة ",
+      "input-label": "رقم الهاتف المحمول",
+      "input-placeholder": "أدخل الرقم",
+      "button": "أرسل رمز التحقق",
+      "errors": {
+        "required": "رقم الهاتف مطلوب",
+        "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
+        "serverError": "حصل خطأ في الاتصال بالسيرفر",
+        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+      }
+    },
+    "verify-opt": {
+      "title": "متابعة تسجيل الدخول",
+      "description": "الرجاء إدخال كلمة المرور المؤقتة المكونة من 4 أرقام المرسلة إلى رقم هاتفك المحمول",
+      "input-label": "أدخل رمز التحقق",
+      "button": "تأكيد الرمز",
+      "change-number-button": "تعديل الرقم",
+      "resend-code": "إعادة الإرسال",
+      "errors": {
+        "serverError": "حصل خطأ في الاتصال بالسيرفر",
+        "unauthorized": "كود غير صالح",
+        "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
+        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+      }
+    },
+    "success": {
+      "title": "تم تسجيل الدخول بنجاح!",
+      "button": "التالي"
+    }
+  },
+  "payment": {
+    "choose-method": "حدد خيار الدفع",
+    "options": {
+      "card": {
+        "value": "بطاقة إئتمان",
+        "description": "ادفع بشكل آمن باستخدام بطاقة فيزا, ماستر كارد، أو مدى."
+      },
+      "apple": {
+        "value": "Apple Pay",
+        "description": ""
+      }
+    },
+    "next-button": "التالي",
+    "selected-course": "البرنامج المحدد",
+    "price": {
+      "original": "سعر البرنامج",
+      "discount": "سعر الخصم",
+      "total": "السعر الإجمالي"
+    },
+    "coupon": {
+      "input-placeholder": "أدخل رمز الخصم الخاص بك",
+      "coupon-button": "تطبيق"
+    },
+    "success": {
+      "title": "تم الدفع بنجاح!",
+      "button": "التالي"
+    }
+  },
+  "faqs": {
+    "title": "الأسئلة الشائعة",
+    "description": "احصل على إجابات للأسئلة الشائعة حول برامجنا وخدماتنا التدريبية"
+  },
+  "information-center": {
+    "title": "مركز المعلومات",
+    "description": "قم بتأكيد الاستلام والإكمال الناجح لبرنامج التدريب على الاستجابة لحالات الطوارئ",
+    "search": {
+      "input-placeholder": "البحث بالاسم أو رقم الشهادة",
+      "search-button": "بحث",
+      "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى."
+    },
+    "result": {
+      "start-course-button": "ابدأ البرنامج",
+      "answers": "الإجابات",
+      "avarage-answer-time": "متوسط ​​سرعة الاجابة"
+    }
+  },
+  "profile": {
+    "edit-button": "تحرير",
+    "mobile": "رقم الهاتف المحمول",
+    "email": "البريد الإلكتروني",
+    "name": "الاسم",
+    "first_name": "الاسم الاول",
+    "last_name": "اسم العائلة",
+    "name-input-placeholder": "Ahamad Alyounis",
+    "first_name-input-placeholder": "Ahamad",
+    "last_name-input-placeholder": "Alyounis ",
+    "email-input-placeholder": "Example@example.co",
+    "certificates": "الشهادات التي تم الحصول عليها",
+    "save-button": "حفظ",
+    "change-mobile-button": "تغيير",
+    "success": "تم تعديل بياناتك الشخصية بنجاح",
+    "dropdown": {
+      "profile": "الملف الشخصي",
+      "change-lang": "تغير اللغة",
+      "logout": "تسجيل الخروج",
+      "change-language": {
+        "title": "تغيير اللغة",
+        "tabs": {
+          "ar": "العربية",
+          "en": "English",
+          "fr": "Français",
+          "fil": "Tagalog",
+          "ur": "اُردُو"
+        },
+        "update-button": "تعديل اللغة"
+      }
+    },
+    "errors": {
+      "required": "هذا الحقل مطلوب",
+      "invalidEmail": "إيميل غير صالح",
+      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+    },
+    "edit": {
+      "title": "تحرير",
+      "description": "قم بتحديث معلوماتك الشخصية، وتفاصيل الاتصالs"
+    },
+    "update-mobile": {
+      "send-opt": {
+        "title": "تحديث رقم الهاتف",
+        "description": "الرجاء إدخال رقم هاتفك المحمول للحصول على رمز التحقق",
+        "input-label": "أدخل رقم الهاتف الجديد*",
+        "input-placeholder": "أدخل الرقم",
+        "button": "أرسل رمز التحقق",
+        "errors": {
+          "required": "رقم الهاتف مطلوب",
+          "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
+          "serverError": "حصل خطأ في الاتصال بالسيرفر",
+          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        }
+      },
+      "verify-opt": {
+        "title": "تحديث رقم الجوال",
+        "description": "الرجاء إدخال رمز التحقق المرسل الى رقم هاتفك والمكون من 4 أرقام ",
+        "input-label": "أدخل رمز التحقق",
+        "button": "تأكيد الرمز",
+        "change-number-button": "تعديل الرقم",
+        "resend-code": "إعادة الإرسال",
+        "errors": {
+          "serverError": "حصل خطأ في الاتصال بالسيرفر",
+          "unauthorized": "كود غير صالح",
+          "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
+          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        }
+      },
+      "success": {
+        "title": "تم تحديث رقم الجوال بنجاح!",
+        "button": "عودة"
+      }
+    }
+  },
+  "contact-us": {
+    "title": "تواصل معنا",
+    "description": " املأ النموذج أدناه، وسنقوم بالرد عليك في اقرب وقت ممكن",
+    "form": {
+      "type-label": "حدد نوع الرسالة",
+      "tabs": {
+        "inquiry": "استفسار",
+        "suggestion": "اقتراح",
+        "complaint": "شكوى"
+      },
+      "email-input-label": "أدخل عنوان بريدك الإلكتروني",
+      "email-input-placeholder": "Example@example.co",
+      "name-input-label": "أدخل اسمك الكامل",
+      "name-input-placeholder": "Ahamad Alyounis",
+      "message-input-label": "الموضوع",
+      "message-input-placeholder": "أدخل الموضوع هنا!",
+      "subject-input-label": "الرسالة",
+      "subject-input-placeholder": "أدخل الموضوع هنا!",
+      "submit-button": "ارسال",
+      "success": "تم استلام رسالتك بنجاح, سيتم الرد عليك في اقرب وقت ممكن.",
+      "errors": {
+        "required": "هذا الحقل مطلوب",
+        "invalidEmail": "إيميل غير صالح",
+        "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      }
+    }
+  },
+  "footer": {
+    "important-links": "روابط مهمة",
+    "contact-us": "اتصل بنا",
+    "full-screen": "ملء الشاشة",
+    "home": "الرئيسية",
+    "about": "عن إنعاش",
+    "information-center": "مركز المعلومات",
+    "contact": "تواصل معنا",
+    "faqs": "الاسئلة الشائعة",
+    "email": "بريد إلكتروني",
+    "phonenumber": "رقم",
+    "socials": "وسائل التواصل الاجتماعي"
+  },
+  "course": {
+    "course-header": {
+      "score": {
+        "total": "إجمالي الأسئلة",
+        "right-answers": "الإجابات الصحيحة"
+      },
+      "average-answer-time": "متوسط سرعة الاجابة"
+    },
+    "course-footer": {
+      "subtitle-tooltip": "الترجمة",
+      "sound-tooltip": "الصوت",
+      "change-program-button": "جميع البرامج",
+      "select-scene-button": "محدد المشهد"
+    }
   }
 }

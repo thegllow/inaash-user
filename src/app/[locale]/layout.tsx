@@ -64,7 +64,7 @@ export default async function RootLayout({
         <NuqsAdapter>
           <NySessionProvider>
             <body
-              className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.className)}>
+              className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
               <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
             </body>
           </NySessionProvider>
