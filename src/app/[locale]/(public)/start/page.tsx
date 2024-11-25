@@ -18,12 +18,10 @@ const Page = async (props: Props) => {
       <section className="relative flex items-center justify-center gap-4 ~/md:~py-16/24">
         <div className="w-full space-y-10">
           <div className="mx-auto space-y-5 text-center ~md/lg:~max-w-[21rem]/[35rem]">
-            <h1 className="text-foreground ~md/lg:~text-4xl/6xl">
-              {t.rich("title", {
-                span: (chunks) => <span className="text-primary">{chunks}</span>,
-              })}
-            </h1>
-            <p className="text-justify text-foreground ~md/lg:~text-sm/base">{t("description")}</p>
+            <h1
+              className="text-foreground ~md/lg:~text-4xl/6xl [&>span]:text-primary"
+              dangerouslySetInnerHTML={{ __html: content.title }}></h1>
+            <p className="text-justify text-foreground ~md/lg:~text-sm/base">{content.description}</p>
           </div>
           <ChooseCourse videos={videos} />
         </div>
