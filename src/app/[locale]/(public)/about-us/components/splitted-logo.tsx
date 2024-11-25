@@ -36,7 +36,7 @@ export const content = [
 const SplittedLogo = async (props: Props) => {
   const t = await getTranslations("about-us.splitted-logo")
   return (
-    <div className="grid grid-cols-2 gap-4 pb-32 sm:grid-cols-3 md:grid-cols-6">
+    <div className="grid grid-cols-2 gap-4 ~sm/xl:~pb-10/32 sm:grid-cols-3 md:grid-cols-6 md:~px-10/20">
       {content.map(({ key, icon }) => {
         return (
           <div key={key} className="flex flex-col items-center gap-2">

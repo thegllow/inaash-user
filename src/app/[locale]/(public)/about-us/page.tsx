@@ -3,6 +3,7 @@ import Footer from "@/components/common/footer"
 import { getTranslations } from "next-intl/server"
 import Image from "next/image"
 import SplittedLogo from "./components/splitted-logo"
+import Objectives from "./components/objectives"
 
 export default async function Page() {
   const t = await getTranslations("about-us")
@@ -270,6 +271,7 @@ export default async function Page() {
         </section>
         <SplittedLogo />
       </main>
+      <Objectives />
       <Footer />
     </>
   )
