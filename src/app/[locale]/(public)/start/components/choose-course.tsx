@@ -10,7 +10,7 @@ import { useQueryState } from "nuqs"
 import Button from "@/components/ui/button"
 import { cn } from "@/lib/cn"
 import { Link } from "@/lib/i18n/navigation"
-import { Video } from "../type"
+import { Video } from "@/types/public-videos-response"
 
 type Props = {
   videos: Video[]

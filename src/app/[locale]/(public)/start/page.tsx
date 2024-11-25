@@ -3,13 +3,13 @@ import { getTranslations } from "next-intl/server"
 import { startBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
 import ChooseCourse from "./components/choose-course"
-import { getVideos } from "./get-videos"
+import { getVideos } from "@/services/utils/get-videos"
 
 type Props = {}
 
 const Page = async (props: Props) => {
   const t = await getTranslations("start")
-  const {videos,content} = await getVideos()
+  const { videos, content } = await getVideos()
 
   return (
     <>
