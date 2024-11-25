@@ -43,7 +43,7 @@ export default async function Page({
                 <Image
                   className="h-full w-full object-cover"
                   removeWrapper
-                  src={dummyCourse.image}
+                  src={dummyCourse.logo}
                   alt={dummyCourse.title}
                 />
               </div>
@@ -53,7 +53,7 @@ export default async function Page({
                 <h4 className="text-xl font-semibold text-foreground">{dummyCourse.title}</h4>
                 <p className="text-sm text-foreground">{dummyCourse.description}</p>
                 <Chip className="bg-[#27252570]" startContent={<Timer size={18} />} radius="sm">
-                  {dummyCourse.estimatedTime}
+                  {dummyCourse.length}
                 </Chip>
               </div>
             </div>

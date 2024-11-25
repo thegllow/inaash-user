@@ -13,6 +13,7 @@ import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 
 import { Providers } from "./providers"
+import ScreenIndicator from "@/components/common/screen-indecator"
 
 export const metadata: Metadata = {
   title: {
@@ -66,6 +67,7 @@ export default async function RootLayout({
             <body
               className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
               <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
+              <ScreenIndicator />
             </body>
           </NySessionProvider>
         </NuqsAdapter>
