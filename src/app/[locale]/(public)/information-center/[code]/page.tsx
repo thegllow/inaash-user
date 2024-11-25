@@ -90,7 +90,6 @@ export default async function Page({
         </Card>
       </section>
       <div className="h-20"></div>
-      <Footer />
     </>
   )
 }

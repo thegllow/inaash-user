@@ -22,8 +22,6 @@ export default async function Page() {
           </div>
         </Card>
       </section>
-      <Footer />
-
     </>
   )
 }

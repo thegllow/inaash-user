@@ -30,14 +30,14 @@ const CourseDetails = async ({ course }: Props) => {
                 startContent={<Timer size={18} />}
                 className="bg-[#3C3C3C] px-2 py-1 backdrop-blur-xl"
                 radius="sm">
-                {course.estimatedTime}
+                {course.length}
               </Chip>
               <div></div>
             </CardHeader>
             <Image
               removeWrapper
               className="absolute top-0 z-0 h-full w-full rounded-2xl object-cover"
-              src={course.image}
+              src={course.logo}
               alt={course.title}
             />
           </div>

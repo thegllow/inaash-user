@@ -12,7 +12,7 @@ const Page = async (props: Props) => {
   const { videos, content } = await getVideos()
 
   return (
-    <>
+    <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">
       <BackgroundImage src={startBackground} />
 
       <section className="relative flex items-center justify-center gap-4 ~/md:~py-16/24">
@@ -28,7 +28,7 @@ const Page = async (props: Props) => {
           <ChooseCourse videos={videos} />
         </div>
       </section>
-    </>
+    </main>
   )
 }
 
