@@ -10,6 +10,7 @@ import noResults from "./no-results.svg"
 import startBackground from "./start-background.png"
 import loginBackground from "./login-background.png"
 import profilePlaceholder from "./profile-placeholder.png"
+import shareUrCertificate from "./share-ur-certificate.png"
 export {
   background,
   logo,
@@ -23,4 +24,5 @@ export {
   startBackground,
   loginBackground,
   profilePlaceholder,
+  shareUrCertificate,
 }

@@ -1,9 +1,10 @@
 import { logo } from "@/assets"
 import Footer from "@/components/common/footer"
+import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
 import Image from "next/image"
-import SplittedLogo from "./components/splitted-logo"
 import Objectives from "./components/objectives"
+import SplittedLogo from "./components/splitted-logo"
 
 export default async function Page() {
   const t = await getTranslations("about-us")
@@ -11,7 +12,7 @@ export default async function Page() {
     <>
       <section className="bg-[#141313]">
         <div className="container mx-auto max-w-7xl flex-grow px-6">
-          <div className="flex w-full flex-col items-center justify-between ~pt-2/6 ~pb-6/16 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
+          <div className="flex w-full flex-col items-center justify-between pt-6 ~pb-6/16 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
             <div className="mx-auto w-full space-y-1 max-md:max-w-[250px] max-md:text-center md:w-1/2">
               <h1 className="text-2xl font-medium text-foreground">{t("hero.title")}</h1>
               <p className="text-sm text-default-500">{t("hero.description")}</p>
@@ -272,6 +273,25 @@ export default async function Page() {
         <SplittedLogo />
       </main>
       <Objectives />
+      <section className="container mx-auto max-w-7xl flex-grow px-6">
+        <div className="flex w-full flex-col items-center justify-between ~py-10/28 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
+          <div className="w-full md:w-1/3">
+            <Card shadow="none" className="rounded-xl bg-[#0A090959] px-5 py-12 backdrop-blur-2xl">
+              {"TODO:"}
+            </Card>
+          </div>
+          <div className="mx-auto w-full space-y-12 max-md:max-w-[250px] max-md:text-center md:w-2/3">
+            <div className="space-y-3">
+              <h2 className="font-medium text-foreground lg:text-2xl">{t("about-us.title")}</h2>
+              <p className="text-sm text-default-500">{t("about-us.description")}</p>
+            </div>
+            <div className="space-y-3">
+              <h3 className="font-medium text-foreground lg:text-2xl">{t("about-us.updates.title")}</h3>
+              <p className="text-sm text-default-500">{t("about-us.updates.description")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </>
   )
