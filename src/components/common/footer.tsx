@@ -11,7 +11,7 @@ type Props = {}
 const Footer = async (props: Props) => {
   const t = await getTranslations("footer")
   return (
-    <footer className="relative -mx-6 overflow-hidden xl:-mx-[calc((100vw-1270px)/2)]">
+    <footer className="relative -mx-6 overflow-hidden xl:-mx-[calc((100vw-1252px)/2)]">
       <img src={logo.src} alt="logo" className="absolute left-0 top-0 block h-[700px] -translate-x-1/4" />
 
       <div className="bg-[#0A090959] px-10 pt-10 backdrop-blur-2xl">

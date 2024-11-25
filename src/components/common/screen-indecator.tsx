@@ -7,9 +7,9 @@ const ScreenIndicator = (props: Props) => {
   if (process.env.NODE_ENV !== "development") return null
   return (
     <div className="fixed bottom-10 left-10 z-[100] flex size-16 items-center justify-center rounded-full bg-blue-700 text-3xl text-white">
-      <span className="md:hidden">sm</span>
-      <span className="lg:hidden">md</span>
-      <span className="xl:hidden">lg</span>
+      <span className="block sm:hidden">sm</span>
+      <span className="hidden md:block lg:hidden">md</span>
+      <span className="hidden lg:block xl:hidden">lg</span>
       <span className="max-xl:hidden">xl</span>
     </div>
   )
