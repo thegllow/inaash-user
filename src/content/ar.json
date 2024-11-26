@@ -293,6 +293,9 @@
       "subtitle-tooltip": "الترجمة",
       "sound-tooltip": "الصوت",
       "change-program-button": "جميع البرامج",
+      "change-program-confirm-dialog": "هل أنت متأكد من أنك ترغب في تغيير البرنامج التدريبي؟",
+      "change-program-dialog-confirm": "نعم",
+      "change-program-dialog-cancel": "لا",
       "select-scene-button": "محدد المشهد",
       "select-scene-warning": "بمجرد الانتهاء من البرنامج، سوف تكون قادرا على اختيار المشاهد"
     }
