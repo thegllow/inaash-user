@@ -1,13 +1,23 @@
-import { getTranslations } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 
 import { startBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
 import ChooseCourse from "./components/choose-course"
 import { getVideos } from "@/services/utils/get-videos"
 
-type Props = {}
+type Props = {
+  params: {
+    locale: string
+  }
+}
+
+export const revalidate = 86400 // 1 day in seconds (24 hours)
+export const dynamic = 'force-static'
+
 
 const Page = async (props: Props) => {
+  // Enable static rendering
+  setRequestLocale(props.params.locale)
   const t = await getTranslations("start")
   const { videos, content } = await getVideos()
 

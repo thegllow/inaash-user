@@ -33,6 +33,9 @@ export const viewport: Viewport = {
   ],
 }
 
+export const revalidate = 86400 // 1 day in seconds (24 hours)
+
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }

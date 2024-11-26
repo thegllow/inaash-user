@@ -11,6 +11,10 @@ const baseURL = "https://api-inaash.glow-host.com"
 const InaashApi = axios.create({
   baseURL: baseURL,
 })
+// Create an Axios instance
+export const InaashApiGuest = axios.create({
+  baseURL: baseURL + "/guest",
+})
 
 // Add a request interceptor to include the authentication token
 InaashApi.interceptors.request.use(
@@ -39,12 +43,34 @@ InaashApi.interceptors.request.use(
 
     return config
   },
-  async(error) => {
+  async (error) => {
     // Do something with request error
-    if(axios.isAxiosError(error) && error.response?.status === 401){
-      await signOut({redirectTo:'/'})
+    if (axios.isAxiosError(error) && error.response?.status === 401) {
+      await signOut({ redirectTo: "/" })
       return
     }
+    return Promise.reject(error)
+  },
+)
+// Add a request interceptor to include the authentication token
+InaashApiGuest.interceptors.request.use(
+  async (config) => {
+    console.log("🚀 ~ config:", config.baseURL, config.url, config.data)
+    if (typeof window === "undefined") {
+      const locale = await getLocale()
+      config.headers["Accept-language"] = locale
+    } else {
+      const locale = getLocaleFromUrl()
+      // if (!config.data.headers["Accept-language"]) {
+      config.headers["Accept-language"] = locale
+      // }
+    }
+
+    return config
+  },
+  async (error) => {
+    // Do something with request error
+
     return Promise.reject(error)
   },
 )
