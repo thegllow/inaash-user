@@ -1,4 +1,3 @@
-
 type Props = {
   params: {
     locale: string
@@ -6,13 +5,8 @@ type Props = {
   }
 }
 
-
 const Page = async ({ params }: Props) => {
-
-
-  return (
-    <div></div>
-  )
+  return <div></div>
 }
 
 export default Page

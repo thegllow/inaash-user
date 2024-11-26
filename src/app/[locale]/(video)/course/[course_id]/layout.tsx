@@ -1,10 +1,12 @@
-import { DummyCoursesData } from "@/data/dummy-courses"
 import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
+import { getVideos } from "@/services/utils/get-videos"
+import axios from "axios"
+import { notFound } from "next/navigation"
 import VideoFooter from "./components/video-footer"
 import VideoHeader from "./components/video-header"
 import { VideosProvider } from "./context/courses-context"
-import { getVideos } from "@/services/utils/get-videos"
+import { getVideo } from "./get-video"
 
 type Props = {
   children: React.ReactNode
@@ -27,17 +29,35 @@ const Layout = async ({ children, params }: Props) => {
       locale: params.locale,
     })
 
-  const { videos } = await getVideos()
+  try {
+    const video = await getVideo(params.course_id)
+    const { videos } = await getVideos()
 
-  return (
-    <div className="relative flex min-h-screen flex-col">
-      <VideosProvider videos={videos}>
-        <VideoHeader />
-        {children}
-        <VideoFooter />
-      </VideosProvider>
-    </div>
-  )
+    return (
+      <div className="relative flex min-h-screen flex-col">
+        <VideosProvider videos={videos} currentVideo={video}>
+          <VideoHeader />
+          {children}
+          <VideoFooter />
+        </VideosProvider>
+      </div>
+    )
+  } catch (error) {
+    console.log("🚀 ~ Layout ~ error:", error)
+    if (axios.isAxiosError(error)) {
+      if (error.response?.status === 404) notFound()
+      redirect({
+        href: {
+          pathname: "/payment/" + params.course_id,
+          query: {
+            callbackUrl: `/course/${params.course_id}`,
+          },
+        },
+        locale: params.locale,
+      })
+    }
+    return <div>Error</div>
+  }
 }
 
 export default Layout

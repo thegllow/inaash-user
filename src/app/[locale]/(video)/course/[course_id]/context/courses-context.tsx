@@ -1,12 +1,24 @@
 "use client"
-import { Video } from "@/types"
-import React, { createContext, useContext, useState } from "react"
+import { Video } from "@/types/public-videos-response"
+import React, { createContext, useContext } from "react"
+import { FullDataVideo } from "../types"
 
-const VideosContext = createContext<[Video[], React.Dispatch<React.SetStateAction<Video[]>>] | null>(null)
+const VideosContext = createContext<{ videos: Video[]; currentVideo: FullDataVideo } | null>(null)
 
-export const VideosProvider = ({ children, videos }: { children: React.ReactNode; videos: Video[] }) => {
-  const state = useState(videos)
-  return <VideosContext.Provider value={state}>{children}</VideosContext.Provider>
+export const VideosProvider = ({
+  children,
+  videos,
+  currentVideo,
+}: {
+  children: React.ReactNode
+  videos: Video[]
+  currentVideo: FullDataVideo
+}) => {
+  const data = {
+    videos,
+    currentVideo,
+  }
+  return <VideosContext.Provider value={data}>{children}</VideosContext.Provider>
 }
 
 export const useVideos = () => {

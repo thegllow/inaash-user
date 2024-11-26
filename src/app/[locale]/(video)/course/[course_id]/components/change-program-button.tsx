@@ -1,11 +1,11 @@
+import { Link } from "@/lib/i18n/navigation"
 import { Button } from "@nextui-org/button"
-import { ChevronDown } from "lucide-react"
-import React from "react"
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal"
-import { useVideos } from "../context/courses-context"
 import { Card } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
-import { Link } from "@/lib/i18n/navigation"
+import { Modal, ModalBody, ModalContent, useDisclosure } from "@nextui-org/modal"
+import { ChevronDown, ChevronUp } from "lucide-react"
+import { useVideos } from "../context/courses-context"
+import { cn } from "@/lib/cn"
 
 type Props = {
   children: String
@@ -13,13 +13,19 @@ type Props = {
 
 const ChangeProgramButton = (props: Props) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
-  const [videos] = useVideos()
+  const { videos } = useVideos()
   return (
     <>
-      <Button onClick={onOpen} size="sm" radius="md" variant="bordered" color="primary" className="border-2 px-4 py-2">
+      <Button
+        onClick={onOpen}
+        size="sm"
+        radius="md"
+        variant="bordered"
+        color="primary"
+        className="border-2 px-4 py-2">
         <div className="flex items-center gap-7">
           <span className="block ps-2 text-sm">{props.children}</span>
-          <ChevronDown />
+          <ChevronUp className={cn(" duration-150", isOpen && 'rotate-180')} />
         </div>
       </Button>
       <Modal
@@ -44,41 +50,40 @@ const ChangeProgramButton = (props: Props) => {
                 ease: "easeIn",
               },
             },
-          }
+          },
         }}
         classNames={{
           base: "p-0 bg-transparent",
           closeButton: "hidden",
         }}
-
-        isOpen={isOpen} onOpenChange={onOpenChange}>
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
               <ModalBody>
-                <div className="flex w-full  items-center justify-center gap-4 flex-row">
-                  {videos.map(course => {
-                    return <Card
-                      shadow={"none"}
-                      key={course.id}
-                      isPressable
-                      as={Link}
-                      href={`/course/${course.id}`}
-
-                      radius="lg"
-                      className="max-w-[390px] flex-grow border-none lg:w-1/2">
-                      <Image
-                        alt="first-course"
-                        className="h-full w-full object-cover"
-                        src={course.logo}
-                        removeWrapper
-                      />
-                    </Card>
+                <div className="flex w-full flex-row items-center justify-center gap-4">
+                  {videos.map((course) => {
+                    return (
+                      <Card
+                        shadow={"none"}
+                        key={course.id}
+                        isPressable
+                        as={Link}
+                        href={`/course/${course.id}`}
+                        radius="lg"
+                        className="max-w-[390px] flex-grow border-none lg:w-1/2">
+                        <Image
+                          alt="first-course"
+                          className="h-full w-full object-cover"
+                          src={course.logo}
+                          removeWrapper
+                        />
+                      </Card>
+                    )
                   })}
                 </div>
-
               </ModalBody>
-
             </>
           )}
         </ModalContent>
