@@ -293,7 +293,8 @@
       "subtitle-tooltip": "الترجمة",
       "sound-tooltip": "الصوت",
       "change-program-button": "جميع البرامج",
-      "select-scene-button": "محدد المشهد"
+      "select-scene-button": "محدد المشهد",
+      "select-scene-warning": "بمجرد الانتهاء من البرنامج، سوف تكون قادرا على اختيار المشاهد"
     }
   }
 }

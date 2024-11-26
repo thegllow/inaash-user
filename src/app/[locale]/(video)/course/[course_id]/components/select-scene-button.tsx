@@ -1,8 +1,11 @@
 import { cn } from "@/lib/cn"
 import { Button } from "@nextui-org/button"
 import { Modal, ModalBody, ModalContent, useDisclosure } from "@nextui-org/modal"
-import { ChevronUp } from "lucide-react"
+import { ChevronUp, TriangleAlert } from "lucide-react"
 import { useVideos } from "../context/courses-context"
+import { Card, CardBody } from "@nextui-org/card"
+import { Image } from "@nextui-org/image"
+import { useTranslations } from "next-intl"
 type Props = {
   children: String
 }
@@ -10,6 +13,9 @@ type Props = {
 const SelectSceneButton = (props: Props) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const { currentVideo } = useVideos()
+  const scenes = currentVideo.scenes
+
+  const t = useTranslations("course.course-footer")
   return (
     <>
       <Button
@@ -48,6 +54,7 @@ const SelectSceneButton = (props: Props) => {
         classNames={{
           base: "p-0 bg-transparent",
           closeButton: "hidden",
+
         }}
         isOpen={isOpen}
         onOpenChange={onOpenChange}>
@@ -55,8 +62,33 @@ const SelectSceneButton = (props: Props) => {
           {(onClose) => (
             <>
               <ModalBody>
+                <Card radius="md" shadow="none" className=" max-w-sm mx-auto mb-7">
+                  <div className="p-4 flex items-end gap-4 text-foreground ">
+                    <TriangleAlert className="text-foreground" />
+                    <p className="text-sm">
+                      {t('select-scene-warning')}
+                    </p>
+
+                  </div>
+                </Card>
                 <div className="flex w-full flex-row items-center justify-center gap-4">
-                  asdjf;las
+                  {scenes.map((scene) => {
+                    return (
+                      <Card
+                        shadow={"none"}
+                        key={scene.id}
+                        isPressable
+                        radius="lg"
+                        className="max-w-[390px] w-full flex-grow border-none ">
+                        <Image
+                          alt="first-course"
+                          className="h-full w-full object-cover"
+                          src={scene.logo}
+                          removeWrapper
+                        />
+                      </Card>
+                    )
+                  })}
                 </div>
               </ModalBody>
             </>

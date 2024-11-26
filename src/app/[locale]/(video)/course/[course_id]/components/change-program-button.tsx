@@ -31,7 +31,7 @@ const ChangeProgramButton = (props: Props) => {
       <Modal
         closeButton={null}
         placement="bottom"
-        size="xl"
+        size="2xl"
         motionProps={{
           variants: {
             enter: {
@@ -55,6 +55,7 @@ const ChangeProgramButton = (props: Props) => {
         classNames={{
           base: "p-0 bg-transparent",
           closeButton: "hidden",
+
         }}
         isOpen={isOpen}
         onOpenChange={onOpenChange}>
