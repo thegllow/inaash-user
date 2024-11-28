@@ -5,7 +5,7 @@ import React from "react"
 type Props = {}
 
 const Solutions = async (props: Props) => {
-  const t = await getTranslations("about-us.about-us.solutions")
+  const t = await getTranslations("about-us.solutions")
   const keys = [
     {
       key: "first",

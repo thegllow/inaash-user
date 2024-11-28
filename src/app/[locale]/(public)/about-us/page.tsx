@@ -6,6 +6,7 @@ import Image from "next/image"
 import Objectives from "./components/objectives"
 import SplittedLogo from "./components/splitted-logo"
 import Solutions from "./components/solutions"
+import WhyUs from "./components/why-us"
 
 export default async function Page() {
   const t = await getTranslations("about-us")
@@ -294,6 +295,7 @@ export default async function Page() {
         </div>
       </section>
       <Solutions />
+      <WhyUs />
       <Footer />
     </>
   )
