@@ -24,7 +24,7 @@ const ChooseCourse = (props: Props) => {
     <div
       className={cn(
         "flex w-full flex-col items-center justify-center gap-4 md:flex-row",
-        selectedCourse == props.videos[1].id && "flex-col-reverse md:flex-row-reverse",
+        selectedCourse == props.videos[1]?.id && "flex-col-reverse md:flex-row-reverse",
       )}>
       {props.videos.map((course) => {
         if (!selectedCourse)

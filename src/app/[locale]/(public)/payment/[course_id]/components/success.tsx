@@ -5,10 +5,11 @@ import { Image } from "@nextui-org/image"
 import { useTranslations } from "next-intl"
 
 import Button from "@/components/ui/button"
+import { Link } from "@/lib/i18n/navigation"
 
-type Props = {}
+type Props = { course_id: string }
 
-const Success = (props: Props) => {
+const Success = ({ course_id }: Props) => {
   const t = useTranslations("payment.success")
 
   // handle change mobile
@@ -20,7 +21,9 @@ const Success = (props: Props) => {
         <h2 className="text-center text-xl font-semibold">{t("title")}</h2>
       </div>
 
-      <Button>{t("button")}</Button>
+      <Button as={Link} href={`/corse/${course_id}`}>
+        {t("button")}
+      </Button>
     </div>
   )
 }

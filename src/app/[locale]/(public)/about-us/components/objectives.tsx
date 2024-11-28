@@ -28,7 +28,7 @@ const Objectives = async (props: Props) => {
               <h3 className="text-xl/normal text-foreground md:bg-gradient-to-br md:from-[#FFFFFF] md:to-[#99999929] md:bg-clip-text md:text-[125px] md:font-light md:text-transparent lg:text-[145px] xl:text-[165px]">
                 {t("title")}
               </h3>
-              <p className="text-sm text-default-500 md:~-mt-4/10">{t("description")}</p>
+              <p className="text-default-500 ~text-xs/sm md:~-mt-4/10">{t("description")}</p>
             </div>
             <div className="w-full md:w-1/3">
               <ul className="flex flex-col gap-3">
@@ -38,7 +38,9 @@ const Objectives = async (props: Props) => {
                       <div className="flex aspect-square size-11 shrink-0 items-center justify-center rounded bg-[#120A09] shadow-[7px_3px_16px_0px_#30ACFF0D]">
                         <img src={icons[key].src} alt="icon" />
                       </div>
-                      <span className="text-sm text-[#ACB4B4]">{t(`objectives-list.list.${key}.title`)}</span>
+                      <span className="text-[#ACB4B4] ~text-xs/sm">
+                        {t(`objectives-list.list.${key}.title`)}
+                      </span>
                     </li>
                   )
                 })}

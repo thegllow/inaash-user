@@ -7,9 +7,10 @@ import { getTranslations } from "next-intl/server"
 
 import Coupon from "./coupon"
 import Price from "./price"
+import { Video } from "@/types/public-videos-response"
 
 type Props = {
-  course: (typeof DummyCoursesData)[0]
+  course: Video
 }
 
 const CourseDetails = async ({ course }: Props) => {

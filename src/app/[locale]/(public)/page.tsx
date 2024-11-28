@@ -20,7 +20,7 @@ export default async function Home() {
       <section className="flex items-center justify-center gap-4 ~/md:~py-8/10">
         <div className="flex w-full max-w-lg shrink-0 flex-col items-center gap-10 md:w-full lg:w-1/2">
           <div className="flex justify-center">
-            <Logo className="size-36" />
+            <Logo className="w-36 shrink-0" />
           </div>
           <Card shadow={"none"} className="w-full shrink-0 bg-[#211E24] py-6 ~md/lg:~px-3/8">
             <CardBody>
