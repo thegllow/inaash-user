@@ -7,6 +7,7 @@ import VideoFooter from "./components/video-footer"
 import VideoHeader from "./components/video-header"
 import { VideosProvider } from "./context/courses-context"
 import { getVideo } from "./get-video"
+import { getUserVideo } from "./get-user-video"
 
 type Props = {
   children: React.ReactNode
@@ -30,8 +31,7 @@ const Layout = async ({ children, params }: Props) => {
     })
 
   try {
-    const video = await getVideo(params.course_id)
-    const { videos } = await getVideos()
+    const [video, { videos }] = await Promise.all([getUserVideo(params.course_id), getVideos()])
 
     return (
       <div className="relative flex min-h-screen flex-col">
@@ -46,15 +46,15 @@ const Layout = async ({ children, params }: Props) => {
     console.log("🚀 ~ Layout ~ error:", error)
     if (axios.isAxiosError(error)) {
       if (error.response?.status === 404) notFound()
-      redirect({
-        href: {
-          pathname: "/payment/" + params.course_id,
-          query: {
-            callbackUrl: `/course/${params.course_id}`,
+
+      if (error.response?.status === 403) {
+        redirect({
+          href: {
+            pathname: "/payment/" + params.course_id,
           },
-        },
-        locale: params.locale,
-      })
+          locale: params.locale,
+        })
+      }
     }
     return <div>Error</div>
   }

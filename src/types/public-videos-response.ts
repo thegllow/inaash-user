@@ -26,6 +26,7 @@ export interface Items {
   links: Links
   meta: Meta
 }
+
 export interface Video {
   id: string
   video_url: string

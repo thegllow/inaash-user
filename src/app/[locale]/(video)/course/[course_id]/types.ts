@@ -1,3 +1,5 @@
+import { Video } from "@/types/video"
+
 export interface VideoResponse {
   status: boolean
   message: string
@@ -8,47 +10,36 @@ export interface VideoResponse {
 }
 
 export interface Data {
-  item: FullDataVideo
+  item: Video
 }
 
-export interface FullDataVideo {
+export interface UserVideoResponse {
+  status: boolean
+  message: string
+  data: {
+    item: UserVideo
+  }
+  guard: string
+  errors: null
+  response_code: number
+  request_body: null
+}
+
+export interface UserVideo {
   id: string
-  video_url: string
-  logo: string
-  title: string
-  description: string
-  length: string
+  user_id: string
+  video_id: string
+  answer_average: string
+  hearts: string
+  total_questions: string
+  correct_answers: string
+  progress: string
+  lang: string
+  current_time: string
+  last_question_id: null
+  certificate_url: null
+  certificate_qr_code: null
+  certificate_number: null
   deleted_at: null
-  questions: Question[]
-  scenes: Scene[]
-}
-
-export interface Question {
-  id: string
-  video_id: string
-  question: string
-  answers_a: string
-  answers_b: string
-  answers_c: string
-  answers_d: string
-  correct_answer: string
-  allowed_time: string
-  appears_at: string
-  wrong_answer_audio_urls: WrongAnswerAudioUrls
-}
-
-export interface WrongAnswerAudioUrls {
-  answer_a: string
-  answer_b: string
-  answer_c: string
-  answer_d: string
-}
-
-export interface Scene {
-  id: string
-  video_id: string
-  logo: string
-  start_time: string
-  length: string
-  end_time: string
+  video: Video
 }

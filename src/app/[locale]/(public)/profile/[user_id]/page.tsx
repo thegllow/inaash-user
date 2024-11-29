@@ -13,7 +13,7 @@ export default async function Page({ params: { user_id } }: { params: { locale: 
     <Card shadow={"none"} className="w-full max-w-4xl shrink-0 rounded-xl bg-[#0A090959] p-1">
       <div className="space-y-1 rounded-t-lg bg-[#1D1B1B] ~p-3/5">
         <h1 className="~text-xl/2xl">{t("title")}</h1>
-        <p className="text-default-500 ~text-xs/sm">{t("description")}</p>
+        <p className="text-sm text-default-500">{t("description")}</p>
         <div className="py-5"></div>
       </div>
       <div className="~px-4/8 ~pb-5/10">
