@@ -10,7 +10,12 @@ import noResults from "./no-results.svg"
 import startBackground from "./start-background.png"
 import loginBackground from "./login-background.png"
 import profilePlaceholder from "./profile-placeholder.png"
-import shareUrCertificate from "./share-ur-certificate.png"
+import partnersBackground from "./partners-background.svg"
+import firstPartner from './first-partner.svg'
+import secondPartner from './second-partner.svg'
+import thirdPartner from './third-partner.svg'
+import secondPartnerLogo from './second-partner-logo.svg'
+import shareYourSuccess from './share-your-success.png'
 export {
   background,
   logo,
@@ -24,5 +29,10 @@ export {
   startBackground,
   loginBackground,
   profilePlaceholder,
-  shareUrCertificate,
+  partnersBackground,
+  firstPartner,
+  secondPartner,
+  thirdPartner,
+  secondPartnerLogo,
+  shareYourSuccess
 }
