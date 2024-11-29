@@ -24,11 +24,11 @@ const WhyUs = (props: Props) => {
   const isRTL = useIsRTL()
   return (
     <main className="container mx-auto max-w-7xl flex-grow px-6">
-      <section className="w-full ~py-10/16 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
+      <section className="w-full ~py-14/24 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
         <div className="w-full space-y-12 text-center">
           <div className="mx-auto w-full max-w-sm space-y-1">
             <h2 className="font-medium text-foreground lg:text-2xl">{t("title")}</h2>
-            <p className="text-default-500 ~text-xs/sm">{t("description")}</p>
+            <p className="text-sm text-default-500">{t("description")}</p>
           </div>
           <div>
             <EmblaCarousel

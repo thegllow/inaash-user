@@ -1,4 +1,4 @@
-import { logo } from "@/assets"
+import { logo, shareYourSuccess } from "@/assets"
 import Footer from "@/components/common/footer"
 import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
@@ -7,6 +7,7 @@ import Objectives from "./components/objectives"
 import SplittedLogo from "./components/splitted-logo"
 import Solutions from "./components/solutions"
 import WhyUs from "./components/why-us"
+import OurPartners from "./components/our-partners"
 
 export default async function Page() {
   const t = await getTranslations("about-us")
@@ -15,7 +16,7 @@ export default async function Page() {
       <section className="bg-[#141313]">
         <div className="container mx-auto max-w-7xl flex-grow px-6">
           <div className="flex w-full flex-col items-center justify-between pt-6 ~pb-6/16 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
-            <div className="mx-auto w-full space-y-1 max-md:max-w-[250px] max-md:text-center md:w-1/2">
+            <div className="mx-auto w-full space-y-1 max-md:max-w-sm max-md:text-center md:w-1/2">
               <h1 className="text-2xl font-medium text-foreground">{t("hero.title")}</h1>
               <p className="text-sm text-default-500">{t("hero.description")}</p>
             </div>
@@ -28,15 +29,15 @@ export default async function Page() {
 
       <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">
         <section className="flex w-full flex-col items-center justify-between ~pt-2/6 ~pb-6/16 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
-          <div className="mx-auto w-full space-y-12 max-md:max-w-[250px] max-md:text-center md:w-1/2">
+          <div className="mx-auto w-full space-y-12 max-md:max-w-sm max-md:text-center md:w-1/2">
             <div className="space-y-1">
               <h2 className="font-medium text-foreground lg:text-2xl">{t("target.title")}</h2>
-              <p className="text-default-500 ~text-xs/sm">{t("target.description")}</p>
+              <p className="text-sm text-default-500">{t("target.description")}</p>
             </div>
             <div className="space-y-3">
               <h3 className="font-medium text-foreground lg:text-2xl">{t("target.main.title")}</h3>
-              <p className="text-default-500 ~text-xs/sm">{t("target.main.description")}</p>
-              <p className="text-default-500 ~text-xs/sm">{t("target.main.sub-description")}</p>
+              <p className="text-sm text-default-500">{t("target.main.description")}</p>
+              <p className="text-sm text-default-500">{t("target.main.sub-description")}</p>
             </div>
           </div>
           <div className="w-full md:w-1/2">
@@ -278,24 +279,23 @@ export default async function Page() {
       <section className="container mx-auto max-w-7xl flex-grow px-6">
         <div className="flex w-full flex-col items-center justify-between ~py-10/28 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
           <div className="w-full md:w-1/3">
-            <Card shadow="none" className="rounded-xl bg-[#0A090959] px-5 py-12 backdrop-blur-2xl">
-              {"TODO:"}
-            </Card>
+            <Image src={shareYourSuccess} alt="share ur success" />
           </div>
-          <div className="mx-auto w-full space-y-12 max-md:max-w-[250px] max-md:text-center md:w-2/3">
+          <div className="mx-auto w-full space-y-12 max-md:max-w-sm max-md:text-center md:w-2/3">
             <div className="space-y-3">
               <h2 className="font-medium text-foreground lg:text-2xl">{t("about-us.title")}</h2>
-              <p className="text-default-500 ~text-xs/sm">{t("about-us.description")}</p>
+              <p className="text-sm text-default-500">{t("about-us.description")}</p>
             </div>
             <div className="space-y-3">
               <h3 className="font-medium text-foreground lg:text-2xl">{t("about-us.updates.title")}</h3>
-              <p className="text-default-500 ~text-xs/sm">{t("about-us.updates.description")}</p>
+              <p className="text-sm text-default-500">{t("about-us.updates.description")}</p>
             </div>
           </div>
         </div>
       </section>
       <Solutions />
       <WhyUs />
+      <OurPartners />
       <Footer />
     </>
   )

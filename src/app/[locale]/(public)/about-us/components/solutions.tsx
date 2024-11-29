@@ -23,7 +23,7 @@ const Solutions = async (props: Props) => {
         <div className="flex w-full flex-col items-center justify-between ~pt-2/6 ~pb-6/16 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
           <div className="mx-auto w-full space-y-3 max-md:max-w-[270px] max-md:text-center md:w-1/2">
             <h2 className="font-medium text-foreground lg:text-2xl">{t("title")}</h2>
-            <p className="text-default-500 ~text-xs/sm">{t("description")}</p>
+            <p className="text-sm text-default-500">{t("description")}</p>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3">
             <div className="relative rounded-lg bg-[#0A090959] px-5 backdrop-blur-2xl ~py-10/14">
