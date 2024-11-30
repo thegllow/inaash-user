@@ -44,11 +44,6 @@ InaashApi.interceptors.request.use(
     return config
   },
   async (error) => {
-    // Do something with request error
-    if (axios.isAxiosError(error) && error.response?.status === 401) {
-      await signOut({ redirectTo: "/" })
-      return
-    }
     return Promise.reject(error)
   },
 )

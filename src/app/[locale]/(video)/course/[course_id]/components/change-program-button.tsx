@@ -62,6 +62,7 @@ const ChangeProgramButton = (props: Props) => {
         classNames={{
           base: "p-0 bg-transparent",
           closeButton: "hidden",
+          body: "!p-0 shadow-[none]",
         }}
         isOpen={isOpen}
         onOpenChange={onOpenChange}>

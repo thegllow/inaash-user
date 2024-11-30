@@ -18,6 +18,7 @@ type Props = {
 }
 
 const Layout = async ({ children, params }: Props) => {
+  console.log("🚀 ~ Layout ~ params:", params)
   const session = await auth()
   if (!session)
     return redirect({
@@ -31,32 +32,33 @@ const Layout = async ({ children, params }: Props) => {
     })
 
   try {
-    const [video, { videos }] = await Promise.all([getUserVideo(params.course_id), getVideos()])
+    const [video] = await Promise.all([getUserVideo(params.course_id)])
 
     return (
       <div className="relative flex min-h-screen flex-col">
-        <VideosProvider videos={videos} currentVideo={video}>
-          <VideoHeader />
-          {children}
-          <VideoFooter />
-        </VideosProvider>
+        {/* <VideosProvider videos={videos} currentVideo={video}>
+          <VideoHeader /> */}
+        {children}
+        {/* <VideoFooter />
+        </VideosProvider> */}
       </div>
     )
   } catch (error) {
-    console.log("🚀 ~ Layout ~ error:", error)
+    // console.log("🚀 ~ Layout ~ error:", error)
     if (axios.isAxiosError(error)) {
+      console.log("🚀 ~ Layout ~ error:", error.response?.data)
       if (error.response?.status === 404) notFound()
 
-      if (error.response?.status === 403) {
-        redirect({
-          href: {
-            pathname: "/payment/" + params.course_id,
-          },
-          locale: params.locale,
-        })
-      }
+      // if (error.response?.status === 403) {
+      //   redirect({
+      //     href: {
+      //       pathname: "/payment/" + params.course_id,
+      //     },
+      //     locale: params.locale,
+      //   })
+      // }
     }
-    return <div>Error</div>
+    return <div className="text-white">Error</div>
   }
 }
 

@@ -1,3 +1,6 @@
+import dynamic from "next/dynamic"
+const VideoPlayer = dynamic(async () => import("./components/video-player"), { ssr: false })
+
 type Props = {
   params: {
     locale: string
@@ -6,7 +9,11 @@ type Props = {
 }
 
 const Page = async ({ params }: Props) => {
-  return <div></div>
+  return (
+    <div className="h-screen w-full">
+      <VideoPlayer src="https://vz-61460180-4fe.b-cdn.net/5a86f5c6-c235-45da-907d-c084d9e5f0e0/playlist.m3u8" />
+    </div>
+  )
 }
 
 export default Page
