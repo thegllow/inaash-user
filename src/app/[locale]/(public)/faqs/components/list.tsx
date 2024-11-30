@@ -28,7 +28,12 @@ const List = (props: Props) => {
         disableIndicatorAnimation>
         {props.data.map((faq) => {
           return (
-            <AccordionItem key={faq.id} aria-label={faq.title} indicator={<Icon />} title={faq.title}>
+            <AccordionItem
+              key={faq.id}
+              aria-label={faq.title}
+              className="text-default-600"
+              indicator={<Icon />}
+              title={faq.title}>
               {faq.description}
             </AccordionItem>
           )

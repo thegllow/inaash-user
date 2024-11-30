@@ -13,18 +13,21 @@ type Props = {
 const SelectSceneButton = (props: Props) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const { currentVideo } = useVideos()
-  const scenes = currentVideo.scenes
+  const scenes = currentVideo.video.scenes
 
   const t = useTranslations("course.course-footer")
   return (
     <>
       <Button
         onClick={onOpen}
-        size="sm" radius="md" variant="bordered" color="primary" className="border-2 px-4 py-2">
+        size="sm"
+        radius="md"
+        variant="bordered"
+        color="primary"
+        className="border-2 px-4 py-2">
         <div className="flex items-center gap-7">
           <span className="block ps-2 text-sm">{props.children}</span>
-          <ChevronUp className={cn(" duration-150", isOpen && 'rotate-180')} />
-
+          <ChevronUp className={cn("duration-150", isOpen && "rotate-180")} />
         </div>
       </Button>
       <Modal
@@ -54,7 +57,6 @@ const SelectSceneButton = (props: Props) => {
         classNames={{
           base: "p-0 bg-transparent",
           closeButton: "hidden",
-
         }}
         isOpen={isOpen}
         onOpenChange={onOpenChange}>
@@ -62,13 +64,10 @@ const SelectSceneButton = (props: Props) => {
           {(onClose) => (
             <>
               <ModalBody>
-                <Card radius="md" shadow="none" className=" max-w-sm mx-auto mb-7">
-                  <div className="p-4 flex items-end gap-4 text-foreground ">
+                <Card radius="md" shadow="none" className="mx-auto mb-7 max-w-sm">
+                  <div className="flex items-end gap-4 p-4 text-foreground">
                     <TriangleAlert className="text-foreground" />
-                    <p className="text-sm">
-                      {t('select-scene-warning')}
-                    </p>
-
+                    <p className="text-sm">{t("select-scene-warning")}</p>
                   </div>
                 </Card>
                 <div className="flex w-full flex-row items-center justify-center gap-4">
@@ -79,7 +78,7 @@ const SelectSceneButton = (props: Props) => {
                         key={scene.id}
                         isPressable
                         radius="lg"
-                        className="max-w-[390px] w-full flex-grow border-none ">
+                        className="w-full max-w-[390px] flex-grow border-none">
                         <Image
                           alt="first-course"
                           className="h-full w-full object-cover"

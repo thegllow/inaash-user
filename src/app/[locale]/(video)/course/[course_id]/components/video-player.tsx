@@ -2,12 +2,14 @@
 
 import { logo } from "@/assets"
 import ReactPlayer from "react-player"
+import { useVideoState } from "../context/video-context.tsx"
 
 interface VideoPlayerProps {
   src: string
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
+  const {} = useVideoState()
   return (
     <ReactPlayer
       onProgress={(state) => {

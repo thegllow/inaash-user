@@ -21,7 +21,7 @@ const Success = ({ course_id }: Props) => {
         <h2 className="text-center text-xl font-semibold">{t("title")}</h2>
       </div>
 
-      <Button as={Link} href={`/corse/${course_id}`}>
+      <Button as={Link} href={`/course/${course_id}`}>
         {t("button")}
       </Button>
     </div>

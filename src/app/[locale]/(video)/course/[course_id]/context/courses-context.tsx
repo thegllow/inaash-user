@@ -1,9 +1,9 @@
 "use client"
 import { Video } from "@/types/public-videos-response"
 import React, { createContext, useContext } from "react"
-import { FullDataVideo } from "../types"
+import { UserVideo } from "../types"
 
-const VideosContext = createContext<{ videos: Video[]; currentVideo: FullDataVideo } | null>(null)
+const VideosContext = createContext<{ videos: Video[]; currentVideo: UserVideo } | null>(null)
 
 export const VideosProvider = ({
   children,
@@ -12,7 +12,7 @@ export const VideosProvider = ({
 }: {
   children: React.ReactNode
   videos: Video[]
-  currentVideo: FullDataVideo
+  currentVideo: UserVideo
 }) => {
   const data = {
     videos,

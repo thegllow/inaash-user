@@ -6,8 +6,8 @@ import { notFound } from "next/navigation"
 import VideoFooter from "./components/video-footer"
 import VideoHeader from "./components/video-header"
 import { VideosProvider } from "./context/courses-context"
-import { getVideo } from "./get-video"
 import { getUserVideo } from "./get-user-video"
+import { VideoStateProvider } from "./context/video-context.tsx"
 
 type Props = {
   children: React.ReactNode
@@ -16,6 +16,7 @@ type Props = {
     course_id: string
   }
 }
+export const dynamic = "force-dynamic"
 
 const Layout = async ({ children, params }: Props) => {
   console.log("🚀 ~ Layout ~ params:", params)
@@ -32,15 +33,17 @@ const Layout = async ({ children, params }: Props) => {
     })
 
   try {
-    const [video] = await Promise.all([getUserVideo(params.course_id)])
+    const [video, { videos }] = await Promise.all([getUserVideo(params.course_id), getVideos()])
 
     return (
       <div className="relative flex min-h-screen flex-col">
-        {/* <VideosProvider videos={videos} currentVideo={video}>
-          <VideoHeader /> */}
-        {children}
-        {/* <VideoFooter />
-        </VideosProvider> */}
+        <VideosProvider videos={videos} currentVideo={video}>
+          <VideoStateProvider video={video}>
+            <VideoHeader />
+            {children}
+            <VideoFooter />
+          </VideoStateProvider>
+        </VideosProvider>
       </div>
     )
   } catch (error) {
@@ -49,14 +52,14 @@ const Layout = async ({ children, params }: Props) => {
       console.log("🚀 ~ Layout ~ error:", error.response?.data)
       if (error.response?.status === 404) notFound()
 
-      // if (error.response?.status === 403) {
-      //   redirect({
-      //     href: {
-      //       pathname: "/payment/" + params.course_id,
-      //     },
-      //     locale: params.locale,
-      //   })
-      // }
+      if (error.response?.status === 403) {
+        redirect({
+          href: {
+            pathname: "/payment/" + params.course_id,
+          },
+          locale: params.locale,
+        })
+      }
     }
     return <div className="text-white">Error</div>
   }

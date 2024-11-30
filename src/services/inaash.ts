@@ -1,9 +1,11 @@
 import { signOut } from "@/lib/auth/auth"
 import { getLocaleFromUrl } from "@/utils/get-locale"
-import axios from "axios"
+import axios, { AxiosError } from "axios"
 import { type Session } from "next-auth"
 import { getSession } from "next-auth/react"
 import { getLocale } from "next-intl/server"
+import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 const baseURL = "https://api-inaash.glow-host.com"
 
@@ -44,6 +46,22 @@ InaashApi.interceptors.request.use(
     return config
   },
   async (error) => {
+    return Promise.reject(error)
+  },
+)
+
+// Add a response interceptor
+InaashApi.interceptors.response.use(
+  function (response) {
+    // Any status code that lie within the range of 2xx cause this function to trigger
+    // Do something with response data
+    return response
+  },
+  async function (error: AxiosError) {
+    if (error.status === 401) {
+      const response = await signOut({ redirectTo: "/" })
+      console.log("🚀 ~ response:", response)
+    }
     return Promise.reject(error)
   },
 )
