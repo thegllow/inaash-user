@@ -31,7 +31,8 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
       locale: locale,
     })
   }
-  const course = await InaashApiGuest.get<SuccessResponse<Video>>(`/videos/${course_id}`)
+  const response = await InaashApiGuest.get<SuccessResponse<Video>>(`/videos/${course_id}`)
+  const course = response.data.data.item
 
   if (searchParams.success)
     return (

@@ -125,6 +125,7 @@ const VerifyOTP = (props: Props) => {
 
         <div className="mt-10">
           <CountDown
+            key={date}
             date={(date ? date : Date.now()) + 60000}
             result={
               <p className="cursor-pointer text-secondary underline" onClick={handleResendCode}>

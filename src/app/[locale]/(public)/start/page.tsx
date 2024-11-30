@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from "next-intl/server"
+import { setRequestLocale } from "next-intl/server"
 
 import { startBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
@@ -17,7 +17,6 @@ export const dynamic = "force-static"
 const Page = async (props: Props) => {
   // Enable static rendering
   setRequestLocale(props.params.locale)
-  const t = await getTranslations("start")
   const { videos, content } = await getVideos()
 
   return (

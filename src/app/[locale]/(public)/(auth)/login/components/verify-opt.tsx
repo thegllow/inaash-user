@@ -41,7 +41,6 @@ const VerifyOTP = (props: Props) => {
   const handleVerifyTOP: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
     try {
- 
       setIsLoading(true)
       const data = await signIn("credentials", { mobile, otp, redirect: false })
       console.log("🚀 ~ consthandleVerifyTOP:React.FormEventHandler<HTMLFormElement>= ~ data:", data)
@@ -112,6 +111,7 @@ const VerifyOTP = (props: Props) => {
 
         <div className="mt-10">
           <CountDown
+            key={date}
             date={(date ? date : Date.now()) + 60000}
             result={
               <p className="cursor-pointer text-secondary underline" onClick={handleResendCode}>

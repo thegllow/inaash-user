@@ -5,10 +5,10 @@ import { getTranslations } from "next-intl/server"
 import Logo from "@/components/common/logo"
 
 import BackgroundImage from "@/components/common/background-image"
+import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import ChooseLanguage from "./components/choose-language"
 import ChooseLanguageButton from "./components/choose-language-button"
-import { auth } from "@/lib/auth/auth"
 
 export default async function Home() {
   const t = await getTranslations("choose-language")
