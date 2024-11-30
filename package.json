@@ -43,7 +43,7 @@
 		"framer-motion": "~11.1.1",
 		"intl-messageformat": "^10.5.0",
 		"lucide-react": "^0.456.0",
-		"next": "^14.2.10",
+		"next": "^14.2.18",
 		"next-auth": "^5.0.0-beta.25",
 		"next-intl": "^3.25.0",
 		"next-themes": "^0.2.1",
@@ -57,7 +57,8 @@
 		"react-player": "^2.16.0",
 		"sharp": "^0.33.5",
 		"tailwind-merge": "^2.5.4",
-		"zod": "^3.23.8"
+		"zod": "^3.23.8",
+		"zustand": "^5.0.1"
 	},
 	"devDependencies": {
 		"@hookform/devtools": "^4.3.1",

@@ -75,7 +75,7 @@ const ChangeProgramButton = (props: Props) => {
                     return (
                       <Card
                         shadow={"none"}
-                        key={course.id}
+                        key={course.id + course.title}
                         isPressable
                         onClick={() => {
                           if (course_id == course.id) {

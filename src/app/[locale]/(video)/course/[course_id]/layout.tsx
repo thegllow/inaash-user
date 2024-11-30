@@ -7,8 +7,9 @@ import VideoFooter from "./components/video-footer"
 import VideoHeader from "./components/video-header"
 import { VideosProvider } from "./context/courses-context"
 import { getUserVideo } from "./get-user-video"
-import { VideoStateProvider } from "./context/video-context.tsx"
 
+import { redirect as nextRedirect } from "next/navigation"
+import { CourseStoreProvider } from "./store/course-store-provider"
 type Props = {
   children: React.ReactNode
   params: {
@@ -38,17 +39,19 @@ const Layout = async ({ children, params }: Props) => {
     return (
       <div className="relative flex min-h-screen flex-col">
         <VideosProvider videos={videos} currentVideo={video}>
-          <VideoStateProvider video={video}>
+          <CourseStoreProvider video={video}>
             <VideoHeader />
             {children}
             <VideoFooter />
-          </VideoStateProvider>
+          </CourseStoreProvider>
         </VideosProvider>
       </div>
     )
   } catch (error) {
-    // console.log("🚀 ~ Layout ~ error:", error)
     if (axios.isAxiosError(error)) {
+      if (error.response?.status === 401) {
+        nextRedirect("/api/auth/signout")
+      }
       console.log("🚀 ~ Layout ~ error:", error.response?.data)
       if (error.response?.status === 404) notFound()
 
