@@ -332,6 +332,11 @@
       "change-program-dialog-cancel": "لا",
       "select-scene-button": "محدد المشهد",
       "select-scene-warning": "بمجرد الانتهاء من البرنامج، سوف تكون قادرا على اختيار المشاهد"
+    },
+    "wrong-answer-modal": {
+      "title": "إجابة غير صحيحة!",
+      "description": "لقد فقدت قلب",
+      "listen": "استمع للشرح لتفهم تأثير هذا القرار على المصاب."
     }
   }
 }

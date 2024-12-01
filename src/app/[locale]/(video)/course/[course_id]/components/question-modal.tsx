@@ -14,6 +14,7 @@ import { motion } from "framer-motion"
 import { AnswerStatus } from "../store/course-store"
 import type ReactCountdown from "react-countdown"
 import { zeroPad } from "react-countdown"
+import WrongAnswerExplanation from "./wrong-answer-explanation"
 
 const GreenHeart: React.FC<HTMLAttributes<HTMLOrSVGElement>> = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="45" viewBox="0 0 58 66" fill="none" {...props}>
@@ -253,13 +254,13 @@ const QuestionModal = () => {
         base: "px-4 py-9 bg-[#0a090970] backdrop-blur-2xl shadow-none rounded-xl",
         closeButton: "hidden",
       }}
-      isOpen={!!current}>
+      isOpen={true}>
       <ModalContent>
         {(onClose) => (
           <>
-            {showExplanation ? (
+            {true ? (
               <ModalBody className="space-y-8 p-0 shadow-none">
-                <p className="text-center text-2xl text-white">{question.question}</p>
+                <WrongAnswerExplanation question={question} answer="answer_b" />
               </ModalBody>
             ) : (
               <ModalBody className="space-y-8 p-0 shadow-none">
