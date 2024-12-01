@@ -8,6 +8,7 @@ import { useShallow } from "zustand/react/shallow"
 import { UserVideo } from "../types"
 import { arrayToMapByKey } from "../utils/array-to-map-by-key"
 import { CourseState, CourseStore, createCourseStore } from "./course-store"
+import { timeToSeconds } from "../utils/time-to-seconds"
 
 export type CourseStoreApi = ReturnType<typeof createCourseStore>
 
@@ -29,13 +30,15 @@ export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProp
       questionsMap,
       currentQuestion: "",
       playing: true,
-      lastQuestion: "",
-      totalQuestions: video.video.scenes.length,
-      correctlyAnsweredQuestions: 0,
-      hearts: 5,
-      answerRate: "00:00",
-      progress: "0",
+      lastQuestion: timeToSeconds(video.current_time) + "",
+      totalQuestions: video.total_questions,
+      correctlyAnsweredQuestions: video.correct_answers,
+      hearts: video.hearts,
+      answerRate: video.answer_average,
+      progress: video.progress,
+      volume: 0.5,
     }
+
     storeRef.current = createCourseStore(initialState)
   }
 

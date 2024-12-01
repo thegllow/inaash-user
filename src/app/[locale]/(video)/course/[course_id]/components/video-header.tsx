@@ -9,6 +9,7 @@ import Score from "./socre"
 import Speed from "./speed"
 import { useRouter } from "@/lib/i18n/navigation"
 import { useCourseStore } from "../store/course-store-provider"
+import { timeToSeconds } from "../utils/time-to-seconds"
 
 type Props = {}
 
@@ -20,20 +21,23 @@ const VideoHeader = (props: Props) => {
     <header className="fixed inset-x-0 top-0 z-50 bg-[#0A090994] backdrop-blur-2xl">
       <div className="grid grid-cols-[100px_1fr_100px] py-2 ~px-4/6">
         <div className="flex items-center ~gap-4/10">
-          <Button onClick={() => Router.back()} isIconOnly variant="light">
+          <Button onClick={() => Router.push("/start")} isIconOnly variant="light">
             <CircleArrowRight strokeWidth={1.2} className="size-6 ltr:hidden" />
             <CircleArrowLeft strokeWidth={1.2} className="size-6 rtl:hidden" />
           </Button>
         </div>
 
         <div className="flex items-center justify-center ~md/xl:~gap-6/12">
-          <ProgressSlider progress={0} />
+          <ProgressSlider progress={Number(state.progress)} />
           <Divider orientation="vertical" />
-          <Score rightAnswers={state.correctlyAnsweredQuestions} totalNumber={state.totalQuestions} />
+          <Score
+            rightAnswers={Number(state.correctlyAnsweredQuestions)}
+            totalNumber={Number(state.totalQuestions)}
+          />
           <Divider orientation="vertical" />
-          <Hearts hearts={state.hearts} />
+          <Hearts hearts={Number(state.hearts)} />
           <Divider orientation="vertical" />
-          <Speed time={state.answerRate} />
+          <Speed time={timeToSeconds(state.answerRate) + ""} />
         </div>
         <div className=""></div>
       </div>

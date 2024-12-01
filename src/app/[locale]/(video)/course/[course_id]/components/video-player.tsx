@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 import ReactPlayer from "react-player"
-import { useCourseStore } from "../store/course-store-provider"
-import { useState } from "react"
 import { useVideos } from "../context/courses-context"
+import { useCourseStore } from "../store/course-store-provider"
+import React from "react"
+import { timeToSeconds } from "../utils/time-to-seconds"
 
 const ColoredCircle = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
@@ -33,18 +34,27 @@ interface VideoPlayerProps {
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
   const { currentVideo } = useVideos()
-  const { questionsMap, lastQuestion, playing, setCurrentQuestion } = useCourseStore((state) => state)
+  const { questionsMap, lastQuestion, playing, setCurrentQuestion, volume } = useCourseStore((state) => state)
 
+  const [isReady, setIsReady] = React.useState(false)
+  const playerRef = React.useRef<ReactPlayer>(null)
+
+  const onReady = React.useCallback(() => {
+    if (!isReady && playerRef.current) {
+      const timeToStart = timeToSeconds(currentVideo.current_time)
+      playerRef.current.seekTo(timeToStart, "seconds")
+      setIsReady(true)
+    }
+  }, [isReady])
   return (
     <ReactPlayer
-      onProgress={({ playedSeconds, played, loadedSeconds, loaded }) => {
-        console.log("🚀 ~ playedSeconds:", playedSeconds)
-        console.log("🚀 ~ played:", played)
+      ref={playerRef}
+      onReady={onReady}
+      onProgress={({ playedSeconds, played }) => {
         const sec = playedSeconds.toFixed()
         if (sec == lastQuestion) return
         const question = questionsMap.get(sec)
         if (question) setCurrentQuestion(sec)
-        console.log("🚀 ~ question:", question)
       }}
       playing={playing}
       light={
@@ -62,6 +72,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
       width="100%"
       height="100%"
       url={src}
+      volume={volume}
     />
   )
 }
