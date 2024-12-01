@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 import ReactPlayer from "react-player"
 import { useCourseStore } from "../store/course-store-provider"
 import { useState } from "react"
+import { useVideos } from "../context/courses-context"
 
 const ColoredCircle = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
@@ -30,6 +32,7 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
+  const { currentVideo } = useVideos()
   const { questionsMap, lastQuestion, playing, setCurrentQuestion } = useCourseStore((state) => state)
 
   return (
@@ -45,8 +48,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
       }}
       playing={playing}
       light={
-        <div>
-          <ColoredCircle />
+        <div className="h-full w-full">
+          <img
+            src={currentVideo.video.logo}
+            className="h-full w-full object-cover object-center"
+            alt="cover"
+          />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <ColoredCircle />
+          </div>
         </div>
       }
       width="100%"

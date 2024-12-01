@@ -8,11 +8,14 @@ import ProgressSlider from "./progress-slider"
 import Score from "./socre"
 import Speed from "./speed"
 import { useRouter } from "@/lib/i18n/navigation"
+import { useCourseStore } from "../store/course-store-provider"
 
 type Props = {}
 
 const VideoHeader = (props: Props) => {
   const Router = useRouter()
+  const state = useCourseStore((state) => state)
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#0A090994] backdrop-blur-2xl">
       <div className="grid grid-cols-[100px_1fr_100px] py-2 ~px-4/6">
@@ -26,11 +29,11 @@ const VideoHeader = (props: Props) => {
         <div className="flex items-center justify-center ~md/xl:~gap-6/12">
           <ProgressSlider progress={0} />
           <Divider orientation="vertical" />
-          <Score rightAnswers={5} totalNumber={10} />
+          <Score rightAnswers={state.correctlyAnsweredQuestions} totalNumber={state.totalQuestions} />
           <Divider orientation="vertical" />
-          <Hearts hearts={3} />
+          <Hearts hearts={state.hearts} />
           <Divider orientation="vertical" />
-          <Speed time="40.20" />
+          <Speed time={state.answerRate} />
         </div>
         <div className=""></div>
       </div>

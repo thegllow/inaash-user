@@ -3,6 +3,7 @@ export interface LoginResponse {
   message: string
   data: {
     token: string
+    timeout_audio: string
     item: User
   }
   guard: null

@@ -55,8 +55,9 @@ const SelectSceneButton = (props: Props) => {
           },
         }}
         classNames={{
-          base: "p-0 bg-transparent",
+          base: "p-0 bg-transparent shadow-none",
           closeButton: "hidden",
+          body: "!p-0 shadow-none",
         }}
         isOpen={isOpen}
         onOpenChange={onOpenChange}>
@@ -64,7 +65,10 @@ const SelectSceneButton = (props: Props) => {
           {(onClose) => (
             <>
               <ModalBody>
-                <Card radius="md" shadow="none" className="mx-auto mb-7 max-w-sm">
+                <Card
+                  radius="md"
+                  shadow="none"
+                  className="mx-auto mb-7 max-w-sm bg-[#362b2bdc] backdrop-blur-md">
                   <div className="flex items-end gap-4 p-4 text-foreground">
                     <TriangleAlert className="text-foreground" />
                     <p className="text-sm">{t("select-scene-warning")}</p>
@@ -77,7 +81,7 @@ const SelectSceneButton = (props: Props) => {
                         shadow={"none"}
                         key={scene.id}
                         isPressable
-                        radius="lg"
+                        radius="md"
                         className="w-full max-w-[390px] flex-grow border-none">
                         <Image
                           alt="first-course"
