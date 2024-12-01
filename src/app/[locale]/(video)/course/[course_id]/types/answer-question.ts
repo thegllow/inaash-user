@@ -1,5 +1,12 @@
 import { UserVideo } from "../types"
 
+export type TVariables = {
+  video_id: string
+  question_id: string
+  answer: string
+  answer_time: string
+}
+
 export interface AnswerQuestion {
   status: boolean
   message: string

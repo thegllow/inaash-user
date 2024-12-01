@@ -21,7 +21,7 @@ const Answer: React.FC<HTMLAttributes<HTMLDivElement> & { answer: string }> = ({
     answer && (
       <div
         className={cn(
-          "text-light w-full cursor-pointer rounded-md bg-[#292929] p-5 text-center text-xs/relaxed font-normal text-white hover:bg-[#292929e8]",
+          "text-light w-full cursor-pointer rounded-md bg-[#292929] p-5 text-center text-xs/relaxed font-normal text-white hover:bg-[#363636e8]",
           className,
         )}
         {...props}>
@@ -44,21 +44,20 @@ const QuestionModal = () => {
 
   type TError = unknown
 
-  const { mutate, error, isLoading, isSuccess, isError } = useMutation<
-    AnswerQuestion["data"],
-    TError,
-    TVariables
-  >(answerQuestion, {
-    onSuccess(data) {
-      updateVideoStatus({
-        correctlyAnsweredQuestions: data.video.correct_answers,
-        hearts: data.video.hearts,
-        answerRate: data.video.answer_average,
-        progress: data.video.progress,
-      })
-      next()
+  const { mutate, error, isLoading, isError } = useMutation<AnswerQuestion["data"], TError, TVariables>(
+    answerQuestion,
+    {
+      onSuccess(data) {
+        updateVideoStatus({
+          correctlyAnsweredQuestions: data.video.correct_answers,
+          hearts: data.video.hearts,
+          answerRate: data.video.answer_average,
+          progress: data.video.progress,
+        })
+        next()
+      },
     },
-  })
+  )
 
   const answersArray = useMemo(() => shuffleArray(["a", "b", "c", "d"] as const), [question?.id])
   const handleAnswering = (answer: string) => {
@@ -90,6 +89,7 @@ const QuestionModal = () => {
                   return (
                     <Answer
                       onClick={() => {
+                        if (isLoading) return
                         handleAnswering(`answer_${key}`)
                       }}
                       key={key}
