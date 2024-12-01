@@ -12,7 +12,10 @@ type Props = {
   className?: string
 }
 
-const Countdown = ({ date, result, alert, onComplete, className }: Props) => {
+const Countdown = React.forwardRef<ReactCountdown, Props>(function Component(
+  { date, result, alert, onComplete, className }: Props,
+  ref,
+) {
   const renderer: CountdownRendererFn = useCallback(
     ({ seconds, minutes, completed }) => {
       if (completed) {
@@ -46,9 +49,9 @@ const Countdown = ({ date, result, alert, onComplete, className }: Props) => {
   if (server) return null
   return (
     <div dir="ltr" className="flex items-center justify-center">
-      <ReactCountdown date={date} renderer={renderer} />
+      <ReactCountdown ref={ref} date={date} renderer={renderer} />
     </div>
   )
-}
+})
 
 export default memo(Countdown)
