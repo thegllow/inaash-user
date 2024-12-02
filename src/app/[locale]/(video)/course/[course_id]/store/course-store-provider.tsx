@@ -39,6 +39,7 @@ export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProp
       volume: 0.5,
       selectedAnswer: "",
       answerStatus: "notAnswered",
+      showExplanation: false,
     }
 
     storeRef.current = createCourseStore(initialState)

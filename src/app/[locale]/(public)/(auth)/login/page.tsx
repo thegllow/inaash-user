@@ -15,9 +15,9 @@ const Page = async ({
 }) => {
   const session = await auth()
   console.log("🚀 ~ session:", session)
-  if (session) {
+  if (session)
     redirect({ href: searchParams.callbackUrl ? searchParams.callbackUrl : "/start", locale: params.locale })
-  }
+
   return (
     <>
       <BackgroundImage src={loginBackground} />
