@@ -7,7 +7,7 @@ type Props = {
 
 const ProgressSlider = ({ progress }: Props) => {
   return (
-    <div className="w-full max-w-[175px] shrink-0" dir="ltr">
+    <div className="w-full shrink-0 md:max-w-[155px] lg:max-w-[175px]" dir="ltr">
       <Slider
         value={progress}
         isDisabled
@@ -22,7 +22,7 @@ const ProgressSlider = ({ progress }: Props) => {
           <div
             {...props}
             className="group top-1/2 flex cursor-grab items-center justify-center rounded bg-primary px-3 py-1">
-            <span className="block text-foreground">{progress}%</span>
+            <span className="block text-sm text-foreground">{progress}%</span>
           </div>
         )}
       />

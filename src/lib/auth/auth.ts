@@ -45,7 +45,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             mobile,
             otp,
           })
-          console.log("🚀 ~ authorize ~ response:", response)
           const user = { ...response.data.data.item, token: response.data.data.token }
           if (user) {
             return { ...user }
@@ -66,7 +65,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   ],
   callbacks: {
     async signIn({ user }) {
-      console.log("🚀 ~ signIn ~ user:", user)
       if ((user as any)?.error) {
         throw new Error((user as any).error)
       }

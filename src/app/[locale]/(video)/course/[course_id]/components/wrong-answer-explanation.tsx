@@ -28,7 +28,7 @@ const WrongAnswerExplanation = (props: Props) => {
   }
 
   return (
-    <div className="space-y-8">
+    <>
       <div className="text-center">
         <img
           src={wrongIcon.src}
@@ -49,7 +49,7 @@ const WrongAnswerExplanation = (props: Props) => {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

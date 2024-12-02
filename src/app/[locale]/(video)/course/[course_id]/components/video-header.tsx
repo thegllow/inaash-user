@@ -10,6 +10,7 @@ import Speed from "./speed"
 import { useRouter } from "@/lib/i18n/navigation"
 import { useCourseStore } from "../store/course-store-provider"
 import { timeToSeconds } from "../utils/time-to-seconds"
+import FullScreenButton from "@/components/common/full-screen-button"
 
 type Props = {}
 
@@ -19,15 +20,15 @@ const VideoHeader = (props: Props) => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#0A090994] backdrop-blur-2xl">
-      <div className="grid grid-cols-[100px_1fr_100px] py-2 ~px-4/6">
-        <div className="flex items-center ~gap-4/10">
+      <div className="grid grid-cols-[100px_1fr_100px] gap-2 ~px-4/6 ~md/lg:~py-1/2">
+        <div className="flex items-center">
           <Button onClick={() => Router.push("/start")} isIconOnly variant="light">
-            <CircleArrowRight strokeWidth={1.2} className="size-6 ltr:hidden" />
-            <CircleArrowLeft strokeWidth={1.2} className="size-6 rtl:hidden" />
+            <CircleArrowRight strokeWidth={1.2} className="~md/lg:~size-5/6 ltr:hidden" />
+            <CircleArrowLeft strokeWidth={1.2} className="~md/lg:~size-5/6 rtl:hidden" />
           </Button>
         </div>
 
-        <div className="flex items-center justify-center ~md/xl:~gap-6/12">
+        <div className="flex items-center justify-center ~md/xl:~gap-4/10">
           <ProgressSlider progress={Number(state.progress)} />
           <Divider orientation="vertical" />
           <Score
@@ -39,7 +40,9 @@ const VideoHeader = (props: Props) => {
           <Divider orientation="vertical" />
           <Speed time={timeToSeconds(state.answerRate) + ""} />
         </div>
-        <div className=""></div>
+        <div className="">
+          <FullScreenButton />
+        </div>
       </div>
     </header>
   )

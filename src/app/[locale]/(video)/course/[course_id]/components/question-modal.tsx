@@ -116,7 +116,7 @@ const QuestionModal = () => {
       isKeyboardDismissDisabled={false}
       size="lg"
       classNames={{
-        base: "px-4 py-9 bg-[#0a090970] backdrop-blur-2xl shadow-none rounded-xl overflow-hidden duration-300",
+        base: "~md/lg:~px-2/4 ~md/lg:~py-5/9 bg-[#0a090970] backdrop-blur-2xl shadow-none rounded-xl overflow-hidden duration-300",
         closeButton: "hidden",
       }}
       isOpen={!!question}>
@@ -130,13 +130,13 @@ const QuestionModal = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.3 }}>
-                <ModalBody className="space-y-8 p-0 shadow-none">
+                <ModalBody className="p-0 shadow-none ~md/lg:~space-y-6/8">
                   <WrongAnswerExplanation question={question!} answer="answer_b" />
                 </ModalBody>
               </motion.div>
             ) : (
               <motion.div key="question" exit={{ opacity: 0, x: 50 }} transition={{ duration: 0.3 }}>
-                <ModalBody className="space-y-8 p-0 shadow-none">
+                <ModalBody className="p-0 shadow-none ~md/lg:~space-y-6/8">
                   <p className="text-center text-2xl text-white">{question?.question}</p>
                   <div className="flex flex-col gap-2">
                     {answersArray.map((key) => {
