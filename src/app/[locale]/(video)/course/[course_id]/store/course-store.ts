@@ -22,6 +22,7 @@ export type CourseState = {
   totalQuestions: string
   selectedAnswer: string
   answerStatus: AnswerStatus
+  showExplanation: boolean
 } & VideoStatus
 
 export type CourseActions = {
@@ -33,6 +34,7 @@ export type CourseActions = {
   setSelectedAnswer: (arg: string) => void
   updateVideoStatus: (arg: VideoStatus) => void
   changeVolume: (arg: number) => void
+  setShowExplanation: (arg: boolean) => void
 }
 
 export type CourseStore = CourseState & CourseActions
@@ -47,12 +49,14 @@ export const createCourseStore = (initState: CourseState) => {
         currentQuestion: "",
         selectedAnswer: "",
         answerStatus: "notAnswered",
+        showExplanation: false,
         playing: true,
       })),
     setSelectedAnswer: (arg) => set(() => ({ selectedAnswer: arg })),
     setAnswerRate: (arg) => set(() => ({ answerRate: arg })),
     setProgress: (arg) => set(() => ({ progress: arg })),
     setAnswerStatus: (arg) => set(() => ({ answerStatus: arg })),
+    setShowExplanation: (arg) => set(() => ({ showExplanation: arg })),
     updateVideoStatus(arg) {
       set({ ...arg })
     },

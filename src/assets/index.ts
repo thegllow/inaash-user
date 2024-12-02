@@ -11,11 +11,12 @@ import startBackground from "./start-background.png"
 import loginBackground from "./login-background.png"
 import profilePlaceholder from "./profile-placeholder.png"
 import partnersBackground from "./partners-background.svg"
-import firstPartner from './first-partner.svg'
-import secondPartner from './second-partner.svg'
-import thirdPartner from './third-partner.svg'
-import secondPartnerLogo from './second-partner-logo.svg'
-import shareYourSuccess from './share-your-success.png'
+import firstPartner from "./first-partner.svg"
+import secondPartner from "./second-partner.svg"
+import thirdPartner from "./third-partner.svg"
+import secondPartnerLogo from "./second-partner-logo.svg"
+import shareYourSuccess from "./share-your-success.png"
+import wrongIcon from "./wrong-icon.svg"
 export {
   background,
   logo,
@@ -34,5 +35,6 @@ export {
   secondPartner,
   thirdPartner,
   secondPartnerLogo,
-  shareYourSuccess
+  shareYourSuccess,
+  wrongIcon,
 }

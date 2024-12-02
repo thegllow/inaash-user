@@ -1,6 +1,8 @@
-function formatTime(seconds: number): string {
+export function formatTime(seconds: number): string {
   // Ensure the input is a valid number
   if (seconds < 0) throw new Error("Time cannot be negative")
+
+  seconds = Math.round(seconds)
 
   // Calculate hours, minutes, and seconds
   const hours = Math.floor(seconds / 3600)
