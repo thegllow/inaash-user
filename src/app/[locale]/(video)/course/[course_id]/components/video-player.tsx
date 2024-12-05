@@ -71,7 +71,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
       }
       width="100%"
       height="100%"
-      url={src}
+      url={currentVideo.video.video_url}
       volume={volume}
     />
   )
