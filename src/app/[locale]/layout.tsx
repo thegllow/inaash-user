@@ -8,24 +8,12 @@ import { notFound } from "next/navigation"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { fontSans, urdu } from "@/config/fonts"
-import { siteConfig } from "@/config/site"
 import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 
 import { Providers } from "./providers"
 import ScreenIndicator from "@/components/common/screen-indecator"
 import ReactQueryProvider from "@/lib/react-query/react-query-provider"
-
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
-}
 
 export const viewport: Viewport = {
   themeColor: [
