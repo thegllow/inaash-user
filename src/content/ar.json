@@ -340,5 +340,15 @@
       "reason": "توضيح السبب",
       "continue-button": "متابعة"
     }
+  },
+  "certificate": {
+    "fist": {
+      "title": "",
+      "answers": "الإجابات",
+      "avarage-answer-time": "متوسط ​​سرعة الاجابة"
+    },
+    "second": "",
+    "third": "",
+    "fourth": ""
   }
 }

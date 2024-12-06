@@ -4,4 +4,9 @@ import third from "./third.svg"
 import fourth from "./fourth.svg"
 import fifth from "./fifth.svg"
 import sixth from "./sixth.svg"
-export { fifth, second, first, fourth, sixth, third }
+import gmail from "./gmail.svg"
+import whatsapp from "./whatsapp.svg"
+import linkedin from "./linkedin.svg"
+import send from "./send.svg"
+import twitter from "./x.svg"
+export { fifth, second, first, fourth, sixth, third, linkedin, send, whatsapp, gmail, twitter }
