@@ -63,7 +63,7 @@ export const RedHeart: React.FC<HTMLAttributes<HTMLOrSVGElement>> = (props) => (
         width="52.3743"
         height="49.5982"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
+        colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"

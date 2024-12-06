@@ -42,6 +42,7 @@ const Layout = async ({ children, params }: Props) => {
         queryKey: ["courses", params.locale],
         queryFn: async () => await getVideos(),
       }),
+      getUserVideo(params.course_id),
     ])
 
     return (

@@ -10,6 +10,7 @@ const SoundSlider = (props: Props) => {
     volume: state.volume,
     changeVolume: state.changeVolume,
   }))
+  console.log("🚀 ~ const{volume,changeVolume}=useCourseStore ~ volume:", volume)
   return (
     <div className="flex items-center gap-3 text-foreground">
       <div dir="ltr" className="min-w-20">

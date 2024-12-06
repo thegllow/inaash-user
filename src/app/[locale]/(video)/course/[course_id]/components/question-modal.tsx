@@ -2,6 +2,7 @@
 import CountDown from "@/components/common/count-down"
 import useMutation from "@/hooks/use-mutation"
 import { Modal, ModalBody, ModalContent } from "@nextui-org/modal"
+import { AnimatePresence, motion } from "framer-motion"
 import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef } from "react"
 import type ReactCountdown from "react-countdown"
@@ -13,37 +14,26 @@ import { shuffleArray } from "../utils/shuffle-array"
 import { timeToSeconds } from "../utils/time-to-seconds"
 import Answer from "./answer"
 import WrongAnswerExplanation from "./wrong-answer-explanation"
-import { AnimatePresence, motion } from "framer-motion"
-import { Question } from "@/types/video"
+import { useVideos } from "../context/courses-context"
 
 const QuestionModal = () => {
   // state
   const { course_id } = useParams() as { course_id: string }
+  const { currentVideo } = useVideos()
+  const hasPassedCourse = currentVideo.certificate_number ? true : false
   const {
-    current,
-    questions,
+    currentQuestion: current,
+    questionsMap: questions,
     selectedAnswer,
     answerStatus,
     setSelectedAnswer,
-    timeout,
     updateVideoStatus,
-    next,
+    removeCurrentQuestion: next,
     setAnswerStatus,
     showExplanation,
     setShowExplanation,
-  } = useCourseStore((state) => ({
-    current: state.currentQuestion,
-    questions: state.questionsMap,
-    timeout: state.removeCurrentQuestion,
-    next: state.removeCurrentQuestion,
-    updateVideoStatus: state.updateVideoStatus,
-    selectedAnswer: state.selectedAnswer,
-    setSelectedAnswer: state.setSelectedAnswer,
-    answerStatus: state.answerStatus,
-    setAnswerStatus: state.setAnswerStatus,
-    showExplanation: state.showExplanation,
-    setShowExplanation: state.setShowExplanation,
-  }))
+  } = useCourseStore((state) => state)
+
   const question = questions.get(current)
 
   // counter
@@ -53,18 +43,25 @@ const QuestionModal = () => {
   // answering question
   type TError = unknown
 
-  const { mutate, data, error, isLoading, isError, isSuccess } = useMutation<
-    AnswerQuestion["data"],
+  const handleAnsweringQuestionOnWithCertificate = async (data: TVariables) => {
+    return { is_correct: data.answer === `answer_a` }
+  }
+
+  const { mutate, isLoading, isSuccess } = useMutation<
+    AnswerQuestion["data"] | { is_correct: boolean },
     TError,
     TVariables
-  >(answerQuestion, {
+  >(hasPassedCourse ? handleAnsweringQuestionOnWithCertificate : answerQuestion, {
     onSuccess(data) {
-      updateVideoStatus({
-        correctlyAnsweredQuestions: data.video.correct_answers,
-        hearts: data.video.hearts,
-        answerRate: data.video.answer_average,
-        progress: data.video.progress,
-      })
+      if (!hasPassedCourse) {
+        let result = data as AnswerQuestion["data"]
+        updateVideoStatus({
+          correctlyAnsweredQuestions: result.video.correct_answers,
+          hearts: result.video.hearts,
+          answerRate: result.video.answer_average,
+          progress: result.video.progress,
+        })
+      }
       setAnswerStatus(data.is_correct ? "correct" : "wrong")
     },
   })
@@ -90,7 +87,7 @@ const QuestionModal = () => {
         clearTimeout(timer)
       }
     }
-  }, [isSuccess, answerStatus, next])
+  }, [isSuccess, answerStatus, next, setShowExplanation])
 
   const answersArray = useMemo(() => {
     return process.env.NODE_ENV === "development"
@@ -158,7 +155,7 @@ const QuestionModal = () => {
                     <CountDown
                       ref={countDownRef}
                       key={question?.appears_at}
-                      onComplete={timeout}
+                      onComplete={next}
                       alert
                       className="rounded-full"
                       date={date}

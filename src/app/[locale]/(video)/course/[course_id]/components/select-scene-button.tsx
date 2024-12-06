@@ -6,6 +6,9 @@ import { useVideos } from "../context/courses-context"
 import { Card, CardBody } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
 import { useTranslations } from "next-intl"
+import { useCourseStore } from "../store/course-store-provider"
+import { timeToSeconds } from "../utils/time-to-seconds"
+import { Scene } from "@/types/video"
 type Props = {
   children: String
 }
@@ -13,8 +16,18 @@ type Props = {
 const SelectSceneButton = (props: Props) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const { currentVideo } = useVideos()
+  const { videoPlayerRef, updateVideoState } = useCourseStore((state) => ({
+    videoPlayerRef: state.videoPlayerRef,
+    updateVideoState: state.updateVideoStatus,
+  }))
   const scenes = currentVideo.video.scenes
+  const hasPassedCourse = currentVideo.certificate_number ? true : false
 
+  const handleSelectScene = (scene: Scene) => {
+    if (!hasPassedCourse) return
+    updateVideoState({ startTime: scene.start_time })
+    videoPlayerRef?.seekTo(timeToSeconds(scene.start_time), "seconds")
+  }
   const t = useTranslations("course.course-footer")
   return (
     <>
@@ -69,10 +82,12 @@ const SelectSceneButton = (props: Props) => {
                   radius="md"
                   shadow="none"
                   className="mx-auto mb-7 max-w-sm bg-[#362b2bdc] backdrop-blur-md">
-                  <div className="flex items-end gap-4 p-4 text-foreground">
-                    <TriangleAlert className="text-foreground" />
-                    <p className="text-sm">{t("select-scene-warning")}</p>
-                  </div>
+                  {hasPassedCourse ? null : (
+                    <div className="flex items-end gap-4 p-4 text-foreground">
+                      <TriangleAlert className="text-foreground" />
+                      <p className="text-sm">{t("select-scene-warning")}</p>
+                    </div>
+                  )}
                 </Card>
                 <div className="flex w-full flex-row items-center justify-center gap-4">
                   {scenes.map((scene) => {
@@ -81,6 +96,9 @@ const SelectSceneButton = (props: Props) => {
                         shadow={"none"}
                         key={scene.id}
                         isPressable
+                        onClick={() => {
+                          handleSelectScene(scene)
+                        }}
                         radius="md"
                         className="w-full max-w-[390px] flex-grow border-none">
                         <Image

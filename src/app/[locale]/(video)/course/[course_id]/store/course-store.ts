@@ -2,12 +2,14 @@
 import { Question, Scene } from "@/types/video"
 import { createStore } from "zustand/vanilla"
 import { UserVideo } from "../types"
+import ReactPlayer from "react-player"
 
 export type VideoStatus = {
   correctlyAnsweredQuestions: string
   hearts: string
   answerRate: string
   progress: string
+  startTime: string
 }
 
 export type AnswerStatus = "notAnswered" | "correct" | "wrong"
@@ -23,6 +25,7 @@ export type CourseState = {
   selectedAnswer: string
   answerStatus: AnswerStatus
   showExplanation: boolean
+  videoPlayerRef: ReactPlayer | null
 } & VideoStatus
 
 export type CourseActions = {
@@ -32,9 +35,10 @@ export type CourseActions = {
   setAnswerStatus: (arg: AnswerStatus) => void
   setProgress: (arg: string) => void
   setSelectedAnswer: (arg: string) => void
-  updateVideoStatus: (arg: VideoStatus) => void
+  updateVideoStatus: (arg: Partial<VideoStatus>) => void
   changeVolume: (arg: number) => void
   setShowExplanation: (arg: boolean) => void
+  setVideoPlayerRef: (arg: ReactPlayer | null) => void
 }
 
 export type CourseStore = CourseState & CourseActions
@@ -52,6 +56,7 @@ export const createCourseStore = (initState: CourseState) => {
         showExplanation: false,
         playing: true,
       })),
+    setVideoPlayerRef: (ref) => set({ videoPlayerRef: ref }),
     setSelectedAnswer: (arg) => set(() => ({ selectedAnswer: arg })),
     setAnswerRate: (arg) => set(() => ({ answerRate: arg })),
     setProgress: (arg) => set(() => ({ progress: arg })),

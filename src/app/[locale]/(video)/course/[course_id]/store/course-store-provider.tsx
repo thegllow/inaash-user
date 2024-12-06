@@ -30,16 +30,19 @@ export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProp
       questionsMap,
       currentQuestion: "",
       playing: true,
-      lastQuestion: timeToSeconds(video.current_time) + "",
+      lastQuestion: timeToSeconds(video.current_time) + "" || "00:00:00",
       totalQuestions: video.total_questions,
       correctlyAnsweredQuestions: video.correct_answers,
       hearts: video.hearts,
-      answerRate: video.answer_average,
+      answerRate: video.answer_average || "00:00:00",
       progress: video.progress,
       volume: 0.5,
       selectedAnswer: "",
       answerStatus: "notAnswered",
       showExplanation: false,
+      videoPlayerRef: null,
+      // if user has completed a course he should start from start by default
+      startTime: video.certificate_number ? "00:00:00" : video.current_time,
     }
 
     storeRef.current = createCourseStore(initialState)

@@ -3,7 +3,7 @@
 import ReactPlayer from "react-player"
 import { useVideos } from "../context/courses-context"
 import { useCourseStore } from "../store/course-store-provider"
-import React, { useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import { timeToSeconds } from "../utils/time-to-seconds"
 import { Spinner } from "@nextui-org/spinner"
 const ColoredCircle = () => (
@@ -32,20 +32,32 @@ interface VideoPlayerProps {}
 
 const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const { currentVideo } = useVideos()
-  const { questionsMap, lastQuestion, playing, setCurrentQuestion, volume } = useCourseStore((state) => state)
+  const { questionsMap, lastQuestion, playing, startTime, setCurrentQuestion, volume, setVideoPlayerRef } =
+    useCourseStore((state) => state)
+  console.log("🚀 ~ startTime:", startTime)
 
-  const [isReady, setIsReady] = React.useState(false)
-  const playerRef = React.useRef<ReactPlayer>(null)
+  const [isReady, setIsReady] = useState(false)
+  const playerRef = useRef<ReactPlayer>(null)
 
-  const onReady = React.useCallback(() => {
+  const onReady = useCallback(() => {
     if (!isReady && playerRef.current) {
-      const timeToStart = timeToSeconds(currentVideo.current_time)
+      console.log("🚀 ~ use callback startTime:", startTime)
+
+      const timeToStart = timeToSeconds(startTime)
       playerRef.current.seekTo(timeToStart, "seconds")
       setIsReady(true)
     }
-  }, [isReady])
+  }, [isReady, startTime])
   const [isPending, setIsPending] = useState(false)
 
+  useEffect(() => {
+    if (playerRef.current) {
+      setVideoPlayerRef(playerRef.current)
+    }
+    return () => {
+      setVideoPlayerRef(null)
+    }
+  }, [setVideoPlayerRef])
   return (
     <>
       {isPending ? (

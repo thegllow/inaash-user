@@ -7,6 +7,9 @@ import VideoFooter from "./video-footer"
 import { useQuery } from "@tanstack/react-query"
 import { getUserVideo } from "../get-user-video"
 import { getVideos } from "@/services/utils/get-videos"
+import axios from "axios"
+import { useRouter } from "@/lib/i18n/navigation"
+import { Spinner } from "@nextui-org/spinner"
 
 type Props = {
   children: React.ReactNode
@@ -19,23 +22,35 @@ type Props = {
 const VideoWrapper = ({ children, params }: Props) => {
   const {
     data: video,
-    isLoading: isLoadingUserVideos,
-    isError: isUserVideosError,
+    isLoading: isLoadingUserVideo,
+    isError: isUserVideoError,
+    error: userVideoError,
   } = useQuery({
     queryKey: ["course", params.course_id, params.locale],
     queryFn: async () => await getUserVideo(params.course_id),
+    refetchOnMount: true,
   })
   const {
     data: videos,
-    isLoading: isLoadingVideo,
-    isError: isVideoError,
+    isLoading: isLoadingVideos,
+    isError: isVideosError,
   } = useQuery({
     queryKey: ["courses", params.locale],
     queryFn: async () => await getVideos(),
   })
 
-  if (isLoadingUserVideos || isLoadingVideo) return
-  if (isVideoError || isUserVideosError) return
+  if (isLoadingUserVideo || isLoadingVideos)
+    return (
+      <div className="flex h-[100svh] items-center justify-center">
+        <Spinner size="lg" />
+      </div>
+    )
+  if (isVideosError || isUserVideoError)
+    return (
+      <div className="flex h-[100svh] items-center justify-center">
+        <p className="text-danger">Something went wrong</p>
+      </div>
+    )
   return (
     <VideosProvider videos={videos?.videos!} currentVideo={video!}>
       <CourseStoreProvider video={video!}>
