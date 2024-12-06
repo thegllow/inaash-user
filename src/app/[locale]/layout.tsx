@@ -14,6 +14,7 @@ import { routing } from "@/lib/i18n/routing"
 
 import { Providers } from "./providers"
 import ScreenIndicator from "@/components/common/screen-indecator"
+import ReactQueryProvider from "@/lib/react-query/react-query-provider"
 
 export const metadata: Metadata = {
   title: {
@@ -66,14 +67,16 @@ export default async function RootLayout({
       <NextIntlClientProvider messages={messages}>
         <NuqsAdapter>
           <NySessionProvider>
-            <body
-              className={clsx(
-                "min-h-screen bg-background font-sans antialiased dark",
-                locale === "ur" ? urdu.variable : fontSans.variable,
-              )}>
-              <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
-              <ScreenIndicator />
-            </body>
+            <ReactQueryProvider>
+              <body
+                className={clsx(
+                  "min-h-screen bg-background font-sans antialiased dark",
+                  locale === "ur" ? urdu.variable : fontSans.variable,
+                )}>
+                <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
+                <ScreenIndicator />
+              </body>
+            </ReactQueryProvider>
           </NySessionProvider>
         </NuqsAdapter>
       </NextIntlClientProvider>

@@ -3,9 +3,9 @@
 import ReactPlayer from "react-player"
 import { useVideos } from "../context/courses-context"
 import { useCourseStore } from "../store/course-store-provider"
-import React from "react"
+import React, { useState } from "react"
 import { timeToSeconds } from "../utils/time-to-seconds"
-
+import { Spinner } from "@nextui-org/spinner"
 const ColoredCircle = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
     <g filter="url(#filter0_b_255_821)">
@@ -28,11 +28,9 @@ const ColoredCircle = () => (
     </defs>
   </svg>
 )
-interface VideoPlayerProps {
-  src: string
-}
+interface VideoPlayerProps {}
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
+const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const { currentVideo } = useVideos()
   const { questionsMap, lastQuestion, playing, setCurrentQuestion, volume } = useCourseStore((state) => state)
 
@@ -46,34 +44,45 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
       setIsReady(true)
     }
   }, [isReady])
+  const [isPending, setIsPending] = useState(false)
+
   return (
-    <ReactPlayer
-      ref={playerRef}
-      onReady={onReady}
-      onProgress={({ playedSeconds, played }) => {
-        const sec = playedSeconds.toFixed()
-        if (sec == lastQuestion) return
-        const question = questionsMap.get(sec)
-        if (question) setCurrentQuestion(sec)
-      }}
-      playing={playing}
-      light={
-        <div className="h-full w-full">
-          <img
-            src={currentVideo.video.logo}
-            className="h-full w-full object-cover object-center"
-            alt="cover"
-          />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <ColoredCircle />
-          </div>
+    <>
+      {isPending ? (
+        <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+          <Spinner size="lg" />
         </div>
-      }
-      width="100%"
-      height="100%"
-      url={currentVideo.video.video_url}
-      volume={volume}
-    />
+      ) : null}
+      <ReactPlayer
+        ref={playerRef}
+        onReady={onReady}
+        onBuffer={() => setIsPending(true)}
+        onBufferEnd={() => setIsPending(false)}
+        onProgress={({ playedSeconds, played }) => {
+          const sec = playedSeconds.toFixed()
+          if (sec == lastQuestion) return
+          const question = questionsMap.get(sec)
+          if (question) setCurrentQuestion(sec)
+        }}
+        playing={playing}
+        light={
+          <div className="h-full w-full">
+            <img
+              src={currentVideo.video.logo}
+              className="h-full w-full object-cover object-center"
+              alt="cover"
+            />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <ColoredCircle />
+            </div>
+          </div>
+        }
+        width="100%"
+        height="100%"
+        url={currentVideo.video.video_url}
+        volume={volume}
+      />
+    </>
   )
 }
 
