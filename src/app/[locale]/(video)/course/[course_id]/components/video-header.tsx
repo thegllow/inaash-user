@@ -40,7 +40,7 @@ const VideoHeader = (props: Props) => {
           <Divider orientation="vertical" />
           <Speed time={timeToSeconds(state.answerRate) + ""} />
         </div>
-        <div className="">
+        <div className="flex items-center justify-center">
           <FullScreenButton />
         </div>
       </div>

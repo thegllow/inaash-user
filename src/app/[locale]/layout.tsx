@@ -7,24 +7,13 @@ import { getMessages, setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
-import { fontSans } from "@/config/fonts"
-import { siteConfig } from "@/config/site"
+import { fontSans, urdu } from "@/config/fonts"
 import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 
 import { Providers } from "./providers"
 import ScreenIndicator from "@/components/common/screen-indecator"
-
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
-}
+import ReactQueryProvider from "@/lib/react-query/react-query-provider"
 
 export const viewport: Viewport = {
   themeColor: [
@@ -34,7 +23,6 @@ export const viewport: Viewport = {
 }
 
 export const revalidate = 86400 // 1 day in seconds (24 hours)
-
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -67,11 +55,16 @@ export default async function RootLayout({
       <NextIntlClientProvider messages={messages}>
         <NuqsAdapter>
           <NySessionProvider>
-            <body
-              className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
-              <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
-              <ScreenIndicator />
-            </body>
+            <ReactQueryProvider>
+              <body
+                className={clsx(
+                  "min-h-screen bg-background font-sans antialiased dark",
+                  locale === "ur" ? urdu.variable : fontSans.variable,
+                )}>
+                <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
+                <ScreenIndicator />
+              </body>
+            </ReactQueryProvider>
           </NySessionProvider>
         </NuqsAdapter>
       </NextIntlClientProvider>

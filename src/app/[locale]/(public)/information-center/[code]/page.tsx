@@ -1,12 +1,11 @@
 import Button from "@/components/ui/button"
-import { Card, CardBody, CardHeader } from "@nextui-org/card"
-import { CircleArrowLeft, CircleArrowRight, PlayCircle, Timer } from "lucide-react"
-import { getTranslations } from "next-intl/server"
 import { DummyCoursesData } from "@/data/dummy-courses"
-import { Image } from "@nextui-org/image"
+import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Chip } from "@nextui-org/chip"
 import { Divider } from "@nextui-org/divider"
-import Footer from "@/components/common/footer"
+import { Image } from "@nextui-org/image"
+import { CircleArrowLeft, CircleArrowRight, PlayCircle, Timer } from "lucide-react"
+import { getTranslations } from "next-intl/server"
 
 export default async function Page({
   params: { code },

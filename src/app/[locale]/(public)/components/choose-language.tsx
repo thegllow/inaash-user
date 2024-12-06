@@ -7,6 +7,8 @@ import { useTranslations } from "next-intl"
 import { parseAsStringLiteral, useQueryState } from "nuqs"
 
 import { LocaleType } from "@/lib/i18n/types"
+import { cn } from "@/lib/cn"
+import { urdu } from "@/config/fonts"
 
 type Props = {}
 
@@ -28,7 +30,10 @@ const ChooseLanguage = (props: Props) => {
             <Tab
               key={element}
               value={element}
-              className="text-sm max-md:px-1.5 max-sm:px-1 md:text-base"
+              className={cn(
+                "text-sm max-md:px-1.5 max-sm:px-1 md:text-base",
+                element === "ur" ? urdu.className : "",
+              )}
               title={t(element)}
             />
           )
