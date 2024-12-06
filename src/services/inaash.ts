@@ -4,7 +4,7 @@ import { type Session } from "next-auth"
 import { getSession } from "next-auth/react"
 import { getLocale } from "next-intl/server"
 
-const baseURL = "https://api-inaash.glow-host.com"
+const baseURL = "https://api.inaash.edu.sa"
 
 // Create an Axios instance
 const InaashApi = axios.create({
