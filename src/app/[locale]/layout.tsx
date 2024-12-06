@@ -7,7 +7,7 @@ import { getMessages, setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
-import { fontSans } from "@/config/fonts"
+import { fontSans, urdu } from "@/config/fonts"
 import { siteConfig } from "@/config/site"
 import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
@@ -34,7 +34,6 @@ export const viewport: Viewport = {
 }
 
 export const revalidate = 86400 // 1 day in seconds (24 hours)
-
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -68,7 +67,10 @@ export default async function RootLayout({
         <NuqsAdapter>
           <NySessionProvider>
             <body
-              className={clsx("min-h-screen bg-background font-sans antialiased dark", fontSans.variable)}>
+              className={clsx(
+                "min-h-screen bg-background font-sans antialiased dark",
+                locale === "ur" ? urdu.variable : fontSans.variable,
+              )}>
               <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
               <ScreenIndicator />
             </body>
