@@ -342,13 +342,23 @@
     }
   },
   "certificate": {
-    "fist": {
-      "title": "",
-      "answers": "الإجابات",
-      "avarage-answer-time": "متوسط ​​سرعة الاجابة"
-    },
-    "second": "",
-    "third": "",
-    "fourth": ""
+    "title": "",
+    "answers": "الإجابات",
+    "avarage-answer-time": "متوسط ​​سرعة الاجابة",
+    "continue": "المتابعة للحصول على الشهادة"
+  },
+  "share-your-success": {
+    "title": "شارك نجاحك!",
+    "share-button": "شارك النتيجة",
+    "share-with-others": "شارك إنعاش مع الآخرين"
+  },
+  "rating": {
+    "title": "ساعدنا على تحسين تجربتك",
+    "description": "رأيك محل اهتمامنا! أجب عن هذه الأسئلة السريعة لمساعدتنا في تحسين تجربة الاختبار والمنصة",
+    "stepper": {
+      "first": "التقييم",
+      "second": "اكمال البيانات",
+      "third": "استلام الشهادة"
+    }
   }
 }

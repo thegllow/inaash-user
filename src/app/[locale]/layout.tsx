@@ -58,7 +58,7 @@ export default async function RootLayout({
             <ReactQueryProvider>
               <body
                 className={clsx(
-                  "min-h-screen bg-background font-sans antialiased dark",
+                  "min-h-screen bg-background font-sans text-white antialiased dark",
                   locale === "ur" ? urdu.variable : fontSans.variable,
                 )}>
                 <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
