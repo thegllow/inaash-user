@@ -93,6 +93,7 @@ const VerifyOTP = (props: Props) => {
             value={otp}
             onChange={setOtp}
             numInputs={4}
+            inputType="number"
             renderSeparator={<span className="block w-3"></span>}
             renderInput={(props) => (
               //   @ts-ignore
