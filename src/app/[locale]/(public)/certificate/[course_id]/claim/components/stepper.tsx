@@ -7,33 +7,25 @@ import { parseAsNumberLiteral, useQueryState } from "nuqs"
 const Stepper = () => {
   const [step] = useQueryState("step", parseAsNumberLiteral([1, 2, 3]).withDefault(1))
 
-  const steps = [
-    { id: 1, title: "Step 1", content: "This is the content of step 1." },
-    { id: 2, title: "Step 2", content: "This is the content of step 2." },
-    { id: 3, title: "Step 3", content: "This is the content of step 3." },
-  ]
-
-  const totalSteps = steps.length
-
   const t = useTranslations("rating.stepper")
   return (
     <Card
       dir="ltr"
       shadow="none"
-      className="mx-auto max-w-md rounded-xl bg-[#0A090959] px-5 py-8 backdrop-blur-xl">
+      className="mx-auto mb-5 max-w-md rounded-xl bg-[#0A090959] px-5 py-8 backdrop-blur-xl">
       <div dir="ltr" className="relative mb-6 px-8">
         <Progress size="sm" value={step === 1 ? 0 : step === 2 ? 50 : 100} color="primary" />
 
         <p
           className={cn(
-            "absolute -top-2 left-6 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black",
-            step >= 2 && "origin-center scale-110",
+            "absolute -top-2 left-6 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black duration-300",
+            step >= 1 && "origin-center scale-125",
           )}>
           {step >= 1 && 1}
         </p>
         <p
           className={cn(
-            "absolute -top-2 left-1/2 flex size-5 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-xs text-black",
+            "absolute -top-2 left-1/2 flex size-5 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-xs text-black duration-300",
             step >= 2 && "origin-center scale-110",
           )}>
           {" "}
@@ -41,7 +33,7 @@ const Stepper = () => {
         </p>
         <p
           className={cn(
-            "absolute -top-2 right-6 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black",
+            "absolute -top-2 right-6 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black duration-300",
             step >= 3 && "origin-center scale-110",
           )}>
           {step >= 3 && 3}

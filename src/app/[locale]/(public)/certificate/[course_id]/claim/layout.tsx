@@ -4,7 +4,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Stepper />
-      {children}
+      <section className="relative flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
+        {children}
+      </section>
     </>
   )
 }

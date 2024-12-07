@@ -1,9 +1,10 @@
 import React from "react"
+import Render from "./components/render"
 
 type Props = {}
 
 const page = (props: Props) => {
-  return <div>page</div>
+  return <Render />
 }
 
 export default page
