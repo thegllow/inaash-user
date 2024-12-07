@@ -6,6 +6,7 @@ import { useCourseStore } from "../store/course-store-provider"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { timeToSeconds } from "../utils/time-to-seconds"
 import { Spinner } from "@nextui-org/spinner"
+import { useRouter } from "@/lib/i18n/navigation"
 const ColoredCircle = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
     <g filter="url(#filter0_b_255_821)">
@@ -58,6 +59,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
       setVideoPlayerRef(null)
     }
   }, [setVideoPlayerRef])
+
+  const Router = useRouter()
+  const handleCourseEnding = () => {
+    Router.push({
+      pathname: `/certificate/${currentVideo.id}`,
+    })
+  }
   return (
     <>
       {isPending ? (
@@ -93,6 +101,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
         height="100%"
         url={currentVideo.video.video_url}
         volume={volume}
+        onEnded={handleCourseEnding}
       />
     </>
   )
