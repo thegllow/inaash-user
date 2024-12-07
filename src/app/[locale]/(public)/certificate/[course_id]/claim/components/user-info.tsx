@@ -1,5 +1,6 @@
 "use client"
 import Button from "@/components/ui/button"
+import { useRouter } from "@/lib/i18n/navigation"
 import InaashApi from "@/services/inaash"
 import { ErrorResponse, SuccessResponse } from "@/types"
 import { User } from "@/types/login"
@@ -11,7 +12,7 @@ import { Input } from "@nextui-org/input"
 import axios from "axios"
 import { useSession } from "next-auth/react"
 import { useTranslations } from "next-intl"
-import { parseAsNumberLiteral, useQueryState } from "nuqs"
+import { useParams } from "next/navigation"
 import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 
@@ -27,12 +28,14 @@ const UserInfo = () => {
       last_name: " ",
     },
   })
-  const [_, setStep] = useQueryState("step", parseAsNumberLiteral([1, 2, 3]).withDefault(1))
+
+  const Router = useRouter()
+  const { course_id } = useParams() as { course_id: string }
 
   const onSubmit = form.handleSubmit(async (data) => {
     try {
       const response = await InaashApi.put<SuccessResponse<User>>(`/user/users/${user!.id}`, data)
-      setStep(3)
+      Router.push(`/certificate/${course_id}/claim/preview`)
     } catch (error) {
       if (axios.isAxiosError(error) && error.response?.status === 422) {
         const responseError = error.response.data as ErrorResponse<z.infer<typeof updateProfileSchema>>

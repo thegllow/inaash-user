@@ -2,16 +2,16 @@
 import { Card } from "@nextui-org/card"
 import { useTranslations } from "next-intl"
 
-import { useState } from "react"
-import RatingHearts from "./rating-hearts"
-import { Textarea } from "@nextui-org/input"
 import Button from "@/components/ui/button"
 import useMutation from "@/hooks/use-mutation"
-import { PostRate } from "../rate"
-import { parseAsNumberLiteral, useQueryState } from "nuqs"
-import { useParams } from "next/navigation"
-import axios from "axios"
+import { useRouter } from "@/lib/i18n/navigation"
 import { ErrorResponse } from "@/types"
+import { Textarea } from "@nextui-org/input"
+import axios from "axios"
+import { useParams } from "next/navigation"
+import { useState } from "react"
+import { PostRate } from "../rate"
+import RatingHearts from "./rating-hearts"
 export default function Rating() {
   // Enable static rendering
   const { course_id } = useParams() as { course_id: string }
@@ -30,11 +30,10 @@ export default function Rating() {
   }
   const [comment, setComment] = useState("")
 
-  const [_, setStep] = useQueryState("step", parseAsNumberLiteral([1, 2, 3]).withDefault(1))
-
+  const Router = useRouter()
   const { mutate, isLoading, isError, error } = useMutation(PostRate, {
     onSuccess(data) {
-      setStep(2)
+      Router.push(`/certificate/${course_id}/claim/profile`)
     },
   })
 
