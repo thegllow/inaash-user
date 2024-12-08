@@ -63,7 +63,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const Router = useRouter()
   const handleCourseEnding = () => {
     Router.push({
-      pathname: `/certificate/${currentVideo.id}`,
+      pathname: `/certificate/${currentVideo.video_id}`,
     })
   }
   return (
