@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useLayoutEffect, useState } from "react"
 
 const useForceLandscape = (): boolean => {
   const [isLandscape, setIsLandscape] = useState<boolean>(true)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleResize = () => {
       setIsLandscape(window.innerWidth > window.innerHeight)
     }

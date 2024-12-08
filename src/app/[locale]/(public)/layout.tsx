@@ -4,6 +4,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <div className="relative flex min-h-screen flex-col">
       <Header />
+
       {children}
     </div>
   )

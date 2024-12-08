@@ -206,6 +206,7 @@
       }
     }
   },
+
   "about-us": {
     "hero": {
       "title": "عن إنعاش",
@@ -342,6 +343,9 @@
       "reason": "توضيح السبب",
       "continue-button": "متابعة"
     }
+  },
+  "landscape": {
+    "description": "الرجاء استخدام الهاتف في الوضع الافقي لافضل تجربة عرض فديو"
   },
   "certificate": {
     "answers": "الإجابات",
