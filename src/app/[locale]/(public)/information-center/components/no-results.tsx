@@ -1,12 +1,12 @@
+"use client"
 import { noResults } from "@/assets"
 import { Image } from "@nextui-org/image"
-import { getTranslations } from "next-intl/server"
-import React from "react"
+import { useTranslations } from "next-intl"
 
 type Props = {}
 
-const NoResults = async (props: Props) => {
-  const t = await getTranslations("information-center.search")
+const NoResults = (props: Props) => {
+  const t = useTranslations("information-center.search")
   return (
     <div className="flex flex-col items-center justify-center gap-4 p-4 ~py-20/32">
       <Image src={noResults.src} alt="no results" className="shrink-0" />

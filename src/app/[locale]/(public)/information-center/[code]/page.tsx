@@ -1,5 +1,7 @@
+import Certificate from "@/components/common/certificate"
 import Button from "@/components/ui/button"
 import { DummyCoursesData } from "@/data/dummy-courses"
+import { Link } from "@/lib/i18n/navigation"
 import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Chip } from "@nextui-org/chip"
 import { Divider } from "@nextui-org/divider"
@@ -28,9 +30,11 @@ export default async function Page({
               <CircleArrowRight strokeWidth={1.2} className="ltr:hidden" />
               {code}
             </h1>
-            <Button fullWidth={false} startContent={<PlayCircle />}>
-              {t("start-course-button")}
-            </Button>
+            <Link href={`/course/2`}>
+              <Button fullWidth={false} startContent={<PlayCircle />}>
+                {t("start-course-button")}
+              </Button>
+            </Link>
           </div>
         </Card>
         <Card
@@ -57,6 +61,11 @@ export default async function Page({
               </div>
             </div>
           </div>
+        </Card>
+        <Card
+          shadow={"none"}
+          className="w-full shrink-0 rounded-xl bg-[#0A090959] ~sm/lg:~px-4/24 ~md/lg:~py-6/10">
+          <Certificate />
         </Card>
         <Card
           shadow={"none"}

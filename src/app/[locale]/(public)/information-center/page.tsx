@@ -3,9 +3,8 @@ import { Divider } from "@nextui-org/divider"
 import { getTranslations } from "next-intl/server"
 import Search from "./components/search"
 import SearchResults from "./components/search-results"
-import Footer from "@/components/common/footer"
 
-export default async function Page() {
+export default async function Page({ searchParams }: { searchParams: { [key: string]: string } }) {
   const t = await getTranslations("information-center")
   return (
     <>
@@ -18,7 +17,7 @@ export default async function Page() {
           <div className="~space-y-4/8 ~px-6/16 ~py-5/7">
             <Search />
             <Divider />
-            <SearchResults />
+            <SearchResults searchParams={searchParams} />
           </div>
         </Card>
       </section>

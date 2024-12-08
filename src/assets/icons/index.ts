@@ -8,5 +8,6 @@ import gmail from "./gmail.svg"
 import whatsapp from "./whatsapp.svg"
 import linkedin from "./linkedin.svg"
 import send from "./send.svg"
+import download from "./download.svg"
 import twitter from "./x.svg"
-export { fifth, second, first, fourth, sixth, third, linkedin, send, whatsapp, gmail, twitter }
+export { fifth, second, first, fourth, sixth, third, linkedin, send, whatsapp, gmail, twitter, download }

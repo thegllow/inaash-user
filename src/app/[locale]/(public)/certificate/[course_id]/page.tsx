@@ -1,4 +1,4 @@
-import ShareSuccess from "@/components/common/certificate-card"
+import ShareSuccess from "@/components/common/share-your-success"
 import Button from "@/components/ui/button"
 import { Link } from "@/lib/i18n/navigation"
 import { Card, CardBody, CardHeader } from "@nextui-org/card"

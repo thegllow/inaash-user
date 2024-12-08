@@ -95,7 +95,9 @@
     "search": {
       "input-placeholder": "البحث بالاسم أو رقم الشهادة",
       "search-button": "بحث",
-      "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى."
+      "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى.",
+      "clear-history": "حذف السجلات",
+      "old-search": "السجلات"
     },
     "result": {
       "start-course-button": "ابدأ البرنامج",
@@ -342,10 +344,15 @@
     }
   },
   "certificate": {
-    "title": "",
     "answers": "الإجابات",
     "avarage-answer-time": "متوسط ​​سرعة الاجابة",
-    "continue": "المتابعة للحصول على الشهادة"
+    "continue": "المتابعة للحصول على الشهادة",
+    "certificate-card": {
+      "title": "شهادة الإنجاز!",
+      "share-button": "مشاركة النتيجة الخاصة بك",
+      "download-button": "تحميل بصيغة PDF",
+      "share-with-others": "شارك إنعاش مع الآخرين"
+    }
   },
   "share-your-success": {
     "title": "شارك نجاحك!",

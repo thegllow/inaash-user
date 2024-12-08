@@ -29,8 +29,9 @@ const ShareSuccess = () => {
             <Button
               as="a"
               href="#"
+              size="md"
               variant="light"
-              startContent={<img className="size-6" src={send.src} alt="share to share" />}>
+              startContent={<img className="size-8" src={send.src} alt="share to share" />}>
               {t("share-button")}
             </Button>
 

@@ -15,9 +15,9 @@ const Search = (props: Props) => {
   const t = useTranslations("information-center.search")
   const ref = useRef<ElementRef<"input">>(null)
   const [query, setQuery] = useQueryState("q", parseAsString.withDefault(""))
-  const [_, setValue] = useLocalStorage({
+  const [_, setValue] = useLocalStorage<string[]>({
     key: "information-center-previous-search",
-    defaultValue: [""],
+    defaultValue: [],
   })
 
   const handleSearch: React.MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -25,7 +25,7 @@ const Search = (props: Props) => {
     if (!value) return
     setQuery(value)
     setValue((pre) => {
-      return [...pre.slice(-5), value]
+      return [...pre.filter((e) => e !== value).slice(-5), value]
     })
   }
 
