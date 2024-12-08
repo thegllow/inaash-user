@@ -41,7 +41,7 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
         <section className="flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
           <Card shadow={"none"} className="w-full max-w-sm border-none bg-[#0A090959] backdrop-blur-md">
             <CardBody className="p-8 rtl:text-right">
-              <Success course_id={course_id} />
+              <Success course_id={course_id} locale={locale} />
             </CardBody>
           </Card>
         </section>
