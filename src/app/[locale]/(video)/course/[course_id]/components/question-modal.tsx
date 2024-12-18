@@ -22,7 +22,7 @@ const QuestionModal = () => {
   const session = useSession()
   const { course_id } = useParams() as { course_id: string }
   const { currentVideo } = useVideos()
-  const hasPassedCourse = currentVideo.certificate_number ? true : false
+  const hasPassedCourse = Number(currentVideo.view_complete_counter) ? true : false
   const {
     currentQuestion: current,
     questionsMap: questions,
@@ -168,13 +168,12 @@ const QuestionModal = () => {
                       result={
                         <div>
                           <p>00:00</p>
-
                           <audio
                             onEnded={(e) => {
                               setIsTimeOut(false)
                               next()
                             }}
-                            src={"https://utfs.io/f/ONrXr93hqgM5tZmUFaNsyPorWSMUIZz6uBeGd0w8CsglTp9E"}
+                            src={session.data?.user.timeout_audio}
                             autoPlay
                           />
                         </div>

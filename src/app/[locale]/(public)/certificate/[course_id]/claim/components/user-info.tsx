@@ -35,7 +35,7 @@ const UserInfo = () => {
   const onSubmit = form.handleSubmit(async (data) => {
     try {
       const response = await InaashApi.put<SuccessResponse<User>>(`/user/users/${user!.id}`, data)
-      Router.push(`/certificate/${course_id}/claim/preview`)
+      Router.push(`/certificate/${course_id}/view`)
     } catch (error) {
       if (axios.isAxiosError(error) && error.response?.status === 422) {
         const responseError = error.response.data as ErrorResponse<z.infer<typeof updateProfileSchema>>

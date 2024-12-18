@@ -38,6 +38,11 @@ const VideoWrapper = ({ children, params }: Props) => {
     queryKey: ["courses", params.locale],
     queryFn: async () => await getVideos(),
   })
+  const Router = useRouter()
+  if (video && Number(video.view_complete_counter) && (!video.is_rated || !video.certificate_number)) {
+    Router.push(`/certificate/${video.video_id}`)
+    return null
+  }
 
   if (isLoadingUserVideo || isLoadingVideos)
     return (

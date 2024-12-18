@@ -1,9 +1,9 @@
-import Rating from "./components/rating"
+import Render from "./components/render"
 
 type Props = {}
 
 const page = (props: Props) => {
-  return <Rating />
+  return <Render />
 }
 
 export default page

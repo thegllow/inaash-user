@@ -12,6 +12,7 @@ import { useParams } from "next/navigation"
 import { useState } from "react"
 import { PostRate } from "../rate"
 import RatingHearts from "./rating-hearts"
+import { parseAsNumberLiteral, useQueryState } from "nuqs"
 export default function Rating() {
   // Enable static rendering
   const { course_id } = useParams() as { course_id: string }
@@ -30,10 +31,10 @@ export default function Rating() {
   }
   const [comment, setComment] = useState("")
 
-  const Router = useRouter()
+  const [step, setStep] = useQueryState("step", parseAsNumberLiteral([1, 2, 3]).withDefault(1))
   const { mutate, isLoading, isError, error } = useMutation(PostRate, {
     onSuccess(data) {
-      Router.push(`/certificate/${course_id}/claim/profile`)
+      setStep(2)
     },
   })
 
