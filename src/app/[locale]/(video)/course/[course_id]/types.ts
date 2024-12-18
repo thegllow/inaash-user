@@ -37,9 +37,32 @@ export interface UserVideo {
   lang: string
   current_time: string
   last_question_id: null
+  view_counter: string
+  view_complete_counter: string
+  is_rated: string
+  price: string
+  coupon_id: string
+  coupon_code: string
+  discount_value: string
+  final_price: string
+  paid: string
+  outstanding_payment: string
+  status: string
   certificate_url: null
   certificate_qr_code: null
   certificate_number: null
   deleted_at: null
   video: Video
+  user: User
+}
+
+export interface User {
+  id: string
+  mobile: string
+  first_name: null
+  last_name: null
+  full_name: null
+  lang: string
+  email: null
+  deleted_at: null
 }
