@@ -18,7 +18,7 @@ export default async function Home() {
     <>
       <BackgroundImage />
       <section className="flex items-center justify-center gap-4 ~/md:~py-8/10">
-        <div className="flex w-full max-w-lg shrink-0 flex-col items-center gap-10 md:w-full lg:w-1/2">
+        <div className="flex w-full max-w-xl flex-col items-center gap-10 max-md:shrink-0 md:w-full lg:w-[59%]">
           <div className="flex justify-center">
             <Logo className="w-36 shrink-0" />
           </div>

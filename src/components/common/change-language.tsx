@@ -7,7 +7,6 @@ import { Divider } from "@nextui-org/divider"
 import { Modal, ModalBody, ModalContent, ModalFooter } from "@nextui-org/modal"
 import { Tab, Tabs } from "@nextui-org/tabs"
 import axios from "axios"
-import { useSession } from "next-auth/react"
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 import { parseAsBoolean, useQueryState } from "nuqs"
@@ -25,9 +24,6 @@ const ChangeLanguage = (props: Props) => {
 
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
-
-  const session = useSession()
-  const { user } = session.data!
 
   const Router = useRouter()
   const pathname = usePathname()

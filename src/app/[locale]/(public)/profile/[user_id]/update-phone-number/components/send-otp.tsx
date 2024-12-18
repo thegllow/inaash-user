@@ -5,13 +5,18 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Input } from "@nextui-org/input"
 import { useTranslations } from "next-intl"
 import { parseAsInteger, parseAsString, useQueryStates } from "nuqs"
-import { Controller, useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
+import ar from "react-phone-number-input/locale/ar.json"
+import en from "react-phone-number-input/locale/en.json"
+import PhoneInput from "react-phone-number-input/react-hook-form"
+import "react-phone-number-input/style.css"
 import { z } from "zod"
 
 import Button from "@/components/ui/button"
 import PostSendOTP from "@/services/utils/post-send-opt"
-import axios from "axios"
 import { ErrorResponse } from "@/types"
+import axios from "axios"
+import { useParams } from "next/navigation"
 
 type Props = {}
 
@@ -44,6 +49,7 @@ const SendOTP = (props: Props) => {
       form.setError("root", { message: "serverError" })
     }
   })
+  const { locale } = useParams() as { locale: string }
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-20">
@@ -51,29 +57,28 @@ const SendOTP = (props: Props) => {
         <h2 className="text-xl font-semibold">{t("title")}</h2>
         <p className="text-sm text-default-500">{t("description")}</p>
       </div>
-      <Controller
-        control={form.control}
-        name="mobile"
-        render={({ field }) => {
-          return (
-            <Input
-              radius="md"
-              size="lg"
-              type="text"
-              label={t("input-label")}
-              labelPlacement={"outside"}
-              placeholder={t("input-placeholder")}
-              {...field}
-              isInvalid={!!form.formState.errors.mobile?.message}
-              errorMessage={
-                form.formState.errors.mobile?.message
-                  ? t(`errors.${form.formState.errors.mobile?.message as "required"}`)
-                  : null
-              }
-            />
-          )
-        }}
-      />
+      <div dir="ltr">
+        <p className="mb-2 text-white">{t("input-label")}</p>
+        <PhoneInput
+          control={form.control}
+          name="mobile"
+          labels={locale === "ar" ? ar : en}
+          international
+          countryCallingCodeEditable={false}
+          defaultCountry="SA"
+          inputComponent={Input}
+          placeholder="+966"
+          radius="md"
+          size="lg"
+          labelPlacement={"outside"}
+          isInvalid={!!form.formState.errors.mobile?.message}
+          errorMessage={
+            form.formState.errors.mobile?.message
+              ? t(`errors.${form.formState.errors.mobile?.message as "required"}`)
+              : null
+          }
+        />
+      </div>
 
       <div>
         <Button isLoading={form.formState.isSubmitting} type="submit">
