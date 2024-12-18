@@ -1,5 +1,11 @@
+import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user-video"
 import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query"
+import { VideoProvider } from "./context/video-context"
+import axios from "axios"
+import { notFound } from "next/navigation"
+import { isRedirectError } from "next/dist/client/components/redirect"
 
 export default async function Layout({
   children,
@@ -10,7 +16,7 @@ export default async function Layout({
 }) {
   const session = await auth()
   if (!session)
-    return redirect({
+    redirect({
       href: {
         pathname: "/login",
         query: {
@@ -19,9 +25,42 @@ export default async function Layout({
       },
       locale: params.locale,
     })
-  return (
-    <>
-      <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">{children}</main>
-    </>
-  )
+
+  try {
+    const video = await getUserVideo(params.course_id)
+    console.log("🚀 ~ video:", video)
+
+    // if (Number(video.view_complete_counter) === 0)
+    //   redirect({
+    //     href: {
+    //       pathname: `/course/${params.course_id}`,
+    //     },
+    //     locale: params.locale,
+    //   })
+    return (
+      <>
+        <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">
+          <VideoProvider video={video}>{children}</VideoProvider>
+        </main>
+      </>
+    )
+  } catch (error) {
+    console.log("🚀 ~ error:", error)
+    if (axios.isAxiosError(error)) {
+      if (error.response?.status === 403) {
+        redirect({
+          href: {
+            pathname: `/payment/${params.course_id}`,
+          },
+          locale: params.locale,
+        })
+      }
+
+      notFound()
+    }
+
+    if (isRedirectError(error)) throw error
+
+    return <p>Server Error</p>
+  }
 }

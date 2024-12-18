@@ -362,8 +362,10 @@
   },
   "certificate": {
     "answers": "الإجابات",
-    "avarage-answer-time": "متوسط ​​سرعة الاجابة",
+    "average-answer-time": "متوسط ​​سرعة الاجابة",
     "continue": "المتابعة للحصول على الشهادة",
+    "sec": "ثانية",
+    "grade": "ممتاز!",
     "certificate-card": {
       "title": "شهادة الإنجاز!",
       "share-button": "مشاركة النتيجة الخاصة بك",

@@ -1,3 +1,4 @@
+"use client"
 /* eslint-disable @next/next/no-img-element */
 import { horizontalLogo, logo } from "@/assets"
 import { gmail, linkedin, send, twitter, whatsapp } from "@/assets/icons"
@@ -5,9 +6,12 @@ import { Button } from "@nextui-org/button"
 import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
 import { useTranslations } from "next-intl"
+import { useVideo } from "../context/video-context"
 
 const ShareSuccess = () => {
   const t = useTranslations("share-your-success")
+  const video = useVideo()
+
   return (
     <div className="flex w-full flex-col items-center justify-center space-y-6 text-foreground lg:max-w-[390px]">
       <h1 className="font-semibold ~text-lg/2xl">{t("title")}</h1>
@@ -19,10 +23,13 @@ const ShareSuccess = () => {
           <div className="relative overflow-hidden">
             <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
               <div className="flex w-full items-center justify-between gap-4">
-                <h2 className="font-bold text-primary ~text-xl/2xl">حصلت على %100</h2>
+                <h2 className="font-bold text-primary ~text-xl/2xl">
+                  حصلت على{" "}
+                  {((Number(video.correct_answers) / Number(video.total_questions)) * 100).toFixed(0) + "%"}
+                </h2>
                 <img src={horizontalLogo.src} alt="Inaash Logo" className="w-20" />
               </div>
-              <p className="mb-4 text-default-500">برنامج التوعية التفاعلية للطوارئ الصحية</p>
+              <p className="mb-4 text-default-500">{video.video.title}</p>
             </CardHeader>
           </div>
           <div className="flex w-full items-center justify-between px-3 py-2">
