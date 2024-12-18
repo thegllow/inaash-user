@@ -4,7 +4,7 @@ import useMutation from "@/hooks/use-mutation"
 import { Modal, ModalBody, ModalContent } from "@nextui-org/modal"
 import { AnimatePresence, motion } from "framer-motion"
 import { useParams } from "next/navigation"
-import { useEffect, useMemo, useRef } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import type ReactCountdown from "react-countdown"
 import { useCourseStore } from "../store/course-store-provider"
 import { AnswerQuestion, TVariables } from "../types/answer-question"
@@ -15,9 +15,11 @@ import { timeToSeconds } from "../utils/time-to-seconds"
 import Answer from "./answer"
 import WrongAnswerExplanation from "./wrong-answer-explanation"
 import { useVideos } from "../context/courses-context"
+import { useSession } from "next-auth/react"
 
 const QuestionModal = () => {
   // state
+  const session = useSession()
   const { course_id } = useParams() as { course_id: string }
   const { currentVideo } = useVideos()
   const hasPassedCourse = currentVideo.certificate_number ? true : false
@@ -38,6 +40,7 @@ const QuestionModal = () => {
 
   // counter
   const countDownRef = useRef<ReactCountdown | null>(null)
+  const [isTimeOut, setIsTimeOut] = useState(false)
   const date = useMemo(() => Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000, [question?.id])
 
   // answering question
@@ -141,8 +144,9 @@ const QuestionModal = () => {
                         <Answer
                           status={`answer_${key}` === selectedAnswer ? answerStatus : "notAnswered"}
                           isLoading={isLoading}
+                          isDisabled={isTimeOut}
                           onClick={() => {
-                            if (isLoading || answerStatus !== "notAnswered") return
+                            if (isLoading || answerStatus !== "notAnswered" || isTimeOut) return
                             handleAnswering(`answer_${key}`)
                           }}
                           key={key}
@@ -155,11 +159,26 @@ const QuestionModal = () => {
                     <CountDown
                       ref={countDownRef}
                       key={question?.appears_at}
-                      onComplete={next}
                       alert
+                      onComplete={() => {
+                        setIsTimeOut(true)
+                      }}
                       className="rounded-full"
                       date={date}
-                      result={<div></div>}
+                      result={
+                        <div>
+                          <p>00:00</p>
+
+                          <audio
+                            onEnded={(e) => {
+                              setIsTimeOut(false)
+                              next()
+                            }}
+                            src={"https://utfs.io/f/ONrXr93hqgM5tZmUFaNsyPorWSMUIZz6uBeGd0w8CsglTp9E"}
+                            autoPlay
+                          />
+                        </div>
+                      }
                     />
                   </div>
                 </ModalBody>

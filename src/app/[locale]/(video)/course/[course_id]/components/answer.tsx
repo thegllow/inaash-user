@@ -8,15 +8,17 @@ const Answer: React.FC<
   HTMLAttributes<HTMLDivElement> & {
     answer: string
     isLoading: boolean
+    isDisabled: boolean
     status: AnswerStatus
   }
-> = ({ answer, className, children, isLoading, status, ...props }) => {
+> = ({ answer, className, children, isLoading, isDisabled, status, ...props }) => {
+  const disabled = isLoading || isDisabled
   return (
     answer && (
       <div
         className={cn(
           "text-light relative w-full cursor-pointer rounded-md bg-[#292929] p-5 text-center text-xs/relaxed font-normal text-white hover:bg-[#363636e8]",
-          isLoading ? "pointer-events-none opacity-60" : "",
+          disabled ? "pointer-events-none opacity-60" : "",
           status === "correct" ? "!bg-[#1AD14545]" : "",
           status === "wrong" ? "!bg-[#F322613B]" : "",
         )}

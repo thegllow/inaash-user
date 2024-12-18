@@ -20,7 +20,7 @@ const ForceLandscape = (props: Props) => {
     <>
       <div
         className={cn(
-          "fixed inset-0 z-50 flex h-full flex-col items-center justify-between gap-10 bg-[#211E24] p-8 md:hidden",
+          "fixed inset-0 z-[100] flex h-full flex-col items-center justify-between gap-10 bg-[#211E24] p-8 md:hidden",
           isLandscape ? "!hidden" : "",
         )}>
         <div>
