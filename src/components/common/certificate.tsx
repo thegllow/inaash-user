@@ -4,10 +4,10 @@ import { download, gmail, linkedin, send, twitter, whatsapp } from "@/assets/ico
 import { Button } from "@nextui-org/button"
 import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 
-const Certificate = () => {
-  const t = useTranslations("certificate.certificate-card")
+const Certificate = async () => {
+  const t = await getTranslations("certificate.certificate-card")
   return (
     <div className="flex w-full flex-col items-center justify-center space-y-6 text-foreground">
       <h1 className="font-semibold ~text-lg/2xl">{t("title")}</h1>
