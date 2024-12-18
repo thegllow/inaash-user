@@ -32,6 +32,8 @@ export interface Video {
   video_url: string
   logo: string
   title: string
+  price: string
+  newPrice: null | string
   description: string
   length: string
   deleted_at: null

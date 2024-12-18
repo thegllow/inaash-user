@@ -44,12 +44,12 @@ const CourseDetails = async ({ course }: Props) => {
           </div>
           <div className="flex items-center justify-between px-3 py-4">
             <span className="text-sm">{t("price.original")}</span>
-            <span className="text-xl">100 RSA</span>
+            <span className="text-xl">{course.price} RSA</span>
           </div>
         </CardBody>
       </Card>
       <Coupon />
-      <Price />
+      <Price {...course} />
     </div>
   )
 }

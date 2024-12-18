@@ -6,7 +6,7 @@ import { redirect } from "@/lib/i18n/navigation"
 import { loginBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
 import { auth } from "@/lib/auth/auth"
-import { InaashApiGuest } from "@/services/inaash"
+import InaashApi, { InaashApiGuest } from "@/services/inaash"
 import { SuccessResponse } from "@/types"
 import { Video } from "@/types/public-videos-response"
 import ChooseMethod from "./components/choose-method"
@@ -31,7 +31,10 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
       locale: locale,
     })
   }
-  const response = await InaashApiGuest.get<SuccessResponse<Video>>(`/videos/${course_id}`)
+  // console.log(searchParams.coupon)
+  const response = await InaashApi.get<SuccessResponse<Video>>(`/user/videos/${course_id}`, {
+    params: { coupon: searchParams.coupon || "" },
+  })
   const course = response.data.data.item
 
   if (searchParams.success)
