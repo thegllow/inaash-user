@@ -27,8 +27,7 @@ export default async function Layout({
     })
 
   try {
-    const video = await getUserVideo(params.course_id)
-    console.log("🚀 ~ video:", video)
+    // const video = await getUserVideo(params.course_id)
 
     // if (Number(video.view_complete_counter) === 0)
     //   redirect({
@@ -40,7 +39,9 @@ export default async function Layout({
     return (
       <>
         <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">
-          <VideoProvider video={video}>{children}</VideoProvider>
+          {/* <VideoProvider video={video}> */}
+          {children}
+          {/* </VideoProvider> */}
         </main>
       </>
     )

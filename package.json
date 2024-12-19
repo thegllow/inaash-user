@@ -58,6 +58,7 @@
 		"react-joyride": "^2.9.3",
 		"react-phone-number-input": "^3.4.10",
 		"react-player": "^2.16.0",
+		"react-share": "^5.1.1",
 		"sharp": "^0.33.5",
 		"tailwind-merge": "^2.5.4",
 		"zod": "^3.23.8",

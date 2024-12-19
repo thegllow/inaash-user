@@ -48,9 +48,9 @@ export interface UserVideo {
   paid: string
   outstanding_payment: string
   status: string
-  certificate_url: null
-  certificate_qr_code: null
-  certificate_number: null
+  certificate_url: null | string
+  certificate_qr_code: null | string
+  certificate_number: null | string
   deleted_at: null
   video: Video
   user: User

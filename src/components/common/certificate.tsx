@@ -1,13 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
+
+import { useVideo } from "@/app/[locale]/(public)/certificate/[course_id]/context/video-context"
+import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user-video"
 import { horizontalLogo } from "@/assets"
 import { download, gmail, linkedin, send, twitter, whatsapp } from "@/assets/icons"
 import { Button } from "@nextui-org/button"
 import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
 import { getTranslations } from "next-intl/server"
+import {
+  EmailShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "./share-buttons"
 
-const Certificate = async () => {
+const Certificate = async ({ course_id }: { course_id: string }) => {
   const t = await getTranslations("certificate.certificate-card")
+  const video = await getUserVideo(course_id)
   return (
     <div className="flex w-full flex-col items-center justify-center space-y-6 text-foreground">
       <h1 className="font-semibold ~text-lg/2xl">{t("title")}</h1>
@@ -19,18 +29,18 @@ const Certificate = async () => {
           <div className="relative overflow-hidden">
             <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
               <div className="flex w-full items-center justify-between gap-4">
-                {/* <h2 className="font-bold text-primary ~text-xl/2xl">حصلت على %100</h2> */}
-                <h2 className="text-foreground"> ممتاز</h2>
+                <h2 className="text-foreground">{t("grade")}</h2>
                 <img src={horizontalLogo.src} alt="Inaash Logo" className="w-20" />
               </div>
               <div className="flex w-full items-center justify-between gap-8">
                 <div className="w-full">
-                  <h2 className="font-bold text-primary ~text-xl/2xl">احمد اليونس</h2>
+                  <h2 className="font-bold text-primary ~text-xl/2xl">{video.user.full_name}</h2>
                   <p className="mb-4 text-default-500">
-                    مجتاز التدريب على الاستجابة للحالات الرياضية الطارئة
+                    {" "}
+                    {t("pass")} {video.video.title}{" "}
                   </p>
                 </div>
-                <img src={horizontalLogo.src} alt="Inaash Logo" className="w-20" />
+                <img src={video.certificate_qr_code || undefined} alt="Inaash Logo" className="w-20" />
               </div>
             </CardHeader>
           </div>
@@ -46,12 +56,14 @@ const Certificate = async () => {
               </Button>
 
               <div className="flex items-center gap-2">
-                <Button size="sm" isIconOnly variant="light">
+                <TwitterShareButton url="link" title={t("share-title", { value: "video.video.title" })}>
                   <img className="size-5" src={twitter.src} alt="share to x" />
-                </Button>
-                <Button size="sm" isIconOnly variant="light">
+                </TwitterShareButton>
+                {/* <Button size="sm" isIconOnly variant="light"> */}
+                <LinkedinShareButton url="link" title={t("share-title", { value: "video.video.title" })}>
                   <img className="size-5" src={linkedin.src} alt="share to linkedin" />
-                </Button>
+                </LinkedinShareButton>
+                {/* </Button> */}
               </div>
             </div>
             <div>
@@ -68,24 +80,19 @@ const Certificate = async () => {
                 endContent={<img className="size-10 shrink-0" src={download.src} alt="share to linkedin" />}>
                 {t("download-button")}
               </Button>
-
-              {/* <div className="flex items-center gap-2">
-                <Button size="md" isIconOnly variant="light">
-                </Button>
-              </div> */}
             </div>
           </div>
         </CardBody>
       </Card>
       <div className="flex flex-col items-center text-sm">
         <p>{t("share-with-others")}</p>
-        <div className="mt-2 flex gap-2">
-          <Button size="sm" isIconOnly variant="light">
+        <div className="mt-2 flex gap-3">
+          <WhatsappShareButton url="pathname" title={t("share-title", { value: "video.video.title" })}>
             <img className="size-6" src={whatsapp.src} alt="share to whatsapp" />
-          </Button>
-          <Button size="sm" isIconOnly variant="light">
+          </WhatsappShareButton>
+          <EmailShareButton url={"pathname"} subject={t("share-title", { value: "video.video.title" })}>
             <img className="size-6" src={gmail.src} alt="share to gmail" />
-          </Button>
+          </EmailShareButton>
         </div>
       </div>
     </div>

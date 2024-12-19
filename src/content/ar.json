@@ -368,9 +368,13 @@
     "grade": "ممتاز!",
     "certificate-card": {
       "title": "شهادة الإنجاز!",
+      "pass": "مجتاز",
       "share-button": "مشاركة النتيجة الخاصة بك",
       "download-button": "تحميل بصيغة PDF",
-      "share-with-others": "شارك إنعاش مع الآخرين"
+      "share-with-others": "شارك إنعاش مع الآخرين",
+      "sec": "ثانية",
+      "grade": "ممتاز!",
+      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
     }
   },
   "share-your-success": {
