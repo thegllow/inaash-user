@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { useVideo } from "@/app/[locale]/(public)/certificate/[course_id]/context/video-context"
-import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user-video"
+import { getCertificate } from "@/app/[locale]/(public)/information-center/[code]/get-certificate"
 import { horizontalLogo } from "@/assets"
 import { download, gmail, linkedin, send, twitter, whatsapp } from "@/assets/icons"
 import { Button } from "@nextui-org/button"
@@ -15,9 +14,9 @@ import {
   WhatsappShareButton,
 } from "./share-buttons"
 
-const Certificate = async ({ course_id }: { course_id: string }) => {
+const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: string }) => {
   const t = await getTranslations("certificate.certificate-card")
-  const video = await getUserVideo(course_id)
+  const video = await getCertificate(certificate_qr_code)
   return (
     <div className="flex w-full flex-col items-center justify-center space-y-6 text-foreground">
       <h1 className="font-semibold ~text-lg/2xl">{t("title")}</h1>

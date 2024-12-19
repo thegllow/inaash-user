@@ -103,7 +103,14 @@
     "result": {
       "start-course-button": "ابدأ البرنامج",
       "answers": "الإجابات",
-      "avarage-answer-time": "متوسط ​​سرعة الاجابة"
+      "average-answer-time": "متوسط ​​سرعة الاجابة",
+      "pass": "مجتاز",
+      "share-button": "مشاركة النتيجة الخاصة بك",
+      "download-button": "تحميل بصيغة PDF",
+      "share-with-others": "شارك إنعاش مع الآخرين",
+      "sec": "ثانية",
+      "grade": "ممتاز!",
+      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
     }
   },
   "profile": {

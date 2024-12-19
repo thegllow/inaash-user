@@ -1,11 +1,9 @@
 import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user-video"
 import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
-import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query"
-import { VideoProvider } from "./context/video-context"
 import axios from "axios"
-import { notFound } from "next/navigation"
 import { isRedirectError } from "next/dist/client/components/redirect"
+import { notFound } from "next/navigation"
 
 export default async function Layout({
   children,

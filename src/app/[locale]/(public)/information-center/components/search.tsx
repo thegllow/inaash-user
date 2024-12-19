@@ -25,7 +25,7 @@ const Search = (props: Props) => {
     if (!value) return
     setQuery(value)
     setValue((pre) => {
-      return [...pre.filter((e) => e !== value).slice(-5), value]
+      return [value, ...pre.filter((e) => e !== value).slice(-5)]
     })
   }
 

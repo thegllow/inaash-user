@@ -18,8 +18,8 @@ const OldSearch = (props: Props) => {
   const handleClearHistory = () => {
     setValues([])
   }
+
   const [query, setQuery] = useQueryState("q", parseAsString.withDefault(""))
-  console.log("🚀 ~ OldSearch ~ query:", query)
   return (
     <>
       {query ? null : (
@@ -30,7 +30,7 @@ const OldSearch = (props: Props) => {
               {t("clear-history")}
             </Button>
           </div>
-          {values.toReversed().map((result, i) => (
+          {values.map((result, i) => (
             <div
               onClick={() => {
                 setQuery(result)
