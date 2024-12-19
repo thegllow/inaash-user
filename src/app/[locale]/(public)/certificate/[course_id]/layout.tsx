@@ -27,15 +27,15 @@ export default async function Layout({
     })
 
   try {
-    // const video = await getUserVideo(params.course_id)
+    const video = await getUserVideo(params.course_id)
 
-    // if (Number(video.view_complete_counter) === 0)
-    //   redirect({
-    //     href: {
-    //       pathname: `/course/${params.course_id}`,
-    //     },
-    //     locale: params.locale,
-    //   })
+    if (!video.certificate_qr_code)
+      redirect({
+        href: {
+          pathname: `/course/${params.course_id}`,
+        },
+        locale: params.locale,
+      })
     return (
       <>
         <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">

@@ -39,7 +39,7 @@ const VideoWrapper = ({ children, params }: Props) => {
     queryFn: async () => await getVideos(),
   })
   const Router = useRouter()
-  if (video && Number(video.view_complete_counter) && (!video.is_rated || !video.certificate_number)) {
+  if (video && video.certificate_qr_code && (!video.is_rated || !video.certificate_number)) {
     Router.push(`/certificate/${video.video_id}`)
     return null
   }

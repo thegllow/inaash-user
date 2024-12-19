@@ -22,7 +22,7 @@ const QuestionModal = () => {
   const session = useSession()
   const { course_id } = useParams() as { course_id: string }
   const { currentVideo } = useVideos()
-  const hasPassedCourse = Number(currentVideo.view_complete_counter) ? true : false
+  const hasPassedCourse = currentVideo.certificate_qr_code ? true : false
   const {
     currentQuestion: current,
     questionsMap: questions,
