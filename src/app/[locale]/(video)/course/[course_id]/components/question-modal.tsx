@@ -110,6 +110,10 @@ const QuestionModal = () => {
     })
   }
 
+  useEffect(() => {
+    setIsTimeOut(false)
+  }, [question?.id])
+
   return (
     <Modal
       isDismissable={false}
@@ -170,6 +174,10 @@ const QuestionModal = () => {
                           <p>00:00</p>
                           <audio
                             onEnded={(e) => {
+                              setIsTimeOut(false)
+                              next()
+                            }}
+                            onError={(e) => {
                               setIsTimeOut(false)
                               next()
                             }}
