@@ -22,6 +22,7 @@ export default async function Page({
 
   const certificate = await getCertificate(code)
   const { video } = certificate
+  console.log("🚀 ~ video:", video)
 
   return (
     <>
@@ -68,7 +69,7 @@ export default async function Page({
         <Card
           shadow={"none"}
           className="w-full shrink-0 rounded-xl bg-[#0A090959] ~sm/lg:~px-4/24 ~md/lg:~py-6/10">
-          <Certificate certificate_qr_code={certificate.certificate_qr_code!} />
+          <Certificate certificate_qr_code={certificate.certificate_number} />
         </Card>
         <Card
           shadow={"none"}

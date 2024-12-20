@@ -6,7 +6,7 @@ import { download, gmail, linkedin, send, twitter, whatsapp } from "@/assets/ico
 import { Button } from "@nextui-org/button"
 import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
-import { getTranslations } from "next-intl/server"
+import { getLocale, getTranslations } from "next-intl/server"
 import {
   EmailShareButton,
   LinkedinShareButton,
@@ -17,6 +17,8 @@ import {
 const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: string }) => {
   const t = await getTranslations("certificate.certificate-card")
   const video = await getCertificate(certificate_qr_code)
+  const locale = await getLocale()
+  const certificateURl = `${process.env.HOST_NAME}/${locale}/information-center/${video.certificate_number}`
   return (
     <div className="flex w-full flex-col items-center justify-center space-y-6 text-foreground">
       <h1 className="font-semibold ~text-lg/2xl">{t("title")}</h1>
@@ -55,11 +57,15 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
               </Button>
 
               <div className="flex items-center gap-2">
-                <TwitterShareButton url="link" title={t("share-title", { value: "video.video.title" })}>
+                <TwitterShareButton
+                  url={certificateURl}
+                  title={t("share-title", { value: video.video.title })}>
                   <img className="size-5" src={twitter.src} alt="share to x" />
                 </TwitterShareButton>
                 {/* <Button size="sm" isIconOnly variant="light"> */}
-                <LinkedinShareButton url="link" title={t("share-title", { value: "video.video.title" })}>
+                <LinkedinShareButton
+                  url={certificateURl}
+                  title={t("share-title", { value: video.video.title })}>
                   <img className="size-5" src={linkedin.src} alt="share to linkedin" />
                 </LinkedinShareButton>
                 {/* </Button> */}
@@ -86,10 +92,10 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
       <div className="flex flex-col items-center text-sm">
         <p>{t("share-with-others")}</p>
         <div className="mt-2 flex gap-3">
-          <WhatsappShareButton url="pathname" title={t("share-title", { value: "video.video.title" })}>
+          <WhatsappShareButton url={certificateURl} title={t("share-title", { value: video.video.title })}>
             <img className="size-6" src={whatsapp.src} alt="share to whatsapp" />
           </WhatsappShareButton>
-          <EmailShareButton url={"pathname"} subject={t("share-title", { value: "video.video.title" })}>
+          <EmailShareButton url={certificateURl} subject={t("share-title", { value: video.video.title })}>
             <img className="size-6" src={gmail.src} alt="share to gmail" />
           </EmailShareButton>
         </div>
