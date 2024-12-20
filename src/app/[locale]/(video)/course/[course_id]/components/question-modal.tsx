@@ -67,6 +67,7 @@ const QuestionModal = () => {
       }
     },
     onSuccess(data, variables) {
+      console.log("🚀 ~ onSuccess ~ data:", data)
       if (!hasPassedCourse) {
         let result = data as AnswerQuestion["data"]
         updateVideoStatus({
@@ -107,7 +108,7 @@ const QuestionModal = () => {
   // handling answering
   const handleAnswering = (answer: string) => {
     setSelectedAnswer(answer)
-    countDownRef.current?.api?.pause
+    countDownRef.current?.api?.pause()
     const timeInSec = (Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000 - timeoutDate) / 1000
     mutate({
       video_id: course_id,
@@ -116,8 +117,10 @@ const QuestionModal = () => {
       answer_time: formatTime(timeInSec),
     })
   }
+
   // handling timeout
   const handleTimeout = () => {
+    if (!question) return
     mutate({
       video_id: course_id,
       question_id: question!.id,
@@ -125,6 +128,13 @@ const QuestionModal = () => {
       answer_time: question!.allowed_time,
     })
   }
+
+  useEffect(() => {
+    if (isTimeOut && answerStatus === "pending") {
+      console.log("🚀 ~ useEffect ~ isTimeOut", isTimeOut)
+      handleTimeout()
+    }
+  }, [isTimeOut])
 
   // shuffle answer in production
   const shuffledAnswers = useMemo(() => {
@@ -183,7 +193,9 @@ const QuestionModal = () => {
                       ref={countDownRef}
                       key={question?.appears_at}
                       alert
-                      onComplete={handleTimeout}
+                      onComplete={() => {
+                        if (answerStatus === "pending") setIsTimeOut(true)
+                      }}
                       className="rounded-full"
                       date={timeoutDate}
                       result={
