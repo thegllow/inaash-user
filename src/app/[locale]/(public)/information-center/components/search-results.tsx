@@ -1,31 +1,45 @@
-import { InaashApiGuest } from "@/services/inaash"
-import NoResults from "./no-results"
+"use client"
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
+import { GetSearch } from "../search"
 import OldSearch from "./old-search"
-import axios from "axios"
 import SearchResultItem from "./search-result-item"
+import { Spinner } from "@nextui-org/spinner"
+import { useQueryState } from "nuqs"
 
-type Props = {
-  searchParams: {
-    [key: string]: string
-  }
-}
+const SearchResults = () => {
+  const [query] = useQueryState("q")
 
-const SearchResults = async ({ searchParams }: Props) => {
-  try {
-    const searchResult = await InaashApiGuest.get(`/certificates/${searchParams}`)
+  const { data: results, status } = useQuery({
+    queryKey: ["information-center-search", query],
+    queryFn: () => GetSearch(query!),
+    staleTime: Infinity,
+    enabled: !!query,
+  })
+
+  if (!query)
     return (
       <div className="space-y-4">
         <OldSearch />
-        <SearchResultItem result={searchParams.q} />
       </div>
     )
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      if (error.response?.status === 404) return <NoResults />
-      return <p>Server Error</p>
-    }
-    return <p>Server Error</p>
-  }
+  if (status === "pending")
+    return (
+      <div className="flex justify-center py-20">
+        <Spinner />
+      </div>
+    )
+  if (status === "error")
+    return (
+      <div className="flex justify-center py-20">
+        <p className="text-danger">Error fetching search results. Please try again later.</p>
+      </div>
+    )
+
+  return (
+    <div className="space-y-4">
+      <SearchResultItem results={results} />
+    </div>
+  )
 }
 
 export default SearchResults

@@ -3,7 +3,7 @@
 import { Input } from "@nextui-org/input"
 import { useTranslations } from "next-intl"
 import { parseAsString, useQueryState } from "nuqs"
-import React, { ElementRef, useRef } from "react"
+import React, { ElementRef, useRef, useState } from "react"
 
 import Button from "@/components/ui/button"
 import { useLocalStorage } from "@mantine/hooks"
@@ -13,19 +13,21 @@ type Props = {}
 
 const Search = (props: Props) => {
   const t = useTranslations("information-center.search")
-  const ref = useRef<ElementRef<"input">>(null)
   const [query, setQuery] = useQueryState("q", parseAsString.withDefault(""))
-  const [_, setValue] = useLocalStorage<string[]>({
+  const [_, setOldSearch] = useLocalStorage<string[]>({
     key: "information-center-previous-search",
     defaultValue: [],
   })
-
+  const [inputValue, setInputValue] = useState(query || "")
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const value = e.target.value.trim()
+    setInputValue(value)
+    if (!value) setQuery(null)
+  }
   const handleSearch: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    const value = ref.current?.value || ""
-    if (!value) return
-    setQuery(value)
-    setValue((pre) => {
-      return [value, ...pre.filter((e) => e !== value).slice(-5)]
+    setQuery(inputValue)
+    setOldSearch((pre) => {
+      return [inputValue, ...pre.filter((value) => value !== inputValue).slice(-5)]
     })
   }
 
@@ -34,7 +36,8 @@ const Search = (props: Props) => {
       <Input
         startContent={<SearchIcon className="text-default-500" />}
         radius="sm"
-        ref={ref}
+        value={inputValue}
+        onChange={handleChange}
         placeholder={t("input-placeholder")}
       />
       <Button radius="sm" onClick={handleSearch} size="md" fullWidth={false}>
