@@ -3,7 +3,7 @@ import { UserVideo } from "../types"
 export type TVariables = {
   video_id: string
   question_id: string
-  answer: string
+  answer: string | null
   answer_time: string
 }
 
