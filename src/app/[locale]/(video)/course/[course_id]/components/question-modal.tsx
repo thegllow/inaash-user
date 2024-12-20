@@ -198,7 +198,6 @@ const QuestionModal = () => {
                         setIsTimeOut(false)
                       }}
                       src={session.data?.user.timeout_audio}
-                      autoPlay
                     />
                   </div>
                 </ModalBody>
