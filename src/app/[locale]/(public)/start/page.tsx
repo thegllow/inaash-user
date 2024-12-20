@@ -11,7 +11,7 @@ type Props = {
   }
 }
 
-export const revalidate = 86400 // 1 day in seconds (24 hours)
+export const revalidate = 60 // 1 day in seconds (24 hours)
 export const dynamic = "force-static"
 
 const Page = async (props: Props) => {
