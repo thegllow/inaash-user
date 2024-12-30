@@ -1,236 +1,429 @@
 {
   "header": {
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة"
+    "full-screen": "Full Screen",
+    "home": "Home",
+    "about": "About Inaash",
+    "information-center": "Information Center",
+    "contact": "Contact Us",
+    "faqs": "FAQs"
   },
   "choose-language": {
-    "title": "أختر اللغة",
+    "title": "Choose Language",
     "tabs": {
-      "ar": "العربية",
+      "ar": "Arabic",
       "en": "English",
-      "fr": "Français",
+      "fr": "French",
       "fil": "Tagalog",
-      "ur": "اُردُو",
+      "ur": "Urdu",
       "id": "Indonesian"
     },
-    "next-button": "التالي"
+    "next-button": "Next"
   },
   "start": {
-    "title": " عيشها، تعلمها،<span> كن منقذًا</span> ",
-    "description": "استكشف الفيديوهات التفاعلية واحصل التدريب المناسب حول الاستجابة للإصابات الصحية والرياضية من خلال اكتساب المهارات الأساسية للتعامل مع حالات الطوارئ بشكل صحيح وسريع",
-    "start-course-button": "بدء البرنامج"
+    "title": "Live it, Learn it, <span>Be a Savior</span>",
+    "description": "Explore interactive videos and get the right training on responding to health and sports injuries by acquiring the basic skills to deal with emergencies correctly and quickly",
+    "start-course-button": "Start Course"
   },
   "login": {
-    "title": "مرحبا بك في انعاش",
+    "title": "Welcome to Inaash",
     "send-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال رقم هاتفك المحمول للمتابعة ",
-      "input-label": "رقم الهاتف المحمول",
-      "input-placeholder": "أدخل الرقم",
-      "button": "أرسل رمز التحقق",
+      "title": "Continue Login",
+      "description": "Please enter your mobile phone number to continue",
+      "input-label": "Mobile Phone Number",
+      "input-placeholder": "Enter Number",
+      "button": "Send Verification Code",
       "errors": {
-        "required": "رقم الهاتف مطلوب",
+        "required": "Phone number is required",
         "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "serverError": "A server connection error occurred",
+        "tryAgainAfter": "You have exceeded the allowed number of attempts, please try again later"
       }
     },
     "verify-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال كلمة المرور المؤقتة المكونة من 4 أرقام المرسلة إلى رقم هاتفك المحمول",
-      "input-label": "أدخل رمز التحقق",
-      "button": "تأكيد الرمز",
-      "change-number-button": "تعديل الرقم",
-      "resend-code": "إعادة الإرسال",
+      "title": "Continue Login",
+      "description": "Please enter the 4-digit temporary password sent to your mobile phone number",
+      "input-label": "Enter Verification Code",
+      "button": "Confirm Code",
+      "change-number-button": "Change Number",
+      "resend-code": "Resend Code",
       "errors": {
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "unauthorized": "كود غير صالح",
-        "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "serverError": "A server connection error occurred",
+        "unauthorized": "Invalid code",
+        "overuse": "You have exceeded the allowed number of attempts, please try again later",
+        "tryAgainAfter": "You have exceeded the allowed number of attempts, please try again later"
       }
     },
     "success": {
-      "title": "تم تسجيل الدخول بنجاح!",
-      "button": "التالي"
+      "title": "Login Successful!",
+      "button": "Next"
     }
   },
   "payment": {
-    "choose-method": "حدد خيار الدفع",
+    "choose-method": "Select Payment Option",
     "options": {
       "card": {
-        "value": "بطاقة إئتمان",
-        "description": "ادفع بشكل آمن باستخدام بطاقة فيزا, ماستر كارد، أو مدى."
+        "value": "Credit Card",
+        "description": "Pay securely using Visa, MasterCard, or Mada."
       },
       "apple": {
         "value": "Apple Pay",
         "description": ""
       }
     },
-    "next-button": "التالي",
-    "selected-course": "البرنامج المحدد",
+    "next-button": "Next",
+    "selected-course": "Selected Course",
     "price": {
-      "original": "سعر البرنامج",
-      "discount": "سعر الخصم",
-      "total": "السعر الإجمالي"
+      "original": "Course Price",
+      "discount": "Discount Price",
+      "total": "Total Price"
     },
     "coupon": {
-      "input-placeholder": "أدخل رمز الخصم الخاص بك",
-      "coupon-button": "تطبيق"
+      "input-placeholder": "Enter your discount code",
+      "coupon-button": "Apply"
     },
     "success": {
-      "title": "تم الدفع بنجاح!",
-      "button": "التالي"
+      "title": "Payment Successful!",
+      "button": "Next"
     }
   },
   "faqs": {
-    "title": "الأسئلة الشائعة",
-    "description": "احصل على إجابات للأسئلة الشائعة حول برامجنا وخدماتنا التدريبية"
+    "title": "Frequently Asked Questions",
+    "description": "Get answers to frequently asked questions about our programs and training services"
   },
   "information-center": {
-    "title": "مركز المعلومات",
-    "description": "قم بتأكيد الاستلام والإكمال الناجح لبرنامج التدريب على الاستجابة لحالات الطوارئ",
+    "title": "Information Center",
+    "description": "Confirm the successful receipt and completion of the emergency response training program",
     "search": {
-      "input-placeholder": "البحث بالاسم أو رقم الشهادة",
-      "search-button": "بحث",
-      "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى."
+      "input-placeholder": "Search by name or certificate number",
+      "search-button": "Search",
+      "no-results": "Sorry, no matching records were found. Please check the details and try again.",
+      "clear-history": "Clear Records",
+      "old-search": "Records"
     },
     "result": {
-      "start-course-button": "ابدأ البرنامج",
-      "answers": "الإجابات",
-      "avarage-answer-time": "متوسط ​​سرعة الاجابة"
+      "start-course-button": "Start Course",
+      "answers": "Answers",
+      "average-answer-time": "Average Answer Time",
+      "pass": "Passed",
+      "share-button": "Share Your Result",
+      "download-button": "Download as PDF",
+      "share-with-others": "Share Inaash with others",
+      "sec": "sec",
+      "grade": "Excellent!",
+      "share-title": "You passed {value} How about you?"
     }
   },
   "profile": {
-    "edit-button": "تحرير",
-    "mobile": "رقم الهاتف المحمول",
-    "email": "البريد الإلكتروني",
-    "name": "الاسم",
-    "first_name": "الاسم الاول",
-    "last_name": "اسم العائلة",
+    "edit-button": "Edit",
+    "mobile": "Mobile Phone Number",
+    "email": "Email",
+    "name": "Name",
+    "first_name": "First Name",
+    "last_name": "Last Name",
     "name-input-placeholder": "Ahamad Alyounis",
     "first_name-input-placeholder": "Ahamad",
     "last_name-input-placeholder": "Alyounis ",
     "email-input-placeholder": "Example@example.co",
-    "certificates": "الشهادات التي تم الحصول عليها",
-    "save-button": "حفظ",
-    "change-mobile-button": "تغيير",
-    "success": "تم تعديل بياناتك الشخصية بنجاح",
+    "certificates": "Obtained Certificates",
+    "save-button": "Save",
+    "change-mobile-button": "Change",
+    "success": "Your personal data has been successfully modified",
     "dropdown": {
-      "profile": "الملف الشخصي",
-      "change-lang": "تغير اللغة",
-      "logout": "تسجيل الخروج",
+      "profile": "Profile",
+      "change-lang": "Change Language",
+      "logout": "Logout",
       "change-language": {
-        "title": "تغيير اللغة",
+        "title": "Change Language",
         "tabs": {
-          "ar": "العربية",
+          "ar": "Arabic",
           "en": "English",
-          "fr": "Français",
+          "fr": "French",
           "fil": "Tagalog",
-          "ur": "اُردُو"
+          "ur": "Urdu",
+          "id": "Indonesian"
         },
-        "update-button": "تعديل اللغة"
+        "update-button": "Update Language"
       }
     },
     "errors": {
-      "required": "هذا الحقل مطلوب",
-      "invalidEmail": "إيميل غير صالح",
-      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      "required": "This field is required",
+      "invalidEmail": "Invalid email",
+      "serverError": "A server connection error occurred"
     },
     "edit": {
-      "title": "تحرير",
-      "description": "قم بتحديث معلوماتك الشخصية، وتفاصيل الاتصالs"
+      "title": "Edit",
+      "description": "Update your personal information and contact details"
     },
     "update-mobile": {
       "send-opt": {
-        "title": "تحديث رقم الهاتف",
-        "description": "الرجاء إدخال رقم هاتفك المحمول للحصول على رمز التحقق",
-        "input-label": "أدخل رقم الهاتف الجديد*",
-        "input-placeholder": "أدخل الرقم",
-        "button": "أرسل رمز التحقق",
+        "title": "Update Phone Number",
+        "description": "Please enter your mobile phone number to receive a verification code",
+        "input-label": "Enter new phone number*",
+        "input-placeholder": "Enter Number",
+        "button": "Send Verification Code",
         "errors": {
-          "required": "رقم الهاتف مطلوب",
+          "required": "Phone number is required",
           "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "serverError": "A server connection error occurred",
+          "tryAgainAfter": "You have exceeded the allowed number of attempts, please try again later"
         }
       },
       "verify-opt": {
-        "title": "تحديث رقم الجوال",
-        "description": "الرجاء إدخال رمز التحقق المرسل الى رقم هاتفك والمكون من 4 أرقام ",
-        "input-label": "أدخل رمز التحقق",
-        "button": "تأكيد الرمز",
-        "change-number-button": "تعديل الرقم",
-        "resend-code": "إعادة الإرسال",
+        "title": "Update Mobile Number",
+        "description": "Please enter the 4-digit verification code sent to your phone number",
+        "input-label": "Enter Verification Code",
+        "button": "Confirm Code",
+        "change-number-button": "Change Number",
+        "resend-code": "Resend Code",
         "errors": {
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "unauthorized": "كود غير صالح",
-          "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "serverError": "A server connection error occurred",
+          "unauthorized": "Invalid code",
+          "overuse": "You have exceeded the allowed number of attempts, please try again later",
+          "tryAgainAfter": "You have exceeded the allowed number of attempts, please try again later"
         }
       },
       "success": {
-        "title": "تم تحديث رقم الجوال بنجاح!",
-        "button": "عودة"
+        "title": "Mobile number updated successfully!",
+        "button": "Back"
       }
     }
   },
   "contact-us": {
-    "title": "تواصل معنا",
-    "description": " املأ النموذج أدناه، وسنقوم بالرد عليك في اقرب وقت ممكن",
+    "title": "Contact Us",
+    "description": "Fill out the form below, and we will get back to you as soon as possible",
     "form": {
-      "type-label": "حدد نوع الرسالة",
+      "type-label": "Select Message Type",
       "tabs": {
-        "inquiry": "استفسار",
-        "suggestion": "اقتراح",
-        "complaint": "شكوى"
+        "inquiry": "Inquiry",
+        "suggestion": "Suggestion",
+        "complaint": "Complaint"
       },
-      "email-input-label": "أدخل عنوان بريدك الإلكتروني",
+      "email-input-label": "Enter your email address",
       "email-input-placeholder": "Example@example.co",
-      "name-input-label": "أدخل اسمك الكامل",
+      "name-input-label": "Enter your full name",
       "name-input-placeholder": "Ahamad Alyounis",
-      "message-input-label": "الموضوع",
-      "message-input-placeholder": "أدخل الموضوع هنا!",
-      "subject-input-label": "الرسالة",
-      "subject-input-placeholder": "أدخل الموضوع هنا!",
-      "submit-button": "ارسال",
-      "success": "تم استلام رسالتك بنجاح, سيتم الرد عليك في اقرب وقت ممكن.",
+      "message-input-label": "Subject",
+      "message-input-placeholder": "Enter subject here!",
+      "subject-input-label": "Message",
+      "subject-input-placeholder": "Enter message here!",
+      "submit-button": "Submit",
+      "success": "Your message has been received successfully, we will get back to you as soon as possible.",
       "errors": {
-        "required": "هذا الحقل مطلوب",
-        "invalidEmail": "إيميل غير صالح",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر"
+        "required": "This field is required",
+        "invalidEmail": "Invalid email",
+        "serverError": "A server connection error occurred"
       }
     }
   },
+
+  "about-us": {
+    "hero": {
+      "title": "About Inaash",
+      "description": "Is an interactive training and awareness program to educate and raise awareness about emergency health and sports injuries and the proper ways to deal with them"
+    },
+    "target": {
+      "title": "Target Audience",
+      "description": "The program is aimed at all members of the community starting from the age of 8 years",
+      "main": {
+        "title": "Main Goal",
+        "description": "To provide awareness and education about health and sports emergencies in order to provide the necessary assistance to individuals before they reach health centers or other medical facilities, and to avoid life-threatening accidents using technology",
+        "sub-description": "The principle is to build a healthier life, free from cardiovascular diseases, stroke, and major sports injuries, and to educate the individual on how to save lives and have a disease-free life and live healthy while encouraging the community to attend first aid, CPR, and sports first responder courses"
+      }
+    },
+    "splitted-logo": {
+      "first": "Start",
+      "second": "Sports",
+      "third": "Heart & Health",
+      "fourth": "R",
+      "fifth": "P",
+      "sixth": "C"
+    },
+    "objectives": {
+      "title": "Objectives",
+      "description": "Enhance the ability of community members to deal with emergencies, learn, and provide assistance",
+      "objectives-list": {
+        "list": {
+          "first": {
+            "title": "Preserving Life"
+          },
+          "second": {
+            "title": "Emergency Medical Conditions"
+          },
+          "third": {
+            "title": "Cardiopulmonary Resuscitation"
+          },
+          "fourth": {
+            "title": "How to use a defibrillator"
+          },
+          "fifth": {
+            "title": "Tongue swallowing accidents during sports"
+          },
+          "sixth": {
+            "title": "Concussion accidents during sports"
+          }
+        }
+      }
+    },
+    "about-us": {
+      "title": "About Us",
+      "description": "The program is designed to provide emergency response training through fun and interactive scenario-based videos. The platform covers both health and sports injuries, aiming to educate users about the basic skills to deal with emergencies. Key features include real-time questions on how to deal with the situation, the ability to track progress, performance evaluation, and obtaining a certificate upon completion of the training program. Our platform ensures a seamless user experience with options to update personal data, verify certificates, and share achievements on social media. The platform targets a wide audience, ranging from 8 to 60 years old, and enhances learning in a fun and interactive way with a focus on life-saving skills",
+      "updates": {
+        "title": "Challenges",
+        "description": "Many individuals lack adequate training to deal with health and sports emergencies. Traditional methods are often inaccessible and routine. There is a need for an interactive platform that provides easily accessible and comprehensive training for emergencies."
+      },
+      "share": {
+        "title": "Share Your Success!",
+        "card": {
+          "title": "You Scored 100%",
+          "description": "Interactive Awareness Program for Health Emergencies"
+        }
+      }
+    },
+    "solutions": {
+      "title": "Solutions",
+      "description": "The Inaash platform provides a fun technological solution for emergency response training through interactive scenario-based educational videos. Users learn health and sports emergency skills at their own pace. The platform features real-time tests, progress tracking, and performance evaluations to keep users engaged. Upon completion of the program, users can obtain certificates and easily verify their achievements and share their results on social media. This solution, designed for a wide audience, provides a modern and flexible way to equip individuals with essential life-saving skills and address the limitations of traditional training methods",
+      "list": {
+        "first": {
+          "title": "Watch Course Videos",
+          "description": "Start your journey by watching the interactive training program videos designed for sharing and teaching practical skills"
+        },
+        "second": {
+          "title": "Answer Questions",
+          "description": "Test your understanding by answering questions between each video"
+        },
+        "third": {
+          "title": "Progress",
+          "description": "With each completed lesson, you can track your progress and deepen your knowledge"
+        },
+        "fourth": {
+          "title": "Get Your Certificate",
+          "description": "Successfully complete all modules and assessments to receive a training program completion certificate"
+        },
+        "fifth": {
+          "title": "Share Your Achievement",
+          "description": "Celebrate your success! Share your certificate and program achievements on social media"
+        }
+      }
+    },
+    "why-us": {
+      "title": "Why Inaash?",
+      "description": "We are committed to providing fun training that equips you with essential emergency response skills",
+      "reasons": {
+        "0": "Multilingual",
+        "1": "Time Efficient",
+        "2": "Wide Reach",
+        "3": "User-Friendly",
+        "4": "Modern Technologies",
+        "5": "Evidence-Based",
+        "6": "Preventive",
+        "7": "Paperless (for a safe environment)",
+        "8": "Interactive"
+      }
+    },
+    "our-partners": {
+      "title": "Our Partners",
+      "description": "We are proud to partner with leading organizations to deliver high-quality emergency response training, ensuring effective and modern practices for health and sports-related situations"
+    }
+  },
   "footer": {
-    "important-links": "روابط مهمة",
-    "contact-us": "اتصل بنا",
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة",
-    "email": "بريد إلكتروني",
-    "phonenumber": "رقم",
-    "socials": "وسائل التواصل الاجتماعي"
+    "important-links": "Important Links",
+    "contact-us": "Contact Us",
+    "full-screen": "Full Screen",
+    "home": "Home",
+    "about": "About Inaash",
+    "information-center": "Information Center",
+    "contact": "Contact Us",
+    "faqs": "FAQs",
+    "email": "Email",
+    "phonenumber": "Phone Number",
+    "socials": "Social Media"
   },
   "course": {
     "course-header": {
       "score": {
-        "total": "إجمالي الأسئلة",
-        "right-answers": "الإجابات الصحيحة"
+        "total": "Total Questions",
+        "right-answers": "Correct Answers"
       },
-      "average-answer-time": "متوسط سرعة الاجابة"
+      "average-answer-time": "Average Answer Time"
     },
     "course-footer": {
-      "subtitle-tooltip": "الترجمة",
-      "sound-tooltip": "الصوت",
-      "change-program-button": "جميع البرامج",
-      "select-scene-button": "محدد المشهد"
+      "subtitle-tooltip": "Subtitle",
+      "sound-tooltip": "Sound",
+      "change-program-button": "All Programs",
+      "change-program-confirm-dialog": "Are you sure you want to change the training program?",
+      "change-program-dialog-confirm": "Yes",
+      "change-program-dialog-cancel": "No",
+      "select-scene-button": "Scene Selector",
+      "select-scene-warning": "Once you finish the program, you will be able to select scenes"
+    },
+    "wrong-answer-modal": {
+      "title": "Incorrect Answer!",
+      "description": "You lost a heart",
+      "listen": "Listen to the explanation to understand the impact of this decision on the injured person.",
+      "reason": "Reason Explanation",
+      "continue-button": "Continue"
+    }
+  },
+  "landscape": {
+    "description": "Please use your phone in landscape mode for the best video viewing experience"
+  },
+  "certificate": {
+    "answers": "Answers",
+    "average-answer-time": "Average Answer Time",
+    "continue": "Continue to get the certificate",
+    "sec": "sec",
+    "grade": "Excellent!",
+    "certificate-card": {
+      "title": "Certificate of Achievement!",
+      "pass": "Passed",
+      "share-button": "Share Your Result",
+      "download-button": "Download as PDF",
+      "share-with-others": "Share Inaash with others",
+      "sec": "sec",
+      "grade": "Excellent!",
+      "share-title": "You passed {value} How about you?"
+    }
+  },
+  "share-your-success": {
+    "title": "Share Your Success!",
+    "share-button": "Share Result",
+    "share-with-others": "Share Inaash with others"
+  },
+  "rating": {
+    "title": "Help us improve your experience",
+    "description": "Your opinion matters to us! Answer these quick questions to help us improve the test and platform experience",
+    "rating-list": {
+      "1": "How would you rate the ease of use of the test interface in general?",
+      "2": "Do the questions reflect real-life scenarios well enough to improve your understanding?",
+      "3": "How satisfied are you with the responsiveness and clarity of the video content?",
+      "4": "Was the progress tracking (hearts, correct answers, time) helpful during the test?"
+    },
+    "textarea-label": "Describe your experience (optional)",
+    "textarea-placeholder": "Tell us more about your experience!",
+    "continue": "Continue",
+    "stepper": {
+      "first": "Rating",
+      "second": "Complete Data",
+      "third": "Receive Certificate"
+    }
+  },
+  "complete-profile": {
+    "title": "Complete Your Profile",
+    "description": "To continue to obtain the certificate, please complete your profile",
+    "email": "Email",
+    "name": "Name",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "name-input-placeholder": "Ahamad Alyounis",
+    "first_name-input-placeholder": "Ahamad",
+    "last_name-input-placeholder": "Alyounis ",
+    "email-input-placeholder": "Example@example.co",
+    "save-button": "Get Certificate",
+    "success": "Your personal data has been successfully completed",
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email",
+      "serverError": "A server connection error occurred"
     }
   }
 }
