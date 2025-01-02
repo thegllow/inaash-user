@@ -31,7 +31,10 @@ const Footer = async (props: Props) => {
                   </div>
                   <div>
                     <p className="text-default-500">{t("phonenumber")}</p>
-                    <a className="font-medium text-white" href={`tel:${siteConfig.contactInfo.phonenumber}`}>
+                    <a
+                      dir="ltr"
+                      className="font-medium text-white"
+                      href={`tel:${siteConfig.contactInfo.phonenumber}`}>
                       {siteConfig.contactInfo.phonenumber}
                     </a>
                   </div>
@@ -67,6 +70,12 @@ const Footer = async (props: Props) => {
                   })}
                 </ul>
               </div>
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-end gap-4 py-4 text-default-500">
+              <Link href={"/privacy-policy"}>{t("privacy-policy")}</Link>
+              <Link href={"/terms"}>{t("terms")}</Link>
             </div>
           </div>
           <Divider />

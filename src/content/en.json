@@ -336,7 +336,9 @@
     "faqs": "FAQs",
     "email": "Email",
     "phonenumber": "Phone Number",
-    "socials": "Social Media"
+    "socials": "Social Media",
+    "privacy-policy": "Privacy policy",
+    "terms": "Terms and conditions"
   },
   "course": {
     "course-header": {
@@ -425,5 +427,13 @@
       "invalidEmail": "Invalid email",
       "serverError": "A server connection error occurred"
     }
+  },
+  "privacy-policy": {
+    "title": "Privacy policy",
+    "description": "Please, read carefully"
+  },
+  "terms": {
+    "title": "Terms and conditions",
+    "description": "Please, read carefully"
   }
 }
