@@ -45,7 +45,7 @@ const Header = () => {
             <Logo variant="horizontal" />
             {/* </NextLink> */}
           </NavbarBrand>
-          <ul className="mx-2 hidden justify-start gap-5 font-medium md:flex md:gap-8 rtl:grow">
+          <ul className="mx-2 hidden justify-start gap-5 font-medium md:flex lg:gap-8 rtl:grow">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
                 <NextLink
