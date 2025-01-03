@@ -10,11 +10,11 @@
   "choose-language": {
     "title": "Choose Language",
     "tabs": {
-      "ar": "Arabic",
+      "ar": "العربية",
       "en": "English",
-      "fr": "French",
+      "fr": "Français",
       "fil": "Tagalog",
-      "ur": "Urdu",
+      "ur": "اُردُو",
       "id": "Indonesian"
     },
     "next-button": "Next"
