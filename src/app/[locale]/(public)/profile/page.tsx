@@ -52,7 +52,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
             />
           </div>
         </div>
-        <div className="px-11">
+        <div className="px-11 py-4">
           <p className="text-lg font-semibold">{t("certificates")}</p>
         </div>
       </Card>

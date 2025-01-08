@@ -26,8 +26,8 @@ export function UserDropdown() {
           </Button>
         </DropdownTrigger>
         <DropdownMenu className="text-foreground" aria-label="User Actions" variant="flat">
-          <DropdownItem key="profile">
-            <Link href={"/profile"}>{t("profile")}</Link>
+          <DropdownItem as={Link} href={"/profile"} key="profile">
+            {t("profile")}
           </DropdownItem>
           <DropdownItem key="lang" onClick={handleChangeLang}>
             {t("change-lang")}
