@@ -3,7 +3,8 @@ import Certificate from "@/components/common/certificate"
 import { Card } from "@nextui-org/card"
 
 export const dynamic = "force-dynamic"
-const Page = async ({ params }: { params: { course_id: string } }) => {
+const Page = async (props: { params: Promise<{ course_id: string }> }) => {
+  const params = await props.params;
   const video = await getUserVideo(params.course_id)
   return (
     <Card

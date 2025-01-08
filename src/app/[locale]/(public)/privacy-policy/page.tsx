@@ -2,7 +2,8 @@ import Footer from "@/components/common/footer"
 import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
 
-export default async function Page({ params }: { params: { locale: string } }) {
+export default async function Page(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
   const ar = params.locale === "ar"
   const t = await getTranslations("privacy-policy")
   return (

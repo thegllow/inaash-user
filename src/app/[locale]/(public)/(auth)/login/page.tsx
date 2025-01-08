@@ -6,13 +6,14 @@ import { Suspense } from "react"
 import Wrapper from "./components/wrapper"
 import { auth } from "@/lib/auth/auth"
 
-const Page = async ({
-  searchParams,
-  params,
-}: {
-  searchParams: { [key: string]: string }
-  params: { locale: string }
-}) => {
+const Page = async (
+  props: {
+    searchParams: Promise<{ [key: string]: string }>
+    params: Promise<{ locale: string }>
+  }
+) => {
+  const params = await props.params;
+  const searchParams = await props.searchParams;
   const session = await auth()
   console.log("🚀 ~ session:", session)
   if (session)

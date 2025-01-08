@@ -8,7 +8,8 @@ import { useVideo } from "./context/video-context"
 import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user-video"
 import { timeToSeconds } from "@/app/[locale]/(video)/course/[course_id]/utils/time-to-seconds"
 
-const Page = async ({ params }: { params: { course_id: string } }) => {
+const Page = async (props: { params: Promise<{ course_id: string }> }) => {
+  const params = await props.params;
   const t = await getTranslations("certificate")
 
   const video = await getUserVideo(params.course_id)

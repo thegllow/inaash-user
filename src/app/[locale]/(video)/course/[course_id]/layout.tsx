@@ -10,14 +10,20 @@ import { redirect as nextRedirect } from "next/navigation"
 import VideoWrapper from "./components/video-wrapper"
 type Props = {
   children: React.ReactNode
-  params: {
+  params: Promise<{
     locale: string
     course_id: string
-  }
+  }>
 }
 export const dynamic = "force-dynamic"
 
-const Layout = async ({ children, params }: Props) => {
+const Layout = async (props: Props) => {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   console.log("🚀 ~ Layout ~ params:", params)
   const session = await auth()
   if (!session)

@@ -5,13 +5,18 @@ import axios from "axios"
 import { isRedirectError } from "next/dist/client/components/redirect"
 import { notFound } from "next/navigation"
 
-export default async function Layout({
-  children,
-  params,
-}: {
-  children: React.ReactNode
-  params: { locale: string; course_id: string }
-}) {
+export default async function Layout(
+  props: {
+    children: React.ReactNode
+    params: Promise<{ locale: string; course_id: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const session = await auth()
   if (!session)
     redirect({

@@ -11,13 +11,19 @@ import { getTranslations } from "next-intl/server"
 import { getCertificate } from "./get-certificate"
 
 export const dynamic = "force-dynamic"
-export default async function Page({
-  params: { code },
-}: {
-  params: {
-    code: string
+export default async function Page(
+  props: {
+    params: Promise<{
+      code: string
+    }>
   }
-}) {
+) {
+  const params = await props.params;
+
+  const {
+    code
+  } = params;
+
   const t = await getTranslations("information-center.result")
 
   const certificate = await getCertificate(code)

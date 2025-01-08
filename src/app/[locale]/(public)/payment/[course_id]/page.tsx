@@ -14,11 +14,19 @@ import CourseDetails from "./components/course-details"
 import Success from "./components/success"
 
 type Props = {
-  params: { course_id: string; locale: string }
+  params: Promise<{ course_id: string; locale: string }>
   searchParams: Record<string, string>
 }
 
-const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
+const Page = async (props: Props) => {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
+
+  const {
+    course_id,
+    locale
+  } = params;
+
   const session = await auth()
   if (!session) {
     redirect({
