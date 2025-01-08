@@ -1,429 +1,437 @@
 {
   "header": {
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة"
+    "full-screen": "Plein écran",
+    "home": "Accueil",
+    "about": "À propos d'Inaa'sh",
+    "information-center": "Centre d'information",
+    "contact": "Contactez-nous",
+    "faqs": "FAQs"
   },
   "choose-language": {
-    "title": "أختر اللغة",
+    "title": "Choisir la langue",
     "tabs": {
-      "ar": "العربية",
-      "en": "English",
+      "ar": "Arabe",
+      "en": "Anglais",
       "fr": "Français",
       "fil": "Tagalog",
-      "ur": "اُردُو",
-      "id": "Indonesian"
+      "ur": "Ourdou",
+      "id": "Indonésien"
     },
-    "next-button": "التالي"
+    "next-button": "Suivant"
   },
   "start": {
-    "title": " عيشها، تعلمها،<span> كن منقذًا</span> ",
-    "description": "استكشف الفيديوهات التفاعلية واحصل التدريب المناسب حول الاستجابة للإصابات الصحية والرياضية من خلال اكتساب المهارات الأساسية للتعامل مع حالات الطوارئ بشكل صحيح وسريع",
-    "start-course-button": "بدء البرنامج"
+    "start-course-button": "Démarrer le programme"
   },
   "login": {
-    "title": "مرحبا بك في انعاش",
+    "title": "Bienvenue sur Inaa'sh",
     "send-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال رقم هاتفك المحمول للمتابعة ",
-      "input-label": "رقم الهاتف المحمول",
-      "input-placeholder": "أدخل الرقم",
-      "button": "أرسل رمز التحقق",
+      "title": "Continuer à se connecter",
+      "description": "Veuillez entrer votre numéro de téléphone mobile pour continuer",
+      "input-label": "Numéro de téléphone mobile",
+      "input-placeholder": "Entrez le numéro",
+      "button": "Envoyer le code de vérification",
       "errors": {
-        "required": "رقم الهاتف مطلوب",
-        "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "required": "Numéro de téléphone requis",
+        "invalidPhoneNumber": "Format de numéro de téléphone invalide. Doit être de 7 à 15 chiffres, pouvant commencer par un '+'.",
+        "serverError": "Erreur de connexion au serveur",
+        "tryAgainAfter": "Nombre d'essais autorisés dépassé. Veuillez réessayer plus tard"
       }
     },
     "verify-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال كلمة المرور المؤقتة المكونة من 4 أرقام المرسلة إلى رقم هاتفك المحمول",
-      "input-label": "أدخل رمز التحقق",
-      "button": "تأكيد الرمز",
-      "change-number-button": "تعديل الرقم",
-      "resend-code": "إعادة الإرسال",
+      "title": "Continuer à se connecter",
+      "description": "Veuillez entrer le mot de passe temporaire à 4 chiffres envoyé à votre numéro de téléphone",
+      "input-label": "Entrez le code de vérification",
+      "button": "Confirmation du code",
+      "change-number-button": "Modifier le numéro",
+      "resend-code": "Renvoyer",
       "errors": {
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "unauthorized": "كود غير صالح",
-        "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "serverError": "Erreur de connexion au serveur",
+        "unauthorized": "Code invalide",
+        "overuse": "Nombre d'essais autorisés dépassé. Veuillez réessayer plus tard",
+        "tryAgainAfter": "Nombre d'essais autorisés dépassé. Veuillez réessayer plus tard"
       }
     },
     "success": {
-      "title": "تم تسجيل الدخول بنجاح!",
-      "button": "التالي"
+      "title": "Connexion réussie!",
+      "button": "Suivant"
     }
   },
   "payment": {
-    "choose-method": "حدد خيار الدفع",
+    "choose-method": "Sélectionner une option de paiement",
     "options": {
       "card": {
-        "value": "بطاقة إئتمان",
-        "description": "ادفع بشكل آمن باستخدام بطاقة فيزا, ماستر كارد، أو مدى."
+        "value": "Carte de crédit",
+        "description": "Payez en toute sécurité avec Visa, MasterCard ou Mada."
       },
       "apple": {
         "value": "Apple Pay",
         "description": ""
       }
     },
-    "next-button": "التالي",
-    "selected-course": "البرنامج المحدد",
+    "next-button": "Suivant",
+    "selected-course": "Le programme sélectionné",
     "price": {
-      "original": "سعر البرنامج",
-      "discount": "سعر الخصم",
-      "total": "السعر الإجمالي"
+      "original": "Prix du programme",
+      "discount": "Prix avec remise",
+      "total": "Prix total"
     },
     "coupon": {
-      "input-placeholder": "أدخل رمز الخصم الخاص بك",
-      "coupon-button": "تطبيق"
+      "input-placeholder": "Entrez votre code de réduction",
+      "coupon-button": "Appliquer"
     },
     "success": {
-      "title": "تم الدفع بنجاح!",
-      "button": "التالي"
+      "title": "Paiement effectué avec succès!",
+      "button": "Suivant"
     }
   },
   "faqs": {
-    "title": "الأسئلة الشائعة",
-    "description": "احصل على إجابات للأسئلة الشائعة حول برامجنا وخدماتنا التدريبية"
+    "title": "FAQs",
+    "description": "Obtenez des réponses aux questions fréquemment posées concernant nos programmes de formation et services"
   },
   "information-center": {
-    "title": "مركز المعلومات",
-    "description": "قم بتأكيد الاستلام والإكمال الناجح لبرنامج التدريب على الاستجابة لحالات الطوارئ",
+    "title": "Centre d'information",
+    "description": " Confirmer la réception et l'achèvement réussi du programme de formation à la réponse d'urgence",
     "search": {
-      "input-placeholder": "البحث بالاسم أو رقم الشهادة",
-      "search-button": "بحث",
-      "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى.",
-      "clear-history": "حذف السجلات",
-      "old-search": "السجلات"
+      "input-placeholder": "Rechercher par nom ou numéro de certificat",
+      "search-button": "Rechercher",
+      "no-results": "Désolé, aucun enregistrement correspondant n'a été trouvé. Veuillez vérifier les détails et réessayer.",
+      "clear-history": "Supprimer les enregistrements",
+      "old-search": "Enregistrements"
     },
     "result": {
-      "start-course-button": "ابدأ البرنامج",
-      "answers": "الإجابات",
-      "average-answer-time": "متوسط ​​سرعة الاجابة",
-      "pass": "مجتاز",
-      "share-button": "مشاركة النتيجة الخاصة بك",
-      "download-button": "تحميل بصيغة PDF",
-      "share-with-others": "شارك إنعاش مع الآخرين",
-      "sec": "ثانية",
-      "grade": "ممتاز!",
-      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
+      "start-course-button": "Démarrer le programme",
+      "answers": "Réponses",
+      "average-answer-time": "Vitesse moyenne des réponses",
+      "pass": "Réussi",
+      "share-button": "Partagez votre score",
+      "download-button": "Télécharger PDF",
+      "share-with-others": "Partagez Inaa'sh avec d'autres",
+      "sec": "Deuxième",
+      "grade": "Excellent!",
+      "share-title": "Vous avez réussi {valeur}. Et vous?"
     }
   },
   "profile": {
-    "edit-button": "تحرير",
-    "mobile": "رقم الهاتف المحمول",
-    "email": "البريد الإلكتروني",
-    "name": "الاسم",
-    "first_name": "الاسم الاول",
-    "last_name": "اسم العائلة",
+    "edit-button": "Modifier",
+    "mobile": "Numéro de téléphone mobile",
+    "email": "Email",
+    "name": "Nom",
+    "first_name": "Prénom",
+    "last_name": "Nom de famille",
     "name-input-placeholder": "Ahamad Alyounis",
     "first_name-input-placeholder": "Ahamad",
-    "last_name-input-placeholder": "Alyounis ",
+    "last_name-input-placeholder": "Alyounis",
     "email-input-placeholder": "Example@example.co",
-    "certificates": "الشهادات التي تم الحصول عليها",
-    "save-button": "حفظ",
-    "change-mobile-button": "تغيير",
-    "success": "تم تعديل بياناتك الشخصية بنجاح",
+    "certificates": "Certificats obtenus",
+    "save-button": "Sauvegarder",
+    "change-mobile-button": "Modifier",
+    "success": "Vos informations personnelles ont été modifiées avec succès",
     "dropdown": {
-      "profile": "الملف الشخصي",
-      "change-lang": "تغير اللغة",
-      "logout": "تسجيل الخروج",
+      "profile": "Profil",
+      "change-lang": "Modifier la langue",
+      "logout": "Se déconnecter",
       "change-language": {
-        "title": "تغيير اللغة",
+        "title": "Modifier la langue",
         "tabs": {
-          "ar": "العربية",
-          "en": "English",
+          "ar": "Arabe",
+          "en": "Anglais",
           "fr": "Français",
           "fil": "Tagalog",
-          "ur": "اُردُو",
-          "id": "Indonesian"
+          "ur": "Ourdou",
+          "id": "Indonésien"
         },
-        "update-button": "تعديل اللغة"
+        "update-button": "Modifier la langue"
       }
     },
     "errors": {
-      "required": "هذا الحقل مطلوب",
-      "invalidEmail": "إيميل غير صالح",
-      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      "required": "Ce champ est requis",
+      "invalidEmail": "Email invalide",
+      "serverError": "Erreur de connexion au serveur"
     },
     "edit": {
-      "title": "تحرير",
-      "description": "قم بتحديث معلوماتك الشخصية، وتفاصيل الاتصالs"
+      "title": "Modifier",
+      "description": "Mettez à jour vos informations personnelles et vos coordonnées"
     },
     "update-mobile": {
       "send-opt": {
-        "title": "تحديث رقم الهاتف",
-        "description": "الرجاء إدخال رقم هاتفك المحمول للحصول على رمز التحقق",
-        "input-label": "أدخل رقم الهاتف الجديد*",
-        "input-placeholder": "أدخل الرقم",
-        "button": "أرسل رمز التحقق",
+        "title": "Mettre à jour le numéro de téléphone",
+        "description": "Veuillez entrer votre numéro mobile pour recevoir un code de vérification",
+        "input-label": "Entrez le nouveau numéro de téléphone*",
+        "input-placeholder": "Entrez le numéro",
+        "button": "Envoyer le code de vérification",
         "errors": {
-          "required": "رقم الهاتف مطلوب",
-          "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "required": "Numéro de téléphone requis",
+          "invalidPhoneNumber": "Format de numéro de téléphone invalide. Doit être de 7 à 15 chiffres, pouvant commencer par un '+'.",
+          "serverError": "Erreur de connexion au serveur",
+          "tryAgainAfter": "Nombre d'essais autorisés dépassé. Veuillez réessayer plus tard"
         }
       },
       "verify-opt": {
-        "title": "تحديث رقم الجوال",
-        "description": "الرجاء إدخال رمز التحقق المرسل الى رقم هاتفك والمكون من 4 أرقام ",
-        "input-label": "أدخل رمز التحقق",
-        "button": "تأكيد الرمز",
-        "change-number-button": "تعديل الرقم",
-        "resend-code": "إعادة الإرسال",
+        "title": "Mise à jour du numéro mobile",
+        "description": "Veuillez entrer le code de vérification à 4 chiffres envoyé à votre numéro de téléphone",
+        "input-label": "Entrez le code de vérification",
+        "button": "Confirmation du code",
+        "change-number-button": "Modifier le numéro",
+        "resend-code": "Renvoyer",
         "errors": {
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "unauthorized": "كود غير صالح",
-          "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "serverError": "Erreur de connexion au serveur",
+          "unauthorized": "Code invalide",
+          "overuse": "Nombre d'essais autorisés dépassé. Veuillez réessayer plus tard",
+          "tryAgainAfter": "Nombre d'essais autorisés dépassé. Veuillez réessayer plus tard"
         }
       },
       "success": {
-        "title": "تم تحديث رقم الجوال بنجاح!",
-        "button": "عودة"
+        "title": "Votre numéro mobile a été mis à jour avec succès!",
+        "button": "Retour"
       }
     }
   },
   "contact-us": {
-    "title": "تواصل معنا",
-    "description": " املأ النموذج أدناه، وسنقوم بالرد عليك في اقرب وقت ممكن",
+    "title": "Contactez-nous",
+    "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais",
     "form": {
-      "type-label": "حدد نوع الرسالة",
+      "type-label": "Sélectionnez le type de message",
       "tabs": {
-        "inquiry": "استفسار",
-        "suggestion": "اقتراح",
-        "complaint": "شكوى"
+        "inquiry": "Demande",
+        "suggestion": "Suggestion",
+        "complaint": "Réclamation"
       },
-      "email-input-label": "أدخل عنوان بريدك الإلكتروني",
+      "email-input-label": "Entrez votre adresse email",
       "email-input-placeholder": "Example@example.co",
-      "name-input-label": "أدخل اسمك الكامل",
+      "name-input-label": "Entrez votre nom complet",
       "name-input-placeholder": "Ahamad Alyounis",
-      "message-input-label": "الموضوع",
-      "message-input-placeholder": "أدخل الموضوع هنا!",
-      "subject-input-label": "الرسالة",
-      "subject-input-placeholder": "أدخل الموضوع هنا!",
-      "submit-button": "ارسال",
-      "success": "تم استلام رسالتك بنجاح, سيتم الرد عليك في اقرب وقت ممكن.",
+      "message-input-label": "Sujet",
+      "message-input-placeholder": "Entrez le sujet ici!",
+      "subject-input-label": "Message",
+      "subject-input-placeholder": "Entrez le sujet ici!",
+      "submit-button": "Soumettre",
+      "success": "Votre message a été reçu avec succès, vous recevrez une réponse dans les plus brefs délais.",
       "errors": {
-        "required": "هذا الحقل مطلوب",
-        "invalidEmail": "إيميل غير صالح",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر"
+        "required": "Ce champ est requis",
+        "invalidEmail": "Email invalide",
+        "serverError": "Erreur de connexion au serveur"
       }
     }
   },
 
   "about-us": {
     "hero": {
-      "title": "عن إنعاش",
-      "description": "هو برنامج توعوي تدريبي تفاعلي للتثقيف والتوعية حول الإصابات الصحية والرياضية الطارئة والطرق السليمة للتعامل معها"
+      "title": "À propos d'Inaa'sh",
+      "description": "Il s'agit d'un programme interactif de sensibilisation et de formation pour éduquer et sensibiliser aux urgences de santé et aux blessures sportives ainsi qu'aux bonnes façons de les gérer"
     },
     "target": {
-      "title": "الفئة المستهدفة",
-      "description": "البرنامج موجه لجميع أفراد المجتمع ابتداء من سن 8 سنوات",
+      "title": "Public cible",
+      "description": "Le programme est destiné à tous les membres de la communauté dès l'âge de 8 ans",
       "main": {
-        "title": "الهدف الرئيسي",
-        "description": "توفير التوعية والتثقيف حول الطوارئ الصحية والرياضية من أجل تقديم المساعدة اللازمة للأشخاص قبل وصولهم الى المراكز الصحية أو المرافق الطبية الاخرى، وتجنب الحوادث التي تهدد الحياة باستخدام التكنولوجيا",
-        "sub-description": "المبدأ هو بناء حياة أكثر صحة، خالية من أمراض القلب والأوعية الدموية والسكتة الدماغية والإصابات الرياضية الكبرى وتثقيف الفرد حول كيفية إنقاذ الارواح والحصول على حياة خالية من الأمراض الخطيرة والعيش بصحة جيدة مع تعزيز المحتمع لحضور دورات الإسعافات الأولية والأنعاش القلبي والرئوي والمستجيب الأول الرياضي"
+        "title": "Objectif principal",
+        "description": "Fournir une sensibilisation et une éducation sur les urgences de santé et de sport pour fournir l'assistance nécessaire aux personnes avant qu'elles n'atteignent des centres de santé ou d'autres installations médicales et éviter les incidents menaçant la vie en utilisant la technologie",
+        "sub-description": "Le principe est de construire une vie plus saine, sans maladies cardiovasculaires, AVC et blessures sportives majeures et d'éduquer l'individu sur la manière de sauver des vies, d'avoir une vie sans maladies graves et de vivre en bonne santé tout en encourageant la communauté à suivre des cours de premiers secours, RCP et secouristes sportifs"
       }
     },
     "splitted-logo": {
-      "first": "البدء",
-      "second": "الرياضة",
-      "third": "القلب والصحة",
+      "first": "Démarrer",
+      "second": "Sport",
+      "third": "Cœur et Santé",
       "fourth": "R",
       "fifth": "P",
       "sixth": "C"
     },
     "objectives": {
-      "title": "الأهداف",
-      "description": "تعزيز قدرة أعضاء المجتمع على كيفية التعامل مع الطوارئ والتعلم وتقديم المساعدة",
+      "title": "Objectifs",
+      "description": "Renforcer la capacité des membres de la communauté à gérer les urgences, apprendre et fournir de l'aide",
       "objectives-list": {
         "list": {
           "first": {
-            "title": "الحفاظ على الحياة"
+            "title": "Sauver des vies"
           },
           "second": {
-            "title": "الحالات الطبية الطارئة"
+            "title": "Urgences médicales"
           },
           "third": {
-            "title": "الإنعاش القلبي الرئوي"
+            "title": "Réanimation cardio-pulmonaire"
           },
           "fourth": {
-            "title": "كيفية استخدام جهاز الصدمات الكهربائية"
+            "title": "Comment utiliser un défibrillateur"
           },
           "fifth": {
-            "title": "حوادث بلع اللسان اثناء ممارسة الرياضة"
+            "title": "Accidents de déglutition de la langue pendant le sport"
           },
           "sixth": {
-            "title": "حوادث الارتجاج أثناء ممارسة الرياضة"
+            "title": "Accidents de commotion cérébrale sportive"
           }
         }
       }
     },
     "about-us": {
-      "title": "من نحن",
-      "description": "تم تصميم البرنامج  لتوفير تدريب  على الاستجابة لحالات الطوارئ من خلال مقاطع فيديو ممتعة وتفاعلية قائمة على السيناريوهات. تغطي المنصة كلاً من الإصابات الصحية والرياضية، بهدف تثقيف المستخدمين حول المهارات الأساسية للتعامل مع حالات الطوارئ كما تشمل الميزات الرئيسية على اسئلة في الوقت الفعلي لكيفية التعامل مع الحالة مع امكانية تتبع التقدم، وتقييم الأداء والحصول على شهادة عند إكمال البرنامج التدريبي، تضمن منصتنا تجربة مستخدم سلسة مع خيارات لتحديث البيانات الشخصية والتحقق من الشهادات ومشاركة الإنجازات على وسائل التواصل الاجتماعي. تستهدف المنصة جمهورًا واسعًا، تتراوح أعمارهم بين 8 و60 عامًا، وتعزز التعلم بطريقة ممتعة وتفاعلية مع التركيز على المهارات المنقذة للحياة",
+      "title": "Qui sommes-nous",
+      "description": "Le programme est conçu pour fournir une formation à la réponse d'urgence à travers des vidéos basées sur des scénarios amusants et interactifs. La plateforme couvre à la fois les blessures de santé et sportives, visant à éduquer les utilisateurs sur les compétences de base pour gérer les urgences. Les principales caractéristiques incluent des questions en temps réel sur la gestion de la situation avec la possibilité de suivre les progrès, évaluer les performances et obtenir un certificat à la fin du programme de formation. Notre plateforme garantit une expérience utilisateur fluide avec des options pour mettre à jour les données personnelles, consulter les certificats et partager les réalisations sur les réseaux sociaux. La plateforme vise un large public, de 8 à 60 ans, et favorise l'apprentissage de manière ludique et interactive avec un accent sur les compétences de sauvetage.",
       "updates": {
-        "title": "التحديات",
-        "description": "يفتقر العديد من الأفراد إلى التدريب المناسب للتعامل مع حالات الطوارئ الصحية والرياضية. غالبًا ما تكون الأساليب التقليدية غير قابلة للوصول واعتيادية. هناك حاجة إلى منصة تفاعلية توفر تدريبًا سهل الوصول وشاملاً  لحالات الطوارئ."
+        "title": "Défis",
+        "description": "De nombreuses personnes n'ont pas la formation appropriée pour gérer les urgences de santé et sportives. Les méthodes traditionnelles sont souvent inaccessibles et habituelles. Il existe un besoin d'une plateforme interactive qui offre une formation complète et accessible pour les urgences"
       },
       "share": {
-        "title": "شارك نجاحك!",
+        "title": "Partagez votre succès!",
         "card": {
-          "title": "حصلت على 100%",
-          "description": "برنامج التوعية التفاعلية للطوارئ الصحية"
+          "title": "Vous avez obtenu 100%",
+          "description": "Programme interactif de sensibilisation aux urgences"
         }
       }
     },
     "solutions": {
-      "title": "الحلول",
-      "description": "توفر المنصة إنعاش حل تقني ممتع  للتدريب على الاستجابة لحالات الطوارئ من خلال مقاطع الفيديو التفاعلية المستندة إلى السيناريوهات التعليمية، يتعلم المستخدمون مهارات الطوارئ المتعلقة بالصحة والرياضة بالسرعة التي تناسبهم. تتميز المنصة باختبارات في الوقت الفعلي، وتتبع التقدم، وتقييمات الأداء للحفاظ على تفاعل المستخدمين، عند الانتهاء من البرنامج يمكن للمستخدمين الحصول على شهادات والتحقق بسهولة من إنجازاتهم ومشاركة نتائجهم على وسائل التواصل الاجتماعي، يوفر هذا الحل المصمم لجمهور واسع طريقة حديثة ومرنة لتزويد الأفراد بالمهارات الأساسية المنقذة للحياة ومعالجة القيود المفروضة على أساليب التدريب التقليدية",
+      "title": "Solutions",
+      "description": "La plateforme propose une solution technologique ludique pour la formation à la réponse d'urgence grâce à des vidéos basées sur des scénarios interactifs, les utilisateurs apprennent à leur rythme les compétences d'urgence liées à la santé et au sport. Avec des quiz en temps réel, le suivi des progrès et des évaluations de performance pour maintenir l'engagement des utilisateurs, à la fin du programme, les utilisateurs peuvent obtenir des certificats, vérifier facilement leurs réalisations et partager leurs résultats sur les réseaux sociaux. Cette solution, conçue pour un large public, offre une manière moderne et flexible de doter les individus des compétences essentielles pour sauver des vies et répondre aux limites des méthodes de formation traditionnelles.",
       "list": {
         "first": {
-          "title": "شاهد فيديوهات البرنامج",
-          "description": "ابدأ رحلتك بمشاهدة مقاطع فيديو البرنامج التدريبي التفاعلي المصمم للمشاركة وتعليم المهارات العملية"
+          "title": "Regarder les vidéos du programme",
+          "description": "Commencez votre parcours en regardant les vidéos du programme de formation interactif conçu pour engager et enseigner des compétences pratiques"
         },
         "second": {
-          "title": "أجب على الأسئلة",
-          "description": "اختبر فهمك من خلال الإجابة على الأسئلة بين كل فيديو"
+          "title": "Répondez aux questions",
+          "description": "Testez votre compréhension en répondant aux questions entre chaque vidéo"
         },
         "third": {
-          "title": "تقدم",
-          "description": "مع كل درس مكتمل، يمكنك تتبع تقدمك وتعميق معرفتك"
+          "title": "Progrès",
+          "description": "À chaque leçon terminée, vous pouvez suivre vos progrès et approfondir vos connaissances"
         },
         "fourth": {
-          "title": "احصل على شهادتك",
-          "description": "أكمل جميع الوحدات والتقييمات بنجاح لتحصل على شهادة إكمال البرنامج التدريبي"
+          "title": "Obtenez votre certificat",
+          "description": "Complétez avec succès tous les modules et évaluations pour recevoir un certificat de fin de programme de formation"
         },
         "fifth": {
-          "title": "شارك إنجازك",
-          "description": "احتفل بنجاحك! شارك شهادتك وإنجازات البرنامج  على وسائل التواصل الاجتماعي"
+          "title": "Partagez votre réussite",
+          "description": "Célébrez votre succès ! Partagez votre certificat et vos réalisations du programme sur les réseaux sociaux"
         }
       }
     },
     "why-us": {
-      "title": "لماذا إنعاش؟",
-      "description": "ملتزمون بتقديم تدريب ممتع يزودك بمهارات الاستجابة لحالات الطوارئ الأساسية",
+      "title": "Pourquoi Inaa'sh",
+      "description": "Engagé à fournir une formation ludique qui vous dote des compétences de base en réponse aux urgences",
       "reasons": {
-        "0": "متعدد اللغات",
-        "1": "كفاءة الوقت",
-        "2": "نطاق واسع",
-        "3": "سهل الاستخدام",
-        "4": "تقنيات حديثة",
-        "5": "مبني على البراهين",
-        "6": "وقاية",
-        "7": "بدون ورق (لبيئة آمنة)",
-        "8": " تفاعلي"
+        "0": "Multilingue",
+        "1": "Efficacité temporelle",
+        "2": "Large éventail",
+        "3": "Facilité d'utilisation",
+        "4": "Nouvelles technologies",
+        "5": "Basé sur des preuves",
+        "6": "Prévention",
+        "7": "Sans papier (pour un environnement sûr)",
+        "8": "Interactif"
       }
     },
     "our-partners": {
-      "title": "شركائنا ",
-      "description": "نحن نفخر بالشراكة مع المنظمات الرائدة لتقديم تدريب عالي الجودة على الاستجابة لحالات الطوارئ، مما يضمن ممارسات فعالة وحديثة للمواقف المتعلقة بالصحة والرياضةs"
+      "title": "Nos partenaires",
+      "description": "Nous sommes fiers de nous associer à des organisations leaders pour offrir une formation de haute qualité à la réponse d'urgence, garantissant des pratiques efficaces et à jour pour les situations liées à la santé et au sport."
     }
   },
   "footer": {
-    "important-links": "روابط مهمة",
-    "contact-us": "اتصل بنا",
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة",
-    "email": "بريد إلكتروني",
-    "phonenumber": "رقم",
-    "socials": "وسائل التواصل الاجتماعي"
+    "important-links": "Liens importants",
+    "contact-us": "Contactez-nous",
+    "full-screen": "Plein écran",
+    "home": "Accueil",
+    "about": "À propos d'Inaa'sh",
+    "information-center": "Centre d'information",
+    "contact": "Contactez-nous",
+    "faqs": "FAQs",
+    "email": "Email",
+    "phonenumber": "numéro de téléphone",
+    "socials": "Médias sociaux",
+    "privacy-policy": "Politique de confidentialité",
+    "terms": "Termes et conditions"
   },
   "course": {
     "course-header": {
       "score": {
-        "total": "إجمالي الأسئلة",
-        "right-answers": "الإجابات الصحيحة"
+        "total": "Nombre total de questions",
+        "right-answers": "Réponses correctes"
       },
-      "average-answer-time": "متوسط سرعة الاجابة"
+      "average-answer-time": "Vitesse moyenne des réponses"
     },
     "course-footer": {
-      "subtitle-tooltip": "الترجمة",
-      "sound-tooltip": "الصوت",
-      "change-program-button": "جميع البرامج",
-      "change-program-confirm-dialog": "هل أنت متأكد من أنك ترغب في تغيير البرنامج التدريبي؟",
-      "change-program-dialog-confirm": "نعم",
-      "change-program-dialog-cancel": "لا",
-      "select-scene-button": "محدد المشهد",
-      "select-scene-warning": "بمجرد الانتهاء من البرنامج، سوف تكون قادرا على اختيار المشاهد"
+      "subtitle-tooltip": "Sous-titres",
+      "sound-tooltip": "Son",
+      "change-program-button": "Tous les programmes",
+      "change-program-confirm-dialog": "Êtes-vous sûr de vouloir changer de programme de formation?",
+      "change-program-dialog-confirm": "Oui",
+      "change-program-dialog-cancel": "Non",
+      "select-scene-button": "Sélecteur de scène",
+      "select-scene-warning": "Une fois que vous avez terminé le programme, vous pourrez sélectionner des scènes"
     },
     "wrong-answer-modal": {
-      "title": "إجابة غير صحيحة!",
-      "description": "لقد فقدت قلب",
-      "listen": "استمع للشرح لتفهم تأثير هذا القرار على المصاب.",
-      "reason": "توضيح السبب",
-      "continue-button": "متابعة"
+      "title": "Réponse incorrecte!",
+      "description": "Vous avez perdu un cœur",
+      "listen": "Écoutez l'explication pour comprendre l'impact de cette décision sur la victime",
+      "reason": "Expliquez la raison",
+      "continue-button": "Continuer"
     }
   },
   "landscape": {
-    "description": "الرجاء استخدام الهاتف في الوضع الافقي لافضل تجربة عرض فديو"
+    "description": "Veuillez utiliser votre téléphone en mode paysage pour une meilleure expérience de visionnage vidéo"
   },
   "certificate": {
-    "answers": "الإجابات",
-    "average-answer-time": "متوسط ​​سرعة الاجابة",
-    "continue": "المتابعة للحصول على الشهادة",
-    "sec": "ثانية",
-    "grade": "ممتاز!",
+    "answers": "Réponses",
+    "average-answer-time": "Vitesse moyenne des réponses",
+    "continue": "Suivi pour obtenir le certificat ",
+    "sec": "Deuxième",
+    "grade": "Excellent!",
     "certificate-card": {
-      "title": "شهادة الإنجاز!",
-      "pass": "مجتاز",
-      "share-button": "مشاركة النتيجة الخاصة بك",
-      "download-button": "تحميل بصيغة PDF",
-      "share-with-others": "شارك إنعاش مع الآخرين",
-      "sec": "ثانية",
-      "grade": "ممتاز!",
-      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
+      "title": "Certificat de réussite!",
+      "pass": "Réussi",
+      "share-button": " Partagez votre score",
+      "download-button": "Télécharger PDF",
+      "share-with-others": "Partagez Inaa'sh avec d'autres",
+      "sec": "Deuxième",
+      "grade": "Excellent!",
+      "share-title": "Vous avez réussi {valeur}. Et vous?"
     }
   },
   "share-your-success": {
-    "title": "شارك نجاحك!",
-    "share-button": "شارك النتيجة",
-    "share-with-others": "شارك إنعاش مع الآخرين"
+    "title": "Partagez votre succès!",
+    "share-button": "Partagez votre score",
+    "share-with-others": "Partagez Inaa'sh avec d'autres"
   },
   "rating": {
-    "title": "ساعدنا على تحسين تجربتك",
-    "description": "رأيك محل اهتمامنا! أجب عن هذه الأسئلة السريعة لمساعدتنا في تحسين تجربة الاختبار والمنصة",
+    "title": "Aidez-nous à optimiser votre expérience",
+    "description": "Vos retours sont importants pour nous! Répondez à ces questions rapides pour nous aider à optimiser l'expérience de test et la plateforme",
     "rating-list": {
-      "1": "كيف تقيم سهولة استخدام واجهة الاختبار بشكل عام؟",
-      "2": "هل تعكس الأسئلة سيناريوهات الحياة الواقعية بشكل جيد بما يكفي لتحسين فهمك؟",
-      "3": "ما مدى رضاك ​​عن سرعة استجابة محتوى الفيديو ووضوحه؟",
-      "4": "هل كان تتبع التقدم (القلوب، الإجابات الصحيحة، الوقت) مفيدًا أثناء الاختبار؟"
+      "1": "Comment évalueriez-vous l'utilisabilité générale de l'interface de test?",
+      "2": "Les questions reflètent-elles suffisamment les scénarios réels pour améliorer votre compréhension?",
+      "3": "Êtes-vous satisfait de la réactivité et de la clarté du contenu vidéo?",
+      "4": "Le suivi des progrès (cœurs, réponses correctes, temps) a-t-il été utile pendant le test?"
     },
-    "textarea-label": "صف تجربتك (اختياري)",
-    "textarea-placeholder": "أخبرنا أكثر عن تجربتك!",
-    "continue": "متابعة",
+    "textarea-label": "Décrivez votre expérience (facultatif)",
+    "textarea-placeholder": "Dites-nous en plus sur votre expérience!",
+    "continue": "Continuer",
     "stepper": {
-      "first": "التقييم",
-      "second": "اكمال البيانات",
-      "third": "استلام الشهادة"
+      "first": "Évaluation",
+      "second": "Complétez les données",
+      "third": "Recevez le certificat "
     }
   },
   "complete-profile": {
-    "title": "أكمل ملفك الشخصي",
-    "description": "لمتابعة الحصول على الشهادة، يرجى إكمال ملف التعريف الخاص بك",
-    "email": "البريد الإلكتروني",
-    "name": "الاسم",
-    "first_name": "الاسم الاول",
-    "last_name": "اسم العائلة",
+    "title": "Complétez votre profil",
+    "description": "Pour continuer avec votre certification, veuillez compléter votre profil",
+    "email": "Email",
+    "name": "Nom",
+    "first_name": "Prénom",
+    "last_name": "Nom de famille",
     "name-input-placeholder": "Ahamad Alyounis",
     "first_name-input-placeholder": "Ahamad",
     "last_name-input-placeholder": "Alyounis ",
-    "email-input-placeholder": "Example@example.co",
-    "save-button": "الحصول على الشهادة",
-    "success": "تم اكمال بياناتك الشخصية بنجاح",
+    "email-input-placeholder": "Exemple@example.co",
+    "save-button": "Obtention d'un certificat",
+    "success": "Vos informations personnelles ont été complétées avec succès",
     "errors": {
-      "required": "هذا الحقل مطلوب",
-      "invalidEmail": "إيميل غير صالح",
-      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      "required": "Ce champ est requis",
+      "invalidEmail": "Email invalide",
+      "serverError": "Erreur de connexion au serveur"
     }
+  },
+  "privacy-policy": {
+    "title": "Politique de confidentialité",
+    "description": "Veuillez lire la politique attentivement"
+  },
+  "terms": {
+    "title": "Termes et conditions",
+    "description": "Veuillez lire attentivement les conditions"
   }
 }

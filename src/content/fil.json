@@ -1,429 +1,438 @@
 {
   "header": {
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة"
+    "full-screen": "Buong Screen",
+    "home": "Bahay",
+    "about": "Tungkol sa Inaa'sh",
+    "information-center": "Sentro ng Impormasyon",
+    "contact": "Makipag-ugnayan sa Amin",
+    "faqs": "Mga Madalas Itanong"
   },
   "choose-language": {
-    "title": "أختر اللغة",
+    "title": "Piliin ang Wika",
     "tabs": {
-      "ar": "العربية",
-      "en": "English",
-      "fr": "Français",
+      "ar": "Arabe",
+      "en": "Ingles",
+      "fr": "Pranses",
       "fil": "Tagalog",
-      "ur": "اُردُو",
-      "id": "Indonesian"
+      "ur": "Urdu",
+      "id": "Indonesyo"
     },
-    "next-button": "التالي"
+    "next-button": "Susunod"
   },
   "start": {
-    "title": " عيشها، تعلمها،<span> كن منقذًا</span> ",
-    "description": "استكشف الفيديوهات التفاعلية واحصل التدريب المناسب حول الاستجابة للإصابات الصحية والرياضية من خلال اكتساب المهارات الأساسية للتعامل مع حالات الطوارئ بشكل صحيح وسريع",
-    "start-course-button": "بدء البرنامج"
+    "start-course-button": "Simulan ang Programa"
   },
   "login": {
-    "title": "مرحبا بك في انعاش",
+    "title": "Maligayang Pagdating sa Inaa'sh",
     "send-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال رقم هاتفك المحمول للمتابعة ",
-      "input-label": "رقم الهاتف المحمول",
-      "input-placeholder": "أدخل الرقم",
-      "button": "أرسل رمز التحقق",
+      "title": "Ipagpatuloy ang Pag-login",
+      "description": "Pakilagay ang iyong mobile number upang magpatuloy",
+      "input-label": "Numero ng Mobile",
+      "input-placeholder": "Ilagay ang numero",
+      "button": "Ipadala ang verification code",
       "errors": {
-        "required": "رقم الهاتف مطلوب",
-        "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "required": "Kinakailangan ang numero ng telepono",
+        "invalidPhoneNumber": "Hindi wastong format ng mobile number. Dapat ay 7-15 na numero, maaaring magsimula sa '+'.",
+        "serverError": "Error sa pagkonekta sa server",
+        "tryAgainAfter": "Lumampas sa bilang ng pinapayagang pagtatangka. Pakisubukang muli mamaya."
       }
     },
     "verify-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال كلمة المرور المؤقتة المكونة من 4 أرقام المرسلة إلى رقم هاتفك المحمول",
-      "input-label": "أدخل رمز التحقق",
-      "button": "تأكيد الرمز",
-      "change-number-button": "تعديل الرقم",
-      "resend-code": "إعادة الإرسال",
+      "title": "Ipagpatuloy ang Pag-login",
+      "description": "Pakilagay ang pansamantalang 4-digit na password na ipinadala sa iyong mobile number",
+      "input-label": "Ilagay ang Verification Code",
+      "button": "Kumpirmahin ang Code",
+      "change-number-button": "Baguhin ang Numero",
+      "resend-code": "Muling Ipadala",
       "errors": {
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "unauthorized": "كود غير صالح",
-        "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
-      }
+        "serverError": "Error sa pagkonekta sa server",
+        "unauthorized": "Di-wastong code",
+        "overuse": "Lumampas sa bilang ng pinapayagang pagtatangka. Pakisubukang muli mamaya.",
+        "tryAgainAfter": "Lumampas sa bilang ng pinapayagang pagtatangka. Pakisubukang muli mamaya."
+     }
     },
     "success": {
-      "title": "تم تسجيل الدخول بنجاح!",
-      "button": "التالي"
+      "title": "Matagumpay na naka-login!",
+      "button": "Susunod"
     }
   },
   "payment": {
-    "choose-method": "حدد خيار الدفع",
+    "choose-method": "Piliin ang Paraan ng Pagbabayad",
     "options": {
       "card": {
-        "value": "بطاقة إئتمان",
-        "description": "ادفع بشكل آمن باستخدام بطاقة فيزا, ماستر كارد، أو مدى."
+        "value": "Credit card",
+        "description": "Magbayad nang ligtas gamit ang Visa, MasterCard, o Mada."
       },
       "apple": {
         "value": "Apple Pay",
         "description": ""
       }
     },
-    "next-button": "التالي",
-    "selected-course": "البرنامج المحدد",
+    "next-button": "Susunod",
+    "selected-course": "Ang Napiling Programa",
     "price": {
-      "original": "سعر البرنامج",
-      "discount": "سعر الخصم",
-      "total": "السعر الإجمالي"
+      "original": "Presyo ng Programa",
+      "discount": "Presyong may Diskwento",
+      "total": "Kabuuang Presyo"
     },
     "coupon": {
-      "input-placeholder": "أدخل رمز الخصم الخاص بك",
-      "coupon-button": "تطبيق"
+      "input-placeholder": "Ilagay ang Discount Code",
+      "coupon-button": "Ilapat"
     },
     "success": {
-      "title": "تم الدفع بنجاح!",
-      "button": "التالي"
+      "title": "Matagumpay na Nagawa ang Pagbabayad!",
+      "button": "Susunod"
     }
   },
   "faqs": {
-    "title": "الأسئلة الشائعة",
-    "description": "احصل على إجابات للأسئلة الشائعة حول برامجنا وخدماتنا التدريبية"
+    "title": "Mga Madalas Itanong",
+    "description": "Kunin ang mga sagot sa madalas itanong tungkol sa aming mga programa sa pagsasanay at serbisyo"
   },
   "information-center": {
-    "title": "مركز المعلومات",
-    "description": "قم بتأكيد الاستلام والإكمال الناجح لبرنامج التدريب على الاستجابة لحالات الطوارئ",
+    "title": "Sentro ng Impormasyon",
+    "description": "Kumpirmahin ang resibo at matagumpay na pagkumpleto ng emergency response training program",
     "search": {
-      "input-placeholder": "البحث بالاسم أو رقم الشهادة",
-      "search-button": "بحث",
-      "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى.",
-      "clear-history": "حذف السجلات",
-      "old-search": "السجلات"
+      "input-placeholder": "Maghanap ayon sa pangalan o numero ng sertipiko",
+      "search-button": "Maghanap",
+      "no-results": "Paumanhin, walang natagpuang katugmang tala. Pakisuri ang mga detalye at subukang muli.",
+      "clear-history": "Burahin ang mga Rekord",
+      "old-search": "Mga Rekord"
     },
     "result": {
-      "start-course-button": "ابدأ البرنامج",
-      "answers": "الإجابات",
-      "average-answer-time": "متوسط ​​سرعة الاجابة",
-      "pass": "مجتاز",
-      "share-button": "مشاركة النتيجة الخاصة بك",
-      "download-button": "تحميل بصيغة PDF",
-      "share-with-others": "شارك إنعاش مع الآخرين",
-      "sec": "ثانية",
-      "grade": "ممتاز!",
-      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
+      "start-course-button": "Simulan ang Programa",
+      "answers": "Mga Sagot",
+      "average-answer-time": "Karaniwang Bilis ng Pagsagot",
+      "pass": "Pumasa",
+      "share-button": "Ibahagi ang Iyong Iskor",
+      "download-button": "I-download ang PDF",
+      "share-with-others": "Ibahagi ang Inaa'sh sa Iba",
+      "sec": "Segundo",
+      "grade": "Napakahusay!",
+      "share-title": "Pumasa ka ng {value}, Ikaw?"
     }
   },
   "profile": {
-    "edit-button": "تحرير",
-    "mobile": "رقم الهاتف المحمول",
-    "email": "البريد الإلكتروني",
-    "name": "الاسم",
-    "first_name": "الاسم الاول",
-    "last_name": "اسم العائلة",
+    "edit-button": "I-edit",
+    "mobile": "Mobile Number",
+    "email": "Email",
+    "name": "Pangalan",
+    "first_name": "Unang Pangalan",
+    "last_name": "Apelyido",
     "name-input-placeholder": "Ahamad Alyounis",
     "first_name-input-placeholder": "Ahamad",
-    "last_name-input-placeholder": "Alyounis ",
+    "last_name-input-placeholder": "Alyounis",
     "email-input-placeholder": "Example@example.co",
-    "certificates": "الشهادات التي تم الحصول عليها",
-    "save-button": "حفظ",
-    "change-mobile-button": "تغيير",
-    "success": "تم تعديل بياناتك الشخصية بنجاح",
+    "certificates": "Mga Nakuha na Sertipiko",
+    "save-button": "I-save",
+    "change-mobile-button": "Palitan",
+    "success": "Matagumpay na nabago ang iyong personal na impormasyon",
     "dropdown": {
-      "profile": "الملف الشخصي",
-      "change-lang": "تغير اللغة",
-      "logout": "تسجيل الخروج",
+      "profile": "Profile",
+      "change-lang": "Palitan ang Wika",
+      "logout": "Mag-sign Out",
       "change-language": {
-        "title": "تغيير اللغة",
+        "title": "Palitan ang Wika",
         "tabs": {
-          "ar": "العربية",
-          "en": "English",
-          "fr": "Français",
+          "ar": "Arabe",
+          "en": "Ingles",
+          "fr": "Pranses",
           "fil": "Tagalog",
-          "ur": "اُردُو",
-          "id": "Indonesian"
+          "ur": "Urdu",
+          "id": "Indonesyo"
         },
-        "update-button": "تعديل اللغة"
+        "update-button": "Baguhin ang Wika"
       }
     },
     "errors": {
-      "required": "هذا الحقل مطلوب",
-      "invalidEmail": "إيميل غير صالح",
-      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      "required": "Kinakailangan ang field na ito",
+      "invalidEmail": "Di-wastong Email",
+      "serverError": "Error sa pagkonekta sa server"
     },
     "edit": {
-      "title": "تحرير",
-      "description": "قم بتحديث معلوماتك الشخصية، وتفاصيل الاتصالs"
+      "title": "I-edit",
+      "description": "I-update ang Iyong Personal na Impormasyon at mga Detalye ng Pakikipag-ugnayan"
     },
     "update-mobile": {
       "send-opt": {
-        "title": "تحديث رقم الهاتف",
-        "description": "الرجاء إدخال رقم هاتفك المحمول للحصول على رمز التحقق",
-        "input-label": "أدخل رقم الهاتف الجديد*",
-        "input-placeholder": "أدخل الرقم",
-        "button": "أرسل رمز التحقق",
+        "title": "I-update ang Mobile Number",
+        "description": "Pakilagay ang iyong mobile number upang makatanggap ng verification code",
+        "input-label": "Ilagay ang Bagong Numero*",
+        "input-placeholder": "Ilagay ang Numero",
+        "button": "Ipadala ang Verification Code",
         "errors": {
-          "required": "رقم الهاتف مطلوب",
-          "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "required": "Kinakailangan ang Mobile Number",
+          "invalidPhoneNumber": "Hindi wastong format ng mobile number. Dapat ay 7-15 na numero, maaaring magsimula sa '+'.",
+          "serverError": "Error sa pagkonekta sa server",
+          "tryAgainAfter": "Lumampas sa Bilang ng Pinapayagang Pagtatangka. Pakisubukang muli mamaya."
         }
       },
       "verify-opt": {
-        "title": "تحديث رقم الجوال",
-        "description": "الرجاء إدخال رمز التحقق المرسل الى رقم هاتفك والمكون من 4 أرقام ",
-        "input-label": "أدخل رمز التحقق",
-        "button": "تأكيد الرمز",
-        "change-number-button": "تعديل الرقم",
-        "resend-code": "إعادة الإرسال",
+        "title": "Pag-update ng Numero ng Mobile",
+        "description": "Pakilagay ang 4-digit na verification code na ipinadala sa iyong numero ng telepono",
+        "input-label": "Ilagay ang verification code",
+        "button": "Kumpirmasyon ng Code",
+        "change-number-button": "I-edit ang Numero",
+        "resend-code": "Ipadala Muli",
         "errors": {
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "unauthorized": "كود غير صالح",
-          "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "serverError": "Error sa pagkonekta sa server",
+          "unauthorized": "Hindi wastong code",
+          "overuse": "Lumagpas sa bilang ng pinapayagang pagtatangka. Pakisubukan ulit mamaya",
+          "tryAgainAfter": "Lumagpas sa bilang ng pinapayagang pagtatangka. Pakisubukan ulit mamaya"
         }
       },
       "success": {
-        "title": "تم تحديث رقم الجوال بنجاح!",
-        "button": "عودة"
+        "title": "Matagumpay na na-update ang iyong numero ng mobile!",
+        "button": "Bumalik"
       }
     }
   },
   "contact-us": {
-    "title": "تواصل معنا",
-    "description": " املأ النموذج أدناه، وسنقوم بالرد عليك في اقرب وقت ممكن",
+    "title": "Makipag-ugnayan sa Amin",
+    "description": "Pakipunan ang form sa ibaba at kami ay babalik sa iyo sa lalong madaling panahon",
     "form": {
-      "type-label": "حدد نوع الرسالة",
+      "type-label": "Piliin ang uri ng mensahe",
       "tabs": {
-        "inquiry": "استفسار",
-        "suggestion": "اقتراح",
-        "complaint": "شكوى"
+        "inquiry": "Pagtatanong",
+        "suggestion": "Mungkahi",
+        "complaint": "Reklamo"
       },
-      "email-input-label": "أدخل عنوان بريدك الإلكتروني",
+      "email-input-label": "Ilagay ang iyong email address",
       "email-input-placeholder": "Example@example.co",
-      "name-input-label": "أدخل اسمك الكامل",
+      "name-input-label": "Ilagay ang iyong buong pangalan",
       "name-input-placeholder": "Ahamad Alyounis",
-      "message-input-label": "الموضوع",
-      "message-input-placeholder": "أدخل الموضوع هنا!",
-      "subject-input-label": "الرسالة",
-      "subject-input-placeholder": "أدخل الموضوع هنا!",
-      "submit-button": "ارسال",
-      "success": "تم استلام رسالتك بنجاح, سيتم الرد عليك في اقرب وقت ممكن.",
+      "message-input-label": "Paksa",
+      "message-input-placeholder": "Ilagay ang paksa dito!",
+      "subject-input-label": "Mensahe",
+      "subject-input-placeholder": "Ilagay ang paksa dito!",
+      "submit-button": "Isumite",
+      "success": "Matagumpay na natanggap ang iyong mensahe, makatatanggap ka ng tugon sa lalong madaling panahon.",
       "errors": {
-        "required": "هذا الحقل مطلوب",
-        "invalidEmail": "إيميل غير صالح",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر"
+        "required": "Kinakailangan ang field na ito",
+        "invalidEmail": "Hindi wastong Email",
+        "serverError": "Error sa pagkonekta sa server"
       }
     }
   },
 
   "about-us": {
     "hero": {
-      "title": "عن إنعاش",
-      "description": "هو برنامج توعوي تدريبي تفاعلي للتثقيف والتوعية حول الإصابات الصحية والرياضية الطارئة والطرق السليمة للتعامل معها"
+      "title": "Tungkol sa Inaa'sh",
+      "description": "Ito ay isang interactive na programa para sa kamalayan at pagsasanay na nagtuturo at nagbibigay-kaalaman tungkol sa mga emerhensiyang pangkalusugan at sports injuries at ang tamang paraan ng pagharap dito."
     },
     "target": {
-      "title": "الفئة المستهدفة",
-      "description": "البرنامج موجه لجميع أفراد المجتمع ابتداء من سن 8 سنوات",
+      "title": "Layunin ng Programa",
+      "description": "Ang programa ay para sa lahat ng miyembro ng komunidad mula sa edad na 8.",
       "main": {
-        "title": "الهدف الرئيسي",
-        "description": "توفير التوعية والتثقيف حول الطوارئ الصحية والرياضية من أجل تقديم المساعدة اللازمة للأشخاص قبل وصولهم الى المراكز الصحية أو المرافق الطبية الاخرى، وتجنب الحوادث التي تهدد الحياة باستخدام التكنولوجيا",
-        "sub-description": "المبدأ هو بناء حياة أكثر صحة، خالية من أمراض القلب والأوعية الدموية والسكتة الدماغية والإصابات الرياضية الكبرى وتثقيف الفرد حول كيفية إنقاذ الارواح والحصول على حياة خالية من الأمراض الخطيرة والعيش بصحة جيدة مع تعزيز المحتمع لحضور دورات الإسعافات الأولية والأنعاش القلبي والرئوي والمستجيب الأول الرياضي"
+        "title": "Pangunahing Layunin",
+        "description": "Magbigay ng kaalaman at edukasyon tungkol sa mga emerhensiyang pangkalusugan at pampalakasan upang makapagbigay ng kinakailangang tulong bago makarating ang mga tao sa mga health center o iba pang pasilidad na medikal at maiwasan ang mga panganib sa buhay gamit ang teknolohiya.",
+        "sub-description": "Ang layunin ay bumuo ng mas malusog na buhay, walang sakit sa puso, stroke, at malubhang pinsala sa sports, at turuan ang indibidwal kung paano magligtas ng buhay, magkaroon ng buhay na malayo sa seryosong sakit, at mamuhay nang malusog habang hinihikayat ang komunidad na dumalo sa mga kurso sa first aid, CPR, at sports first responder."
       }
     },
     "splitted-logo": {
-      "first": "البدء",
-      "second": "الرياضة",
-      "third": "القلب والصحة",
+      "first": "Simulan",
+      "second": "Palakasan",
+      "third": "Puso at Kalusugan",
       "fourth": "R",
       "fifth": "P",
       "sixth": "C"
     },
     "objectives": {
-      "title": "الأهداف",
-      "description": "تعزيز قدرة أعضاء المجتمع على كيفية التعامل مع الطوارئ والتعلم وتقديم المساعدة",
+      "title": "Mga Layunin",
+      "description": "Palakasin ang kakayahan ng mga miyembro ng komunidad sa kung paano harapin ang mga emerhensiya, matuto, at magbigay ng tulong.",
       "objectives-list": {
         "list": {
           "first": {
-            "title": "الحفاظ على الحياة"
+            "title": "Pagpapanatili ng Buhay"
           },
           "second": {
-            "title": "الحالات الطبية الطارئة"
+            "title": "Mga Emerhensiyang Medikal"
           },
           "third": {
-            "title": "الإنعاش القلبي الرئوي"
+            "title": "Cardiopulmonary resuscitation"
           },
           "fourth": {
-            "title": "كيفية استخدام جهاز الصدمات الكهربائية"
+            "title": "Paano Gumamit ng Defibrillator"
           },
           "fifth": {
-            "title": "حوادث بلع اللسان اثناء ممارسة الرياضة"
+            "title": "Pagkalunok ng dila habang naglalaro ng sports"
           },
           "sixth": {
-            "title": "حوادث الارتجاج أثناء ممارسة الرياضة"
+            "title": "Mga Aksidente ng Concussion sa Palakasan"
           }
         }
       }
     },
     "about-us": {
-      "title": "من نحن",
-      "description": "تم تصميم البرنامج  لتوفير تدريب  على الاستجابة لحالات الطوارئ من خلال مقاطع فيديو ممتعة وتفاعلية قائمة على السيناريوهات. تغطي المنصة كلاً من الإصابات الصحية والرياضية، بهدف تثقيف المستخدمين حول المهارات الأساسية للتعامل مع حالات الطوارئ كما تشمل الميزات الرئيسية على اسئلة في الوقت الفعلي لكيفية التعامل مع الحالة مع امكانية تتبع التقدم، وتقييم الأداء والحصول على شهادة عند إكمال البرنامج التدريبي، تضمن منصتنا تجربة مستخدم سلسة مع خيارات لتحديث البيانات الشخصية والتحقق من الشهادات ومشاركة الإنجازات على وسائل التواصل الاجتماعي. تستهدف المنصة جمهورًا واسعًا، تتراوح أعمارهم بين 8 و60 عامًا، وتعزز التعلم بطريقة ممتعة وتفاعلية مع التركيز على المهارات المنقذة للحياة",
+      "title": "Sino Kami",
+      "description": "Ang programa ay idinisenyo upang magbigay ng pagsasanay sa pagtugon sa emerhensiya sa pamamagitan ng masaya at interactive na mga video na nakabatay sa senaryo. Saklaw ng platform ang parehong mga pinsala sa kalusugan at sports, na naglalayong turuan ang mga gumagamit ng mga pangunahing kasanayan sa pagharap sa mga emerhensiya. Kabilang sa mga pangunahing tampok ang real-time na mga tanong kung paano harapin ang sitwasyon, kasama ang kakayahang subaybayan ang progreso, suriin ang pagganap, at kumuha ng sertipiko matapos makumpleto ang programa ng pagsasanay. Tinitiyak ng aming platform ang tuloy-tuloy na karanasan para sa mga gumagamit na may mga opsyon upang i-update ang personal na data, tingnan ang mga sertipiko, at ibahagi ang mga nakamit sa social media. Ang platform ay nakatuon sa malawak na saklaw ng madla mula 8 hanggang 60 taong gulang, at isinusulong ang pag-aaral sa masaya at interactive na paraan na may pokus sa mga kasanayang nagliligtas ng buhay.",
       "updates": {
-        "title": "التحديات",
-        "description": "يفتقر العديد من الأفراد إلى التدريب المناسب للتعامل مع حالات الطوارئ الصحية والرياضية. غالبًا ما تكون الأساليب التقليدية غير قابلة للوصول واعتيادية. هناك حاجة إلى منصة تفاعلية توفر تدريبًا سهل الوصول وشاملاً  لحالات الطوارئ."
+        "title": "Mga Hamon",
+        "description": "Maraming tao ang walang sapat na pagsasanay para harapin ang mga emerhensiyang may kaugnayan sa kalusugan at palakasan. Ang mga tradisyunal na paraan ay madalas hindi naaabot at karaniwang nakasanayan. Kinakailangan ang isang interactive na platform na nagbibigay ng abot-kamay at komprehensibong pagsasanay para sa mga emerhensiya."
       },
       "share": {
-        "title": "شارك نجاحك!",
+        "title": "Ibahagi ang iyong tagumpay!",
         "card": {
-          "title": "حصلت على 100%",
-          "description": "برنامج التوعية التفاعلية للطوارئ الصحية"
+          "title": "Nakuha ang 100%!",
+          "description": "Interactive na Programa sa Kamalayan para sa Emerhensiya"
         }
       }
     },
     "solutions": {
-      "title": "الحلول",
-      "description": "توفر المنصة إنعاش حل تقني ممتع  للتدريب على الاستجابة لحالات الطوارئ من خلال مقاطع الفيديو التفاعلية المستندة إلى السيناريوهات التعليمية، يتعلم المستخدمون مهارات الطوارئ المتعلقة بالصحة والرياضة بالسرعة التي تناسبهم. تتميز المنصة باختبارات في الوقت الفعلي، وتتبع التقدم، وتقييمات الأداء للحفاظ على تفاعل المستخدمين، عند الانتهاء من البرنامج يمكن للمستخدمين الحصول على شهادات والتحقق بسهولة من إنجازاتهم ومشاركة نتائجهم على وسائل التواصل الاجتماعي، يوفر هذا الحل المصمم لجمهور واسع طريقة حديثة ومرنة لتزويد الأفراد بالمهارات الأساسية المنقذة للحياة ومعالجة القيود المفروضة على أساليب التدريب التقليدية",
+      "title": "Mga Solusyon",
+      "description": "Ang platform ay nagbibigay ng masayang teknolohikal na solusyon para sa pagsasanay sa pagtugon sa emerhensiya gamit ang mga interactive na video na nakabatay sa senaryo. Natututo ang mga gumagamit ng mga kasanayan sa emerhensiya na may kinalaman sa kalusugan at palakasan sa kanilang sariling bilis. Naglalaman ng real-time na pagsusulit, pagsubaybay sa progreso, at pagtatasa ng pagganap upang mapanatili ang interes ng mga gumagamit. Matapos makumpleto ang programa, maaaring makakuha ng sertipiko ang mga gumagamit, madaling mapatunayan ang kanilang mga nakamit, at ibahagi ang kanilang mga resulta sa social media. Ang solusyong ito, na idinisenyo para sa malawak na madla, ay nagbibigay ng modernong at flexible na paraan upang turuan ang mga tao ng mahahalagang kasanayang nagliligtas ng buhay at malutas ang mga limitasyon ng tradisyunal na pamamaraan ng pagsasanay.",
       "list": {
         "first": {
-          "title": "شاهد فيديوهات البرنامج",
-          "description": "ابدأ رحلتك بمشاهدة مقاطع فيديو البرنامج التدريبي التفاعلي المصمم للمشاركة وتعليم المهارات العملية"
+          "title": "Panoorin ang mga video ng programa",
+          "description": "Simulan ang iyong paglalakbay sa pamamagitan ng panonood ng mga video ng interactive na programa sa pagsasanay na idinisenyo upang magbigay ng interes at magturo ng praktikal na kasanayan."
         },
         "second": {
-          "title": "أجب على الأسئلة",
-          "description": "اختبر فهمك من خلال الإجابة على الأسئلة بين كل فيديو"
+          "title": "Sagutin ang mga tanong",
+          "description": "Subukan ang iyong pagkaunawa sa pamamagitan ng pagsagot sa mga tanong sa pagitan ng bawat video."
         },
         "third": {
-          "title": "تقدم",
-          "description": "مع كل درس مكتمل، يمكنك تتبع تقدمك وتعميق معرفتك"
+          "title": "Progreso",
+          "description": "Sa bawat natapos na aralin, maaari mong subaybayan ang iyong progreso at palalimin ang iyong kaalaman."
         },
         "fourth": {
-          "title": "احصل على شهادتك",
-          "description": "أكمل جميع الوحدات والتقييمات بنجاح لتحصل على شهادة إكمال البرنامج التدريبي"
+          "title": "Kunin ang iyong sertipiko",
+          "description": "Matagumpay na kumpletuhin ang lahat ng mga module at pagtatasa upang makatanggap ng sertipiko ng pagkumpleto ng programa sa pagsasanay."
         },
         "fifth": {
-          "title": "شارك إنجازك",
-          "description": "احتفل بنجاحك! شارك شهادتك وإنجازات البرنامج  على وسائل التواصل الاجتماعي"
+          "title": "Ibahagi ang iyong nakamit",
+          "description": "Ipagdiwang ang iyong tagumpay! Ibahagi ang iyong sertipiko at mga nakamit sa programa sa social media."
         }
       }
     },
     "why-us": {
-      "title": "لماذا إنعاش؟",
-      "description": "ملتزمون بتقديم تدريب ممتع يزودك بمهارات الاستجابة لحالات الطوارئ الأساسية",
+      "title": "Bakit Inaa'sh?",
+      "description": "Nakatuon sa pagbibigay ng masayang pagsasanay na nagtuturo sa iyo ng mga pangunahing kasanayan sa pagtugon sa emerhensiya.",
       "reasons": {
-        "0": "متعدد اللغات",
-        "1": "كفاءة الوقت",
-        "2": "نطاق واسع",
-        "3": "سهل الاستخدام",
-        "4": "تقنيات حديثة",
-        "5": "مبني على البراهين",
-        "6": "وقاية",
-        "7": "بدون ورق (لبيئة آمنة)",
-        "8": " تفاعلي"
+        "0": "Maramihang Wika",
+        "1": "Episyente sa Oras",
+        "2": "Malawak na Saklaw",
+        "3": "Madaling Gamitin",
+        "4": "Bagong Teknolohiya",
+        "5": "Nakabatay sa Ebidensya",
+        "6": "Pag-iwas",
+        "7": "Walang Papel (para sa ligtas na kapaligiran)",
+        "8": "Interactive"
       }
     },
     "our-partners": {
-      "title": "شركائنا ",
-      "description": "نحن نفخر بالشراكة مع المنظمات الرائدة لتقديم تدريب عالي الجودة على الاستجابة لحالات الطوارئ، مما يضمن ممارسات فعالة وحديثة للمواقف المتعلقة بالصحة والرياضةs"
+      "title": "Ang aming mga kasosyo",
+      "description": "Ipinagmamalaki naming makipagtulungan sa mga nangungunang organisasyon upang magbigay ng de-kalidad na pagsasanay sa pagtugon sa emerhensiya, tinitiyak ang epektibo at napapanahong mga pamamaraan para sa mga sitwasyong may kinalaman sa kalusugan at palakasan."
     }
   },
   "footer": {
-    "important-links": "روابط مهمة",
-    "contact-us": "اتصل بنا",
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة",
-    "email": "بريد إلكتروني",
-    "phonenumber": "رقم",
-    "socials": "وسائل التواصل الاجتماعي"
+    "important-links": "Mahahalagang Link",
+    "contact-us": "Makipag-ugnayan sa amin",
+    "full-screen": "Buong Screen",
+    "home": "Bahay",
+    "about": "Tungkol sa Inaa'sh",
+    "information-center": "Sentro ng Impormasyon",
+    "contact": "Makipag-ugnayan sa amin",
+    "faqs": "Mga Madalas Itanong",
+    "email": "Email",
+    "phonenumber": "Numero ng Telepono",
+    "socials": "Social Media",
+    "privacy-policy": "Patakaran sa Privacy",
+    "terms": "Mga Tuntunin at Kondisyon"
   },
   "course": {
     "course-header": {
       "score": {
-        "total": "إجمالي الأسئلة",
-        "right-answers": "الإجابات الصحيحة"
+        "total": "Kabuuang Mga Tanong",
+        "right-answers": "Tamang Sagot"
       },
-      "average-answer-time": "متوسط سرعة الاجابة"
+      "average-answer-time": "Karaniwang Bilis ng Sagot"
     },
     "course-footer": {
-      "subtitle-tooltip": "الترجمة",
-      "sound-tooltip": "الصوت",
-      "change-program-button": "جميع البرامج",
-      "change-program-confirm-dialog": "هل أنت متأكد من أنك ترغب في تغيير البرنامج التدريبي؟",
-      "change-program-dialog-confirm": "نعم",
-      "change-program-dialog-cancel": "لا",
-      "select-scene-button": "محدد المشهد",
-      "select-scene-warning": "بمجرد الانتهاء من البرنامج، سوف تكون قادرا على اختيار المشاهد"
+      "subtitle-tooltip": "Subtitulo",
+      "sound-tooltip": "Tunog",
+      "change-program-button": "Lahat ng mga Programa",
+      "change-program-confirm-dialog": "Sigurado ka bang gusto mong palitan ang iyong programa ng pagsasanay?",
+      "change-program-dialog-confirm": "Oo",
+      "change-program-dialog-cancel": "Hindi",
+      "select-scene-button": "Tagapili ng Eksena",
+      "select-scene-warning": "Kapag natapos mo na ang programa, magagawa mong pumili ng mga eksena."
     },
     "wrong-answer-modal": {
-      "title": "إجابة غير صحيحة!",
-      "description": "لقد فقدت قلب",
-      "listen": "استمع للشرح لتفهم تأثير هذا القرار على المصاب.",
-      "reason": "توضيح السبب",
-      "continue-button": "متابعة"
+      "title": "Maling Sagot!",
+      "description": "Nawala ang isang puso.",
+      "listen": "Makinig sa paliwanag upang maunawaan ang epekto ng desisyong ito sa biktima.",
+      "reason": "Ipaliwanag ang dahilan",
+      "continue-button": "Magpatuloy"
     }
   },
   "landscape": {
-    "description": "الرجاء استخدام الهاتف في الوضع الافقي لافضل تجربة عرض فديو"
+    "description": "Pakigamit ang iyong telepono sa landscape mode para sa pinakamainam na karanasan sa panonood ng video"
   },
   "certificate": {
-    "answers": "الإجابات",
-    "average-answer-time": "متوسط ​​سرعة الاجابة",
-    "continue": "المتابعة للحصول على الشهادة",
-    "sec": "ثانية",
-    "grade": "ممتاز!",
+    "answers": "Mga Sagot",
+    "average-answer-time": "Karaniwang Bilis ng Sagot",
+    "continue": "Pag-follow-up upang makuha ang sertipiko.",
+    "sec": "Pangalawa",
+    "grade": "Napakahusay!",
     "certificate-card": {
-      "title": "شهادة الإنجاز!",
-      "pass": "مجتاز",
-      "share-button": "مشاركة النتيجة الخاصة بك",
-      "download-button": "تحميل بصيغة PDF",
-      "share-with-others": "شارك إنعاش مع الآخرين",
-      "sec": "ثانية",
-      "grade": "ممتاز!",
-      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
+      "title": "Sertipiko ng Tagumpay!",
+      "pass": "Nakapasa",
+      "share-button": "Ibahagi ang iyong iskor",
+      "download-button": "I-download ang PDF",
+      "share-with-others": "Ibahagi ang Inaa'sh sa iba",
+      "sec": "Pangalawa",
+      "grade": "Napakahusay!",
+      "share-title": "Pumasa ka ng {value}, paano ka?"
     }
   },
   "share-your-success": {
-    "title": "شارك نجاحك!",
-    "share-button": "شارك النتيجة",
-    "share-with-others": "شارك إنعاش مع الآخرين"
+    "title": "Ibahagi ang iyong tagumpay!",
+    "share-button": "Ibahagi ang iyong iskor",
+    "share-with-others": "Ibahagi ang Inaa'sh sa iba"
   },
   "rating": {
-    "title": "ساعدنا على تحسين تجربتك",
-    "description": "رأيك محل اهتمامنا! أجب عن هذه الأسئلة السريعة لمساعدتنا في تحسين تجربة الاختبار والمنصة",
+    "title": "Tulungan kaming i-optimize ang iyong karanasan.",
+    "description": "Mahalaga sa amin ang iyong puna! Sagutin ang mga mabilis na tanong na ito upang matulungan kaming i-optimize ang karanasan at platform ng pagsusulit.",
     "rating-list": {
-      "1": "كيف تقيم سهولة استخدام واجهة الاختبار بشكل عام؟",
-      "2": "هل تعكس الأسئلة سيناريوهات الحياة الواقعية بشكل جيد بما يكفي لتحسين فهمك؟",
-      "3": "ما مدى رضاك ​​عن سرعة استجابة محتوى الفيديو ووضوحه؟",
-      "4": "هل كان تتبع التقدم (القلوب، الإجابات الصحيحة، الوقت) مفيدًا أثناء الاختبار؟"
+      "1": "Paano mo ire-rate ang kabuuang kakayahang magamit ng test interface?",
+      "2": "Nagre-reflect ba ang mga tanong sa mga totoong sitwasyon upang mapabuti ang iyong pag-unawa?",
+      "3": "Gaano ka nasiyahan sa pagiging responsive at kalinawan ng video content?",
+      "4": "Nakatulong ba ang pagsubaybay sa progreso [mga puso, tamang sagot, oras] sa panahon ng pagsusulit?"
     },
-    "textarea-label": "صف تجربتك (اختياري)",
-    "textarea-placeholder": "أخبرنا أكثر عن تجربتك!",
-    "continue": "متابعة",
+    "textarea-label": "Ilarawan ang iyong karanasan [opsyonal].",
+    "textarea-placeholder": "Sabihin pa sa amin ang tungkol sa iyong karanasan!",
+    "continue": "Magpatuloy.",
     "stepper": {
-      "first": "التقييم",
-      "second": "اكمال البيانات",
-      "third": "استلام الشهادة"
+      "first": "Rating",
+      "second": "Kumpletuhin ang data.",
+      "third": "Tanggapin ang sertipiko"
     }
   },
   "complete-profile": {
-    "title": "أكمل ملفك الشخصي",
-    "description": "لمتابعة الحصول على الشهادة، يرجى إكمال ملف التعريف الخاص بك",
-    "email": "البريد الإلكتروني",
-    "name": "الاسم",
-    "first_name": "الاسم الاول",
-    "last_name": "اسم العائلة",
+    "title": "Kumpletuhin ang iyong profile.",
+    "description": "Upang magpatuloy sa iyong sertipikasyon, pakikumpleto ang iyong profile.",
+    "email": "Email",
+    "name": "Pangalan",
+    "first_name": "Unang Pangalan",
+    "last_name": "Apelyido",
     "name-input-placeholder": "Ahamad Alyounis",
     "first_name-input-placeholder": "Ahamad",
     "last_name-input-placeholder": "Alyounis ",
     "email-input-placeholder": "Example@example.co",
-    "save-button": "الحصول على الشهادة",
-    "success": "تم اكمال بياناتك الشخصية بنجاح",
+    "save-button": "Pagkuha ng sertipiko",
+    "success": "Matagumpay na nakumpleto ang iyong personal na detalye.",
     "errors": {
-      "required": "هذا الحقل مطلوب",
-      "invalidEmail": "إيميل غير صالح",
-      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      "required": "Kinakailangan ang field na ito",
+      "invalidEmail": "Hindi wasto ang Email.",
+      "serverError": "Error sa pagkonekta sa server."
     }
+  },
+  "privacy-policy": {
+    "title": "Patakaran sa Privacy",
+    "description": "Pakibasa nang maigi ang patakaran"
+  },
+  "terms": {
+    "title": "Mga Tuntunin at Kundisyon",
+    "description": "Pakibasa nang maigi ang mga tuntunin"
   }
 }
+

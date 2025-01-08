@@ -1,429 +1,437 @@
 {
   "header": {
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة"
+    "full-screen": "Layar Penuh",
+    "home": "Beranda",
+    "about": "Tentang Inaa'sh",
+    "information-center": "Pusat Informasi",
+    "contact": "Hubungi Kami",
+    "faqs": "Pertanyaan yang Sering Diajukan"
   },
   "choose-language": {
-    "title": "أختر اللغة",
+    "title": "Pilih bahasa",
     "tabs": {
-      "ar": "العربية",
-      "en": "English",
-      "fr": "Français",
+      "ar": "Arab",
+      "en": "Inggris",
+      "fr": "Prancis",
       "fil": "Tagalog",
-      "ur": "اُردُو",
-      "id": "Indonesian"
+      "ur": "Urdu",
+      "id": "Indonesia"
     },
-    "next-button": "التالي"
+    "next-button": "Berikutnya"
   },
   "start": {
-    "title": " عيشها، تعلمها،<span> كن منقذًا</span> ",
-    "description": "استكشف الفيديوهات التفاعلية واحصل التدريب المناسب حول الاستجابة للإصابات الصحية والرياضية من خلال اكتساب المهارات الأساسية للتعامل مع حالات الطوارئ بشكل صحيح وسريع",
-    "start-course-button": "بدء البرنامج"
+    "start-course-button": "Mulai Program"
   },
   "login": {
-    "title": "مرحبا بك في انعاش",
+    "title": "Selamat datang di Inaa'sh",
     "send-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال رقم هاتفك المحمول للمتابعة ",
-      "input-label": "رقم الهاتف المحمول",
-      "input-placeholder": "أدخل الرقم",
-      "button": "أرسل رمز التحقق",
+      "title": "Lanjutkan masuk",
+      "description": "Harap masukkan nomor ponsel Anda untuk melanjutkan",
+      "input-label": "Nomor Ponsel",
+      "input-placeholder": "Masukkan nomor",
+      "button": "Kirim kode verifikasi",
       "errors": {
-        "required": "رقم الهاتف مطلوب",
-        "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "required": "Nomor telepon diperlukan",
+        "invalidPhoneNumber": "Format nomor telepon tidak valid. Harus 7-15 digit, dapat dimulai dengan '+'",
+        "serverError": "Kesalahan menghubungkan ke server",
+        "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
       }
     },
     "verify-opt": {
-      "title": "متابعة تسجيل الدخول",
-      "description": "الرجاء إدخال كلمة المرور المؤقتة المكونة من 4 أرقام المرسلة إلى رقم هاتفك المحمول",
-      "input-label": "أدخل رمز التحقق",
-      "button": "تأكيد الرمز",
-      "change-number-button": "تعديل الرقم",
-      "resend-code": "إعادة الإرسال",
+      "title": "Lanjutkan masuk",
+      "description": "Harap masukkan kata sandi sementara 4 digit yang dikirimkan ke nomor ponsel Anda",
+      "input-label": "Masukkan kode verifikasi",
+      "button": "Konfirmasi kode",
+      "change-number-button": "Edit Nomor",
+      "resend-code": "Kirim ulang",
       "errors": {
-        "serverError": "حصل خطأ في الاتصال بالسيرفر",
-        "unauthorized": "كود غير صالح",
-        "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-        "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+        "serverError": "Kesalahan menghubungkan ke server",
+        "unauthorized": "Kode tidak valid",
+        "overuse": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti",
+        "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
       }
     },
     "success": {
-      "title": "تم تسجيل الدخول بنجاح!",
-      "button": "التالي"
+      "title": "Berhasil masuk!",
+      "button": "Berikutnya"
     }
   },
   "payment": {
-    "choose-method": "حدد خيار الدفع",
+    "choose-method": "Pilih metode pembayaran",
     "options": {
       "card": {
-        "value": "بطاقة إئتمان",
-        "description": "ادفع بشكل آمن باستخدام بطاقة فيزا, ماستر كارد، أو مدى."
+        "value": "Kartu Kredit",
+        "description": "Bayar dengan aman menggunakan Visa, MasterCard, atau Mada."
       },
       "apple": {
         "value": "Apple Pay",
         "description": ""
       }
     },
-    "next-button": "التالي",
-    "selected-course": "البرنامج المحدد",
+    "next-button": "Berikutnya",
+    "selected-course": "Program yang dipilih",
     "price": {
-      "original": "سعر البرنامج",
-      "discount": "سعر الخصم",
-      "total": "السعر الإجمالي"
+      "original": "Harga Program",
+      "discount": "Harga Diskon",
+      "total": "Harga Total"
     },
     "coupon": {
-      "input-placeholder": "أدخل رمز الخصم الخاص بك",
-      "coupon-button": "تطبيق"
+      "input-placeholder": "Masukkan kode diskon Anda",
+      "coupon-button": "Terapkan"
     },
     "success": {
-      "title": "تم الدفع بنجاح!",
-      "button": "التالي"
+      "title": "Pembayaran berhasil dilakukan!",
+      "button": "Berikutnya"
     }
   },
   "faqs": {
-    "title": "الأسئلة الشائعة",
-    "description": "احصل على إجابات للأسئلة الشائعة حول برامجنا وخدماتنا التدريبية"
+    "title": "Pertanyaan yang Sering Diajukan",
+    "description": "Dapatkan jawaban atas pertanyaan umum tentang program pelatihan dan layanan kami"
   },
   "information-center": {
-    "title": "مركز المعلومات",
-    "description": "قم بتأكيد الاستلام والإكمال الناجح لبرنامج التدريب على الاستجابة لحالات الطوارئ",
+    "title": "Pusat Informasi",
+    "description": "Konfirmasi penerimaan dan penyelesaian program pelatihan tanggap darurat",
     "search": {
-      "input-placeholder": "البحث بالاسم أو رقم الشهادة",
-      "search-button": "بحث",
-      "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى.",
-      "clear-history": "حذف السجلات",
-      "old-search": "السجلات"
+      "input-placeholder": "Cari berdasarkan nama atau nomor sertifikat",
+      "search-button": "Cari",
+      "no-results": "Maaf, tidak ada data yang sesuai ditemukan. Silakan periksa detailnya dan coba lagi.",
+      "clear-history": "Hapus Data",
+      "old-search": "Data"
     },
     "result": {
-      "start-course-button": "ابدأ البرنامج",
-      "answers": "الإجابات",
-      "average-answer-time": "متوسط ​​سرعة الاجابة",
-      "pass": "مجتاز",
-      "share-button": "مشاركة النتيجة الخاصة بك",
-      "download-button": "تحميل بصيغة PDF",
-      "share-with-others": "شارك إنعاش مع الآخرين",
-      "sec": "ثانية",
-      "grade": "ممتاز!",
-      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
+      "start-course-button": "Mulai Program",
+      "answers": "Jawaban",
+      "average-answer-time": "Kecepatan Jawaban Rata-rata",
+      "pass": "Lulus",
+      "share-button": "Bagikan skor Anda",
+      "download-button": "Unduh PDF",
+      "share-with-others": "Bagikan Inaa'sh dengan orang lain",
+      "sec": "Detik",
+      "grade": "Luar biasa!",
+      "share-title": "Anda telah lulus {value} Bagaimana dengan Anda"
     }
   },
   "profile": {
-    "edit-button": "تحرير",
-    "mobile": "رقم الهاتف المحمول",
-    "email": "البريد الإلكتروني",
-    "name": "الاسم",
-    "first_name": "الاسم الاول",
-    "last_name": "اسم العائلة",
+    "edit-button": "Ubah",
+    "mobile": "Nomor Ponsel",
+    "email": "Email",
+    "name": "Nama",
+    "first_name": "Nama Depan",
+    "last_name": "Nama Belakang",
     "name-input-placeholder": "Ahamad Alyounis",
     "first_name-input-placeholder": "Ahamad",
-    "last_name-input-placeholder": "Alyounis ",
+    "last_name-input-placeholder": "Alyounis",
     "email-input-placeholder": "Example@example.co",
-    "certificates": "الشهادات التي تم الحصول عليها",
-    "save-button": "حفظ",
-    "change-mobile-button": "تغيير",
-    "success": "تم تعديل بياناتك الشخصية بنجاح",
+    "certificates": "Sertifikat yang diperoleh",
+    "save-button": "Simpan",
+    "change-mobile-button": "Ubah",
+    "success": "Detail pribadi Anda berhasil diperbarui",
     "dropdown": {
-      "profile": "الملف الشخصي",
-      "change-lang": "تغير اللغة",
-      "logout": "تسجيل الخروج",
+      "profile": "Profil",
+      "change-lang": "Ubah bahasa",
+      "logout": "Keluar",
       "change-language": {
-        "title": "تغيير اللغة",
+        "title": "Ubah bahasa",
         "tabs": {
-          "ar": "العربية",
-          "en": "English",
-          "fr": "Français",
+          "ar": "Arab",
+          "en": "Inggris",
+          "fr": " Prancis",
           "fil": "Tagalog",
-          "ur": "اُردُو",
-          "id": "Indonesian"
+          "ur": "Urdu",
+          "id": "Indonesia"
         },
-        "update-button": "تعديل اللغة"
+        "update-button": "Ubah bahasa"
       }
     },
     "errors": {
-      "required": "هذا الحقل مطلوب",
-      "invalidEmail": "إيميل غير صالح",
-      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      "required": "Kolom ini wajib diisi",
+      "invalidEmail": "Email tidak valid",
+      "serverError": "Kesalahan menghubungkan ke server"
     },
     "edit": {
-      "title": "تحرير",
-      "description": "قم بتحديث معلوماتك الشخصية، وتفاصيل الاتصالs"
+      "title": "Ubah",
+      "description": "Perbarui informasi pribadi dan detail kontak Anda"
     },
     "update-mobile": {
       "send-opt": {
-        "title": "تحديث رقم الهاتف",
-        "description": "الرجاء إدخال رقم هاتفك المحمول للحصول على رمز التحقق",
-        "input-label": "أدخل رقم الهاتف الجديد*",
-        "input-placeholder": "أدخل الرقم",
-        "button": "أرسل رمز التحقق",
+        "title": "Perbarui Nomor Telepon",
+        "description": "Masukkan nomor ponsel Anda untuk menerima kode verifikasi",
+        "input-label": "Masukkan nomor telepon baru*",
+        "input-placeholder": "Masukkan nomor",
+        "button": "Kirim kode verifikasi",
         "errors": {
-          "required": "رقم الهاتف مطلوب",
-          "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "required": "Nomor telepon diperlukan",
+          "invalidPhoneNumber": "Format nomor telepon tidak valid. Harus 7-15 digit, dapat dimulai dengan '+'",
+          "serverError": "Kesalahan menghubungkan ke server",
+          "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
         }
       },
       "verify-opt": {
-        "title": "تحديث رقم الجوال",
-        "description": "الرجاء إدخال رمز التحقق المرسل الى رقم هاتفك والمكون من 4 أرقام ",
-        "input-label": "أدخل رمز التحقق",
-        "button": "تأكيد الرمز",
-        "change-number-button": "تعديل الرقم",
-        "resend-code": "إعادة الإرسال",
+        "title": "Pembaruan Nomor Ponsel",
+        "description": "Harap masukkan kata sandi sementara 4 digit yang dikirimkan ke nomor ponsel Anda",
+        "input-label": "Masukkan kode verifikasi",
+        "button": "Konfirmasi kode",
+        "change-number-button": "Edit Nomor",
+        "resend-code": "Kirim ulang",
         "errors": {
-          "serverError": "حصل خطأ في الاتصال بالسيرفر",
-          "unauthorized": "كود غير صالح",
-          "overuse": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق",
-          "tryAgainAfter": "تجاوزت عدد المحاولات المسموحة الرجاء المحاولة في وقت لاحق"
+          "serverError": "Kesalahan menghubungkan ke server",
+          "unauthorized": "Kode tidak valid",
+          "overuse": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti",
+          "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
         }
       },
       "success": {
-        "title": "تم تحديث رقم الجوال بنجاح!",
-        "button": "عودة"
+        "title": "Nomor ponsel Anda telah berhasil diperbarui!",
+        "button": "Kembali"
       }
     }
   },
   "contact-us": {
-    "title": "تواصل معنا",
-    "description": " املأ النموذج أدناه، وسنقوم بالرد عليك في اقرب وقت ممكن",
+    "title": "Hubungi Kami",
+    "description": "Isi formulir di bawah ini dan kami akan menghubungi Anda secepatnya",
     "form": {
-      "type-label": "حدد نوع الرسالة",
+      "type-label": "Pilih jenis pesan",
       "tabs": {
-        "inquiry": "استفسار",
-        "suggestion": "اقتراح",
-        "complaint": "شكوى"
+        "inquiry": "Pertanyaan",
+        "suggestion": "Saran",
+        "complaint": "Keluhan"
       },
-      "email-input-label": "أدخل عنوان بريدك الإلكتروني",
+      "email-input-label": "Masukkan alamat email Anda",
       "email-input-placeholder": "Example@example.co",
-      "name-input-label": "أدخل اسمك الكامل",
+      "name-input-label": "Masukkan nama lengkap Anda",
       "name-input-placeholder": "Ahamad Alyounis",
-      "message-input-label": "الموضوع",
-      "message-input-placeholder": "أدخل الموضوع هنا!",
-      "subject-input-label": "الرسالة",
-      "subject-input-placeholder": "أدخل الموضوع هنا!",
-      "submit-button": "ارسال",
-      "success": "تم استلام رسالتك بنجاح, سيتم الرد عليك في اقرب وقت ممكن.",
+      "message-input-label": "Subjek",
+      "message-input-placeholder": "Masukkan subjek di sini!",
+      "subject-input-label": "Pesan",
+      "subject-input-placeholder": "Masukkan subjek di sini!",
+      "submit-button": "Kirim",
+      "success": "Pesan Anda telah berhasil diterima, Anda akan menerima balasan sesegera mungkin",
       "errors": {
-        "required": "هذا الحقل مطلوب",
-        "invalidEmail": "إيميل غير صالح",
-        "serverError": "حصل خطأ في الاتصال بالسيرفر"
+        "required": "Kolom ini wajib diisi",
+        "invalidEmail": "Email tidak valid",
+        "serverError": "Kesalahan menghubungkan ke server"
       }
     }
   },
 
   "about-us": {
     "hero": {
-      "title": "عن إنعاش",
-      "description": "هو برنامج توعوي تدريبي تفاعلي للتثقيف والتوعية حول الإصابات الصحية والرياضية الطارئة والطرق السليمة للتعامل معها"
+      "title": "Tentang Inaa'sh",
+      "description": "Ini adalah program kesadaran dan pelatihan interaktif untuk mendidik serta meningkatkan kesadaran tentang darurat kesehatan dan cedera olahraga, serta cara yang tepat untuk menanganinya."
     },
     "target": {
-      "title": "الفئة المستهدفة",
-      "description": "البرنامج موجه لجميع أفراد المجتمع ابتداء من سن 8 سنوات",
+      "title": "Sasaran audiens",
+      "description": "Program ini ditujukan untuk semua anggota masyarakat mulai usia 8 tahun.",
       "main": {
-        "title": "الهدف الرئيسي",
-        "description": "توفير التوعية والتثقيف حول الطوارئ الصحية والرياضية من أجل تقديم المساعدة اللازمة للأشخاص قبل وصولهم الى المراكز الصحية أو المرافق الطبية الاخرى، وتجنب الحوادث التي تهدد الحياة باستخدام التكنولوجيا",
-        "sub-description": "المبدأ هو بناء حياة أكثر صحة، خالية من أمراض القلب والأوعية الدموية والسكتة الدماغية والإصابات الرياضية الكبرى وتثقيف الفرد حول كيفية إنقاذ الارواح والحصول على حياة خالية من الأمراض الخطيرة والعيش بصحة جيدة مع تعزيز المحتمع لحضور دورات الإسعافات الأولية والأنعاش القلبي والرئوي والمستجيب الأول الرياضي"
+        "title": "Tujuan utama",
+        "description": "Memberikan kesadaran dan pendidikan tentang darurat kesehatan dan olahraga untuk memberikan bantuan yang diperlukan kepada orang-orang sebelum mereka mencapai pusat kesehatan atau fasilitas medis lainnya, serta menghindari insiden yang mengancam jiwa menggunakan teknologi.",
+        "sub-description": "Prinsipnya adalah membangun hidup yang lebih sehat, bebas dari penyakit kardiovaskular, stroke, dan cedera olahraga serius, serta mendidik individu tentang cara menyelamatkan nyawa, menjalani hidup bebas dari penyakit serius, dan hidup sehat sambil mendorong masyarakat untuk mengikuti kursus pertolongan pertama, CPR, dan pelatihan respon darurat olahraga."
       }
     },
     "splitted-logo": {
-      "first": "البدء",
-      "second": "الرياضة",
-      "third": "القلب والصحة",
+      "first": "Mulai",
+      "second": "Olahraga",
+      "third": "Jantung dan Kesehatan",
       "fourth": "R",
       "fifth": "P",
       "sixth": "C"
     },
     "objectives": {
-      "title": "الأهداف",
-      "description": "تعزيز قدرة أعضاء المجتمع على كيفية التعامل مع الطوارئ والتعلم وتقديم المساعدة",
+      "title": "Tujuan",
+      "description": "Memperkuat kapasitas anggota komunitas untuk menangani keadaan darurat, belajar, dan memberikan bantuan.",
       "objectives-list": {
         "list": {
           "first": {
-            "title": "الحفاظ على الحياة"
+            "title": "Menjaga Kehidupan"
           },
           "second": {
-            "title": "الحالات الطبية الطارئة"
+            "title": "Keadaan Darurat Medis"
           },
           "third": {
-            "title": "الإنعاش القلبي الرئوي"
+            "title": "Resusitasi Jantung Paru"
           },
           "fourth": {
-            "title": "كيفية استخدام جهاز الصدمات الكهربائية"
+            "title": "Cara menggunakan defibrillator"
           },
           "fifth": {
-            "title": "حوادث بلع اللسان اثناء ممارسة الرياضة"
+            "title": "Kecelakaan menelan lidah saat berolahraga"
           },
           "sixth": {
-            "title": "حوادث الارتجاج أثناء ممارسة الرياضة"
+            "title": "Kecelakaan gegar otak saat berolahraga"
           }
         }
       }
     },
     "about-us": {
-      "title": "من نحن",
-      "description": "تم تصميم البرنامج  لتوفير تدريب  على الاستجابة لحالات الطوارئ من خلال مقاطع فيديو ممتعة وتفاعلية قائمة على السيناريوهات. تغطي المنصة كلاً من الإصابات الصحية والرياضية، بهدف تثقيف المستخدمين حول المهارات الأساسية للتعامل مع حالات الطوارئ كما تشمل الميزات الرئيسية على اسئلة في الوقت الفعلي لكيفية التعامل مع الحالة مع امكانية تتبع التقدم، وتقييم الأداء والحصول على شهادة عند إكمال البرنامج التدريبي، تضمن منصتنا تجربة مستخدم سلسة مع خيارات لتحديث البيانات الشخصية والتحقق من الشهادات ومشاركة الإنجازات على وسائل التواصل الاجتماعي. تستهدف المنصة جمهورًا واسعًا، تتراوح أعمارهم بين 8 و60 عامًا، وتعزز التعلم بطريقة ممتعة وتفاعلية مع التركيز على المهارات المنقذة للحياة",
+      "title": "Siapa Kami",
+      "description": "Program ini dirancang untuk memberikan pelatihan respon darurat melalui video berbasis skenario yang menyenangkan dan interaktif. Platform ini mencakup cedera kesehatan dan olahraga, dengan tujuan mendidik pengguna tentang keterampilan dasar dalam menangani keadaan darurat. Fitur utama meliputi pertanyaan langsung tentang cara menangani situasi, kemampuan melacak kemajuan, mengevaluasi kinerja, dan mendapatkan sertifikat setelah menyelesaikan program pelatihan. Platform kami memastikan pengalaman pengguna yang lancar dengan opsi memperbarui data pribadi, memeriksa sertifikat, dan berbagi pencapaian di media sosial. Platform ini menargetkan audiens yang luas, mulai dari usia 8 hingga 60 tahun, dan mempromosikan pembelajaran dengan cara yang menyenangkan dan interaktif dengan fokus pada keterampilan yang dapat menyelamatkan jiwa.",
       "updates": {
-        "title": "التحديات",
-        "description": "يفتقر العديد من الأفراد إلى التدريب المناسب للتعامل مع حالات الطوارئ الصحية والرياضية. غالبًا ما تكون الأساليب التقليدية غير قابلة للوصول واعتيادية. هناك حاجة إلى منصة تفاعلية توفر تدريبًا سهل الوصول وشاملاً  لحالات الطوارئ."
+        "title": "Tantangan",
+        "description": "Banyak individu yang kurang memiliki pelatihan yang tepat untuk menangani keadaan darurat kesehatan dan olahraga. Metode tradisional seringkali tidak mudah diakses dan sudah menjadi kebiasaan. Dibutuhkan platform interaktif yang menyediakan pelatihan darurat yang mudah diakses dan komprehensif."
       },
       "share": {
-        "title": "شارك نجاحك!",
+        "title": "Bagikan Kesuksesan Anda!",
         "card": {
-          "title": "حصلت على 100%",
-          "description": "برنامج التوعية التفاعلية للطوارئ الصحية"
+          "title": "Mendapatkan 100%",
+          "description": "Program Kesadaran Darurat Interaktif"
         }
       }
     },
     "solutions": {
-      "title": "الحلول",
-      "description": "توفر المنصة إنعاش حل تقني ممتع  للتدريب على الاستجابة لحالات الطوارئ من خلال مقاطع الفيديو التفاعلية المستندة إلى السيناريوهات التعليمية، يتعلم المستخدمون مهارات الطوارئ المتعلقة بالصحة والرياضة بالسرعة التي تناسبهم. تتميز المنصة باختبارات في الوقت الفعلي، وتتبع التقدم، وتقييمات الأداء للحفاظ على تفاعل المستخدمين، عند الانتهاء من البرنامج يمكن للمستخدمين الحصول على شهادات والتحقق بسهولة من إنجازاتهم ومشاركة نتائجهم على وسائل التواصل الاجتماعي، يوفر هذا الحل المصمم لجمهور واسع طريقة حديثة ومرنة لتزويد الأفراد بالمهارات الأساسية المنقذة للحياة ومعالجة القيود المفروضة على أساليب التدريب التقليدية",
+      "title": "Solusi",
+      "description": "Platform ini memberikan solusi teknologi yang menyenangkan untuk pelatihan respons darurat melalui video berbasis skenario interaktif, pengguna mempelajari keterampilan darurat terkait kesehatan dan olahraga dengan kecepatan mereka sendiri. Dilengkapi dengan kuis waktu nyata, pelacakan kemajuan, dan penilaian kinerja untuk menjaga keterlibatan pengguna. Setelah menyelesaikan program, pengguna dapat memperoleh sertifikat, memverifikasi pencapaian mereka dengan mudah, dan membagikan hasil mereka di media sosial. Solusi ini dirancang untuk audiens yang luas, memberikan cara yang modern dan fleksibel untuk membekali individu dengan keterampilan penyelamatan nyawa yang penting dan mengatasi keterbatasan metode pelatihan tradisional.",
       "list": {
         "first": {
-          "title": "شاهد فيديوهات البرنامج",
-          "description": "ابدأ رحلتك بمشاهدة مقاطع فيديو البرنامج التدريبي التفاعلي المصمم للمشاركة وتعليم المهارات العملية"
+          "title": "Tonton video program",
+          "description": "Mulai perjalanan Anda dengan menonton video dari program pelatihan interaktif yang dirancang untuk melibatkan dan mengajarkan keterampilan praktis"
         },
         "second": {
-          "title": "أجب على الأسئلة",
-          "description": "اختبر فهمك من خلال الإجابة على الأسئلة بين كل فيديو"
+          "title": "Jawab pertanyaan",
+          "description": "Uji pemahaman Anda dengan menjawab pertanyaan di antara setiap video"
         },
         "third": {
-          "title": "تقدم",
-          "description": "مع كل درس مكتمل، يمكنك تتبع تقدمك وتعميق معرفتك"
+          "title": "Kemajuan",
+          "description": "Dengan setiap pelajaran yang diselesaikan, Anda dapat melacak kemajuan Anda dan memperdalam pengetahuan Anda."
         },
         "fourth": {
-          "title": "احصل على شهادتك",
-          "description": "أكمل جميع الوحدات والتقييمات بنجاح لتحصل على شهادة إكمال البرنامج التدريبي"
+          "title": "Dapatkan sertifikat Anda",
+          "description": "Selesaikan semua modul dan penilaian untuk menerima sertifikat penyelesaian program pelatihan"
         },
         "fifth": {
-          "title": "شارك إنجازك",
-          "description": "احتفل بنجاحك! شارك شهادتك وإنجازات البرنامج  على وسائل التواصل الاجتماعي"
+          "title": "Bagikan pencapaian Anda",
+          "description": "Rayakan keberhasilan Anda! Bagikan sertifikat dan pencapaian program Anda di media sosial"
         }
       }
     },
     "why-us": {
-      "title": "لماذا إنعاش؟",
-      "description": "ملتزمون بتقديم تدريب ممتع يزودك بمهارات الاستجابة لحالات الطوارئ الأساسية",
+      "title": "Mengapa Inaa'sh",
+      "description": "Berkomitmen untuk memberikan pelatihan menyenangkan yang membekali Anda dengan keterampilan respons darurat dasar",
       "reasons": {
-        "0": "متعدد اللغات",
-        "1": "كفاءة الوقت",
-        "2": "نطاق واسع",
-        "3": "سهل الاستخدام",
-        "4": "تقنيات حديثة",
-        "5": "مبني على البراهين",
-        "6": "وقاية",
-        "7": "بدون ورق (لبيئة آمنة)",
-        "8": " تفاعلي"
+        "0": "Multibahasa",
+        "1": "Efisiensi waktu",
+        "2": "Jangkauan luas",
+        "3": "Mudah digunakan",
+        "4": "Teknologi baru",
+        "5": "Berbasis bukti",
+        "6": "Pencegahan",
+        "7": "Tanpa kertas (untuk lingkungan yang aman)",
+        "8": "Interaktif"
       }
     },
     "our-partners": {
-      "title": "شركائنا ",
-      "description": "نحن نفخر بالشراكة مع المنظمات الرائدة لتقديم تدريب عالي الجودة على الاستجابة لحالات الطوارئ، مما يضمن ممارسات فعالة وحديثة للمواقف المتعلقة بالصحة والرياضةs"
+      "title": "Mitra kami",
+      "description": "Kami bangga bekerja sama dengan organisasi terkemuka untuk memberikan pelatihan respons darurat berkualitas tinggi, memastikan praktik yang efektif dan terbaru untuk situasi kesehatan dan olahraga."
     }
   },
   "footer": {
-    "important-links": "روابط مهمة",
-    "contact-us": "اتصل بنا",
-    "full-screen": "ملء الشاشة",
-    "home": "الرئيسية",
-    "about": "عن إنعاش",
-    "information-center": "مركز المعلومات",
-    "contact": "تواصل معنا",
-    "faqs": "الاسئلة الشائعة",
-    "email": "بريد إلكتروني",
-    "phonenumber": "رقم",
-    "socials": "وسائل التواصل الاجتماعي"
+    "important-links": "Tautan Penting",
+    "contact-us": "Hubungi Kami",
+    "full-screen": "Layar Penuh",
+    "home": "Beranda",
+    "about": "Tentang Inaa'sh",
+    "information-center": "Pusat Informasi",
+    "contact": "Hubungi Kami",
+    "faqs": "Pertanyaan yang Sering Diajukan",
+    "email": "Email",
+    "phonenumber": "Nomor Telepon",
+    "socials": "Media Sosial",
+    "privacy-policy": "Kebijakan Privasi",
+    "terms": "Syarat dan Ketentuan"
   },
   "course": {
     "course-header": {
       "score": {
-        "total": "إجمالي الأسئلة",
-        "right-answers": "الإجابات الصحيحة"
+        "total": "Jumlah Pertanyaan",
+        "right-answers": "Jawaban Benar"
       },
-      "average-answer-time": "متوسط سرعة الاجابة"
+      "average-answer-time": "Kecepatan Jawaban Rata-rata"
     },
     "course-footer": {
-      "subtitle-tooltip": "الترجمة",
-      "sound-tooltip": "الصوت",
-      "change-program-button": "جميع البرامج",
-      "change-program-confirm-dialog": "هل أنت متأكد من أنك ترغب في تغيير البرنامج التدريبي؟",
-      "change-program-dialog-confirm": "نعم",
-      "change-program-dialog-cancel": "لا",
-      "select-scene-button": "محدد المشهد",
-      "select-scene-warning": "بمجرد الانتهاء من البرنامج، سوف تكون قادرا على اختيار المشاهد"
+      "subtitle-tooltip": "Teks",
+      "sound-tooltip": "Suara",
+      "change-program-button": "Semua program",
+      "change-program-confirm-dialog": "Apakah Anda yakin ingin mengubah program pelatihan Anda?",
+      "change-program-dialog-confirm": "Ya",
+      "change-program-dialog-cancel": "Tidak",
+      "select-scene-button": "Pemilih Adegan",
+      "select-scene-warning": "Setelah Anda menyelesaikan program, Anda akan dapat memilih adegan"
     },
     "wrong-answer-modal": {
-      "title": "إجابة غير صحيحة!",
-      "description": "لقد فقدت قلب",
-      "listen": "استمع للشرح لتفهم تأثير هذا القرار على المصاب.",
-      "reason": "توضيح السبب",
-      "continue-button": "متابعة"
+      "title": "Jawaban Salah!",
+      "description": "Anda kehilangan satu hati",
+      "listen": "Dengarkan penjelasan untuk memahami dampak keputusan ini terhadap penderita",
+      "reason": "Jelaskan alasannya",
+      "continue-button": "Lanjutkan "
     }
   },
   "landscape": {
-    "description": "الرجاء استخدام الهاتف في الوضع الافقي لافضل تجربة عرض فديو"
+    "description": "Harap gunakan ponsel Anda dalam mode lanskap untuk pengalaman menonton video terbaik"
   },
   "certificate": {
-    "answers": "الإجابات",
-    "average-answer-time": "متوسط ​​سرعة الاجابة",
-    "continue": "المتابعة للحصول على الشهادة",
-    "sec": "ثانية",
-    "grade": "ممتاز!",
+    "answers": "Jawaban",
+    "average-answer-time": "Kecepatan Jawaban Rata-rata",
+    "continue": "Tindak lanjuti untuk mendapatkan sertifikat",
+    "sec": "Kedua",
+    "grade": "Luar Biasa!",
     "certificate-card": {
-      "title": "شهادة الإنجاز!",
-      "pass": "مجتاز",
-      "share-button": "مشاركة النتيجة الخاصة بك",
-      "download-button": "تحميل بصيغة PDF",
-      "share-with-others": "شارك إنعاش مع الآخرين",
-      "sec": "ثانية",
-      "grade": "ممتاز!",
-      "share-title": "لقد قمت باجتياز {value} ماذا عنك"
+      "title": "Sertifikat Prestasi!",
+      "pass": "Lulus",
+      "share-button": "Bagikan skor Anda",
+      "download-button": "Unduh PDF",
+      "share-with-others": "Bagikan Inaa'sh dengan orang lain",
+      "sec": "Kedua",
+      "grade": "Luar Biasa!",
+      "share-title": "Anda telah lulus {value} Bagaimana dengan Anda"
     }
   },
   "share-your-success": {
-    "title": "شارك نجاحك!",
-    "share-button": "شارك النتيجة",
-    "share-with-others": "شارك إنعاش مع الآخرين"
+    "title": "Bagikan kesuksesan Anda!",
+    "share-button": "Bagikan skor Anda",
+    "share-with-others": "Bagikan Inaa'sh dengan orang lain"
   },
   "rating": {
-    "title": "ساعدنا على تحسين تجربتك",
-    "description": "رأيك محل اهتمامنا! أجب عن هذه الأسئلة السريعة لمساعدتنا في تحسين تجربة الاختبار والمنصة",
+    "title": "Bantu kami mengoptimalkan pengalaman Anda",
+    "description": "Umpan balik Anda sangat penting bagi kami! Jawab pertanyaan singkat ini untuk membantu kami mengoptimalkan pengalaman uji coba dan platform",
     "rating-list": {
-      "1": "كيف تقيم سهولة استخدام واجهة الاختبار بشكل عام؟",
-      "2": "هل تعكس الأسئلة سيناريوهات الحياة الواقعية بشكل جيد بما يكفي لتحسين فهمك؟",
-      "3": "ما مدى رضاك ​​عن سرعة استجابة محتوى الفيديو ووضوحه؟",
-      "4": "هل كان تتبع التقدم (القلوب، الإجابات الصحيحة، الوقت) مفيدًا أثناء الاختبار؟"
+      "1": "Bagaimana Anda menilai kegunaan keseluruhan antarmuka uji coba?",
+      "2": "Apakah pertanyaan-pertanyaan tersebut mencerminkan skenario kehidupan nyata dengan cukup baik untuk meningkatkan pemahaman Anda?",
+      "3": "Seberapa puas Anda dengan responsivitas dan kejelasan konten video?",
+      "4": "Apakah pelacakan kemajuan (hati, jawaban benar, waktu) berguna selama ujian?"
     },
-    "textarea-label": "صف تجربتك (اختياري)",
-    "textarea-placeholder": "أخبرنا أكثر عن تجربتك!",
-    "continue": "متابعة",
+    "textarea-label": "Jelaskan pengalaman Anda (opsional)",
+    "textarea-placeholder": "Ceritakan lebih banyak tentang pengalaman Anda!",
+    "continue": "Lanjutkan",
     "stepper": {
-      "first": "التقييم",
-      "second": "اكمال البيانات",
-      "third": "استلام الشهادة"
+      "first": "Penilaian",
+      "second": "Lengkapi data",
+      "third": "Dapatkan sertifikat"
     }
   },
   "complete-profile": {
-    "title": "أكمل ملفك الشخصي",
-    "description": "لمتابعة الحصول على الشهادة، يرجى إكمال ملف التعريف الخاص بك",
-    "email": "البريد الإلكتروني",
-    "name": "الاسم",
-    "first_name": "الاسم الاول",
-    "last_name": "اسم العائلة",
+    "title": "Lengkapi profil Anda",
+    "description": "Untuk melanjutkan sertifikasi Anda, silakan lengkapi profil Anda",
+    "email": "Email",
+    "name": "Nama",
+    "first_name": "Nama Depan",
+    "last_name": "Nama Belakang",
     "name-input-placeholder": "Ahamad Alyounis",
     "first_name-input-placeholder": "Ahamad",
     "last_name-input-placeholder": "Alyounis ",
     "email-input-placeholder": "Example@example.co",
-    "save-button": "الحصول على الشهادة",
-    "success": "تم اكمال بياناتك الشخصية بنجاح",
+    "save-button": "Memperoleh sertifikat",
+    "success": "Detail pribadi Anda telah berhasil dilengkapi",
     "errors": {
-      "required": "هذا الحقل مطلوب",
-      "invalidEmail": "إيميل غير صالح",
-      "serverError": "حصل خطأ في الاتصال بالسيرفر"
+      "required": "Kolom ini wajib diisi",
+      "invalidEmail": "Email tidak valid",
+      "serverError": "Kesalahan menghubungkan ke server"
     }
+  },
+  "privacy-policy": {
+    "title": "Kebijakan Privasi",
+    "description": "Harap baca kebijakan ini dengan cermat"
+  },
+  "terms": {
+    "title": "Syarat dan Ketentuan",
+    "description": "Harap baca syarat ini dengan cermat"
   }
 }
