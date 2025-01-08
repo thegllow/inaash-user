@@ -1,15 +1,14 @@
 "use client"
+import { useRouter } from "@/lib/i18n/navigation"
+import { getVideos } from "@/services/utils/get-videos"
+import { Spinner } from "@nextui-org/spinner"
+import { useQuery } from "@tanstack/react-query"
 import React from "react"
 import { VideosProvider } from "../context/courses-context"
-import { CourseStoreProvider } from "../store/course-store-provider"
-import VideoHeader from "./video-header"
-import VideoFooter from "./video-footer"
-import { useQuery } from "@tanstack/react-query"
 import { getUserVideo } from "../get-user-video"
-import { getVideos } from "@/services/utils/get-videos"
-import axios from "axios"
-import { useRouter } from "@/lib/i18n/navigation"
-import { Spinner } from "@nextui-org/spinner"
+import { CourseStoreProvider } from "../store/course-store-provider"
+import VideoFooter from "./video-footer"
+import VideoHeader from "./video-header"
 
 type Props = {
   children: React.ReactNode

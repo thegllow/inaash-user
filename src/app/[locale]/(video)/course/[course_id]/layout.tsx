@@ -18,13 +18,10 @@ type Props = {
 export const dynamic = "force-dynamic"
 
 const Layout = async (props: Props) => {
-  const params = await props.params;
+  const params = await props.params
 
-  const {
-    children
-  } = props;
+  const { children } = props
 
-  console.log("🚀 ~ Layout ~ params:", params)
   const session = await auth()
   if (!session)
     return redirect({
