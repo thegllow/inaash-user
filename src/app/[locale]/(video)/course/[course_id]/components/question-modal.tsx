@@ -5,7 +5,7 @@ import { Modal, ModalBody, ModalContent } from "@nextui-org/modal"
 import { AnimatePresence, motion } from "framer-motion"
 import { useSession } from "next-auth/react"
 import { useParams } from "next/navigation"
-import { ElementRef, useEffect, useMemo, useRef, useState } from "react"
+import { ComponentRef, useEffect, useMemo, useRef, useState } from "react"
 import type ReactCountdown from "react-countdown"
 import { useVideos } from "../context/courses-context"
 import { useCourseStore } from "../store/course-store-provider"
@@ -40,7 +40,7 @@ const QuestionModal = () => {
   // counter
   const countDownRef = useRef<ReactCountdown | null>(null)
   const [isTimeOut, setIsTimeOut] = useState(false)
-  const timeoutAudioRef = useRef<ElementRef<"audio">>(null)
+  const timeoutAudioRef = useRef<ComponentRef<"audio">>(null)
   const timeoutDate = useMemo(
     () => Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000,
     [question?.id],

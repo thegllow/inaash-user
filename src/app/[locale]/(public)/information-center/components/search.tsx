@@ -3,7 +3,7 @@
 import { Input } from "@nextui-org/input"
 import { useTranslations } from "next-intl"
 import { parseAsString, useQueryState } from "nuqs"
-import React, { ElementRef, useRef, useState } from "react"
+import React, { ComponentRef, useRef, useState } from "react"
 
 import Button from "@/components/ui/button"
 import { useLocalStorage } from "@mantine/hooks"

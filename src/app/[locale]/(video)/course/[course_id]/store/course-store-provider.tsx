@@ -20,7 +20,7 @@ export interface CourseStoreProviderProps {
 }
 
 export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProps) => {
-  const storeRef = useRef<CourseStoreApi>()
+  const storeRef = useRef<CourseStoreApi>(null)
   if (!storeRef.current) {
     const scenesMap = arrayToMapByKey(video.video.scenes, "start_time")
     const questionsMap = arrayToMapByKey(video.video.questions, "appears_at")

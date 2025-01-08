@@ -3,7 +3,7 @@ import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
-  const params = await props.params;
+  const params = await props.params
   const ar = params.locale === "ar"
   const t = await getTranslations("privacy-policy")
   return (
@@ -42,7 +42,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </p>
                 <br />
 
-                <ol start="2">
+                <ol start={2}>
                   <li>
                     <strong>استخدام المعلومات الشخصية</strong>
                     <strong>:</strong>
@@ -58,7 +58,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>تحليل أداء المستخدم لتقديم توصيات شخصية.</li>
                 </ul>
                 <br />
-                <ol start="3">
+                <ol start={3}>
                   <li>
                     <strong>أمان البيانات</strong>
                     <strong>:</strong>
@@ -78,7 +78,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   </li>
                 </ul>
                 <br />
-                <ol start="4">
+                <ol start={4}>
                   <li>
                     <strong>مشاركة المعلومات</strong>
                     <strong>:</strong>
@@ -90,7 +90,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>إتمام المعاملات المالية بالتنسيق مع مزودي خدمة الدفع.</li>
                   <li>توفير خدمات الدعم الفني أو تحسين العمليات.</li>
                 </ul>
-                <ol start="5">
+                <ol start={5}>
                   <li>
                     <strong>ملفات تعريف الارتباط</strong> <strong>(Cookies)</strong>
                     <strong>:</strong>
@@ -103,7 +103,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>تقديم محتوى مخصص بناءً على سلوك المستخدم.</li>
                 </ul>
                 <br />
-                <ol start="6">
+                <ol start={6}>
                   <li>
                     <strong>حقوق المستخدم</strong>
                     <strong>:</strong>
@@ -116,7 +116,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>الاطلاع على البيانات التي تحتفظ بها المنصة.</li>
                 </ul>
                 <br />
-                <ol start="7">
+                <ol start={7}>
                   <li>
                     <strong>التعديلات</strong>
                     <strong>:</strong>
@@ -249,7 +249,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   </ul>
                 </ul>
                 <br />
-                <ol start="9">
+                <ol start={9}>
                   <li>
                     <strong> تعديل الشروط</strong>
                     <strong>:</strong>
@@ -266,7 +266,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   </li>
                 </ul>
                 <br />
-                <ol start="10">
+                <ol start={10}>
                   <li>
                     <strong> التواصل</strong>
                     <strong>:</strong>
@@ -312,7 +312,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   Additional information may be collected to improve the experience, such as preferred
                   language and activity history within the app..
                 </p>
-                <ol start="2">
+                <ol start={2}>
                   <li>
                     <strong>Use of Personal Information:</strong>
                   </li>
@@ -327,7 +327,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>Analyze user performance to provide personalized recommendations..</li>
                 </ul>
                 <p>&nbsp;</p>
-                <ol start="3">
+                <ol start={3}>
                   <li>
                     <strong>Data Security:</strong>
                   </li>
@@ -346,7 +346,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   </li>
                 </ul>
                 <p>&nbsp;</p>
-                <ol start="4">
+                <ol start={4}>
                   <li>
                     <strong>Information sharing:</strong>
                   </li>
@@ -357,7 +357,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>Complete financial transactions in coordination with payment service providers..</li>
                   <li>Providing technical support services or improving operations.</li>
                 </ul>
-                <ol start="5">
+                <ol start={5}>
                   <li>
                     <strong>Cookies (Cookies):</strong>
                   </li>
@@ -369,7 +369,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>Deliver personalized content based on user behavior.</li>
                 </ul>
                 <p>&nbsp;</p>
-                <ol start="6">
+                <ol start={6}>
                   <li>
                     <strong>User rights:</strong>
                   </li>
@@ -381,7 +381,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>View the data thatKeepWith itThe platform.</li>
                 </ul>
                 <p>&nbsp;</p>
-                <ol start="7">
+                <ol start={7}>
                   <li>
                     <strong>Modifications:</strong>
                   </li>

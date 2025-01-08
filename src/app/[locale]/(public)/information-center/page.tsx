@@ -3,9 +3,8 @@ import { Divider } from "@nextui-org/divider"
 import { getTranslations } from "next-intl/server"
 import Search from "./components/search"
 import SearchResults from "./components/search-results"
-import { Suspense } from "react"
 
-export default async function Page({ searchParams }: { searchParams: { [key: string]: string } }) {
+export default async function Page() {
   const t = await getTranslations("information-center")
   return (
     <>

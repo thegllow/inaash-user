@@ -2,20 +2,16 @@ import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user
 import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import axios from "axios"
-import { isRedirectError } from "next/dist/client/components/redirect"
+import { isRedirectError } from "next/dist/client/components/redirect-error"
 import { notFound } from "next/navigation"
 
-export default async function Layout(
-  props: {
-    children: React.ReactNode
-    params: Promise<{ locale: string; course_id: string }>
-  }
-) {
-  const params = await props.params;
+export default async function Layout(props: {
+  children: React.ReactNode
+  params: Promise<{ locale: string; course_id: string }>
+}) {
+  const params = await props.params
 
-  const {
-    children
-  } = props;
+  const { children } = props
 
   const session = await auth()
   if (!session)
