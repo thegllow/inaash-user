@@ -35,15 +35,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const { currentVideo } = useVideos()
   const { questionsMap, lastQuestion, playing, startTime, setCurrentQuestion, volume, setVideoPlayerRef } =
     useCourseStore((state) => state)
-  console.log("🚀 ~ startTime:", startTime)
 
   const [isReady, setIsReady] = useState(false)
   const playerRef = useRef<ReactPlayer>(null)
 
   const onReady = useCallback(() => {
     if (!isReady && playerRef.current) {
-      console.log("🚀 ~ use callback startTime:", startTime)
-
       const timeToStart = timeToSeconds(startTime)
       playerRef.current.seekTo(timeToStart, "seconds")
       setIsReady(true)

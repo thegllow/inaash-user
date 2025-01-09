@@ -36,7 +36,6 @@ const Page = async (props: Props) => {
       locale: locale,
     })
   }
-  // console.log(searchParams.coupon)
   const response = await InaashApi.get<SuccessResponse<Video>>(`/user/videos/${course_id}`, {
     params: { coupon: searchParams.coupon || "" },
   })

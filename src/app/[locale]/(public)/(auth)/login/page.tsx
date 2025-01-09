@@ -6,16 +6,13 @@ import { Suspense } from "react"
 import Wrapper from "./components/wrapper"
 import { auth } from "@/lib/auth/auth"
 
-const Page = async (
-  props: {
-    searchParams: Promise<{ [key: string]: string }>
-    params: Promise<{ locale: string }>
-  }
-) => {
-  const params = await props.params;
-  const searchParams = await props.searchParams;
+const Page = async (props: {
+  searchParams: Promise<{ [key: string]: string }>
+  params: Promise<{ locale: string }>
+}) => {
+  const params = await props.params
+  const searchParams = await props.searchParams
   const session = await auth()
-  console.log("🚀 ~ session:", session)
   if (session)
     redirect({ href: searchParams.callbackUrl ? searchParams.callbackUrl : "/start", locale: params.locale })
 

@@ -43,7 +43,7 @@ const Footer = async (props: Props) => {
                     <div className="flex items-center gap-3">
                       {siteConfig.contactInfo.socials.map((item, index) => {
                         return (
-                          <a target="_blank" key={item.href} className="text-white" href={item.href}>
+                          <a target="_blank" key={item.href + index} className="text-white" href={item.href}>
                             {item.icon}
                           </a>
                         )
@@ -58,7 +58,7 @@ const Footer = async (props: Props) => {
                 <ul className="flex flex-col gap-4">
                   {siteConfig.navItems.map((item, index) => {
                     return (
-                      <li key={item.label}>
+                      <li key={item.label + index}>
                         <Link
                           className="text-medium text-white duration-150 hover:text-[#f1f1f1b9] max-lg:text-sm"
                           href={item.href}>

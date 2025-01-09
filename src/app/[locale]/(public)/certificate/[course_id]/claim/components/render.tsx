@@ -12,7 +12,7 @@ const Render = (props: Props) => {
   const video = useVideo()
   useEffect(() => {
     if (video.is_rated != "0") setStep(2)
-  }, [])
+  }, [video.is_rated, setStep])
 
   switch (step) {
     case 1:

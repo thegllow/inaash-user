@@ -83,7 +83,7 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
                 variant="light"
                 size="md"
                 className="justify-between"
-                endContent={<img className="size-10 shrink-0" src={download.src} alt="share to linkedin" />}>
+                endContent={<img className="size-10 shrink-0" src={download.src} alt="download" />}>
                 {t("download-button")}
               </Button>
             </div>
