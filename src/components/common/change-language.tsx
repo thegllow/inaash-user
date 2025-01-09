@@ -38,18 +38,18 @@ const ChangeLanguage = (props: Props) => {
       Router.push({ pathname }, { locale: language })
     } catch (error) {
       if (axios.isAxiosError(error) && error.response?.data) {
+        console.log("🚀 ~ onUpdateLanguage ~ error:", error)
         const responseError = error.response.data as ErrorResponse<{}>
         setError(responseError.message)
         return
       }
     } finally {
-      setError("")
-
       setIsLoading(false)
     }
   }
   return (
     <Modal
+      size="lg"
       classNames={{
         base: "bg-[#0A0909] backdrop-blur-2xl",
       }}
@@ -68,6 +68,7 @@ const ChangeLanguage = (props: Props) => {
                     selectedKey={language}
                     onSelectionChange={(key) => setLanguage(key as string)}
                     color="primary"
+                    className="gap-1"
                     variant={"underlined"}
                     aria-label="Tabs variants">
                     {LOCALES.map((element) => {
@@ -75,7 +76,7 @@ const ChangeLanguage = (props: Props) => {
                         <Tab
                           key={element}
                           value={element}
-                          className="text-base"
+                          className="px-1 text-xs md:px-2 md:text-base"
                           title={t(`tabs.${element}`)}
                         />
                       )
@@ -86,7 +87,7 @@ const ChangeLanguage = (props: Props) => {
             </ModalBody>
             <ModalFooter>
               <div className="w-full">
-                <Button isLoading={isLoading} onClick={onUpdateLanguage}>
+                <Button size="md" isLoading={isLoading} onClick={onUpdateLanguage}>
                   {t("update-button")}
                 </Button>
                 {error ? <p className="mt-3 text-sm font-semibold text-danger">{error}</p> : ""}
