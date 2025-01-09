@@ -22,6 +22,7 @@ export interface Result {
   correct_answers: string
   progress: string
   lang: string
+  evaluation: string
   current_time: string
   last_question_id: string
   view_counter: string

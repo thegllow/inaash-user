@@ -9,7 +9,7 @@ import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user
 import { timeToSeconds } from "@/app/[locale]/(video)/course/[course_id]/utils/time-to-seconds"
 
 const Page = async (props: { params: Promise<{ course_id: string }> }) => {
-  const params = await props.params;
+  const params = await props.params
   const t = await getTranslations("certificate")
 
   const video = await getUserVideo(params.course_id)
@@ -21,7 +21,7 @@ const Page = async (props: { params: Promise<{ course_id: string }> }) => {
           <div className="h-full w-full shrink-0 rounded-xl ~sm/lg:~px-4/24 ~md/lg:~py-6/10">
             <div className="flex flex-col-reverse justify-center gap-8 lg:flex-row">
               <div className="space-y-6">
-                <h4 className="text-center font-semibold ~text-lg/2xl">{t("grade")}</h4>
+                <h4 className="text-center font-semibold ~text-lg/2xl">{video.evaluation}</h4>
 
                 <div className="flex shrink-0 items-stretch justify-center ~gap-2/4">
                   <Card shadow="none" radius="md" className="min-w-[140px] bg-[#2E2D34] p-2 md:min-w-[210px]">

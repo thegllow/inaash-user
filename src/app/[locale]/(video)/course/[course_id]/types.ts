@@ -35,6 +35,7 @@ export interface UserVideo {
   correct_answers: string
   progress: string
   lang: string
+  evaluation?: string
   current_time: string
   last_question_id: null
   view_counter: string

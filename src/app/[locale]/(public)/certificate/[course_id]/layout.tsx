@@ -4,6 +4,7 @@ import { redirect } from "@/lib/i18n/navigation"
 import axios from "axios"
 import { isRedirectError } from "next/dist/client/components/redirect-error"
 import { notFound } from "next/navigation"
+import { VideoProvider } from "./context/video-context"
 
 export default async function Layout(props: {
   children: React.ReactNode
@@ -38,9 +39,7 @@ export default async function Layout(props: {
     return (
       <>
         <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">
-          {/* <VideoProvider video={video}> */}
-          {children}
-          {/* </VideoProvider> */}
+          <VideoProvider video={video}>{children}</VideoProvider>
         </main>
       </>
     )

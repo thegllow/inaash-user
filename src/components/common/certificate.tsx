@@ -30,7 +30,7 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
           <div className="relative overflow-hidden">
             <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
               <div className="flex w-full items-center justify-between gap-4">
-                <h2 className="text-foreground">{t("grade")}</h2>
+                <h2 className="text-foreground">{video.evaluation}</h2>
                 <img src={horizontalLogo.src} alt="Inaash Logo" className="w-20" />
               </div>
               <div className="flex w-full items-center justify-between gap-8">
@@ -45,7 +45,7 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
               </div>
             </CardHeader>
           </div>
-          <div className="flex w-full items-center justify-between gap-5 px-3 py-2">
+          <div className="flex w-full flex-col items-center justify-between gap-5 px-3 py-2 md:flex-row">
             <div className="flex w-full items-center justify-between gap-4">
               <Button
                 as="a"
@@ -71,8 +71,9 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
                 {/* </Button> */}
               </div>
             </div>
-            <div>
-              <Divider className="h-10" orientation="vertical" />
+            <div className="max-md:w-full">
+              <Divider className="hidden h-10 md:block" orientation="vertical" />
+              <Divider className="w-full md:hidden" orientation="horizontal" />
             </div>
             <div className="w-full">
               <Button

@@ -10,7 +10,7 @@ export const VideoProvider = ({ children, video }: { children: React.ReactNode; 
 
 export const useVideo = () => {
   const value = useContext(VideoContext)
-  if (!value) throw new Error("useVideos should be VideosContext")
+  if (!value) throw new Error("useVideo should be VideosContext")
 
   return value
 }
