@@ -7,7 +7,7 @@ type Props = {
 
 const ProgressSlider = ({ progress }: Props) => {
   return (
-    <div className="w-full max-w-[120px] shrink-0 md:max-w-[155px] lg:max-w-[175px]" dir="ltr">
+    <div id="step1" className="w-full max-w-[120px] shrink-0 md:max-w-[155px] lg:max-w-[175px]" dir="ltr">
       <Slider
         value={progress}
         isDisabled

@@ -8,7 +8,7 @@ type Props = {
 
 const Hearts = (props: Props) => {
   return (
-    <div dir="ltr" className="flex items-center justify-center gap-2">
+    <div id="step3" dir="ltr" className="flex items-center justify-center gap-2">
       {Array(5)
         .fill("")
         .map((element, index) => {
