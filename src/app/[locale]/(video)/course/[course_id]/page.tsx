@@ -1,17 +1,79 @@
-"use client"
-import dynamic from "next/dynamic"
-import QuestionModal from "./components/question-modal"
-const CustomJOYRIDE = dynamic(async () => (await import("./tour/tour")).CustomJOYRIDE, { ssr: false })
-const VideoPlayer = dynamic(async () => import("./components/video-player"), { ssr: false })
+import { auth } from "@/lib/auth/auth"
+import { redirect } from "@/lib/i18n/navigation"
+import { getVideos } from "@/services/utils/get-videos"
+import axios from "axios"
+import { notFound } from "next/navigation"
+import { getUserVideo } from "./get-user-video"
 
-const Page = () => {
-  return (
-    <div className="h-[100lvh] w-full">
-      <VideoPlayer />
-      <QuestionModal />
-      <CustomJOYRIDE />
-    </div>
-  )
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query"
+import { redirect as nextRedirect } from "next/navigation"
+import VideoWrapper from "./components/video-wrapper"
+import PageWrapper from "./components/page-wrapper"
+type Props = {
+  params: Promise<{
+    locale: string
+    course_id: string
+  }>
+}
+export const dynamic = "force-dynamic"
+
+const Layout = async (props: Props) => {
+  const params = await props.params
+
+  const session = await auth()
+  if (!session)
+    return redirect({
+      href: {
+        pathname: "/login",
+        query: {
+          callbackUrl: `/course/${params.course_id}`,
+        },
+      },
+      locale: params.locale,
+    })
+
+  try {
+    const queryClient = new QueryClient()
+    await Promise.all([
+      queryClient.prefetchQuery({
+        queryKey: ["course", params.course_id, params.locale],
+        queryFn: async () => await getUserVideo(params.course_id),
+      }),
+      queryClient.prefetchQuery({
+        queryKey: ["courses", params.locale],
+        queryFn: async () => await getVideos(),
+      }),
+      getUserVideo(params.course_id),
+    ])
+
+    return (
+      <div className="relative flex min-h-screen flex-col">
+        <HydrationBoundary state={dehydrate(queryClient)}>
+          <VideoWrapper params={params}>
+            <PageWrapper />
+          </VideoWrapper>
+        </HydrationBoundary>
+      </div>
+    )
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      if (error.response?.status === 401) {
+        nextRedirect("/api/auth/signout")
+      }
+      console.log("🚀 ~ Layout ~ error:", error.response?.data)
+      if (error.response?.status === 404) notFound()
+
+      if (error.response?.status === 403) {
+        redirect({
+          href: {
+            pathname: "/payment/" + params.course_id,
+          },
+          locale: params.locale,
+        })
+      }
+    }
+    return <div className="text-white">Error</div>
+  }
 }
 
-export default Page
+export default Layout
