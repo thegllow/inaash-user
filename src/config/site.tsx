@@ -32,7 +32,7 @@ export const siteConfig = {
     socials: [
       {
         label: "",
-        href: "",
+        href: "https://www.instagram.com/inaash14?igsh=M3ptOWhhc2M1c3Rk",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>Instagram</title>
@@ -42,7 +42,7 @@ export const siteConfig = {
       },
       {
         label: "",
-        href: "",
+        href: "https://x.com/inaash14?s=21&t=QLLO0EXjeTIhB9Okd73ILg",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>X</title>
@@ -52,7 +52,7 @@ export const siteConfig = {
       },
       {
         label: "",
-        href: "",
+        href: "https://www.linkedin.com/in/inaash14?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>LinkedIn</title>
