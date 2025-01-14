@@ -9,6 +9,7 @@ export interface VideosResponse {
 
 export interface Data {
   helpers: Helpers
+
   items: Items
 }
 

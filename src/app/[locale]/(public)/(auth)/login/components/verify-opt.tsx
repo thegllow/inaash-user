@@ -12,18 +12,21 @@ import Button from "@/components/ui/button"
 
 import PostSendOTP from "@/services/utils/post-send-opt"
 import { ErrorResponse } from "@/types"
+import { useRouter } from "@/lib/i18n/navigation"
+import { useSearchParams } from "next/navigation"
 
 type Props = {}
 
 const VerifyOTP = (props: Props) => {
   const t = useTranslations("login.verify-opt")
+  const searchParams = useSearchParams()
+  const callbackURL = searchParams.get("callbackUrl")
 
   // state
   const [{ mobile, date }, setQueries] = useQueryStates({
     mobile: parseAsString,
     date: parseAsInteger,
   })
-  const [_, setSuccess] = useQueryState("success")
 
   // handle change mobile
   const handleChangeMobileNumber = () => {
@@ -36,6 +39,7 @@ const VerifyOTP = (props: Props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
   const [otp, setOtp] = useState("")
+  const Router = useRouter()
 
   const handleVerifyTOP: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
@@ -48,7 +52,8 @@ const VerifyOTP = (props: Props) => {
         return
       }
 
-      setSuccess("true")
+      // callbackURL ? revalidatePath(callbackURL, "page") : null
+      Router.push(callbackURL || "/start")
     } catch (error) {
       console.log("🚀 ~ handleVerifyTOP ~ error:", error)
       setError(t(`errors.serverError`))

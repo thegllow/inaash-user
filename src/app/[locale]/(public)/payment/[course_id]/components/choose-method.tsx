@@ -1,41 +1,36 @@
 "use client"
 
-import React, { useState } from "react"
 import { appleLogo, cardsLogo } from "@/assets"
 import { Image } from "@nextui-org/image"
-import { Radio, RadioGroup, type RadioProps } from "@nextui-org/radio"
+import { RadioGroup } from "@nextui-org/radio"
 import { useTranslations } from "next-intl"
+import { useState } from "react"
 
-import { cn } from "@/lib/cn"
-import { Link, usePathname, useRouter } from "@/lib/i18n/navigation"
 import Button from "@/components/ui/button"
-import { Pay } from "../pay"
 import useMutation from "@/hooks/use-mutation"
+import { cn } from "@/lib/cn"
+import { useRouter } from "@/lib/i18n/navigation"
+import { ErrorResponse } from "@/types"
+import axios from "axios"
 import { useParams } from "next/navigation"
 import { useQueryState } from "nuqs"
-import { isErrored } from "stream"
-import axios from "axios"
-import { ErrorResponse } from "@/types"
+import { Pay } from "../pay"
 
-type Props = {}
+type Props = {
+  children: React.ReactNode
+}
 
-export const CustomRadio = (props: RadioProps) => {
-  const { children, ...otherProps } = props
-
+export const CustomRadio = ({ children }: Props) => {
   return (
-    <Radio
-      {...otherProps}
-      classNames={{
-        base: cn(
-          "inline-flex m-0 bg-[#2E2A33] hover:bg-default-100 items-start justify-between",
-          "flex-row  max-w-[450px] cursor-pointer rounded-lg gap-2 p-2 border-2 border-transparent",
-        ),
-        labelWrapper: cn("gap-2 w-full"),
-        label: "flex justify-between gap-4 items-center",
-        description: "text-default-500",
-      }}>
+    <div
+      className={cn(
+        "m-0 inline-flex items-start justify-between bg-[#2E2A33]",
+        "max-w-[450px] cursor-pointer flex-row gap-2 rounded-lg border-2 border-transparent p-4",
+        "flex items-center justify-between gap-4",
+        "w-full gap-2",
+      )}>
       {children}
-    </Radio>
+    </div>
   )
 }
 
@@ -47,19 +42,12 @@ const ChooseMethod = (props: Props) => {
   const t = useTranslations("payment")
   const keys = ["card", "apple"] as const
 
-  const [method, setMethod] = useState("")
   const [coupon, _] = useQueryState("coupon")
   const params = useParams() as { course_id: string }
   const Router = useRouter()
-  const pathname = usePathname()
   const { mutate, isLoading, isError, error } = useMutation(Pay, {
-    onSuccess() {
-      Router.push({
-        pathname,
-        query: {
-          success: true,
-        },
-      })
+    onSuccess(data) {
+      Router.push(data.data.redirect_url)
     },
   })
   const handlePayment = () => {
@@ -71,8 +59,7 @@ const ChooseMethod = (props: Props) => {
   return (
     <div className="flex w-full flex-col justify-between gap-20">
       <RadioGroup
-        value={method}
-        onValueChange={setMethod}
+        isReadOnly
         classNames={{
           base: "gap-5",
           label: "text-foreground text-lg font-semibold",
@@ -80,13 +67,16 @@ const ChooseMethod = (props: Props) => {
         }}
         label={t("choose-method")}>
         {keys.map((key) => (
-          <CustomRadio key={key} description={t(`options.${key}.description`)} value={key}>
-            {t(`options.${key}.value`)}
+          <CustomRadio key={key}>
+            <div>
+              {t(`options.${key}.value`)}
+              <p className="text-default-500">{t(`options.${key}.description`)}</p>
+            </div>
             <Image src={icons[key]} alt={key} />
           </CustomRadio>
         ))}
       </RadioGroup>
-      <Button isLoading={isLoading} isDisabled={!method} onClick={handlePayment}>
+      <Button isLoading={isLoading} onClick={handlePayment}>
         {t("next-button")}
       </Button>
       {isError ? (
