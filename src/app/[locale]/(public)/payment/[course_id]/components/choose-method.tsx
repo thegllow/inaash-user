@@ -38,7 +38,8 @@ const icons = {
   card: cardsLogo.src,
   apple: appleLogo.src,
 }
-const ChooseMethod = (props: Props) => {
+
+const ChooseMethod = () => {
   const t = useTranslations("payment")
   const keys = ["card", "apple"] as const
 
