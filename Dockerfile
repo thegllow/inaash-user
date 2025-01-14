@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
  
 # Install the project dependencies.
-RUN npm install
+RUN npm install --force or --legacy-peer-deps
 
 # Copy the rest of your Next.js application files.1
 COPY . .
