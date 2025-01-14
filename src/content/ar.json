@@ -57,7 +57,7 @@
     }
   },
   "payment": {
-    "choose-method": "حدد خيار الدفع",
+    "choose-method": "ندعم طرق الدفع التالية",
     "options": {
       "card": {
         "value": "بطاقة إئتمان",

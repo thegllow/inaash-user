@@ -12,7 +12,6 @@ type Props = {}
 const Coupon = (props: Props) => {
   const t = useTranslations("payment.coupon")
   const [c, setC] = useState("")
-  console.log("🚀 ~ Coupon ~ c:", c)
   const [coupon, setCoupon] = useQueryState("coupon", parseAsString.withDefault(""))
   const handleApplyCoupon = () => {
     setCoupon(c, { shallow: false })
