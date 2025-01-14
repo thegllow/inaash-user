@@ -11,6 +11,8 @@ import { UserResponse } from "./types"
 import { Button } from "@nextui-org/button"
 import { Divider } from "@nextui-org/divider"
 import { download } from "@/assets/icons"
+import { firstCertificate, secondCertificate } from "@/assets/certificates"
+import Image from "next/image"
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params
@@ -70,7 +72,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   shadow={"none"}
                   className="w-full max-w-[unset] overflow-hidden rounded-[21px] border border-[#5A4A73] md:max-w-[320px]">
                   <CardBody className="relative w-full overflow-hidden p-1 rtl:text-right">
-                    <div className="relative mb-3 overflow-hidden">
+                    <div className="relative mb-3 aspect-[16/7] overflow-hidden rounded-2xl">
+                      <Image
+                        className="h-full w-full object-cover"
+                        src={video.video_id === "1" ? firstCertificate : secondCertificate}
+                        alt="certificate"
+                      />
                       <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
                         <div className="h-16 w-full"></div>
                       </CardHeader>
@@ -84,7 +91,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                         <Button
                           fullWidth
                           as="a"
-                          href="#"
+                          href={video.certificate_url || "#"}
+                          download
                           variant="light"
                           size="md"
                           className="items-center justify-center text-lg text-primary"
