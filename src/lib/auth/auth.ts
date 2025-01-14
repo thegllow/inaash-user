@@ -18,6 +18,7 @@ declare module "next-auth" {
 
   interface User extends ApiUserType {
     token: string
+    timeout_audio: string
   }
 }
 
@@ -45,7 +46,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             mobile,
             otp,
           })
-          const user = { ...response.data.data.item, token: response.data.data.token }
+          const user = {
+            ...response.data.data.item,
+            token: response.data.data.token,
+            timeout_audio: response.data.data.timeout_audio,
+          }
           if (user) {
             return { ...user }
           }

@@ -6,7 +6,7 @@ import { redirect } from "@/lib/i18n/navigation"
 import { loginBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
 import { auth } from "@/lib/auth/auth"
-import { InaashApiGuest } from "@/services/inaash"
+import InaashApi, { InaashApiGuest } from "@/services/inaash"
 import { SuccessResponse } from "@/types"
 import { Video } from "@/types/public-videos-response"
 import ChooseMethod from "./components/choose-method"
@@ -14,11 +14,16 @@ import CourseDetails from "./components/course-details"
 import Success from "./components/success"
 
 type Props = {
-  params: { course_id: string; locale: string }
-  searchParams: Record<string, string>
+  params: Promise<{ course_id: string; locale: string }>
+  searchParams: Promise<Record<string, string>>
 }
 
-const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
+const Page = async (props: Props) => {
+  const searchParams = await props.searchParams
+  const params = await props.params
+
+  const { course_id, locale } = params
+
   const session = await auth()
   if (!session) {
     redirect({
@@ -31,7 +36,9 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
       locale: locale,
     })
   }
-  const response = await InaashApiGuest.get<SuccessResponse<Video>>(`/videos/${course_id}`)
+  const response = await InaashApi.get<SuccessResponse<Video>>(`/user/videos/${course_id}`, {
+    params: { coupon: searchParams.coupon || "" },
+  })
   const course = response.data.data.item
 
   if (searchParams.success)
@@ -41,7 +48,7 @@ const Page = async ({ params: { course_id, locale }, searchParams }: Props) => {
         <section className="flex h-full items-center justify-center gap-4 ~/md:~py-8/10">
           <Card shadow={"none"} className="w-full max-w-sm border-none bg-[#0A090959] backdrop-blur-md">
             <CardBody className="p-8 rtl:text-right">
-              <Success course_id={course_id} />
+              <Success course_id={course_id} locale={locale} />
             </CardBody>
           </Card>
         </section>

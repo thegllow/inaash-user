@@ -9,6 +9,13 @@ import { useTranslations } from "next-intl"
 import { cn } from "@/lib/cn"
 import { Link, usePathname, useRouter } from "@/lib/i18n/navigation"
 import Button from "@/components/ui/button"
+import { Pay } from "../pay"
+import useMutation from "@/hooks/use-mutation"
+import { useParams } from "next/navigation"
+import { useQueryState } from "nuqs"
+import { isErrored } from "stream"
+import axios from "axios"
+import { ErrorResponse } from "@/types"
 
 type Props = {}
 
@@ -41,14 +48,24 @@ const ChooseMethod = (props: Props) => {
   const keys = ["card", "apple"] as const
 
   const [method, setMethod] = useState("")
+  const [coupon, _] = useQueryState("coupon")
+  const params = useParams() as { course_id: string }
   const Router = useRouter()
   const pathname = usePathname()
+  const { mutate, isLoading, isError, error } = useMutation(Pay, {
+    onSuccess() {
+      Router.push({
+        pathname,
+        query: {
+          success: true,
+        },
+      })
+    },
+  })
   const handlePayment = () => {
-    Router.push({
-      pathname,
-      query: {
-        success: true,
-      },
+    mutate({
+      video_id: params.course_id,
+      coupon: coupon ? coupon : undefined,
     })
   }
   return (
@@ -69,9 +86,16 @@ const ChooseMethod = (props: Props) => {
           </CustomRadio>
         ))}
       </RadioGroup>
-      <Button isDisabled={!method} onClick={handlePayment}>
+      <Button isLoading={isLoading} isDisabled={!method} onClick={handlePayment}>
         {t("next-button")}
       </Button>
+      {isError ? (
+        <p className="text-center text-sm text-danger-500">
+          {axios.isAxiosError(error)
+            ? (error.response!.data as ErrorResponse<any>).message
+            : (error as any).message}
+        </p>
+      ) : null}
     </div>
   )
 }

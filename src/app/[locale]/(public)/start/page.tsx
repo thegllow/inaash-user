@@ -6,17 +6,17 @@ import ChooseCourse from "./components/choose-course"
 import { getVideos } from "@/services/utils/get-videos"
 
 type Props = {
-  params: {
+  params: Promise<{
     locale: string
-  }
+  }>
 }
 
-export const revalidate = 86400 // 1 day in seconds (24 hours)
+export const revalidate = 60 // 1 day in seconds (24 hours)
 export const dynamic = "force-static"
 
 const Page = async (props: Props) => {
   // Enable static rendering
-  setRequestLocale(props.params.locale)
+  setRequestLocale((await props.params).locale)
   const { videos, content } = await getVideos()
 
   return (

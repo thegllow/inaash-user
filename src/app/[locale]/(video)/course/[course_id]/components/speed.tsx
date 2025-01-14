@@ -10,7 +10,7 @@ type Props = {
 const Speed = (props: Props) => {
   const t = useTranslations("course.course-header")
   return (
-    <div className="flex items-center gap-2">
+    <div id="step4" className="flex items-center gap-2">
       <span className="text-xs text-default-500">{t("average-answer-time")}</span>
       <Chip
         startContent={<Timer size={18} />}

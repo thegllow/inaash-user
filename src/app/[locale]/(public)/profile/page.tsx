@@ -1,16 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-import { profilePlaceholder } from "@/assets"
+import { horizontalLogo, profilePlaceholder } from "@/assets"
 import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import InaashApi from "@/services/inaash"
-import { Card } from "@nextui-org/card"
+import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Input } from "@nextui-org/input"
 import { getTranslations } from "next-intl/server"
 import EditProfileButton from "./components/edit-button"
 import { UserResponse } from "./types"
+import { Button } from "@nextui-org/button"
+import { Divider } from "@nextui-org/divider"
+import { download } from "@/assets/icons"
 
-export default async function Page({ params: { locale } }: { params: { locale: string } }) {
+export default async function Page(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params
+
+  const { locale } = params
+
   const t = await getTranslations("profile")
+  const t2 = await getTranslations("certificate.certificate-card")
 
   const session = await auth()
   if (!session) redirect({ href: "/login", locale })
@@ -19,7 +27,7 @@ export default async function Page({ params: { locale } }: { params: { locale: s
   const user = response.data.data.item
 
   return (
-    <section className="flex items-center justify-center gap-4 ~/md:~py-16/24">
+    <section className="flex items-center justify-center gap-4 ~/md:~py-10/24">
       <Card shadow={"none"} className="w-full max-w-4xl shrink-0 rounded-xl bg-[#0A090959] p-1">
         <div className="mb-3 space-y-5 rounded-t-lg bg-[#1D1B1B] ~px-7/12 ~py-5/9">
           <div className="flex items-center justify-between">
@@ -52,8 +60,47 @@ export default async function Page({ params: { locale } }: { params: { locale: s
             />
           </div>
         </div>
-        <div className="px-11">
+        <div className="space-y-4 py-4 ~px-4/11">
           <p className="text-lg font-semibold">{t("certificates")}</p>
+          <div className="flex w-full flex-wrap justify-start gap-5">
+            {user.userVideos?.map((video) => {
+              return (
+                <Card
+                  key={video.video_id}
+                  shadow={"none"}
+                  className="w-full max-w-[unset] overflow-hidden rounded-[21px] border border-[#5A4A73] md:max-w-[320px]">
+                  <CardBody className="relative w-full overflow-hidden p-1 rtl:text-right">
+                    <div className="relative mb-3 overflow-hidden">
+                      <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
+                        <div className="h-16 w-full"></div>
+                      </CardHeader>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex gap-3">
+                        <p className="text-foreground">{video.video_title}</p>
+                      </div>
+                      <Divider />
+                      <div className="w-full px-1 pb-1">
+                        <Button
+                          fullWidth
+                          as="a"
+                          href="#"
+                          variant="light"
+                          size="md"
+                          className="items-center justify-center text-lg text-primary"
+                          endContent={
+                            <img className="mt-1 size-10 shrink-0" src={download.src} alt="download" />
+                          }>
+                          {t2("download-button")}
+                        </Button>
+                      </div>
+                    </div>
+                  </CardBody>
+                </Card>
+              )
+            })}
+          </div>
+          <div></div>
         </div>
       </Card>
     </section>

@@ -1,18 +1,43 @@
-import React from "react"
+"use client"
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
+import { GetSearch } from "../search"
+import OldSearch from "./old-search"
 import SearchResultItem from "./search-result-item"
-import NoResults from "./no-results"
+import { Spinner } from "@nextui-org/spinner"
+import { useQueryState } from "nuqs"
 
-type Props = {}
+const SearchResults = () => {
+  const [query] = useQueryState("q")
 
-const SearchResults = (props: Props) => {
+  const { data: results, status } = useQuery({
+    queryKey: ["information-center-search", query],
+    queryFn: () => GetSearch(query!),
+    staleTime: Infinity,
+    enabled: !!query,
+  })
+
+  if (!query)
+    return (
+      <div className="space-y-4">
+        <OldSearch />
+      </div>
+    )
+  if (status === "pending")
+    return (
+      <div className="flex justify-center py-20">
+        <Spinner />
+      </div>
+    )
+  if (status === "error")
+    return (
+      <div className="flex justify-center py-20">
+        <p className="text-danger">Error fetching search results. Please try again later.</p>
+      </div>
+    )
+
   return (
     <div className="space-y-4">
-      {Array(5)
-        .fill("")
-        .map((e, i) => (
-          <SearchResultItem result="CODE" key={i} />
-        ))}
-      <NoResults />
+      <SearchResultItem results={results} />
     </div>
   )
 }

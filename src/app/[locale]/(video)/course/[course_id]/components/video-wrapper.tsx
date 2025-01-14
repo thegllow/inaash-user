@@ -1,15 +1,14 @@
 "use client"
+import { useRouter } from "@/lib/i18n/navigation"
+import { getVideos } from "@/services/utils/get-videos"
+import { Spinner } from "@nextui-org/spinner"
+import { useQuery } from "@tanstack/react-query"
 import React from "react"
 import { VideosProvider } from "../context/courses-context"
-import { CourseStoreProvider } from "../store/course-store-provider"
-import VideoHeader from "./video-header"
-import VideoFooter from "./video-footer"
-import { useQuery } from "@tanstack/react-query"
 import { getUserVideo } from "../get-user-video"
-import { getVideos } from "@/services/utils/get-videos"
-import axios from "axios"
-import { useRouter } from "@/lib/i18n/navigation"
-import { Spinner } from "@nextui-org/spinner"
+import { CourseStoreProvider } from "../store/course-store-provider"
+import VideoFooter from "./video-footer"
+import VideoHeader from "./video-header"
 
 type Props = {
   children: React.ReactNode
@@ -38,6 +37,11 @@ const VideoWrapper = ({ children, params }: Props) => {
     queryKey: ["courses", params.locale],
     queryFn: async () => await getVideos(),
   })
+  const Router = useRouter()
+  if (video && video.certificate_qr_code && (!video.is_rated || !video.certificate_number)) {
+    Router.push(`/certificate/${video.video_id}`)
+    return null
+  }
 
   if (isLoadingUserVideo || isLoadingVideos)
     return (

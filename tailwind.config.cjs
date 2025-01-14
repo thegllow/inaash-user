@@ -4,7 +4,7 @@ import fluid, { extract, fontSize, screens } from "fluid-tailwind" // Tailwind's
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./node_modules/@nextui-org/theme/dist/components/(accordion|button|card|chip|code|divider|dropdown|image|input|kbd|link|listbox|modal|navbar|radio|slider|snippet|spinner|toggle|tabs|popover|ripple|menu).js",
+    "./node_modules/@nextui-org/theme/dist/components/(accordion|button|card|chip|code|divider|dropdown|image|input|input-otp|kbd|link|listbox|modal|navbar|progress|radio|slider|snippet|spinner|toggle|tabs|popover|ripple|menu|form).js",
   ],
   content: {
     files: [
@@ -35,6 +35,7 @@ module.exports = {
   },
   darkMode: "class",
   plugins: [
+    require("@tailwindcss/typography"),
     fluid(),
     nextui({
       layout: {

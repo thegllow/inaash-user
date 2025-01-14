@@ -8,7 +8,13 @@ import { FAQResponse } from "./types"
 
 export const revalidate = 86400 // 1 day in seconds (24 hours)
 export const dynamic = "force-static"
-export default async function Page({ params: { locale } }: { params: { locale: string } }) {
+export default async function Page(props: { params: Promise<{ locale: string }> }) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   // Enable static rendering
   setRequestLocale(locale)
   const t = await getTranslations("faqs")

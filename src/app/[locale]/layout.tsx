@@ -30,13 +30,22 @@ export function generateStaticParams() {
 
 export const dynamicParams = false
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode
-  params: { locale: string }
-}) {
+export default async function RootLayout(
+  props: {
+    children: React.ReactNode
+    params: Promise<{ locale: string }>
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   if (!routing.locales.includes(locale as any)) {
     notFound()
   }
@@ -58,7 +67,7 @@ export default async function RootLayout({
             <ReactQueryProvider>
               <body
                 className={clsx(
-                  "min-h-screen bg-background font-sans antialiased dark",
+                  "min-h-screen bg-background font-sans text-white antialiased dark",
                   locale === "ur" ? urdu.variable : fontSans.variable,
                 )}>
                 <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>

@@ -16,21 +16,21 @@ const OurPartners = async (props: Props) => {
             <p className="text-sm text-default-500">{t("description")}</p>
           </div>
           <div className="w-full lg:w-3/5">
-            <div className="relative mx-auto w-fit overflow-hidden rounded-2xl px-6 py-12">
+            <div className="relative mx-auto w-fit overflow-hidden rounded-2xl ~px-4/6 ~py-8/12">
               <Image
                 src={partnersBackground}
                 alt="background"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="relative flex items-center gap-4">
-                <div className="flex aspect-square h-28 items-center justify-center rounded-xl bg-white p-2">
+              <div className="relative grid grid-cols-3 items-center gap-4 md:flex">
+                <div className="flex aspect-square items-center justify-center rounded-xl bg-white p-2 sm:h-28">
                   <img className="h-full" src={firstPartner.src} alt="partner" />
                 </div>
-                <div className="flex h-28 items-center justify-center rounded-xl bg-white p-2 max-md:aspect-square">
+                <div className="flex items-center justify-center rounded-xl bg-white p-2 max-md:aspect-square sm:h-28">
                   <img className="hidden h-full md:block" src={secondPartner.src} alt="partner" />
                   <img className="h-full md:hidden" src={secondPartnerLogo.src} alt="partner" />
                 </div>
-                <div className="flex aspect-square h-28 items-center justify-center rounded-xl bg-white p-2">
+                <div className="flex aspect-square items-center justify-center rounded-xl bg-white p-2 sm:h-28">
                   <img className="h-full" src={thirdPartner.src} alt="partner" />
                 </div>
               </div>

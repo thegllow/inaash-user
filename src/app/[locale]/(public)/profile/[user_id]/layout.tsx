@@ -4,16 +4,26 @@ import InaashApi from "@/services/inaash"
 import { UserResponse } from "../types"
 import { UserProvider } from "./context/user-context"
 
-export default async function Layout({
-  children,
-  params: { user_id, locale },
-}: {
-  children: React.ReactNode
-  params: {
-    user_id: string
-    locale: string
+export default async function Layout(
+  props: {
+    children: React.ReactNode
+    params: Promise<{
+      user_id: string
+      locale: string
+    }>
   }
-}) {
+) {
+  const params = await props.params;
+
+  const {
+    user_id,
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   const session = await auth()
   if (!session || session.user.id != user_id) redirect({ href: "/login", locale })
 

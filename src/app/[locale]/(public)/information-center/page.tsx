@@ -3,7 +3,6 @@ import { Divider } from "@nextui-org/divider"
 import { getTranslations } from "next-intl/server"
 import Search from "./components/search"
 import SearchResults from "./components/search-results"
-import Footer from "@/components/common/footer"
 
 export default async function Page() {
   const t = await getTranslations("information-center")

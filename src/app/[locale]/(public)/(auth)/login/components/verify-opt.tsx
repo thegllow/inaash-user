@@ -1,12 +1,11 @@
 "use client"
 
-import { Input } from "@nextui-org/input"
+import { InputOtp } from "@nextui-org/input-otp"
 import axios from "axios"
 import { signIn } from "next-auth/react"
 import { useTranslations } from "next-intl"
 import { parseAsInteger, parseAsString, useQueryState, useQueryStates } from "nuqs"
 import React, { useState } from "react"
-import OtpInput from "react-otp-input"
 
 import CountDown from "@/components/common/count-down"
 import Button from "@/components/ui/button"
@@ -89,23 +88,7 @@ const VerifyOTP = (props: Props) => {
         <p className="mb-4 text-center text-xl">{t("input-label")}</p>
 
         <div dir="ltr" className="flex justify-center">
-          <OtpInput
-            value={otp}
-            onChange={setOtp}
-            numInputs={4}
-            renderSeparator={<span className="block w-3"></span>}
-            renderInput={(props) => (
-              //   @ts-ignore
-              <Input
-                classNames={{
-                  inputWrapper: " w-12",
-                }}
-                radius="sm"
-                size="lg"
-                {...props}
-              />
-            )}
-          />
+          <InputOtp size="lg" length={4} value={otp} onValueChange={setOtp} />
         </div>
         {error ? <p className="mt-3 text-sm font-semibold text-danger">{error}</p> : ""}
 

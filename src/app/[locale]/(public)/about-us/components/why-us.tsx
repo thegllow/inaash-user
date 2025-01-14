@@ -10,13 +10,13 @@ type Props = {}
 const WhyUs = (props: Props) => {
   const t = useTranslations("about-us.why-us")
 
-  const slidesContent = Array(20).fill("")
+  const slidesContent = Array(8).fill("")
   const slides = slidesContent.map((slideContent, index) => {
     return (
       <div
         key={slideContent}
-        className="embla__slide flex shrink-0 items-center justify-center bg-[#1D1B1B] text-slate-50 ~h-24/32 ~w-28/36">
-        {index}
+        className="embla__slide flex shrink-0 items-center justify-center bg-[#1D1B1B] px-10 text-slate-50 ~h-24/32">
+        {t(("reasons." + index) as "reasons.0")}
       </div>
     )
   })

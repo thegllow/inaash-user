@@ -31,7 +31,7 @@ const ChooseLanguage = (props: Props) => {
               key={element}
               value={element}
               className={cn(
-                "text-sm max-md:px-1.5 max-sm:px-1 md:text-base",
+                "text-xs max-md:px-1.5 max-sm:px-1 sm:text-sm md:text-base",
                 element === "ur" ? urdu.className : "",
               )}
               title={t(element)}

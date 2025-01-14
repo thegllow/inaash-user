@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react"
 
 interface UseMutationOptions<TData, TError, TVariables> {
-  onSuccess?: (data: TData) => void
+  onSuccess?: (data: TData, variables: TVariables) => void
   onError?: (error: TError) => void
   onMutate?: (variables: TVariables) => void
 }
@@ -35,7 +35,7 @@ function useMutation<TData, TError, TVariables>(
         const result = await mutationFn(variables)
         setData(result)
         setIsSuccess(true)
-        options?.onSuccess?.(result)
+        options?.onSuccess?.(result, variables)
       } catch (err) {
         setError(err as TError)
         options?.onError?.(err as TError)

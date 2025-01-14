@@ -20,7 +20,7 @@ export interface CourseStoreProviderProps {
 }
 
 export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProps) => {
-  const storeRef = useRef<CourseStoreApi>()
+  const storeRef = useRef<CourseStoreApi>(null)
   if (!storeRef.current) {
     const scenesMap = arrayToMapByKey(video.video.scenes, "start_time")
     const questionsMap = arrayToMapByKey(video.video.questions, "appears_at")
@@ -38,7 +38,7 @@ export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProp
       progress: video.progress,
       volume: 0.5,
       selectedAnswer: "",
-      answerStatus: "notAnswered",
+      answerStatus: "pending",
       showExplanation: false,
       videoPlayerRef: null,
       // if user has completed a course he should start from start by default

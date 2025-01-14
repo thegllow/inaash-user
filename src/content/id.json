@@ -1,0 +1,437 @@
+{
+  "header": {
+    "full-screen": "Layar Penuh",
+    "home": "Beranda",
+    "about": "Tentang Inaa'sh",
+    "information-center": "Pusat Informasi",
+    "contact": "Hubungi Kami",
+    "faqs": "Pertanyaan yang Sering Diajukan"
+  },
+  "choose-language": {
+    "title": "Pilih bahasa",
+    "tabs": {
+      "ar": "Arab",
+      "en": "Inggris",
+      "fr": "Prancis",
+      "fil": "Tagalog",
+      "ur": "Urdu",
+      "id": "Indonesia"
+    },
+    "next-button": "Berikutnya"
+  },
+  "start": {
+    "start-course-button": "Mulai Program"
+  },
+  "login": {
+    "title": "Selamat datang di Inaa'sh",
+    "send-opt": {
+      "title": "Lanjutkan masuk",
+      "description": "Harap masukkan nomor ponsel Anda untuk melanjutkan",
+      "input-label": "Nomor Ponsel",
+      "input-placeholder": "Masukkan nomor",
+      "button": "Kirim kode verifikasi",
+      "errors": {
+        "required": "Nomor telepon diperlukan",
+        "invalidPhoneNumber": "Format nomor telepon tidak valid. Harus 7-15 digit, dapat dimulai dengan '+'",
+        "serverError": "Kesalahan menghubungkan ke server",
+        "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
+      }
+    },
+    "verify-opt": {
+      "title": "Lanjutkan masuk",
+      "description": "Harap masukkan kata sandi sementara 4 digit yang dikirimkan ke nomor ponsel Anda",
+      "input-label": "Masukkan kode verifikasi",
+      "button": "Konfirmasi kode",
+      "change-number-button": "Edit Nomor",
+      "resend-code": "Kirim ulang",
+      "errors": {
+        "serverError": "Kesalahan menghubungkan ke server",
+        "unauthorized": "Kode tidak valid",
+        "overuse": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti",
+        "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
+      }
+    },
+    "success": {
+      "title": "Berhasil masuk!",
+      "button": "Berikutnya"
+    }
+  },
+  "payment": {
+    "choose-method": "Pilih metode pembayaran",
+    "options": {
+      "card": {
+        "value": "Kartu Kredit",
+        "description": "Bayar dengan aman menggunakan Visa, MasterCard, atau Mada."
+      },
+      "apple": {
+        "value": "Apple Pay",
+        "description": ""
+      }
+    },
+    "next-button": "Berikutnya",
+    "selected-course": "Program yang dipilih",
+    "price": {
+      "original": "Harga Program",
+      "discount": "Harga Diskon",
+      "total": "Harga Total"
+    },
+    "coupon": {
+      "input-placeholder": "Masukkan kode diskon Anda",
+      "coupon-button": "Terapkan"
+    },
+    "success": {
+      "title": "Pembayaran berhasil dilakukan!",
+      "button": "Berikutnya"
+    }
+  },
+  "faqs": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "description": "Dapatkan jawaban atas pertanyaan umum tentang program pelatihan dan layanan kami"
+  },
+  "information-center": {
+    "title": "Pusat Informasi",
+    "description": "Konfirmasi penerimaan dan penyelesaian program pelatihan tanggap darurat",
+    "search": {
+      "input-placeholder": "Cari berdasarkan nama atau nomor sertifikat",
+      "search-button": "Cari",
+      "no-results": "Maaf, tidak ada data yang sesuai ditemukan. Silakan periksa detailnya dan coba lagi.",
+      "clear-history": "Hapus Data",
+      "old-search": "Data"
+    },
+    "result": {
+      "start-course-button": "Mulai Program",
+      "answers": "Jawaban",
+      "average-answer-time": "Kecepatan Jawaban Rata-rata",
+      "pass": "Lulus",
+      "share-button": "Bagikan skor Anda",
+      "download-button": "Unduh PDF",
+      "share-with-others": "Bagikan Inaa'sh dengan orang lain",
+      "sec": "Detik",
+      "grade": "Luar biasa!",
+      "share-title": "Anda telah lulus {value} Bagaimana dengan Anda"
+    }
+  },
+  "profile": {
+    "edit-button": "Ubah",
+    "mobile": "Nomor Ponsel",
+    "email": "Email",
+    "name": "Nama",
+    "first_name": "Nama Depan",
+    "last_name": "Nama Belakang",
+    "name-input-placeholder": "Ahamad Alyounis",
+    "first_name-input-placeholder": "Ahamad",
+    "last_name-input-placeholder": "Alyounis",
+    "email-input-placeholder": "Example@example.co",
+    "certificates": "Sertifikat yang diperoleh",
+    "save-button": "Simpan",
+    "change-mobile-button": "Ubah",
+    "success": "Detail pribadi Anda berhasil diperbarui",
+    "dropdown": {
+      "profile": "Profil",
+      "change-lang": "Ubah bahasa",
+      "logout": "Keluar",
+      "change-language": {
+        "title": "Ubah bahasa",
+        "tabs": {
+          "ar": "Arab",
+          "en": "Inggris",
+          "fr": " Prancis",
+          "fil": "Tagalog",
+          "ur": "Urdu",
+          "id": "Indonesia"
+        },
+        "update-button": "Ubah bahasa"
+      }
+    },
+    "errors": {
+      "required": "Kolom ini wajib diisi",
+      "invalidEmail": "Email tidak valid",
+      "serverError": "Kesalahan menghubungkan ke server"
+    },
+    "edit": {
+      "title": "Ubah",
+      "description": "Perbarui informasi pribadi dan detail kontak Anda"
+    },
+    "update-mobile": {
+      "send-opt": {
+        "title": "Perbarui Nomor Telepon",
+        "description": "Masukkan nomor ponsel Anda untuk menerima kode verifikasi",
+        "input-label": "Masukkan nomor telepon baru*",
+        "input-placeholder": "Masukkan nomor",
+        "button": "Kirim kode verifikasi",
+        "errors": {
+          "required": "Nomor telepon diperlukan",
+          "invalidPhoneNumber": "Format nomor telepon tidak valid. Harus 7-15 digit, dapat dimulai dengan '+'",
+          "serverError": "Kesalahan menghubungkan ke server",
+          "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
+        }
+      },
+      "verify-opt": {
+        "title": "Pembaruan Nomor Ponsel",
+        "description": "Harap masukkan kata sandi sementara 4 digit yang dikirimkan ke nomor ponsel Anda",
+        "input-label": "Masukkan kode verifikasi",
+        "button": "Konfirmasi kode",
+        "change-number-button": "Edit Nomor",
+        "resend-code": "Kirim ulang",
+        "errors": {
+          "serverError": "Kesalahan menghubungkan ke server",
+          "unauthorized": "Kode tidak valid",
+          "overuse": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti",
+          "tryAgainAfter": "Jumlah percobaan yang diizinkan terlampaui. Silakan coba lagi nanti"
+        }
+      },
+      "success": {
+        "title": "Nomor ponsel Anda telah berhasil diperbarui!",
+        "button": "Kembali"
+      }
+    }
+  },
+  "contact-us": {
+    "title": "Hubungi Kami",
+    "description": "Isi formulir di bawah ini dan kami akan menghubungi Anda secepatnya",
+    "form": {
+      "type-label": "Pilih jenis pesan",
+      "tabs": {
+        "inquiry": "Pertanyaan",
+        "suggestion": "Saran",
+        "complaint": "Keluhan"
+      },
+      "email-input-label": "Masukkan alamat email Anda",
+      "email-input-placeholder": "Example@example.co",
+      "name-input-label": "Masukkan nama lengkap Anda",
+      "name-input-placeholder": "Ahamad Alyounis",
+      "message-input-label": "Subjek",
+      "message-input-placeholder": "Masukkan subjek di sini!",
+      "subject-input-label": "Pesan",
+      "subject-input-placeholder": "Masukkan subjek di sini!",
+      "submit-button": "Kirim",
+      "success": "Pesan Anda telah berhasil diterima, Anda akan menerima balasan sesegera mungkin",
+      "errors": {
+        "required": "Kolom ini wajib diisi",
+        "invalidEmail": "Email tidak valid",
+        "serverError": "Kesalahan menghubungkan ke server"
+      }
+    }
+  },
+
+  "about-us": {
+    "hero": {
+      "title": "Tentang Inaa'sh",
+      "description": "Ini adalah program kesadaran dan pelatihan interaktif untuk mendidik serta meningkatkan kesadaran tentang darurat kesehatan dan cedera olahraga, serta cara yang tepat untuk menanganinya."
+    },
+    "target": {
+      "title": "Sasaran audiens",
+      "description": "Program ini ditujukan untuk semua anggota masyarakat mulai usia 8 tahun.",
+      "main": {
+        "title": "Tujuan utama",
+        "description": "Memberikan kesadaran dan pendidikan tentang darurat kesehatan dan olahraga untuk memberikan bantuan yang diperlukan kepada orang-orang sebelum mereka mencapai pusat kesehatan atau fasilitas medis lainnya, serta menghindari insiden yang mengancam jiwa menggunakan teknologi.",
+        "sub-description": "Prinsipnya adalah membangun hidup yang lebih sehat, bebas dari penyakit kardiovaskular, stroke, dan cedera olahraga serius, serta mendidik individu tentang cara menyelamatkan nyawa, menjalani hidup bebas dari penyakit serius, dan hidup sehat sambil mendorong masyarakat untuk mengikuti kursus pertolongan pertama, CPR, dan pelatihan respon darurat olahraga."
+      }
+    },
+    "splitted-logo": {
+      "first": "Mulai",
+      "second": "Olahraga",
+      "third": "Jantung dan Kesehatan",
+      "fourth": "R",
+      "fifth": "P",
+      "sixth": "C"
+    },
+    "objectives": {
+      "title": "Tujuan",
+      "description": "Memperkuat kapasitas anggota komunitas untuk menangani keadaan darurat, belajar, dan memberikan bantuan.",
+      "objectives-list": {
+        "list": {
+          "first": {
+            "title": "Menjaga Kehidupan"
+          },
+          "second": {
+            "title": "Keadaan Darurat Medis"
+          },
+          "third": {
+            "title": "Resusitasi Jantung Paru"
+          },
+          "fourth": {
+            "title": "Cara menggunakan defibrillator"
+          },
+          "fifth": {
+            "title": "Kecelakaan menelan lidah saat berolahraga"
+          },
+          "sixth": {
+            "title": "Kecelakaan gegar otak saat berolahraga"
+          }
+        }
+      }
+    },
+    "about-us": {
+      "title": "Siapa Kami",
+      "description": "Program ini dirancang untuk memberikan pelatihan respon darurat melalui video berbasis skenario yang menyenangkan dan interaktif. Platform ini mencakup cedera kesehatan dan olahraga, dengan tujuan mendidik pengguna tentang keterampilan dasar dalam menangani keadaan darurat. Fitur utama meliputi pertanyaan langsung tentang cara menangani situasi, kemampuan melacak kemajuan, mengevaluasi kinerja, dan mendapatkan sertifikat setelah menyelesaikan program pelatihan. Platform kami memastikan pengalaman pengguna yang lancar dengan opsi memperbarui data pribadi, memeriksa sertifikat, dan berbagi pencapaian di media sosial. Platform ini menargetkan audiens yang luas, mulai dari usia 8 hingga 60 tahun, dan mempromosikan pembelajaran dengan cara yang menyenangkan dan interaktif dengan fokus pada keterampilan yang dapat menyelamatkan jiwa.",
+      "updates": {
+        "title": "Tantangan",
+        "description": "Banyak individu yang kurang memiliki pelatihan yang tepat untuk menangani keadaan darurat kesehatan dan olahraga. Metode tradisional seringkali tidak mudah diakses dan sudah menjadi kebiasaan. Dibutuhkan platform interaktif yang menyediakan pelatihan darurat yang mudah diakses dan komprehensif."
+      },
+      "share": {
+        "title": "Bagikan Kesuksesan Anda!",
+        "card": {
+          "title": "Mendapatkan 100%",
+          "description": "Program Kesadaran Darurat Interaktif"
+        }
+      }
+    },
+    "solutions": {
+      "title": "Solusi",
+      "description": "Platform ini memberikan solusi teknologi yang menyenangkan untuk pelatihan respons darurat melalui video berbasis skenario interaktif, pengguna mempelajari keterampilan darurat terkait kesehatan dan olahraga dengan kecepatan mereka sendiri. Dilengkapi dengan kuis waktu nyata, pelacakan kemajuan, dan penilaian kinerja untuk menjaga keterlibatan pengguna. Setelah menyelesaikan program, pengguna dapat memperoleh sertifikat, memverifikasi pencapaian mereka dengan mudah, dan membagikan hasil mereka di media sosial. Solusi ini dirancang untuk audiens yang luas, memberikan cara yang modern dan fleksibel untuk membekali individu dengan keterampilan penyelamatan nyawa yang penting dan mengatasi keterbatasan metode pelatihan tradisional.",
+      "list": {
+        "first": {
+          "title": "Tonton video program",
+          "description": "Mulai perjalanan Anda dengan menonton video dari program pelatihan interaktif yang dirancang untuk melibatkan dan mengajarkan keterampilan praktis"
+        },
+        "second": {
+          "title": "Jawab pertanyaan",
+          "description": "Uji pemahaman Anda dengan menjawab pertanyaan di antara setiap video"
+        },
+        "third": {
+          "title": "Kemajuan",
+          "description": "Dengan setiap pelajaran yang diselesaikan, Anda dapat melacak kemajuan Anda dan memperdalam pengetahuan Anda."
+        },
+        "fourth": {
+          "title": "Dapatkan sertifikat Anda",
+          "description": "Selesaikan semua modul dan penilaian untuk menerima sertifikat penyelesaian program pelatihan"
+        },
+        "fifth": {
+          "title": "Bagikan pencapaian Anda",
+          "description": "Rayakan keberhasilan Anda! Bagikan sertifikat dan pencapaian program Anda di media sosial"
+        }
+      }
+    },
+    "why-us": {
+      "title": "Mengapa Inaa'sh",
+      "description": "Berkomitmen untuk memberikan pelatihan menyenangkan yang membekali Anda dengan keterampilan respons darurat dasar",
+      "reasons": {
+        "0": "Multibahasa",
+        "1": "Efisiensi waktu",
+        "2": "Jangkauan luas",
+        "3": "Mudah digunakan",
+        "4": "Teknologi baru",
+        "5": "Berbasis bukti",
+        "6": "Pencegahan",
+        "7": "Tanpa kertas (untuk lingkungan yang aman)",
+        "8": "Interaktif"
+      }
+    },
+    "our-partners": {
+      "title": "Mitra kami",
+      "description": "Kami bangga bekerja sama dengan organisasi terkemuka untuk memberikan pelatihan respons darurat berkualitas tinggi, memastikan praktik yang efektif dan terbaru untuk situasi kesehatan dan olahraga."
+    }
+  },
+  "footer": {
+    "important-links": "Tautan Penting",
+    "contact-us": "Hubungi Kami",
+    "full-screen": "Layar Penuh",
+    "home": "Beranda",
+    "about": "Tentang Inaa'sh",
+    "information-center": "Pusat Informasi",
+    "contact": "Hubungi Kami",
+    "faqs": "Pertanyaan yang Sering Diajukan",
+    "email": "Email",
+    "phonenumber": "Nomor Telepon",
+    "socials": "Media Sosial",
+    "privacy-policy": "Kebijakan Privasi",
+    "terms": "Syarat dan Ketentuan"
+  },
+  "course": {
+    "course-header": {
+      "score": {
+        "total": "Jumlah Pertanyaan",
+        "right-answers": "Jawaban Benar"
+      },
+      "average-answer-time": "Kecepatan Jawaban Rata-rata"
+    },
+    "course-footer": {
+      "subtitle-tooltip": "Teks",
+      "sound-tooltip": "Suara",
+      "change-program-button": "Semua program",
+      "change-program-confirm-dialog": "Apakah Anda yakin ingin mengubah program pelatihan Anda?",
+      "change-program-dialog-confirm": "Ya",
+      "change-program-dialog-cancel": "Tidak",
+      "select-scene-button": "Pemilih Adegan",
+      "select-scene-warning": "Setelah Anda menyelesaikan program, Anda akan dapat memilih adegan"
+    },
+    "wrong-answer-modal": {
+      "title": "Jawaban Salah!",
+      "description": "Anda kehilangan satu hati",
+      "listen": "Dengarkan penjelasan untuk memahami dampak keputusan ini terhadap penderita",
+      "reason": "Jelaskan alasannya",
+      "continue-button": "Lanjutkan "
+    }
+  },
+  "landscape": {
+    "description": "Harap gunakan ponsel Anda dalam mode lanskap untuk pengalaman menonton video terbaik"
+  },
+  "certificate": {
+    "answers": "Jawaban",
+    "average-answer-time": "Kecepatan Jawaban Rata-rata",
+    "continue": "Tindak lanjuti untuk mendapatkan sertifikat",
+    "sec": "Kedua",
+    "grade": "Luar Biasa!",
+    "certificate-card": {
+      "title": "Sertifikat Prestasi!",
+      "pass": "Lulus",
+      "share-button": "Bagikan skor Anda",
+      "download-button": "Unduh PDF",
+      "share-with-others": "Bagikan Inaa'sh dengan orang lain",
+      "sec": "Kedua",
+      "grade": "Luar Biasa!",
+      "share-title": "Anda telah lulus {value} Bagaimana dengan Anda"
+    }
+  },
+  "share-your-success": {
+    "title": "Bagikan kesuksesan Anda!",
+    "share-button": "Bagikan skor Anda",
+    "share-with-others": "Bagikan Inaa'sh dengan orang lain"
+  },
+  "rating": {
+    "title": "Bantu kami mengoptimalkan pengalaman Anda",
+    "description": "Umpan balik Anda sangat penting bagi kami! Jawab pertanyaan singkat ini untuk membantu kami mengoptimalkan pengalaman uji coba dan platform",
+    "rating-list": {
+      "1": "Bagaimana Anda menilai kegunaan keseluruhan antarmuka uji coba?",
+      "2": "Apakah pertanyaan-pertanyaan tersebut mencerminkan skenario kehidupan nyata dengan cukup baik untuk meningkatkan pemahaman Anda?",
+      "3": "Seberapa puas Anda dengan responsivitas dan kejelasan konten video?",
+      "4": "Apakah pelacakan kemajuan (hati, jawaban benar, waktu) berguna selama ujian?"
+    },
+    "textarea-label": "Jelaskan pengalaman Anda (opsional)",
+    "textarea-placeholder": "Ceritakan lebih banyak tentang pengalaman Anda!",
+    "continue": "Lanjutkan",
+    "stepper": {
+      "first": "Penilaian",
+      "second": "Lengkapi data",
+      "third": "Dapatkan sertifikat"
+    }
+  },
+  "complete-profile": {
+    "title": "Lengkapi profil Anda",
+    "description": "Untuk melanjutkan sertifikasi Anda, silakan lengkapi profil Anda",
+    "email": "Email",
+    "name": "Nama",
+    "first_name": "Nama Depan",
+    "last_name": "Nama Belakang",
+    "name-input-placeholder": "Ahamad Alyounis",
+    "first_name-input-placeholder": "Ahamad",
+    "last_name-input-placeholder": "Alyounis ",
+    "email-input-placeholder": "Example@example.co",
+    "save-button": "Memperoleh sertifikat",
+    "success": "Detail pribadi Anda telah berhasil dilengkapi",
+    "errors": {
+      "required": "Kolom ini wajib diisi",
+      "invalidEmail": "Email tidak valid",
+      "serverError": "Kesalahan menghubungkan ke server"
+    }
+  },
+  "privacy-policy": {
+    "title": "Kebijakan Privasi",
+    "description": "Harap baca kebijakan ini dengan cermat"
+  },
+  "terms": {
+    "title": "Syarat dan Ketentuan",
+    "description": "Harap baca syarat ini dengan cermat"
+  }
+}

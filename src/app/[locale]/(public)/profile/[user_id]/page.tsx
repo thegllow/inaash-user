@@ -6,7 +6,13 @@ import { getTranslations } from "next-intl/server"
 import { UserResponse } from "../types"
 import EditProfileForm from "./components/edit-profile-form"
 
-export default async function Page({ params: { user_id } }: { params: { locale: string; user_id: string } }) {
+export default async function Page(props: { params: Promise<{ locale: string; user_id: string }> }) {
+  const params = await props.params;
+
+  const {
+    user_id
+  } = params;
+
   const t = await getTranslations("profile.edit")
 
   return (

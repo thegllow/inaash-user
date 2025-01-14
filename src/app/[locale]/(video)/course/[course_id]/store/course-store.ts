@@ -12,7 +12,7 @@ export type VideoStatus = {
   startTime: string
 }
 
-export type AnswerStatus = "notAnswered" | "correct" | "wrong"
+export type AnswerStatus = "pending" | "correct" | "wrong" | "timeout"
 export type CourseState = {
   video: UserVideo
   playing: boolean
@@ -52,7 +52,7 @@ export const createCourseStore = (initState: CourseState) => {
       set((state) => ({
         currentQuestion: "",
         selectedAnswer: "",
-        answerStatus: "notAnswered",
+        answerStatus: "pending",
         showExplanation: false,
         playing: true,
       })),

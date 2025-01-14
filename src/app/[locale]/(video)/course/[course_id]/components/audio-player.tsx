@@ -1,4 +1,4 @@
-import React, { ElementRef, useImperativeHandle, useRef, useState } from "react"
+import React, { ComponentRef, useImperativeHandle, useRef, useState } from "react"
 import { useForceUpdate } from "@mantine/hooks"
 import { Pause, Play } from "lucide-react"
 import { Slider } from "@nextui-org/slider"
@@ -7,12 +7,12 @@ import { Divider } from "@nextui-org/divider"
 
 const AudioPlayer = React.forwardRef(function Comp(
   { src, name, onEnd }: { src: string; name: string; onEnd?: () => void },
-  ref: React.ForwardedRef<ElementRef<"audio">>,
+  ref: React.ForwardedRef<ComponentRef<"audio">>,
 ) {
   const audioUrl = src
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
-  const audioRef = useRef<ElementRef<"audio">>(null)
+  const audioRef = useRef<ComponentRef<"audio">>(null)
   useImperativeHandle(ref, () => audioRef.current!, [audioRef])
 
   const togglePlayPause = () => {

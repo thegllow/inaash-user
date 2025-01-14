@@ -3,9 +3,11 @@ import CountDown from "@/components/common/count-down"
 import useMutation from "@/hooks/use-mutation"
 import { Modal, ModalBody, ModalContent } from "@nextui-org/modal"
 import { AnimatePresence, motion } from "framer-motion"
+import { useSession } from "next-auth/react"
 import { useParams } from "next/navigation"
-import { useEffect, useMemo, useRef } from "react"
+import { ComponentRef, useEffect, useMemo, useRef, useState } from "react"
 import type ReactCountdown from "react-countdown"
+import { useVideos } from "../context/courses-context"
 import { useCourseStore } from "../store/course-store-provider"
 import { AnswerQuestion, TVariables } from "../types/answer-question"
 import { answerQuestion } from "../utils/answer-question"
@@ -14,13 +16,13 @@ import { shuffleArray } from "../utils/shuffle-array"
 import { timeToSeconds } from "../utils/time-to-seconds"
 import Answer from "./answer"
 import WrongAnswerExplanation from "./wrong-answer-explanation"
-import { useVideos } from "../context/courses-context"
 
 const QuestionModal = () => {
   // state
+  const session = useSession()
   const { course_id } = useParams() as { course_id: string }
   const { currentVideo } = useVideos()
-  const hasPassedCourse = currentVideo.certificate_number ? true : false
+  const hasPassedCourse = currentVideo.certificate_qr_code ? true : false
   const {
     currentQuestion: current,
     questionsMap: questions,
@@ -33,16 +35,20 @@ const QuestionModal = () => {
     showExplanation,
     setShowExplanation,
   } = useCourseStore((state) => state)
-
   const question = questions.get(current)
 
   // counter
   const countDownRef = useRef<ReactCountdown | null>(null)
-  const date = useMemo(() => Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000, [question?.id])
+  const [isTimeOut, setIsTimeOut] = useState(false)
+  const timeoutAudioRef = useRef<ComponentRef<"audio">>(null)
+  const timeoutDate = useMemo(
+    () => Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000,
+    [question?.id],
+  )
 
   // answering question
-  type TError = unknown
 
+  type TError = unknown
   const handleAnsweringQuestionOnWithCertificate = async (data: TVariables) => {
     return { is_correct: data.answer === `answer_a` }
   }
@@ -51,8 +57,17 @@ const QuestionModal = () => {
     AnswerQuestion["data"] | { is_correct: boolean },
     TError,
     TVariables
+    //? if course has been passed no need to do a server request to check {{a}} is always right
   >(hasPassedCourse ? handleAnsweringQuestionOnWithCertificate : answerQuestion, {
-    onSuccess(data) {
+    onMutate(variables) {
+      // handling playing timeout audio
+      if (!variables.answer) {
+        setIsTimeOut(true)
+        timeoutAudioRef.current?.play()
+      }
+    },
+    onSuccess(data, variables) {
+      console.log("🚀 ~ onSuccess ~ data:", data)
       if (!hasPassedCourse) {
         let result = data as AnswerQuestion["data"]
         updateVideoStatus({
@@ -62,43 +77,39 @@ const QuestionModal = () => {
           progress: result.video.progress,
         })
       }
-      setAnswerStatus(data.is_correct ? "correct" : "wrong")
+
+      setAnswerStatus(variables.answer ? (data.is_correct ? "correct" : "wrong") : "timeout")
     },
   })
-
+  // closing question modal 3 sec after answering
   useEffect(() => {
     if (!isSuccess) return
+    let timer: NodeJS.Timeout
     if (answerStatus === "correct") {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         next()
       }, 3000)
-
-      return () => {
-        clearTimeout(timer)
-      }
     }
 
     if (answerStatus === "wrong") {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         setShowExplanation(true)
       }, 3000)
-
-      return () => {
-        clearTimeout(timer)
-      }
     }
-  }, [isSuccess, answerStatus, next, setShowExplanation])
+    if (answerStatus === "timeout" && !isTimeOut) {
+      next()
+    }
 
-  const answersArray = useMemo(() => {
-    return process.env.NODE_ENV === "development"
-      ? (["a", "b", "c", "d"] as const)
-      : shuffleArray(["a", "b", "c", "d"] as const)
-  }, [question?.id])
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [isSuccess, answerStatus, isTimeOut, next, setShowExplanation])
 
+  // handling answering
   const handleAnswering = (answer: string) => {
     setSelectedAnswer(answer)
-    countDownRef.current?.api?.stop()
-    const timeInSec = (Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000 - date) / 1000
+    countDownRef.current?.api?.pause()
+    const timeInSec = (Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000 - timeoutDate) / 1000
     mutate({
       video_id: course_id,
       question_id: question!.id,
@@ -106,6 +117,31 @@ const QuestionModal = () => {
       answer_time: formatTime(timeInSec),
     })
   }
+
+  // handling timeout
+  const handleTimeout = () => {
+    if (!question) return
+    mutate({
+      video_id: course_id,
+      question_id: question!.id,
+      answer: null,
+      answer_time: question!.allowed_time,
+    })
+  }
+
+  useEffect(() => {
+    if (isTimeOut && answerStatus === "pending") {
+      console.log("🚀 ~ useEffect ~ isTimeOut", isTimeOut)
+      handleTimeout()
+    }
+  }, [isTimeOut])
+
+  // shuffle answer in production
+  const shuffledAnswers = useMemo(() => {
+    return process.env.NODE_ENV === "development"
+      ? (["a", "b", "c", "d"] as const)
+      : shuffleArray(["a", "b", "c", "d"] as const)
+  }, [question?.id])
 
   return (
     <Modal
@@ -136,13 +172,14 @@ const QuestionModal = () => {
                 <ModalBody className="p-0 shadow-none ~md/lg:~space-y-6/8">
                   <p className="text-center text-2xl text-white">{question?.question}</p>
                   <div className="flex flex-col gap-2">
-                    {answersArray.map((key) => {
+                    {shuffledAnswers.map((key) => {
                       return (
                         <Answer
-                          status={`answer_${key}` === selectedAnswer ? answerStatus : "notAnswered"}
+                          status={`answer_${key}` === selectedAnswer ? answerStatus : "pending"}
                           isLoading={isLoading}
+                          isDisabled={isTimeOut}
                           onClick={() => {
-                            if (isLoading || answerStatus !== "notAnswered") return
+                            if (isLoading || answerStatus !== "pending" || isTimeOut) return
                             handleAnswering(`answer_${key}`)
                           }}
                           key={key}
@@ -155,11 +192,24 @@ const QuestionModal = () => {
                     <CountDown
                       ref={countDownRef}
                       key={question?.appears_at}
-                      onComplete={next}
                       alert
+                      onComplete={() => {
+                        if (answerStatus === "pending") setIsTimeOut(true)
+                      }}
                       className="rounded-full"
-                      date={date}
-                      result={<div></div>}
+                      date={timeoutDate}
+                      result={
+                        <div>
+                          <p className="text-danger">00:00</p>
+                        </div>
+                      }
+                    />
+                    <audio
+                      ref={timeoutAudioRef}
+                      onEnded={(e) => {
+                        setIsTimeOut(false)
+                      }}
+                      src={session.data?.user.timeout_audio}
                     />
                   </div>
                 </ModalBody>
