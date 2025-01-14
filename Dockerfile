@@ -8,7 +8,7 @@ RUN apk add --no-cache python3 make g++ pkgconfig cairo-dev pango-dev libpng-dev
 WORKDIR /app
 
 # Create a volume at the root directory.
-VOLUME ["/"]
+ 
 
 # Copy package.json and package-lock.json to install dependencies.
 COPY package*.json ./
