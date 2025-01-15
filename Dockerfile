@@ -1,14 +1,11 @@
 # Use the official Node.js image.
 FROM node:20-alpine
 
-# Install Python, pkg-config, and additional libraries for canvas
-RUN apk add --no-cache python3 make g++ pkgconfig cairo-dev pango-dev libpng-dev
+# Install Python, pkg-config, and additional libraries for canvas and fonts
+RUN apk add --no-cache python3 make g++ pkgconfig cairo-dev pango-dev libpng-dev fontconfig ttf-dejavu
 
 # Set the working directory in the container.
 WORKDIR /app
-
-# Create a volume at the root directory.
- 
 
 # Copy package.json and package-lock.json to install dependencies.
 COPY package*.json ./
