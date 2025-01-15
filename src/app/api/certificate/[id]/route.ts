@@ -12,16 +12,17 @@ const searchParamsSchema = z.object({
   date: z.string().min(1),
   certificate_no: z.string(),
   certificate_code: z.string(),
+  certificate_file_name: z.string(),
   scale: z.coerce.number().optional(),
 })
 
+const Base_Url = 'https://api.inaash.edu.sa/storage/certificate/';
+
 const certificates = {
   "1": {
-    src: path.join(process.cwd(), "public", "1.png"),
     color: "#9f5ffc",
   },
   "2": {
-    src: path.join(process.cwd(), "public", "2.png"),
     color: "#1ad0d1",
   },
 }
@@ -32,7 +33,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
       searchParamsToObject(request.nextUrl.searchParams),
     )
     if (!success) return NextResponse.json(error, { status: 422 })
-    const { name, date, certificate_no, certificate_code } = data
+    const { name, date, certificate_no, certificate_code, certificate_file_name } = data
     console.log("🚀 ~ GET ~ date:", date)
 
     // scale factor is an optional scale of the original size
@@ -40,9 +41,9 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     const id = (await params).id as "1" | "2"
 
-    const { src, color } = certificates[id]
+    const { color } = certificates[id]
     // loading certificate template
-    const templatePath = src
+    const templatePath = `${Base_Url}${id}/${certificate_file_name}`
     console.log("🚀 ~ GET ~ templatePath:", templatePath)
     const certificateImage = await loadImage(templatePath)
     const canvasWidth = certificateImage.width * scaleFactor
