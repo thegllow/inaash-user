@@ -45,7 +45,8 @@ const VerifyOTP = (props: Props) => {
     e.preventDefault()
     try {
       setIsLoading(true)
-      const data = await signIn("credentials", { mobile, otp, redirect: false })
+      const phonenumber = mobile?.replace("+", "")
+      const data = await signIn("credentials", { mobile: phonenumber, otp, redirect: false })
       console.log("🚀 ~ consthandleVerifyTOP:React.FormEventHandler<HTMLFormElement>= ~ data:", data)
       if (data?.error) {
         setError(t(`errors.unauthorized`))
