@@ -79,8 +79,8 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
               <Button
                 fullWidth
                 as="a"
-                href={ video.certificate_url!}
-                variant="light"
+                href={ video.certificate_url?? "#"}
+                variant="light" 
                 size="md"
                 className="justify-between"
                 endContent={<img className="size-10 shrink-0" src={download.src} alt="download" />}>
