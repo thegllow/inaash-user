@@ -21,7 +21,9 @@ const Coupon = (props: Props) => {
       <Input
         value={c}
         onChange={(e) => {
-          setC(e.target.value.toUpperCase())
+          const value = e.target.value.toUpperCase().trim()
+          setC(value)
+          if (!value) setCoupon("", { shallow: false })
         }}
         placeholder={t("input-placeholder")}
       />

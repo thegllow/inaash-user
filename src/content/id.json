@@ -57,7 +57,7 @@
     }
   },
   "payment": {
-    "choose-method": "Pilih metode pembayaran",
+    "choose-method": "Kami mendukung metode pembayaran berikut",
     "options": {
       "card": {
         "value": "Kartu Kredit",

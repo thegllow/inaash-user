@@ -57,7 +57,7 @@
     }
   },
   "payment": {
-    "choose-method": "Sélectionner une option de paiement",
+    "choose-method": "Nous prenons en charge les méthodes de paiement suivantes",
     "options": {
       "card": {
         "value": "Carte de crédit",

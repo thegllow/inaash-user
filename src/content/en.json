@@ -57,7 +57,7 @@
     }
   },
   "payment": {
-    "choose-method": "Select a payment option",
+    "choose-method": "We support the following payment methods",
     "options": {
       "card": {
         "value": "Credit card",

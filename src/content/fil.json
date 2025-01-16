@@ -49,7 +49,7 @@
         "unauthorized": "Di-wastong code",
         "overuse": "Lumampas sa bilang ng pinapayagang pagtatangka. Pakisubukang muli mamaya.",
         "tryAgainAfter": "Lumampas sa bilang ng pinapayagang pagtatangka. Pakisubukang muli mamaya."
-     }
+      }
     },
     "success": {
       "title": "Matagumpay na naka-login!",
@@ -57,7 +57,7 @@
     }
   },
   "payment": {
-    "choose-method": "Piliin ang Paraan ng Pagbabayad",
+    "choose-method": "Sinusuportahan namin ang mga sumusunod na paraan ng pagbabayad",
     "options": {
       "card": {
         "value": "Credit card",
@@ -435,4 +435,3 @@
     "description": "Pakibasa nang maigi ang mga tuntunin"
   }
 }
-
