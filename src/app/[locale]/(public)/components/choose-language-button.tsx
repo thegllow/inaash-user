@@ -11,18 +11,26 @@ type Props = {}
 
 const ChooseLanguageButton = (props: Props) => {
   const t = useTranslations("choose-language")
-  const [language] = useQueryState("language")
+  const [language] = useQueryState("language", { defaultValue: "ar" })
 
+  const text = {
+    ar: "التالي",
+    en: "Next",
+    fr: "Suivant",
+    fil: "Susunod",
+    id: "Berikutnya",
+    ur: "اگلا",
+  }
   return (
     <Button
       as={Link}
-      href={`/${language || "ar"}/start`}
+      href={`/${language}/start`}
       size="lg"
       radius="md"
       color="primary"
       fullWidth
       className="mx-auto max-w-72 text-black">
-      {t("next-button")}
+      {text[language as "ar"]}
     </Button>
   )
 }

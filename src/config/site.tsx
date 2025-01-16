@@ -27,8 +27,8 @@ export const siteConfig = {
     },
   ],
   contactInfo: {
-    email: "inaash.co.com",
-    phonenumber: " +966 55 140 5555",
+    email: "info@inaash.edu.sa",
+    phonenumber: " 00966 114620502",
     socials: [
       {
         label: "",

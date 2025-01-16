@@ -4,7 +4,6 @@ import { createCanvas, loadImage } from "canvas"
 import QRCode from "qrcode"
 import { z } from "zod"
 
-import path from "node:path"
 import { drawRoundedRectangle, formatDateToDDMMYYYY, searchParamsToObject } from "./utils"
 
 const searchParamsSchema = z.object({
@@ -12,6 +11,7 @@ const searchParamsSchema = z.object({
   date: z.string().min(1),
   certificate_no: z.string(),
   certificate_code: z.string(),
+  certificate_file_name: z.string(),
   certificate_file_name: z.string(),
   scale: z.coerce.number().optional(),
 })
@@ -34,6 +34,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     )
     if (!success) return NextResponse.json(error, { status: 422 })
     const { name, date, certificate_no, certificate_code, certificate_file_name } = data
+    const { name, date, certificate_no, certificate_code, certificate_file_name } = data
     console.log("🚀 ~ GET ~ date:", date)
 
     // scale factor is an optional scale of the original size
@@ -42,7 +43,9 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const id = (await params).id as "1" | "2"
 
     const { color } = certificates[id]
+    const { color } = certificates[id]
     // loading certificate template
+    const templatePath = `${Base_Url}${id}/${certificate_file_name}`
     const templatePath = `${Base_Url}${id}/${certificate_file_name}`
     console.log("🚀 ~ GET ~ templatePath:", templatePath)
     const certificateImage = await loadImage(templatePath)

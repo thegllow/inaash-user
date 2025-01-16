@@ -57,9 +57,11 @@ const VerifyOTP = (props: Props) => {
       }
       setIsLoading(true)
 
+      const phonenumber = mobile?.replace("+", "")
+
       const response = await InaashApi.put(`user/mobile/update`, {
         old_mobile: user.mobile,
-        new_mobile: mobile,
+        new_mobile: phonenumber,
         otp: otp,
       })
       setSuccess("true")

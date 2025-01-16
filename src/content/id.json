@@ -57,7 +57,7 @@
     }
   },
   "payment": {
-    "choose-method": "Pilih metode pembayaran",
+    "choose-method": "Kami mendukung metode pembayaran berikut",
     "options": {
       "card": {
         "value": "Kartu Kredit",
@@ -118,9 +118,9 @@
     "name": "Nama",
     "first_name": "Nama Depan",
     "last_name": "Nama Belakang",
-    "name-input-placeholder": "Ahamad Alyounis",
-    "first_name-input-placeholder": "Ahamad",
-    "last_name-input-placeholder": "Alyounis",
+    "name-input-placeholder": "",
+    "first_name-input-placeholder": "",
+    "last_name-input-placeholder": "",
     "email-input-placeholder": "Example@example.co",
     "certificates": "Sertifikat yang diperoleh",
     "save-button": "Simpan",
@@ -199,7 +199,7 @@
       "email-input-label": "Masukkan alamat email Anda",
       "email-input-placeholder": "Example@example.co",
       "name-input-label": "Masukkan nama lengkap Anda",
-      "name-input-placeholder": "Ahamad Alyounis",
+      "name-input-placeholder": "",
       "message-input-label": "Subjek",
       "message-input-placeholder": "Masukkan subjek di sini!",
       "subject-input-label": "Pesan",
@@ -324,6 +324,7 @@
     }
   },
   "footer": {
+    "all-right-reserved": "{value} Inaash. Semua hak dilindungi.",
     "important-links": "Tautan Penting",
     "contact-us": "Hubungi Kami",
     "full-screen": "Layar Penuh",
@@ -414,9 +415,9 @@
     "name": "Nama",
     "first_name": "Nama Depan",
     "last_name": "Nama Belakang",
-    "name-input-placeholder": "Ahamad Alyounis",
-    "first_name-input-placeholder": "Ahamad",
-    "last_name-input-placeholder": "Alyounis ",
+    "name-input-placeholder": "",
+    "first_name-input-placeholder": "",
+    "last_name-input-placeholder": " ",
     "email-input-placeholder": "Example@example.co",
     "save-button": "Memperoleh sertifikat",
     "success": "Detail pribadi Anda telah berhasil dilengkapi",

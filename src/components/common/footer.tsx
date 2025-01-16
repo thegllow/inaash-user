@@ -79,12 +79,13 @@ const Footer = async (props: Props) => {
             </div>
           </div>
           <Divider />
-          <div className="flex items-center py-8 text-default-500 ~gap-10/20">
-            <p>© 2024 Inaash. All rights reserved.</p>
-            {/* TODO: add link to tawahoj */}
-            <a href="#" target="_blank">
-              تم تطويره بواسطة توهج
-            </a>
+          <div className="grid grid-cols-3 py-8 text-default-500 ~gap-10/20">
+            <p>© {t("all-right-reserved", { value: new Date().getFullYear() })}</p>
+            <div className="flex items-center justify-center">
+              <a href="https://glow.net.sa/" target="_blank">
+                مطور بواسطة Glow
+              </a>
+            </div>
           </div>
         </div>
       </div>
