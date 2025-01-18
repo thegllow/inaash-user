@@ -7,6 +7,7 @@ import NextAuth from "next-auth"
 
 import { User as ApiUserType, LoginResponse } from "@/types/login"
 import { ErrorResponse } from "@/types"
+import { UserResponse } from "@/app/[locale]/(public)/profile/types"
 
 declare module "next-auth" {
   /**
@@ -75,12 +76,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return true
     },
-    async jwt({ trigger, token, user }) {
-      // if (trigger === "update") {
+    async jwt({ trigger, token, user, session }) {
+      // console.log("🚀 ~ jwt ~ user:", user)
+      // console.log("🚀 ~ jwt ~ token:", token)
+      // console.log("🚀 ~ jwt ~ trigger:", trigger)
+      // console.log("🚀 ~ jwt ~ session:", session)
+      // if (trigger === "update" && session.id) {
       //   try {
-      //     const me = await getMe()
-      //     token.user = me.data.data.user
-      //     return token
+      //     const response = await InaashApi.get<UserResponse>(`/user/users/${session.id}`)
+      //     console.log({ ...response.data.data.item, ...token })
+      //     return { ...response.data.data.item, ...token }
       //   } catch (error) {
       //     return { ...user, ...token }
       //   }

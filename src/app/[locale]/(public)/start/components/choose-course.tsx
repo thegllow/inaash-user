@@ -11,6 +11,8 @@ import Button from "@/components/ui/button"
 import { cn } from "@/lib/cn"
 import { Link } from "@/lib/i18n/navigation"
 import { Video } from "@/types/public-videos-response"
+// import { useEffect } from "react"
+// import { useSession } from "next-auth/react"
 
 type Props = {
   videos: Video[]
@@ -20,6 +22,13 @@ const ChooseCourse = (props: Props) => {
   const [selectedCourse, setSelectedCourse] = useQueryState("course")
   const t = useTranslations("start")
 
+  // const session = useSession()
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     console.log("this runs")
+  //     session.update({ id: session.data?.user.id })
+  //   }, 1000)
+  // }, [])
   return (
     <div className={cn("flex w-full flex-col items-center justify-center gap-4 md:flex-row")}>
       {props.videos.map((course) => {
