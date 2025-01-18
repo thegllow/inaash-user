@@ -6,8 +6,9 @@ import { parseAsString, useQueryState } from "nuqs"
 
 import Button from "@/components/ui/button"
 import { useState } from "react"
+import { Video } from "@/types/public-videos-response"
 
-type Props = {}
+type Props = Video
 
 const Coupon = (props: Props) => {
   const t = useTranslations("payment.coupon")
@@ -26,6 +27,8 @@ const Coupon = (props: Props) => {
           if (!value) setCoupon("", { shallow: false })
         }}
         placeholder={t("input-placeholder")}
+        isInvalid={!Number(props.discount) && !props.coupon}
+        errorMessage={t("errors.invalidCoupon")}
       />
       <Button onClick={handleApplyCoupon} size="md" fullWidth={false}>
         {t("coupon-button")}

@@ -77,7 +77,10 @@
     },
     "coupon": {
       "input-placeholder": "Ilagay ang Discount Code",
-      "coupon-button": "Ilapat"
+      "coupon-button": "Ilapat",
+      "errors": {
+        "invalidCoupon": "Hindi wastong code ng kupon"
+      }
     },
     "success": {
       "title": "Matagumpay na Nagawa ang Pagbabayad!",

@@ -77,7 +77,10 @@
     },
     "coupon": {
       "input-placeholder": "أدخل رمز الخصم الخاص بك",
-      "coupon-button": "تطبيق"
+      "coupon-button": "تطبيق",
+      "errors": {
+        "invalidCoupon": "كود خصم غير صالح"
+      }
     },
     "success": {
       "title": "تم الدفع بنجاح!",

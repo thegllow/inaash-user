@@ -37,6 +37,7 @@ export interface Video {
   final_price: null | string
   discount: string
   description: string
+  coupon: string | null
   length: string
   deleted_at: null
 }

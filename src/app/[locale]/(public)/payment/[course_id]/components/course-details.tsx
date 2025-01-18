@@ -48,7 +48,7 @@ const CourseDetails = async ({ course }: Props) => {
           </div>
         </CardBody>
       </Card>
-      <Coupon />
+      <Coupon {...course} />
       <Price {...course} />
     </div>
   )
