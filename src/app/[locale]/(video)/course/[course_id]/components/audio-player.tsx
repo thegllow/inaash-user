@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/button"
 import { Divider } from "@nextui-org/divider"
 
 const AudioPlayer = React.forwardRef(function Comp(
-  { src, name, onEnd }: { src: string; name: string; onEnd?: () => void },
+  { src, name, onEnd, isDisabled }: { src: string; name: string; onEnd?: () => void; isDisabled?: boolean },
   ref: React.ForwardedRef<ComponentRef<"audio">>,
 ) {
   const audioUrl = src
@@ -61,6 +61,7 @@ const AudioPlayer = React.forwardRef(function Comp(
             maxValue={audioRef.current?.duration || 100}
             value={currentTime}
             onChange={(time) => {
+              if (isDisabled) return
               handleTimeChange(time as number)
             }}
           />
