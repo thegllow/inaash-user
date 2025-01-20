@@ -27,7 +27,7 @@ const Coupon = (props: Props) => {
           if (!value) setCoupon("", { shallow: false })
         }}
         placeholder={t("input-placeholder")}
-        isInvalid={!Number(props.discount) && !props.coupon}
+        isInvalid={props.coupon ? Number(props.discount) > 0 : false}
         errorMessage={t("errors.invalidCoupon")}
       />
       <Button onClick={handleApplyCoupon} size="md" fullWidth={false}>
