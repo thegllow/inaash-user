@@ -131,158 +131,103 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </ul>
                 <br />
 
-                <p>
-                  <strong>. القبول بالشروط</strong>
-                  <strong>:</strong>
-                </p>
-                <ul>
+                <ol start={8}>
                   <li>
-                    <strong>باستخدام التطبيق، يوافق المستخدم على الشروط والأحكام التالية</strong>
-                    <strong>.</strong>
-                  </li>
-                  <li>
-                    <strong>يتحمل المستخدم مسؤولية مراجعة الشروط دوريًا لمعرفة التعديلات الجديدة</strong>
-                    <strong>.</strong>
-                  </li>
-                </ul>
-                <br />
-                <p>
-                  <strong>. التسجيل والاستخدام</strong>
-                  <strong>:</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>يجب على المستخدم تقديم معلومات دقيقة وكاملة أثناء التسجيل</strong>
-                    <strong>.</strong>
-                  </li>
-                  <li>
-                    <strong>يُمنع استخدام التطبيق لأغراض غير قانونية أو مخالفة للأخلاقيات</strong>
-                    <strong>.</strong>
-                  </li>
-                </ul>
-                <br />
-                <p>
-                  <strong>. المحتوى والخدمات المقدمة</strong>
-                  <strong>:</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>يقدم التطبيق محتوى تعليمي عبر فيديوهات تفاعلية مع أسئلة تقييمية</strong>
-                    <strong>.</strong>
-                  </li>
-                  <li>
-                    <strong>جميع الشهادات الصادرة تحمل رمز</strong>
-                    <strong> QR </strong>
-                    <strong>للتحقق من صحتها</strong>
-                    <strong>.</strong>
-                  </li>
-                  <li>
-                    <strong>قد يتم تحديث أو تغيير المحتوى وفقًا لتوصيات اللجنة العلمية أو الإدارة</strong>
-                    <strong>.</strong>
-                  </li>
-                </ul>
-                <br />
-                <p>
-                  <strong>. سياسة الدفع</strong>
-                  <strong>:</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>يتم الدفع لكل برنامج تدريب عبر بوابة دفع إلكترونية آمنة</strong>
-                    <strong>.</strong>
-                  </li>
-                  <li>
-                    <strong>لن يتمكن المستخدم من الوصول إلى البرامج دون إتمام الدفع</strong>
-                    <strong>.</strong>
-                  </li>
-                </ul>
-
-                <br />
-                <p>
-                  <strong>. المسؤولية</strong>
-                  <strong>:</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>المنصة غير مسؤولة عن</strong>
+                    <strong>. القبول بالشروط</strong>
                     <strong>:</strong>
                   </li>
-                  <ul>
-                    <li>
-                      <strong>أي أخطاء ناتجة عن سوء استخدام المستخدم</strong>
-                      <strong>.</strong>
-                    </li>
-                    <li>
-                      <strong>انقطاع الخدمة بسبب أعطال تقنية خارجة عن السيطرة</strong>
-                      <strong>.</strong>
-                    </li>
-                    <li>
-                      <strong>أي خسائر ناجمة عن استخدام غير مصرح به للحساب الشخصي للمستخدم</strong>
-                      <strong>.</strong>
-                    </li>
-                  </ul>
-                </ul>
-
-                <br />
-                <p>
-                  <strong>. إنهاء الخدمة</strong>
-                  <strong>:</strong>
-                </p>
+                </ol>
                 <ul>
-                  <li>
-                    <strong>تحتفظ الإدارة بحق إنهاء الحساب في حال</strong>
-                    <strong>:</strong>
-                  </li>
-                  <ul>
-                    <li>
-                      <strong>انتهاك الشروط والأحكام</strong>
-                      <strong>.</strong>
-                    </li>
-                    <li>
-                      <strong>تقديم معلومات خاطئة أثناء التسجيل</strong>
-                      <strong>.</strong>
-                    </li>
-                    <li>
-                      <strong>استخدام الحساب لأغراض غير قانونية</strong>
-                      <strong>.</strong>
-                    </li>
-                  </ul>
+                  <li>باستخدام التطبيق، يوافق المستخدم على الشروط والأحكام التالية .</li>
+                  <li>يتحمل المستخدم مسؤولية مراجعة الشروط دوريًا لمعرفة التعديلات الجديدة</li>
                 </ul>
                 <br />
                 <ol start={9}>
+                  <li>
+                    <strong>. التسجيل والاستخدام</strong>
+                    <strong>:</strong>
+                  </li>
+                </ol>
+                <ul>
+                  <li>يجب على المستخدم تقديم معلومات دقيقة وكاملة أثناء التسجيل .</li>
+                  <li>يُمنع استخدام التطبيق لأغراض غير قانونية أو مخالفة للأخلاقيات .</li>
+                </ul>
+                <br />
+                <ol start={10}>
+                  <li>
+                    <strong>. المحتوى والخدمات المقدمة</strong>
+                    <strong>:</strong>
+                  </li>
+                </ol>
+                <ul>
+                  <li>يقدم التطبيق محتوى تعليمي عبر فيديوهات تفاعلية مع أسئلة تقييمية .</li>
+                  <li>جميع الشهادات الصادرة تحمل رمز QR للتحقق من صحتها .</li>
+                  <li>قد يتم تحديث أو تغيير المحتوى وفقًا لتوصيات اللجنة العلمية أو الإدارة .</li>
+                </ul>
+                <br />
+                <ol start={11}>
+                  <li>
+                    <strong>. سياسة الدفع</strong>
+                    <strong>:</strong>
+                  </li>
+                </ol>
+                <ul>
+                  <li>يتم الدفع لكل برنامج تدريب عبر بوابة دفع إلكترونية آمنة .</li>
+                  <li>لن يتمكن المستخدم من الوصول إلى البرامج دون إتمام الدفع .</li>
+                </ul>
+
+                <br />
+                <ol start={12}>
+                  <li>
+                    <strong>. المسؤولية</strong>
+                    <strong>:</strong>
+                  </li>
+                </ol>
+                <ul>
+                  <li>المنصة غير مسؤولة عن :</li>
+                  <ul>
+                    <li>أي أخطاء ناتجة عن سوء استخدام المستخدم .</li>
+                    <li>انقطاع الخدمة بسبب أعطال تقنية خارجة عن السيطرة .</li>
+                    <li>أي خسائر ناجمة عن استخدام غير مصرح به للحساب الشخصي للمستخدم .</li>
+                  </ul>
+                </ul>
+
+                <br />
+                <ol start={13}>
+                  <li>
+                    <strong>. إنهاء الخدمة</strong>
+                    <strong>:</strong>
+                  </li>
+                </ol>
+                <ul>
+                  <li>تحتفظ الإدارة بحق إنهاء الحساب في حال :</li>
+                  <ul>
+                    <li>انتهاك الشروط والأحكام .</li>
+                    <li>تقديم معلومات خاطئة أثناء التسجيل .</li>
+                    <li>استخدام الحساب لأغراض غير قانونية .</li>
+                  </ul>
+                </ul>
+                <br />
+                <ol start={14}>
                   <li>
                     <strong> تعديل الشروط</strong>
                     <strong>:</strong>
                   </li>
                 </ol>
                 <ul>
-                  <li>
-                    <strong>قد يتم تعديل الشروط والأحكام وفقًا لمتطلبات التشغيل أو القوانين</strong>
-                    <strong>.</strong>
-                  </li>
-                  <li>
-                    <strong>سيتم إخطار المستخدمين بالتعديلات الجديدة قبل سريانها</strong>
-                    <strong>.</strong>
-                  </li>
+                  <li>قد يتم تعديل الشروط والأحكام وفقًا لمتطلبات التشغيل أو القوانين .</li>
+                  <li>سيتم إخطار المستخدمين بالتعديلات الجديدة قبل سريانها .</li>
                 </ul>
                 <br />
-                <ol start={10}>
+                <ol start={15}>
                   <li>
                     <strong> التواصل</strong>
                     <strong>:</strong>
                   </li>
                 </ol>
                 <ul>
-                  <li>
-                    <strong>
-                      يمكن للمستخدمين إرسال استفساراتهم أو شكاواهم عبر صفحة "تواصل معنا" داخل المنصة
-                    </strong>
-                    <strong>.</strong>
-                  </li>
-                  <li>
-                    <strong>سيتم الرد على الرسائل في غضون 3-5 أيام عمل</strong>
-                    <strong>.</strong>
-                  </li>
+                  <li>يمكن للمستخدمين إرسال استفساراتهم أو شكاواهم عبر صفحة "تواصل معنا" داخل المنصة .</li>
+                  <li>سيتم الرد على الرسائل في غضون 3-5 أيام عمل .</li>
                 </ul>
                 <br />
               </article>
@@ -396,146 +341,106 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </ul>
 
                 <br />
-                <p>
-                  <strong>.Acceptance of terms:</strong>
-                </p>
-                <ul>
+                <ol start={8}>
                   <li>
-                    <strong>
-                      By using the application, the user agrees to the following terms and conditions:.
-                    </strong>
+                    <strong>.Acceptance of terms:</strong>
                   </li>
+                </ol>
+                <ul>
+                  <li>By using the application, the user agrees to the following terms and conditions:.</li>
                   <li>
-                    <strong>
-                      It is the user's responsibility to review the terms periodically for new amendments..
-                    </strong>
+                    It is the user's responsibility to review the terms periodically for new amendments..
                   </li>
                 </ul>
                 <br />
-                <p>
-                  <strong>.Registration and Use:</strong>
-                </p>
+                <ol start={10}>
+                  <li>
+                    <strong>.Registration and Use:</strong>
+                  </li>
+                </ol>
+                <ul>
+                  <li>The user must provide accurate and complete information during registration..</li>
+                  <li>The application may not be used for any illegal or immoral purposes..</li>
+                </ul>
+                <br />
+                <ol start={11}>
+                  <li>
+                    <strong>.Content and Services Provided:</strong>
+                  </li>
+                </ol>
                 <ul>
                   <li>
-                    <strong>
-                      The user must provide accurate and complete information during registration..
-                    </strong>
+                    The application provides educational content through interactive videos with assessment
+                    questions..
                   </li>
+                  <li>All issued certificates bear the symbolQR to verify its authenticity.</li>
                   <li>
-                    <strong>The application may not be used for any illegal or immoral purposes..</strong>
+                    Content may be updated or changed according to the recommendations of the Scientific
+                    Committee or the Administration..
                   </li>
                 </ul>
                 <br />
-                <p>
-                  <strong>.Content and Services Provided:</strong>
-                </p>
+                <ol start={12}>
+                  <li>
+                    <strong>. PolicyPayment:</strong>
+                  </li>
+                </ol>
                 <ul>
-                  <li>
-                    <strong>
-                      The application provides educational content through interactive videos with assessment
-                      questions..
-                    </strong>
-                  </li>
-                  <li>
-                    <strong>All issued certificates bear the symbolQR to verify its authenticity.</strong>
-                  </li>
-                  <li>
-                    <strong>
-                      Content may be updated or changed according to the recommendations of the Scientific
-                      Committee or the Administration..
-                    </strong>
-                  </li>
-                </ul>
-                <br />
-                <p>
-                  <strong>. PolicyPayment:</strong>
-                </p>
-                <ul>
-                  <li>
-                    <strong>
-                      Payment for each training program is made via a secure electronic payment gateway..
-                    </strong>
-                  </li>
-                  <li>
-                    <strong>
-                      The user will not be able to access the software without completing the payment..
-                    </strong>
-                  </li>
+                  <li>Payment for each training program is made via a secure electronic payment gateway..</li>
+                  <li>The user will not be able to access the software without completing the payment..</li>
                 </ul>
 
                 <br />
-                <p>
-                  <strong>.Responsibility:</strong>
-                </p>
-                <ul>
+                <ol start={12}>
                   <li>
-                    <strong>The platformirresponsibleAndon:</strong>
+                    <strong>.Responsibility:</strong>
                   </li>
+                </ol>
+                <ul>
+                  <li>The platformirresponsibleAndon:</li>
                   <ul>
-                    <li>
-                      <strong>Any errors resulting from user misuse.</strong>
-                    </li>
-                    <li>
-                      <strong>Service interruption due to technical failures beyond our control.</strong>
-                    </li>
-                    <li>
-                      <strong>
-                        Any losses resulting from unauthorized use of the User's personal account.
-                      </strong>
-                    </li>
+                    <li>Any errors resulting from user misuse.</li>
+                    <li>Service interruption due to technical failures beyond our control.</li>
+                    <li>Any losses resulting from unauthorized use of the User's personal account.</li>
                   </ul>
                 </ul>
 
                 <br />
-                <p>
-                  <strong>.Termination of service:</strong>
-                </p>
-                <ul>
+                <ol start={13}>
                   <li>
-                    <strong>
-                      The administration reserves the right to terminate the account in the event of::
-                    </strong>
+                    <strong>.Termination of service:</strong>
                   </li>
+                </ol>
+                <ul>
+                  <li>The administration reserves the right to terminate the account in the event of::</li>
                   <ul>
-                    <li>
-                      <strong>Violation of Terms and Conditions.</strong>
-                    </li>
-                    <li>
-                      <strong>Providing incorrect information during registration.</strong>
-                    </li>
-                    <li>
-                      <strong>Using the account for illegal purposes.</strong>
-                    </li>
+                    <li>Violation of Terms and Conditions.</li>
+                    <li>Providing incorrect information during registration.</li>
+                    <li>Using the account for illegal purposes.</li>
                   </ul>
                 </ul>
                 <br />
-                <p>
-                  <strong>9.Modify Terms:</strong>
-                </p>
+                <ol start={14}>
+                  <li>
+                    <strong>Modify Terms:</strong>
+                  </li>
+                </ol>
                 <ul>
-                  <li>
-                    <strong>
-                      Terms and Conditions may be modified according to operating requirements or laws..
-                    </strong>
-                  </li>
-                  <li>
-                    <strong>Users will be notified of new changes before they take effect..</strong>
-                  </li>
+                  <li>Terms and Conditions may be modified according to operating requirements or laws..</li>
+                  <li>Users will be notified of new changes before they take effect..</li>
                 </ul>
                 <br />
-                <p>
-                  <strong>10.communication:</strong>
-                </p>
+                <ol start={15}>
+                  <li>
+                    <strong>communication:</strong>
+                  </li>
+                </ol>
                 <ul>
                   <li>
-                    <strong>
-                      Users can submit their inquiries or complaints via the &ldquo;Contact Us&rdquo; page
-                      withinThe platform.
-                    </strong>
+                    Users can submit their inquiries or complaints via the &ldquo;Contact Us&rdquo; page
+                    withinThe platform.
                   </li>
-                  <li>
-                    <strong>Messages will be replied within 3-5 business days..</strong>
-                  </li>
+                  <li>Messages will be replied within 3-5 business days..</li>
                 </ul>
                 <br />
               </article>
