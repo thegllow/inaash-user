@@ -4,6 +4,7 @@ import { startBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
 import ChooseCourse from "./components/choose-course"
 import { getVideos } from "@/services/utils/get-videos"
+import SuccessAnimation from "@/components/common/success-animation"
 
 type Props = {
   params: Promise<{
