@@ -110,7 +110,7 @@ export default async function Page({ params }: { params: Promise<{ locale: (type
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -140,7 +140,7 @@ export default async function Page({ params }: { params: Promise<{ locale: (type
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -225,7 +225,7 @@ export default async function Page({ params }: { params: Promise<{ locale: (type
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -255,7 +255,7 @@ export default async function Page({ params }: { params: Promise<{ locale: (type
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
