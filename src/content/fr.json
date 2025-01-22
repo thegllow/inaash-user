@@ -10,12 +10,12 @@
   "choose-language": {
     "title": "Choisir la langue",
     "tabs": {
-      "ar": "Arabe",
-      "en": "Anglais",
+      "ar": "العربية",
+      "en": "English",
       "fr": "Français",
       "fil": "Tagalog",
-      "ur": "Ourdou",
-      "id": "Indonésien"
+      "ur": "اُردُو",
+      "id": "Indonesian"
     },
     "next-button": "Suivant"
   },
@@ -137,12 +137,12 @@
       "change-language": {
         "title": "Modifier la langue",
         "tabs": {
-          "ar": "Arabe",
-          "en": "Anglais",
+          "ar": "العربية",
+          "en": "English",
           "fr": "Français",
           "fil": "Tagalog",
-          "ur": "Ourdou",
-          "id": "Indonésien"
+          "ur": "اُردُو",
+          "id": "Indonesian"
         },
         "update-button": "Modifier la langue"
       }

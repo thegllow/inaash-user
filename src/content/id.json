@@ -10,12 +10,12 @@
   "choose-language": {
     "title": "Pilih bahasa",
     "tabs": {
-      "ar": "Arab",
-      "en": "Inggris",
-      "fr": "Prancis",
+      "ar": "العربية",
+      "en": "English",
+      "fr": "Français",
       "fil": "Tagalog",
-      "ur": "Urdu",
-      "id": "Indonesia"
+      "ur": "اُردُو",
+      "id": "Indonesian"
     },
     "next-button": "Berikutnya"
   },
@@ -137,12 +137,12 @@
       "change-language": {
         "title": "Ubah bahasa",
         "tabs": {
-          "ar": "Arab",
-          "en": "Inggris",
-          "fr": " Prancis",
+          "ar": "العربية",
+          "en": "English",
+          "fr": "Français",
           "fil": "Tagalog",
-          "ur": "Urdu",
-          "id": "Indonesia"
+          "ur": "اُردُو",
+          "id": "Indonesian"
         },
         "update-button": "Ubah bahasa"
       }

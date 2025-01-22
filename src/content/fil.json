@@ -10,12 +10,12 @@
   "choose-language": {
     "title": "Piliin ang Wika",
     "tabs": {
-      "ar": "Arabe",
-      "en": "Ingles",
-      "fr": "Pranses",
+      "ar": "العربية",
+      "en": "English",
+      "fr": "Français",
       "fil": "Tagalog",
-      "ur": "Urdu",
-      "id": "Indonesyo"
+      "ur": "اُردُو",
+      "id": "Indonesian"
     },
     "next-button": "Susunod"
   },
@@ -138,12 +138,12 @@
       "change-language": {
         "title": "Palitan ang Wika",
         "tabs": {
-          "ar": "Arabe",
-          "en": "Ingles",
-          "fr": "Pranses",
+          "ar": "العربية",
+          "en": "English",
+          "fr": "Français",
           "fil": "Tagalog",
-          "ur": "Urdu",
-          "id": "Indonesyo"
+          "ur": "اُردُو",
+          "id": "Indonesian"
         },
         "update-button": "Baguhin ang Wika"
       }
