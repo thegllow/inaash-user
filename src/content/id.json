@@ -99,7 +99,8 @@
       "search-button": "Cari",
       "no-results": "Maaf, tidak ada data yang sesuai ditemukan. Silakan periksa detailnya dan coba lagi.",
       "clear-history": "Hapus Data",
-      "old-search": "Data"
+      "old-search": "Data",
+      "empty-search-error": "Harap masukkan nama atau nomor sertifikat"
     },
     "result": {
       "start-course-button": "Mulai Program",

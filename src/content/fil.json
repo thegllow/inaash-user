@@ -99,7 +99,9 @@
       "search-button": "Maghanap",
       "no-results": "Paumanhin, walang natagpuang katugmang tala. Pakisuri ang mga detalye at subukang muli.",
       "clear-history": "Burahin ang mga Rekord",
-      "old-search": "Mga Rekord"
+      "old-search": "Mga Rekord",
+
+      "empty-search-error": "Pakilagay ang pangalan o numero ng sertipiko"
     },
     "result": {
       "start-course-button": "Simulan ang Programa",

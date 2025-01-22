@@ -99,7 +99,8 @@
       "search-button": "بحث",
       "no-results": "عذرا، لم يتم العثور على سجلات مطابقة. يرجى التحقق من التفاصيل والمحاولة مرة أخرى.",
       "clear-history": "حذف السجلات",
-      "old-search": "السجلات"
+      "old-search": "السجلات",
+      "empty-search-error": "الرجاء ادخال الاسم او رقم الشهادة"
     },
     "result": {
       "start-course-button": "ابدأ البرنامج",

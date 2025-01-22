@@ -99,7 +99,8 @@
       "search-button": "Search",
       "no-results": "Sorry, no matching records were found. Please check the details and try again.",
       "clear-history": "Delete Records",
-      "old-search": "Records"
+      "old-search": "Records",
+      "empty-search-error": "Please enter the name or certificate number"
     },
     "result": {
       "start-course-button": "Start Program",
