@@ -42,7 +42,7 @@ const WrongAnswerExplanation = (props: Props) => {
       </div>
       <div className="flex flex-col items-center justify-center space-y-3 rounded bg-[#292929] py-4 ~px-8/10">
         <p className="text-center text-white">{t("description")}</p>
-        <AudioPlayer isDisabled={hasPassedCourse} onEnd={handleAudioEnding} src={src} name={t("reason")} />
+        <AudioPlayer isDisabled={!hasPassedCourse} onEnd={handleAudioEnding} src={src} name={t("reason")} />
       </div>
       <div className="w-full">
         <div className="mx-auto max-w-sm">

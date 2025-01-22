@@ -58,29 +58,38 @@ const QuestionModal = () => {
     TError,
     TVariables
     //? if course has been passed no need to do a server request to check {{a}} is always right
-  >(hasPassedCourse ? handleAnsweringQuestionOnWithCertificate : answerQuestion, {
-    onMutate(variables) {
-      // handling playing timeout audio
-      if (!variables.answer) {
-        setIsTimeOut(true)
-        timeoutAudioRef.current?.play()
-      }
-    },
-    onSuccess(data, variables) {
-      console.log("🚀 ~ onSuccess ~ data:", data)
-      if (!hasPassedCourse) {
-        let result = data as AnswerQuestion["data"]
-        updateVideoStatus({
-          correctlyAnsweredQuestions: result.video.correct_answers,
-          hearts: result.video.hearts,
-          answerRate: result.video.answer_average,
-          progress: result.video.progress,
-        })
-      }
+  >(
+    hasPassedCourse
+      ? handleAnsweringQuestionOnWithCertificate
+      : async (variables) => {
+          setAnswerStatus(variables.answer === `answer_a` ? "correct" : "wrong")
 
-      setAnswerStatus(variables.answer ? (data.is_correct ? "correct" : "wrong") : "timeout")
+          return await answerQuestion(variables)
+        },
+    {
+      onMutate(variables) {
+        // handling playing timeout audio
+        if (!variables.answer) {
+          setIsTimeOut(true)
+          timeoutAudioRef.current?.play()
+        }
+      },
+      onSuccess(data, variables) {
+        console.log("🚀 ~ onSuccess ~ data:", data)
+        if (!hasPassedCourse) {
+          let result = data as AnswerQuestion["data"]
+          updateVideoStatus({
+            correctlyAnsweredQuestions: result.video.correct_answers,
+            hearts: result.video.hearts,
+            answerRate: result.video.answer_average,
+            progress: result.video.progress,
+          })
+        }
+
+        setAnswerStatus(variables.answer ? (data.is_correct ? "correct" : "wrong") : "timeout")
+      },
     },
-  })
+  )
   // closing question modal 3 sec after answering
   useEffect(() => {
     if (!isSuccess) return
@@ -88,13 +97,13 @@ const QuestionModal = () => {
     if (answerStatus === "correct") {
       timer = setTimeout(() => {
         next()
-      }, 3000)
+      }, 1500)
     }
 
     if (answerStatus === "wrong") {
       timer = setTimeout(() => {
         setShowExplanation(true)
-      }, 3000)
+      }, 1500)
     }
     if (answerStatus === "timeout" && !isTimeOut) {
       next()
