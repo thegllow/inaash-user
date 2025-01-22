@@ -10,22 +10,26 @@ const Stepper = () => {
   const t = useTranslations("rating.stepper")
   return (
     <Card
-      dir="ltr"
       shadow="none"
       className="mx-auto mb-5 max-w-md rounded-xl bg-[#0A090959] px-5 py-8 backdrop-blur-xl">
-      <div dir="ltr" className="relative mb-6 px-8">
-        <Progress size="sm" value={step === 1 ? 0 : step === 2 ? 50 : 100} color="primary" />
+      <div className="relative mb-6 px-8">
+        <Progress
+          className="rtl:rotate-180"
+          size="sm"
+          value={step === 1 ? 0 : step === 2 ? 50 : 100}
+          color="primary"
+        />
 
         <p
           className={cn(
-            "absolute -top-2 left-6 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black duration-300",
+            "absolute -top-2 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black duration-300 ltr:left-6 rtl:right-6",
             step >= 1 && "origin-center scale-125",
           )}>
           {step >= 1 && 1}
         </p>
         <p
           className={cn(
-            "absolute -top-2 left-1/2 flex size-5 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-xs text-black duration-300",
+            "absolute -top-2 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black duration-300 ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2",
             step >= 2 && "origin-center scale-110",
           )}>
           {" "}
@@ -33,7 +37,7 @@ const Stepper = () => {
         </p>
         <p
           className={cn(
-            "absolute -top-2 right-6 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black duration-300",
+            "absolute -top-2 flex size-5 items-center justify-center rounded-full bg-primary text-xs text-black duration-300 ltr:right-6 rtl:left-6",
             step >= 3 && "origin-center scale-110",
           )}>
           {step >= 3 && 3}
