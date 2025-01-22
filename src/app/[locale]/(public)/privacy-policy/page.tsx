@@ -16,7 +16,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
               <p className="text-sm text-default-500">{t("description")}</p>
             </div>
             {ar ? (
-              <article className="prose prose-invert ~p-4/8 lg:prose-lg [&>ul]:px-12">
+              <article className="prose prose-invert max-w-[unset] ~p-4/8 lg:prose-lg [&>ul]:px-12">
                 <ol>
                   <li>
                     <strong>جمع المعلومات الشخصية</strong>
@@ -232,7 +232,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 <br />
               </article>
             ) : (
-              <article dir="ltr" className="prose prose-invert ~p-4/8 lg:prose-lg [&>ul]:px-12">
+              <article dir="ltr" className="prose prose-invert max-w-[unset] ~p-4/8 lg:prose-lg [&>ul]:px-12">
                 <ol>
                   <li>
                     <strong>Collection of personal information:</strong>
