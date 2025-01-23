@@ -80,7 +80,7 @@ const Footer = async (props: Props) => {
           </div>
           <Divider />
           <div className="py-8 text-default-500">
-            <p>© {t("all-right-reserved", { value: new Date().getFullYear() })}</p>
+            <p>{t("all-right-reserved")}</p>
             {/* <div className="flex items-center justify-center">
               <a href="https://glow.net.sa/" target="_blank">
                 مطور بواسطة Glow
