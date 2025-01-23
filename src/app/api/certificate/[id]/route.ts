@@ -88,7 +88,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const certX = canvasWidth - canvasWidth / 5.5 // Right margin
     const certY = canvasHeight / 9 // Top margin
     context.textAlign = "right"
-    context.fillText(certificate_no, certX + 25 * certificate_no.length * scaleFactor, certY)
+    context.fillText(certificate_no, certX + 27.5 * certificate_no.length * scaleFactor, certY)
     context.fillStyle = "rgba(0, 0, 0, 0.7)" // Lighter color for "Date"
     context.fillText(`Certificate no:`, certX, certY)
 
