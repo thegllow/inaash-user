@@ -82,7 +82,7 @@
       "input-placeholder": "أدخل رمز الخصم الخاص بك",
       "coupon-button": "تطبيق",
       "errors": {
-        "invalidCoupon": "كود خصم غير صالح"
+        "invalidCoupon": "كود الخصم منتهي أو غير فعال"
       }
     },
     "success": {
