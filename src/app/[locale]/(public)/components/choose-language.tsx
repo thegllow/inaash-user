@@ -23,6 +23,7 @@ const ChooseLanguage = (props: Props) => {
         selectedKey={language}
         onSelectionChange={(key) => setLanguage(key as LocaleType[number])}
         color="primary"
+        className="gap-1"
         variant={"underlined"}
         aria-label="Tabs variants">
         {LOCALES.map((element) => {

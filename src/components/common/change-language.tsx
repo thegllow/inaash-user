@@ -68,7 +68,7 @@ const ChangeLanguage = (props: Props) => {
                     selectedKey={language}
                     onSelectionChange={(key) => setLanguage(key as string)}
                     color="primary"
-                    className="gap-1"
+                    className="gap-0.5"
                     variant={"underlined"}
                     aria-label="Tabs variants">
                     {LOCALES.map((element) => {
