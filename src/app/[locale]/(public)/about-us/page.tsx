@@ -8,9 +8,24 @@ import SplittedLogo from "./components/splitted-logo"
 import Solutions from "./components/solutions"
 import WhyUs from "./components/why-us"
 import OurPartners from "./components/our-partners"
+import { LOCALES } from "@/config"
+import { arShare, enShare, filShare, frShare, idShare, urShare } from "@/assets/share-your-success"
 
-export default async function Page() {
+const images = {
+  ar: arShare,
+  en: enShare,
+  fil: filShare,
+  fr: frShare,
+  id: idShare,
+  ur: urShare,
+} as const
+
+export default async function Page({ params }: { params: Promise<{ locale: (typeof LOCALES)[number] }> }) {
   const t = await getTranslations("about-us")
+
+  const locale = (await params).locale
+  const imageSrc = images[locale]
+
   return (
     <>
       <section className="bg-[#141313]">
@@ -95,7 +110,7 @@ export default async function Page() {
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -125,7 +140,7 @@ export default async function Page() {
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -210,7 +225,7 @@ export default async function Page() {
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -240,7 +255,7 @@ export default async function Page() {
                     height="76"
                     filterUnits="userSpaceOnUse"
                     colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -279,7 +294,7 @@ export default async function Page() {
       <section className="container mx-auto max-w-7xl flex-grow px-6">
         <div className="flex w-full flex-col items-center justify-between ~py-10/28 ~/md:~gap-5/10 md:flex-row md:~px-10/20">
           <div className="w-full md:w-1/3">
-            <Image src={shareYourSuccess} alt="share ur success" />
+            <Image src={imageSrc} className="rounded-lg" alt="share ur success" />
           </div>
           <div className="mx-auto w-full space-y-12 max-md:max-w-sm max-md:text-center md:w-2/3">
             <div className="space-y-3">

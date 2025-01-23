@@ -1,9 +1,8 @@
 "use client"
 
-import { successLogin } from "@/assets"
-import { Image } from "@nextui-org/image"
 import { useTranslations } from "next-intl"
 
+import SuccessAnimation from "@/components/common/success-animation"
 import Button from "@/components/ui/button"
 import { useParams, useSearchParams } from "next/navigation"
 
@@ -20,7 +19,7 @@ const Success = (props: Props) => {
   return (
     <div className="flex w-full max-w-md flex-col gap-20">
       <div>
-        <Image className="mx-auto w-32" removeWrapper src={successLogin.src} alt="success" />
+        <SuccessAnimation />
         <h2 className="text-center text-xl font-semibold">{t("title")}</h2>
       </div>
 

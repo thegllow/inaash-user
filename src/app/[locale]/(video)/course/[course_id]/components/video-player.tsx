@@ -21,7 +21,7 @@ const ColoredCircle = () => (
         height="175.5"
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB">
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feGaussianBlur in="BackgroundImageFix" stdDeviation="24.375" />
         <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_255_821" />
         <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_255_821" result="shape" />

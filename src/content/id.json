@@ -7,15 +7,18 @@
     "contact": "Hubungi Kami",
     "faqs": "Pertanyaan yang Sering Diajukan"
   },
+  "share": {
+    "title": "Saya mencapai {value}% dalam program {course}. Bagaimana denganmu? Cobalah sekarang."
+  },
   "choose-language": {
     "title": "Pilih bahasa",
     "tabs": {
-      "ar": "Arab",
-      "en": "Inggris",
-      "fr": "Prancis",
+      "ar": "العربية",
+      "en": "English",
+      "fr": "Français",
       "fil": "Tagalog",
-      "ur": "Urdu",
-      "id": "Indonesia"
+      "ur": "اُردُو",
+      "id": "Indonesian"
     },
     "next-button": "Berikutnya"
   },
@@ -77,7 +80,10 @@
     },
     "coupon": {
       "input-placeholder": "Masukkan kode diskon Anda",
-      "coupon-button": "Terapkan"
+      "coupon-button": "Terapkan",
+      "errors": {
+        "invalidCoupon": "Kode kupon tidak valid"
+      }
     },
     "success": {
       "title": "Pembayaran berhasil dilakukan!",
@@ -96,7 +102,8 @@
       "search-button": "Cari",
       "no-results": "Maaf, tidak ada data yang sesuai ditemukan. Silakan periksa detailnya dan coba lagi.",
       "clear-history": "Hapus Data",
-      "old-search": "Data"
+      "old-search": "Data",
+      "empty-search-error": "Harap masukkan nama atau nomor sertifikat"
     },
     "result": {
       "start-course-button": "Mulai Program",
@@ -133,12 +140,12 @@
       "change-language": {
         "title": "Ubah bahasa",
         "tabs": {
-          "ar": "Arab",
-          "en": "Inggris",
-          "fr": " Prancis",
+          "ar": "العربية",
+          "en": "English",
+          "fr": "Français",
           "fil": "Tagalog",
-          "ur": "Urdu",
-          "id": "Indonesia"
+          "ur": "اُردُو",
+          "id": "Indonesian"
         },
         "update-button": "Ubah bahasa"
       }

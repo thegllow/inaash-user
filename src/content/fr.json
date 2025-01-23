@@ -7,15 +7,18 @@
     "contact": "Contactez-nous",
     "faqs": "FAQs"
   },
+  "share": {
+    "title": "J'ai atteint {value}% dans le programme {course}. Et toi ? Essaie-le maintenant."
+  },
   "choose-language": {
     "title": "Choisir la langue",
     "tabs": {
-      "ar": "Arabe",
-      "en": "Anglais",
+      "ar": "العربية",
+      "en": "English",
       "fr": "Français",
       "fil": "Tagalog",
-      "ur": "Ourdou",
-      "id": "Indonésien"
+      "ur": "اُردُو",
+      "id": "Indonesian"
     },
     "next-button": "Suivant"
   },
@@ -77,7 +80,10 @@
     },
     "coupon": {
       "input-placeholder": "Entrez votre code de réduction",
-      "coupon-button": "Appliquer"
+      "coupon-button": "Appliquer",
+      "errors": {
+        "invalidCoupon": "Code de réduction invalide"
+      }
     },
     "success": {
       "title": "Paiement effectué avec succès!",
@@ -96,7 +102,8 @@
       "search-button": "Rechercher",
       "no-results": "Désolé, aucun enregistrement correspondant n'a été trouvé. Veuillez vérifier les détails et réessayer.",
       "clear-history": "Supprimer les enregistrements",
-      "old-search": "Enregistrements"
+      "old-search": "Enregistrements",
+      "empty-search-error": "Veuillez saisir le nom ou le numéro de certificat"
     },
     "result": {
       "start-course-button": "Démarrer le programme",
@@ -133,12 +140,12 @@
       "change-language": {
         "title": "Modifier la langue",
         "tabs": {
-          "ar": "Arabe",
-          "en": "Anglais",
+          "ar": "العربية",
+          "en": "English",
           "fr": "Français",
           "fil": "Tagalog",
-          "ur": "Ourdou",
-          "id": "Indonésien"
+          "ur": "اُردُو",
+          "id": "Indonesian"
         },
         "update-button": "Modifier la langue"
       }

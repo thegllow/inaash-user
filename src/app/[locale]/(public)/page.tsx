@@ -9,6 +9,26 @@ import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import ChooseLanguage from "./components/choose-language"
 import ChooseLanguageButton from "./components/choose-language-button"
+import { Metadata } from "next"
+import { siteConfig } from "@/config/site"
+import { LOCALES } from "@/config"
+import ChooseLanguageTitle from "./components/choose-language-title"
+
+type Props = {
+  params: Promise<{ locale: (typeof LOCALES)[number] }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const locale = (await params).locale
+
+  const data = siteConfig["share"][locale]
+
+  return {
+    ...data,
+    openGraph: { images: ["/logo.png"] },
+  }
+}
 
 export default async function Home() {
   const t = await getTranslations("choose-language")
@@ -24,7 +44,7 @@ export default async function Home() {
           </div>
           <Card shadow={"none"} className="w-full shrink-0 bg-[#211E24] py-6 ~md/lg:~px-3/8">
             <CardBody>
-              <h1 className="text-center text-lg text-white">{t("title")}</h1>
+              <ChooseLanguageTitle />
               <Divider className="mx-auto my-6 w-1/2" />
               <ChooseLanguage />
             </CardBody>

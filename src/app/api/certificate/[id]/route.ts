@@ -83,12 +83,12 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     // Draw the actual date in a darker color
     context.fillStyle = "#000" // Darker color for the date value
-    context.fillText(formatDateToDDMMYYYY(new Date(date)), dateX + 120 * scaleFactor, dateY) // Offset to the right of "Date:"
+    context.fillText(formatDateToDDMMYYYY(new Date(date)), dateX + 124 * scaleFactor, dateY) // Offset to the right of "Date:"
     // Add the certificate number on the top-right corner
     const certX = canvasWidth - canvasWidth / 5.5 // Right margin
     const certY = canvasHeight / 9 // Top margin
     context.textAlign = "right"
-    context.fillText(certificate_no, certX + 105 * scaleFactor, certY)
+    context.fillText(certificate_no, certX + 25 * certificate_no.length * scaleFactor, certY)
     context.fillStyle = "rgba(0, 0, 0, 0.7)" // Lighter color for "Date"
     context.fillText(`Certificate no:`, certX, certY)
 

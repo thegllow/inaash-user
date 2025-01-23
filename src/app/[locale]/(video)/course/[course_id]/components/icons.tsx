@@ -22,7 +22,7 @@ export const GreenHeart: React.FC<HTMLAttributes<HTMLOrSVGElement>> = (props) =>
         height="49.5983"
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB">
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -64,7 +64,7 @@ export const RedHeart: React.FC<HTMLAttributes<HTMLOrSVGElement>> = (props) => (
         height="49.5982"
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB">
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"

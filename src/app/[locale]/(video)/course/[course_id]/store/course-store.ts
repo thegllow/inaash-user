@@ -26,6 +26,7 @@ export type CourseState = {
   answerStatus: AnswerStatus
   showExplanation: boolean
   videoPlayerRef: ReactPlayer | null
+  showSubtitle: boolean
 } & VideoStatus
 
 export type CourseActions = {
@@ -39,6 +40,7 @@ export type CourseActions = {
   changeVolume: (arg: number) => void
   setShowExplanation: (arg: boolean) => void
   setVideoPlayerRef: (arg: ReactPlayer | null) => void
+  toggleSubtitle: (arg: boolean) => void
 }
 
 export type CourseStore = CourseState & CourseActions
@@ -67,6 +69,9 @@ export const createCourseStore = (initState: CourseState) => {
     },
     changeVolume(arg) {
       set({ volume: arg })
+    },
+    toggleSubtitle(arg) {
+      set({ showSubtitle: arg })
     },
   }))
 }

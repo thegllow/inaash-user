@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { useCourseStore } from "../store/course-store-provider"
 import AudioPlayer from "./audio-player"
+import { useVideos } from "../context/courses-context"
 
 type Props = {
   question: Question
@@ -25,6 +26,13 @@ const WrongAnswerExplanation = (props: Props) => {
     setHasEnded(true)
   }
 
+  const { currentVideo } = useVideos()
+  const hasPassedCourse = currentVideo.certificate_number ? true : false
+
+  // show wrong answer explanation text
+  const showSubtitle = useCourseStore((state) => state.showSubtitle)
+  const wrongAnswerSubtitle = props.question[props.answer.replace("answer_", "wrong_") as "wrong_a"]
+
   return (
     <>
       <div className="text-center">
@@ -38,8 +46,13 @@ const WrongAnswerExplanation = (props: Props) => {
       </div>
       <div className="flex flex-col items-center justify-center space-y-3 rounded bg-[#292929] py-4 ~px-8/10">
         <p className="text-center text-white">{t("description")}</p>
-        <AudioPlayer onEnd={handleAudioEnding} src={src} name={t("reason")} />
+        <AudioPlayer isDisabled={!hasPassedCourse} onEnd={handleAudioEnding} src={src} name={t("reason")} />
       </div>
+      {showSubtitle && (
+        <div className="!mt-1 rounded bg-[#292929] ~p-3/4">
+          <p className="text-center text-sm text-[#BEB7C8]">{wrongAnswerSubtitle}</p>
+        </div>
+      )}
       <div className="w-full">
         <div className="mx-auto max-w-sm">
           <Button onClick={next} isDisabled={!hasEnded} size="md">

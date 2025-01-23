@@ -7,15 +7,18 @@
     "contact": "Makipag-ugnayan sa Amin",
     "faqs": "Mga Madalas Itanong"
   },
+  "share": {
+    "title": "Nakamit ko ang {value}% sa programang {course}. Kumusta ka naman? Subukan mo ngayon."
+  },
   "choose-language": {
     "title": "Piliin ang Wika",
     "tabs": {
-      "ar": "Arabe",
-      "en": "Ingles",
-      "fr": "Pranses",
+      "ar": "العربية",
+      "en": "English",
+      "fr": "Français",
       "fil": "Tagalog",
-      "ur": "Urdu",
-      "id": "Indonesyo"
+      "ur": "اُردُو",
+      "id": "Indonesian"
     },
     "next-button": "Susunod"
   },
@@ -77,7 +80,10 @@
     },
     "coupon": {
       "input-placeholder": "Ilagay ang Discount Code",
-      "coupon-button": "Ilapat"
+      "coupon-button": "Ilapat",
+      "errors": {
+        "invalidCoupon": "Hindi wastong code ng kupon"
+      }
     },
     "success": {
       "title": "Matagumpay na Nagawa ang Pagbabayad!",
@@ -96,7 +102,9 @@
       "search-button": "Maghanap",
       "no-results": "Paumanhin, walang natagpuang katugmang tala. Pakisuri ang mga detalye at subukang muli.",
       "clear-history": "Burahin ang mga Rekord",
-      "old-search": "Mga Rekord"
+      "old-search": "Mga Rekord",
+
+      "empty-search-error": "Pakilagay ang pangalan o numero ng sertipiko"
     },
     "result": {
       "start-course-button": "Simulan ang Programa",
@@ -133,12 +141,12 @@
       "change-language": {
         "title": "Palitan ang Wika",
         "tabs": {
-          "ar": "Arabe",
-          "en": "Ingles",
-          "fr": "Pranses",
+          "ar": "العربية",
+          "en": "English",
+          "fr": "Français",
           "fil": "Tagalog",
-          "ur": "Urdu",
-          "id": "Indonesyo"
+          "ur": "اُردُو",
+          "id": "Indonesian"
         },
         "update-button": "Baguhin ang Wika"
       }

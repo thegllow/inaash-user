@@ -1,9 +1,10 @@
 import Footer from "@/components/common/footer"
+import { Link } from "@/lib/i18n/navigation"
 import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
-  const params = await props.params;
+  const params = await props.params
   const ar = params.locale === "ar"
   const t = await getTranslations("terms")
   return (
@@ -16,10 +17,15 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
               <p className="text-sm text-default-500">{t("description")}</p>
             </div>
             {ar ? (
-              <article className="prose prose-invert ~p-4/8 lg:prose-lg [&>ul]:px-12">
-                <p>شروط الاستخدام</p>
+              <article className="prose prose-invert max-w-[unset] ~p-4/8 lg:prose-lg [&>ul]:px-12">
+                <p>
+                  <strong>شروط الاستخدام</strong>
+                </p>
                 <p>يرجى قراءة الشروط والأحكام التالية بعناية قبل استخدام الموقع:</p>
-                <p>مقدمة</p>
+
+                <p>
+                  <strong>مقدمة</strong>
+                </p>
                 <p>
                   شروط الاستخدام (مع الوثائق المشار إليها في هذه الوثيقة) تتضمن الإرشادات اللازمة لكيفية
                   الاستخدام والاستفادة من موقعنا&nbsp;(www.inaash.edu.sa)&nbsp;، سواء بصفة زائر أو مستخدم
@@ -34,7 +40,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   أحكام.
                 </p>
                 <p>وفي حال عدم موافقتكم على هذه الشروط، يجب عليكم عدم استخدام الموقع.</p>
-                <p>شروط إضافية</p>
+                <p>
+                  <strong>شروط إضافية</strong>
+                </p>
                 <p>
                   تتضمن شروط الاستخدام أيضا الشروط الإضافية التالية، التي تنطبق أيضا على استخدامك لموقعنا:
                 </p>
@@ -45,12 +53,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                     المعالجة وتتعهدون بأن جميع البيانات التي تقدمونها هي بيانات دقيقة وصحيحة.
                   </li>
                 </ul>
-                <p>المعلومات الخاصة بنا</p>
+                <p>
+                  <strong>المعلومات الخاصة بنا</strong>
+                </p>
                 <p>
                   موقعinaash.edu.sa&nbsp;هي&nbsp;منصة تابعة لشركة رؤى المتطورة للتدريب الصحي، تقدم برامج
                   توعوية تفاعلية و تسعى إلى إثراء المعرفة لأفراد المجتمع
                 </p>
-                <p>التعديلات في الشروط</p>
+                <p>
+                  <strong>التعديلات في الشروط</strong>
+                </p>
                 <p>
                   يجوز لنا تعديل شروط الاستخدام هذه في أي وقت وذلك بتعديل هذه الصفحة و دون إشعار مسبق مع
                   إمكانية تحديث أو إيقاف الموقع للصيانة اذا تطلب الأمر في أي وقت دون إذن مسبق و سيتم إشعاركم
@@ -60,13 +72,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   يرجى مراجعة هذه الصفحة من وقت لآخر للاطلاع على أي تعديلات نكون قد قمنا بها، لأنها تعتبر
                   ملزمة لكم.
                 </p>
-                <p>التعديلات في الموقع</p>
+                <p>
+                  <strong>التعديلات في الموقع</strong>
+                </p>
                 <p>
                   قد نقوم بتحديث موقعنا من وقت لآخر، وقد نقوم بتغيير المحتوى في أي وقت. ومع ذلك، يرجى ملاحظة
                   أن أياً من محتويات الموقع قد يصبح متقادماً في أي وقت، ونحن لسنا ملزمين بتحديثه.
                 </p>
                 <p>نحن لا نضمن أن يكون الموقع، أو أي من محتوياته، خالياً من حالات السهو أو الأخطاء.</p>
-                <p>الدخول على الموقع</p>
+                <p>
+                  <strong>الدخول على الموقع</strong>
+                </p>
                 <p>
                   الدخول على موقعنا متاح للعموم مع وجود رسوم رمزية للدخول إلى البرامج مع أحقية إدارة الموقع
                   بتغيير الأسعار للبرامج دون إذن أو إشعار مسبق .
@@ -83,7 +99,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   عن طريق شبكة الإنترنت لديكم يجب أن يكونوا على علم تام بشروط الاستخدام والشروط والأحكام
                   المرعية الأخرى، والامتثال لها.
                 </p>
-                <p>الحساب و رسائل التحقق</p>
+                <p>
+                  <strong>الحساب و رسائل التحقق</strong>
+                </p>
                 <p>
                   في حال اختياركم، أو تزويدكم، بحساب مستخدم أو أي معلومات أخرى كجزء من إجراءات التسجيل أو
                   الإجراءات الأمنية المعتمدة لدينا، يجب التعامل مع هذه المعلومات باعتبارها معلومات سرية. ويجب
@@ -98,7 +116,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   الاستخدام.
                 </p>
                 <p>في حال عدم القدرة للوصول الى رقم الجوال او استلام رسائل التحقق OTP الرجاء التواصل معنا</p>
-                <p>حقوق الملكية الفكرية</p>
+                <p>
+                  <strong>حقوق الملكية الفكرية</strong>
+                </p>
                 <p>
                   باعتبارنا المالك أو الجهة المرخص لها باستخدام جميع حقوق الملكية الفكرية في موقعنا، والمواد
                   المنشورة فيه، يراعى أن تلك الأعمال محمية بقوانين ومعاهدات حقوق التأليف والنشر المعتمدة في
@@ -130,7 +150,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   فإن حقكم في استخدام موقعنا سيتوقف فورا، ويكون لنا الخيار أن نطلب منكم إعادة أو إتلاف أي نسخ
                   من المواد التي قمتم بالحصول عليها بهذه الطريقة.
                 </p>
-                <p>الاعتماد على المعلومات</p>
+                <p>
+                  <strong>الاعتماد على المعلومات</strong>
+                </p>
                 <p>
                   يتم توفير المحتوى على موقعنا بغرض الحصول على معلومات عامة فحسب، ولا ترتقي إلى مستوى المشورة
                   التي يمكن الاعتماد عليها، وإنما يتعين عليكم الحصول على المشورة المهنية المتخصصة قبل القيام
@@ -146,7 +168,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   التوقعات الخاصة بكم. كما أننا لا نقدم أي ضمان بشأن دقة واكتمال وتوقيت أو نوعية موقعنا أو أي
                   برامج أو محتويات، أو بشأن استمرار تقديم أي برامج توعوية أو محتويات معينة.
                 </p>
-                <p>حدود مسؤوليتنا</p>
+                <p>
+                  <strong>حدود مسؤوليتنا</strong>
+                </p>
                 <p>
                   لا تتضمن شروط الاستخدام أي استثناء أو الاحتيال أو تحريف الحقائق بطرق احتيالية من جانبنا، أو
                   أية مسؤولية أخرى لا يمكن استبعادها أو تقييدها بموجب أحكام القوانين والأنظمة السعودية
@@ -197,7 +221,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   الروابط بأن تلك المواقع معتمدة من جانبنا. وعليه، فإننا لا نتحمل أية مسؤولية عن أي خسارة أو
                   ضرر قد ينشأ من استخدامكم لتلك الروابط أو المواقع.
                 </p>
-                <p>قواعد السلوك في استخدام الإنترنت</p>
+                <p>
+                  <strong>قواعد السلوك في استخدام الإنترنت</strong>
+                </p>
                 <p>
                   إنكم توافقون على تحمل مسؤولية استخدامكم الخاص لموقعنا، وعن أي محتوى تقومون بتحميله، أو أي
                   اتصال تقيمونه مع المستخدمين الآخرين وعن منشورات المستخدم الخاصة بكم&nbsp;(بما في ذلك جميع
@@ -235,7 +261,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   ويراعى أن الآراء ووجهات النظر التي يعبر عنها مستخدمون آخرون على موقعنا لا تمثل - بالضرورة -
                   وجهات نظرنا أو قيمنا.
                 </p>
-                <p>الاستخدامات المحظورة</p>
+                <p>
+                  <strong>الاستخدامات المحظورة</strong>
+                </p>
                 <p>يمكنكم استخدام موقعنا فقط لأغراض مشروعة. ولا يجوز لكم استخدام موقعنا:</p>
                 <ul>
                   <li>
@@ -261,7 +289,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                     مصمم ليؤثر سلباً على تشغيل أي برامج أو أجهزة كمبيوتر.
                   </li>
                 </ul>
-                <p>كما أنكم توافقون أيضاً على:</p>
+                <p>
+                  <strong>كما أنكم توافقون أيضاً على:</strong>
+                </p>
                 <ul>
                   <li>
                     الامتناع عن إعادة إنتاج أو تكرار أو نسخ أو إعادة بيع أي جزء من موقعنا بطريقة مخالفة لأحكام
@@ -290,7 +320,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   معلومات المستخدم. كما أنكم توافقون على عدم تحريف أو محاولة تحريف هويتكم أثناء استخدامكم
                   لموقعنا.
                 </p>
-                <p>الخدمات التفاعلية</p>
+                <p>
+                  <strong>الخدمات التفاعلية</strong>
+                </p>
                 <p>
                   قد نقوم من وقت لآخر بتقديم خدمات تفاعلية على موقعنا(التي تعرف مجتمعة بعبارة "الخدمات
                   التفاعلية"):
@@ -318,7 +350,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   الاتصال بمشرف الاعتدال، في حال مواجهتكم أي صعوبة أو مصدر قلق.
                 </p>
                 <p>&nbsp;</p>
-                <p>معايير المحتوى</p>
+                <p>
+                  <strong>معايير المحتوى</strong>
+                </p>
                 <p>
                   تنطبق معايير المحتوى هذه على جميع المواد التي تساهمون بها لموقعنا ("المشاركات")، وعلى
                   الخدمات التفاعلية المرتبطة بها.
@@ -327,7 +361,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   يجب عليكم الالتزام بروح ونص المعايير التالية، التي تنطبق على كل جزء من أي مشاركة وعلى جميع
                   المشاركات بوجه عام.
                 </p>
-                <p>التعليق والإنهاء</p>
+                <p>
+                  <strong>التعليق والإنهاء</strong>
+                </p>
                 <p>
                   سنحدد، في تقديرنا، ما إذا كان هناك إخلال بشروط الاستخدام من خلال استخدامكم لموقعنا. وإذا
                   تبين وقوع إخلال بالفعل بهذه السياسة، فقد نتخذ بحقكم الإجراءات التي نراها مناسبة.
@@ -350,8 +386,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   نراه مناسبا بحدود المعقول.
                 </p>
                 <p>&nbsp;</p>
-                <p>الشهادات</p>
-                <p>عام</p>
+                <p>
+                  <strong>الشهادات</strong>
+                </p>
+                <p>
+                  <strong>عام</strong>
+                </p>
                 <p>
                   نقوم نحن و أية أطراف ثالثة بتقديم برامج توعوية على موقعنا للراغبين في نيل شهادة الإنجاز .
                   وستصدر هذه الشهادات من قبلنا تحت اسم &ldquo;برنامج إنعاش&nbsp;(INAASH)&nbsp;ويتوقف القرار
@@ -359,7 +399,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   عدم منح شهادة لبعض البرامج التوعوية. مع إخلاء المسئؤولية عند الإستخدام الخاطيء لشهادات
                   الإنجاز ويمنع تزوير الشهادات حيث إنها مرتبطة بمركز المعلومات بالموقع حسب رقم الشهادة.
                 </p>
-                <p>التسجيل وتسديد الرسوم</p>
+                <p>
+                  <strong>التسجيل وتسديد الرسوم</strong>
+                </p>
                 <p>مع مراعاة ما تقدم، يطلب منكم دفع رسوم قبل بدء البرنامج التوعوي على موقعنا.</p>
                 <p>
                   يتم تجهيز معلومات الدفع الخاصة بكم من قبل بائع طرف ثالث، وسيتم إعادة توجيهكم إلى موقع آمن
@@ -371,14 +413,18 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   بمجرد الإنتهاء من معاملات الدفع الخاصة بكم، فإنه سوف يتم إعادة توجيهكم إلى صفحة تأكيد الدفع
                   على موقعنا وستتلقون رسالة تأكيد من خلال رقم الجوال المسجل.
                 </p>
-                <p>توثيق صحة البيانات</p>
+                <p>
+                  <strong>توثيق صحة البيانات</strong>
+                </p>
                 <p>
                   لكي نتمكن من توثيق رقم جوالك، كما تنص عليه شروط الاستخدام الظاهرة عند تسجيلك للمرة الأولى
                   على منصة &ldquo;إنعاش&rdquo;، سيطلب منك إدخال رقم الجوال صحيح. بعدها ستصلك رسالة نصية بها
                   رمز تحقق وبعد إدخال رمز التحقق المرسل سيتم توثيق رقم الجوال مباشرة وسيتم إعادة توجيهك إلى
                   منصة &ldquo;إنعاش".
                 </p>
-                <p>الفيروسات</p>
+                <p>
+                  <strong>الفيروسات</strong>
+                </p>
                 <p>نحن لا نضمن أن يكون موقعنا آمناً أو خالياً من الشوائب أو الفيروسات.</p>
                 <p>
                   فأنتم مسؤولون عن تجهيز تقنية المعلومات الخاصة بكم، وبرامج الكمبيوتر ومنصة العمل الخاصة بكم
@@ -393,7 +439,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   إلى السلطات المختصة بتطبيق القانون والنظام، وسنتعاون مع هذه السلطات من خلال الإفصاح لها عن
                   هويتكم. وفي حالة حدوث مثل هذا الاختراق، فإن حقكم في استخدام موقعنا سيتوقف على الفور.
                 </p>
-                <p>الربط بموقعنا</p>
+                <p>
+                  <strong>الربط بموقعنا</strong>
+                </p>
                 <p>
                   بإمكانكم الربط بالصفحة الرئيسية لموقعنا، مع مراعاة القيام بذلك بطريقة عادلة وقانونية لا تضر
                   بسمعتنا أو تنطوي على إساءة استغلال موقعنا.
@@ -414,10 +462,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </p>
                 <p>
                   إذا كنتم ترغبون في استخدام أي محتوى على موقعنا باستثناء ما هو مبين أعلاه، يرجى التواصل على
-                  رابط&nbsp;<a href="https://www.doroob.sa/ar/individuals/contact/">اتصل بنا</a>
+                  رابط&nbsp;<Link href="/contact-us">اتصل بنا</Link>
                 </p>
                 <p>&nbsp;</p>
-                <p>سياسة الاسترداد</p>
+                <p>
+                  <strong>سياسة الاسترداد</strong>
+                </p>
                 <p>
                   نود أن نوضح أن قيمة البرامج المدفوعة على منصتنا غير قابلة للاسترداد، سواء تم الدفع باستخدام
                   رمز ترويجي أو بدونه. بقبولك لهذه الشروط، فإنك توافق على عدم استرداد أي مبالغ تم دفعها.
@@ -433,7 +483,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   لاطلاعكم فحسب.
                 </p>
                 <p>ونحن ليس لدينا أي سيطرة على محتويات تلك المواقع أو الموارد.</p>
-                <p>التعويض</p>
+                <p>
+                  <strong>التعويض</strong>
+                </p>
                 <p>
                   أنتم توافقون على الدفاع وتأميننا وتعويضنا من كل ضرر نحن والجهات التابعة والمنتسبة لنا
                   والمسؤولين عن الموقع و إدارة الموقع وكذلك مع وضد أي مطالبات أو إجراءات أو مطالب طرف ثالث
@@ -442,13 +494,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   وتكاليف التقاضي وأتعاب المحاماة أيا كان نوعها وطبيعتها. وفي مثل هذه الحالة، فإننا سنوجه لكم
                   إشعاراً خطياً بتلك المطالبة أو الدعوى أو القضية.
                 </p>
-                <p>القوانين والأنظمة المرعية</p>
+                <p>
+                  <strong>القوانين والأنظمة المرعية</strong>
+                </p>
                 <p>
                   شروط الاستخدام هذه، وموضوعها وتشكيلها، تخضع لأحكام القوانين والأنظمة المرعية في المملكة
                   العربية السعودية. ونحن نوافق معكم على أن محاكم المملكة العربية السعودية سيكون لها الاختصاص
                   الحصري في هذا الخصوص.
                 </p>
-                <p>العلامات التجارية</p>
+                <p>
+                  <strong>العلامات التجارية</strong>
+                </p>
                 <p>
                   "برنامج إنعاش" INAASH&nbsp;هي علامة تجارية مسجلة في المملكة العربية السعودية لشركة رؤى
                   المتطورة للتدريب الصحي. ويراعى أن جميع العلامات التجارية غير المملوكة من قبلنا والتي تظهر
@@ -463,13 +519,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   المعنية.
                 </p>
                 <p>&nbsp;</p>
+
                 <p>للاتصال بنا</p>
                 <p>بإمكانكم الاتصال بنا، على رابط&nbsp;اتصل بنا</p>
                 <p>شكراً لكم على زيارة موقعنا.</p>
               </article>
             ) : (
-              <article className="prose prose-invert ~p-4/8 lg:prose-lg [&>ul]:px-12">
-                <p>introduction</p>
+              <article className="prose prose-invert max-w-[unset] ~p-4/8 lg:prose-lg [&>ul]:px-12">
+                <p>
+                  {" "}
+                  <strong>introduction</strong>
+                </p>
                 <p>
                   These Terms of Use (together with the documents referred to in this document) provide the
                   necessary guidelines on how to use and benefit from our website.(www.inaash.edu.sa), whether
@@ -485,7 +545,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   the provisions contained therein..
                 </p>
                 <p>If you do not agree to these terms, you must not use the site..</p>
-                <p>Additional Terms</p>
+                <p>
+                  <strong>Additional Terms</strong>
+                </p>
                 <p>
                   These Terms of Use also include the following additional terms, which also apply to your use
                   of our Site::
@@ -497,7 +559,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                     processing and you warrant that all data you provide is accurate and correct..
                   </li>
                 </ul>
-                <p>Our information</p>
+                <p>
+                  <strong>Our information</strong>
+                </p>
                 <p>
                   locationinaash.edu.saYA platform affiliated with Roaa Advanced Health Training Company.
                   TSubmit programsAwareness Interactive andSeeking toEnriching knowledge for community members
@@ -512,7 +576,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   Please check this page from time to time to take notice of any changes we may have made, as
                   they are binding on you..
                 </p>
-                <p>Modifications to the Site</p>
+                <p>
+                  <strong>Modifications to the Site</strong>
+                </p>
                 <p>
                   We may update our site from time to time, and may change the content at any time. However,
                   please note that any of the content on the site may be out of date at any given time, and we
@@ -522,7 +588,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   We do not guarantee that the Site, or any of its contents, will be free from omissions or
                   errors..
                 </p>
-                <p>Login to the site</p>
+                <p>
+                  <strong>Login to the site</strong>
+                </p>
                 <p>
                   Our website is open to the public.There is a nominal fee to access the programs, with the
                   site management having the right to change the prices of the programs without prior
@@ -543,7 +611,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   internet connection are fully aware of these Terms of Use and other applicable terms and
                   conditions, and that they comply with them..
                 </p>
-                <p>the accountand verification messages</p>
+                <p>
+                  <strong>the accountand verification messages</strong>
+                </p>
                 <p>
                   If you choose, or are provided with, a user account or any other information as part of our
                   registration or security procedures, such information must be treated as confidential. You
@@ -562,7 +632,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   In case you are unable to access your mobile number or receive verification
                   messagesOTPPlease contact us
                 </p>
-                <p>Intellectual property rights</p>
+                <p>
+                  <strong>Intellectual property rights</strong>
+                </p>
                 <p>
                   As the owner or licensee of all intellectual property rights in our site and the material
                   published on it, these works are protected by copyright laws and treaties around the world.
@@ -596,7 +668,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   your right to use our site will cease immediately and we will, at our option, require you to
                   return or destroy any copies of the materials you have made..
                 </p>
-                <p>Reliance on information</p>
+                <p>
+                  <strong>Reliance on information</strong>
+                </p>
                 <p>
                   The content on our site is provided for general information purposes only and does not
                   amount to advice on which you should rely. You should obtain professional advice before
@@ -613,7 +687,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   completeness, timeliness or quality of our site or anyProgramsor contents, or regarding the
                   continued provision of anyAwareness programsor certain content.
                 </p>
-                <p>Limits of our liability</p>
+                <p>
+                  <strong>Limits of our liability</strong>
+                </p>
                 <p>
                   The Terms of Use do not include any exclusion or fraud or fraudulent misrepresentation on
                   our part, or any other liability that cannot be excluded or limited under the provisions of
@@ -668,7 +744,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   accept any liability for any loss or damage that may arise from your use of those links or
                   websites..
                 </p>
-                <p>Rules of conduct for using the Internet</p>
+                <p>
+                  <strong>Rules of conduct for using the Internet</strong>
+                </p>
                 <p>
                   You agree to accept responsibility for your own use of our Site, for any content you upload,
                   for any communication you have with other users and for your User Postings.(including all
@@ -708,7 +786,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   Please note that the opinions and views expressed by other users on our site do not
                   necessarily represent our views or values..
                 </p>
-                <p>Prohibited Uses</p>
+                <p>
+                  <strong>Prohibited Uses</strong>
+                </p>
                 <p>You may use our site only for lawful purposes. You may not use our site:</p>
                 <ul>
                   <li>
@@ -735,7 +815,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                     computer software or hardware.
                   </li>
                 </ul>
-                <p>You also agree to::</p>
+                <p>
+                  <strong>You also agree to::</strong>
+                </p>
                 <ul>
                   <li>
                     Refrain from reproducing, duplicating, copying or reselling any part of our site in
@@ -764,7 +846,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   postings or user information. You also agree not to misrepresent or attempt to misrepresent
                   your identity while using our Site..
                 </p>
-                <p>Interactive Services</p>
+                <p>
+                  <strong>Interactive Services</strong>
+                </p>
                 <p>
                   We may from time to time provide interactive services on our Site (collectively known as
                   &ldquo;Interactive Services&rdquo;).:
@@ -793,7 +877,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   means of contacting the moderator, should you experience any difficulty or concern..
                 </p>
                 <p>&nbsp;</p>
-                <p>Content Standards</p>
+                <p>
+                  <strong>Content Standards</strong>
+                </p>
                 <p>
                   These content standards apply to all material you contribute to our site
                   (&ldquo;Contributions&rdquo;), and to the interactive services associated with it..
@@ -802,7 +888,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   You must comply with the spirit and letter of the following standards, which apply to each
                   part of any Contribution and to all Contributions in general..
                 </p>
-                <p>Suspension and Termination</p>
+                <p>
+                  <strong>Suspension and Termination</strong>
+                </p>
                 <p>
                   We will determine, in our sole discretion, whether there has been a breach of these Terms of
                   Use through your use of our Site. If a breach of this policy has occurred, we may take such
@@ -833,8 +921,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   action we deem appropriate within reasonable limits..
                 </p>
                 <p>&nbsp;</p>
-                <p>Certificates</p>
-                <p>general</p>
+                <p>
+                  <strong>Certificates</strong>
+                </p>
+                <p>
+                  <strong>general</strong>
+                </p>
                 <p>
                   We do and Any third parties providing softwareAwarenessOn our website for those wishing to
                   obtain a certificate of achievement. These certificates will be issued by us under the name
@@ -844,7 +936,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   of achievement certificates and forgery of certificates is prohibited as they are linked to
                   the information center on the site according to the certificate number.
                 </p>
-                <p>Registration and payment of fees</p>
+                <p>
+                  <strong>Registration and payment of fees</strong>
+                </p>
                 <p>
                   Subject to the above, you are required to pay a fee.Before starting the awareness programOn
                   our website.
@@ -861,7 +955,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   page.PaymentOn our website and you will receive a confirmation message.Through the
                   registered mobile number.
                 </p>
-                <p>Data Validation</p>
+                <p>
+                  <strong>Data Validation</strong>
+                </p>
                 <p>
                   So that we can documentYour mobile numberAs stated in the terms of use that appear when you
                   first register on the &ldquo;platform.&rdquo;Revitalize&rdquo;, you will be asked to
@@ -869,7 +965,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   code. After entering the verification code sentIt will be documented.Mobile numberDirectly
                   you will be redirected to the platform &ldquo;reviveSh.
                 </p>
-                <p>Viruses</p>
+                <p>
+                  <strong>Viruses</strong>
+                </p>
                 <p>We do not guarantee that our site will be secure or free from bugs or viruses..</p>
                 <p>
                   You are responsible for preparing your information technology, computer programmes and
@@ -885,7 +983,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   disclosing your identity to them. In the event of such a breach, your right to use our site
                   will cease immediately.
                 </p>
-                <p>Linking to our site</p>
+                <p>
+                  <strong>Linking to our site</strong>
+                </p>
                 <p>
                   You may link to our website home page, provided you do so in a way that is fair and legal
                   and does not damage our reputation or take advantage of our site..
@@ -908,10 +1008,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </p>
                 <p>
                   If you wish to make any use of any content on our site other than as set out above, please
-                  contact us at<a href="https://www.doroob.sa/ar/individuals/contact/">Contact us</a>
+                  contact us at<Link href="/contact-us">Contact us</Link>
                 </p>
                 <p>&nbsp;</p>
-                <p>Refund Policy</p>
+                <p>
+                  <strong>Refund Policy</strong>
+                </p>
                 <p>
                   We would like to clarify that the value of paid programs on our platform is non-refundable,
                   whether or not payment was made using a promotional code. By accepting these terms, you
@@ -923,13 +1025,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   or promote your account to others. Any violation of this condition may expose you
                   toAccountabilityLegal
                 </p>
-                <p>Third Party Links and Resources Available on Our Site</p>
+                <p>
+                  <strong>Third Party Links and Resources Available on Our Site</strong>
+                </p>
                 <p>
                   Where our website contains links to third party websites and resources, these links are
                   provided for your information only..
                 </p>
                 <p>We have no control over the contents of those sites or resources..</p>
-                <p>Compensation</p>
+                <p>
+                  <strong>Compensation</strong>
+                </p>
                 <p>
                   You agree to defend, indemnify and hold us, our affiliates, successors and assigns harmless
                   from and against any and all claims, damages, losses, expenses, expenses, or damages arising
@@ -940,13 +1046,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   costs and attorneys' fees of every kind and nature. In such event, we will provide you with
                   written notice of such claim, action or suit..
                 </p>
-                <p>Applicable laws and regulations</p>
+                <p>
+                  <strong>Applicable laws and regulations</strong>
+                </p>
                 <p>
                   These Terms of Use, their subject matter and formation, are subject to the laws and
                   regulations in force in the Kingdom of Saudi Arabia. We agree with you that the courts of
                   the Kingdom of Saudi Arabia will have exclusive jurisdiction in this regard..
                 </p>
-                <p>Brands</p>
+                <p>
+                  <strong>Brands</strong>
+                </p>
                 <p>
                   "programRevitalizeINAASH is a registered trademark in the Kingdom of Saudi Arabia.For
                   Advanced Visions for Health Training CompanyAll trademarks not owned by us that appear on

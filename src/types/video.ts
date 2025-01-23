@@ -12,6 +12,10 @@ export interface Question {
   answers_b: string
   answers_c: string
   answers_d: string
+  wrong_a: string
+  wrong_b: string
+  wrong_c: string
+  wrong_d: string
   correct_answer: string
   allowed_time: string
   appears_at: string

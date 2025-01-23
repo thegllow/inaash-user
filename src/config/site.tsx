@@ -62,4 +62,36 @@ export const siteConfig = {
       },
     ],
   },
+  share: {
+    ar: {
+      title: "Inaash | عيشها، تعلمها، كن منقذاً",
+      description:
+        "منصة إنعاش توفر الاستجابة للاصابات الصحية والرياضية الطارئة بشكل تفاعلي ممتع مع الحصول على شهادة حضور للبرنامج التثقيفي",
+    },
+    en: {
+      title: "Inaash | Live it, Learn it, Be a Rescuer",
+      description:
+        "The Inaash platform provides an interactive and enjoyable response to health and sports emergencies, along with a certificate of attendance for the educational program.",
+    },
+    fil: {
+      title: "Inaash | Isabuhay ito, Alamin ito, Maging Isang Tagapagligtas",
+      description:
+        "Ang platform na Inaash ay nagbibigay ng interactive at kasiya-siyang tugon sa mga emerhensiyang pangkalusugan at pampalakasan, kasama ang sertipiko ng pagdalo para sa programang pang-edukasyon.",
+    },
+    fr: {
+      title: "Inaash | Vivez-le, Apprenez-le, Soyez un Sauveteur",
+      description:
+        "La plateforme Inaash offre une réponse interactive et agréable aux urgences sanitaires et sportives, avec un certificat de participation au programme éducatif.",
+    },
+    ur: {
+      title: "Inaash | اسے جیو، اسے سیکھو، ایک بچانے والے بنو",
+      description:
+        "Inaash پلیٹ فارم صحت اور کھیلوں کی ہنگامی صورتحال کے لیے ایک تعاملاتی اور دلچسپ جواب فراہم کرتا ہے، ساتھ ہی تعلیمی پروگرام کے لیے شرکت کا سرٹیفکیٹ بھی فراہم کرتا ہے۔",
+    },
+    id: {
+      title: "Inaash | Jalani, Pelajari, Jadilah Penyelamat",
+      description:
+        "Platform Inaash menyediakan respons interaktif dan menyenangkan terhadap keadaan darurat kesehatan dan olahraga, serta sertifikat kehadiran untuk program pendidikan.",
+    },
+  },
 }
