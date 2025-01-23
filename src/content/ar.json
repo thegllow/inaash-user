@@ -7,6 +7,9 @@
     "contact": "تواصل معنا",
     "faqs": "الاسئلة الشائعة"
   },
+  "share": {
+    "title": "لقد حققت {value}% في برنامج {course}، ماذا عنك؟ جرّبه الان"
+  },
   "choose-language": {
     "title": "أختر اللغة",
     "tabs": {

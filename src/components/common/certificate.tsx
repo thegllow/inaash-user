@@ -13,12 +13,16 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from "./share-buttons"
+import ShareButton from "./share-button"
 
 const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: string }) => {
   const t = await getTranslations("certificate.certificate-card")
   const video = await getCertificate(certificate_qr_code)
   const locale = await getLocale()
   const certificateURl = `${process.env.HOST_NAME}/${locale}/information-center/${video.certificate_number}`
+  const share = await getTranslations("share")
+  const grade = ((Number(video.correct_answers) / Number(video.total_questions)) * 100).toFixed(0)
+
   return (
     <div className="flex w-full flex-col items-center justify-center space-y-6 text-foreground">
       <h1 className="font-semibold ~text-lg/2xl">{t("title")}</h1>
@@ -47,25 +51,18 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
           </div>
           <div className="flex w-full flex-col items-center justify-between gap-5 px-3 py-2 md:flex-row">
             <div className="flex w-full items-center justify-between gap-4">
-              <Button
-                as="a"
-                href="#"
-                variant="light"
-                size="md"
-                startContent={<img className="size-8" src={send.src} alt="share to share" />}>
-                {t("share-button")}
-              </Button>
+              <ShareButton />
 
               <div className="flex items-center gap-2">
                 <TwitterShareButton
                   url={certificateURl}
-                  title={t("share-title", { value: video.video.title })}>
+                  title={share("title", { value: grade, course: video.video.title })}>
                   <img className="size-5" src={twitter.src} alt="share to x" />
                 </TwitterShareButton>
                 {/* <Button size="sm" isIconOnly variant="light"> */}
                 <LinkedinShareButton
                   url={certificateURl}
-                  title={t("share-title", { value: video.video.title })}>
+                  title={share("title", { value: grade, course: video.video.title })}>
                   <img className="size-5" src={linkedin.src} alt="share to linkedin" />
                 </LinkedinShareButton>
                 {/* </Button> */}
@@ -79,7 +76,7 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
               <Button
                 fullWidth
                 as="a"
-                href={ video.certificate_url!}
+                href={video.certificate_url!}
                 variant="light"
                 size="md"
                 className="justify-between"
@@ -93,10 +90,14 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
       <div className="flex flex-col items-center text-sm">
         <p>{t("share-with-others")}</p>
         <div className="mt-2 flex gap-3">
-          <WhatsappShareButton url={certificateURl} title={t("share-title", { value: video.video.title })}>
+          <WhatsappShareButton
+            url={certificateURl}
+            title={share("title", { value: grade, course: video.video.title })}>
             <img className="size-6" src={whatsapp.src} alt="share to whatsapp" />
           </WhatsappShareButton>
-          <EmailShareButton url={certificateURl} subject={t("share-title", { value: video.video.title })}>
+          <EmailShareButton
+            url={certificateURl}
+            subject={t("share-title", { value: grade, course: video.video.title })}>
             <img className="size-6" src={gmail.src} alt="share to gmail" />
           </EmailShareButton>
         </div>

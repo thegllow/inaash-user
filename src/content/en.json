@@ -7,6 +7,9 @@
     "contact": "Contact Us",
     "faqs": "FAQs"
   },
+  "share": {
+    "title": "I achieved {value}% in the {course} program. What about you? Try it now."
+  },
   "choose-language": {
     "title": "Choose the language",
     "tabs": {

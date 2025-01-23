@@ -9,6 +9,25 @@ import { auth } from "@/lib/auth/auth"
 import { redirect } from "@/lib/i18n/navigation"
 import ChooseLanguage from "./components/choose-language"
 import ChooseLanguageButton from "./components/choose-language-button"
+import { Metadata } from "next"
+import { siteConfig } from "@/config/site"
+import { LOCALES } from "@/config"
+
+type Props = {
+  params: Promise<{ locale: (typeof LOCALES)[number] }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const locale = (await params).locale
+
+  const data = siteConfig["share"][locale]
+
+  return {
+    ...data,
+    openGraph: { images: ["/logo.png"] },
+  }
+}
 
 export default async function Home() {
   const t = await getTranslations("choose-language")

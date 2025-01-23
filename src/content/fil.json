@@ -7,6 +7,9 @@
     "contact": "Makipag-ugnayan sa Amin",
     "faqs": "Mga Madalas Itanong"
   },
+  "share": {
+    "title": "Nakamit ko ang {value}% sa programang {course}. Kumusta ka naman? Subukan mo ngayon."
+  },
   "choose-language": {
     "title": "Piliin ang Wika",
     "tabs": {

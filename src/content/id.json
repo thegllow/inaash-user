@@ -7,6 +7,9 @@
     "contact": "Hubungi Kami",
     "faqs": "Pertanyaan yang Sering Diajukan"
   },
+  "share": {
+    "title": "Saya mencapai {value}% dalam program {course}. Bagaimana denganmu? Cobalah sekarang."
+  },
   "choose-language": {
     "title": "Pilih bahasa",
     "tabs": {
