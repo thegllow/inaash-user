@@ -41,6 +41,7 @@ export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProp
       answerStatus: "pending",
       showExplanation: false,
       videoPlayerRef: null,
+      showSubtitle: false,
       // if user has completed a course he should start from start by default
       startTime: video.certificate_number ? "00:00:00" : video.current_time,
     }

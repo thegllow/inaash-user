@@ -37,6 +37,7 @@ const VideoWrapper = ({ children, params }: Props) => {
     queryKey: ["courses", params.locale],
     queryFn: async () => await getVideos(),
   })
+  // if course has completed but skipped rating
   const Router = useRouter()
   if (video && video.certificate_qr_code && (!video.is_rated || !video.certificate_number)) {
     Router.push(`/certificate/${video.video_id}`)
