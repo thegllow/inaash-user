@@ -20,8 +20,8 @@ const Coupon = (props: Props) => {
   };
 
   // Check for error condition
-  const showError = props.coupon && props.price === props.final_price && Number(props.price) >0;
-
+  const isInvalidCoupon = (props.coupon && props.price === props.final_price && Number(props.price) >0);
+  
   return (
       <div className="flex gap-4">
         <Input
@@ -32,7 +32,7 @@ const Coupon = (props: Props) => {
             if (!value) setCoupon("", { shallow: false });
           }}
           placeholder={t("input-placeholder")}
-          isInvalid={showError || (props.coupon ? Number(props.discount) > 0 : false)}
+          isInvalid={!!isInvalidCoupon}
           errorMessage={t("errors.invalidCoupon")}
         />
         <Button onClick={handleApplyCoupon} size="md" fullWidth={false}>
