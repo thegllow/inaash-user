@@ -35,6 +35,12 @@ export function UserDropdown() {
 
           <DropdownItem
             onClick={() => {
+              localStorage.clear();
+              // Clear all cookies
+              document.cookie.split(";").forEach((cookie) => {
+                const [name] = cookie.split("=");
+                document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/`;
+              });
               signOut()
             }}
             key="signout"

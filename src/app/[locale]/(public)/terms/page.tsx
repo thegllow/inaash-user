@@ -2,6 +2,7 @@ import Footer from "@/components/common/footer"
 import { Link } from "@/lib/i18n/navigation"
 import { Card } from "@nextui-org/card"
 import { getTranslations } from "next-intl/server"
+import styles from './Page.module.css';
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params
@@ -17,8 +18,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
               <p className="text-sm text-default-500">{t("description")}</p>
             </div>
             {ar ? (
-              <article className="prose prose-invert max-w-[unset] ~p-4/8 lg:prose-lg [&>ul]:px-12">
-                <p>
+              <article className={`prose prose-invert max-w-[unset] ~p-4/8 lg:prose-lg [&>ul]:px-12 ${styles.p}`}>
+              <p>
                   <strong>شروط الاستخدام</strong>
                 </p>
                 <p>يرجى قراءة الشروط والأحكام التالية بعناية قبل استخدام الموقع:</p>
