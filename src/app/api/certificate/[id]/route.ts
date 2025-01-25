@@ -94,7 +94,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     // Generate QR code for the certificate number
     const qrCodeData = await QRCode.toDataURL(
-      `https://inaash.edu.sa/eb/information-center/${certificate_code}`,
+      `https://inaash.edu.sa/en/information-center/${certificate_code}`,
       {
         margin: 0.5,
         errorCorrectionLevel: "M",
