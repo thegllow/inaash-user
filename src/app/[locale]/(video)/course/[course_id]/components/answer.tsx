@@ -8,7 +8,7 @@ const Answer: React.FC<
   HTMLAttributes<HTMLDivElement> & {
     answer: string
     isLoading: boolean
-    isDisabled: boolean
+    isDisabled?: boolean
     status: AnswerStatus
   }
 > = ({ answer, className, children, isLoading, isDisabled, status, ...props }) => {

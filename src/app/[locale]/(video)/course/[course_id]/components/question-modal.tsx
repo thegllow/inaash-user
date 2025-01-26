@@ -16,6 +16,7 @@ import { shuffleArray } from "../utils/shuffle-array"
 import { timeToSeconds } from "../utils/time-to-seconds"
 import Answer from "./answer"
 import WrongAnswerExplanation from "./wrong-answer-explanation"
+import { useTimeout } from "@mantine/hooks"
 
 const QuestionModal = () => {
   // state
@@ -39,7 +40,7 @@ const QuestionModal = () => {
 
   // counter
   const countDownRef = useRef<ReactCountdown | null>(null)
-  const [isTimeOut, setIsTimeOut] = useState(false)
+  // const [isTimeOut, setIsTimeOut] = useState(false)
   const timeoutAudioRef = useRef<ComponentRef<"audio">>(null)
   const timeoutDate = useMemo(
     () => Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000,
@@ -69,10 +70,10 @@ const QuestionModal = () => {
     {
       onMutate(variables) {
         // handling playing timeout audio
-        if (!variables.answer) {
-          setIsTimeOut(true)
-          timeoutAudioRef.current?.play()
-        }
+        // if (!variables.answer) {
+        // setIsTimeOut(true)
+        //   timeoutAudioRef.current?.play()
+        // }
       },
       onSuccess(data, variables) {
         console.log("🚀 ~ onSuccess ~ data:", data)
@@ -105,14 +106,14 @@ const QuestionModal = () => {
         setShowExplanation(true)
       }, 1500)
     }
-    if (answerStatus === "timeout" && !isTimeOut) {
+    if (answerStatus === "timeout") {
       next()
     }
 
     return () => {
       clearTimeout(timer)
     }
-  }, [isSuccess, answerStatus, isTimeOut, next, setShowExplanation])
+  }, [isSuccess, answerStatus, next, setShowExplanation])
 
   // handling answering
   const handleAnswering = (answer: string) => {
@@ -138,12 +139,24 @@ const QuestionModal = () => {
     })
   }
 
-  useEffect(() => {
-    if (isTimeOut && answerStatus === "pending") {
-      console.log("🚀 ~ useEffect ~ isTimeOut", isTimeOut)
-      handleTimeout()
-    }
-  }, [isTimeOut])
+  console.log(timeoutDate)
+
+  useTimeout(
+    () => {
+      timeoutAudioRef.current?.play()
+    },
+    timeToSeconds(question?.allowed_time || "0") * 1000 - 5000,
+    {
+      autoInvoke: true,
+    },
+  )
+
+  // useEffect(() => {
+  //   if (isTimeOut && answerStatus === "pending") {
+  //     console.log("🚀 ~ useEffect ~ isTimeOut", isTimeOut)
+  //     handleTimeout()
+  //   }
+  // }, [isTimeOut])
 
   // shuffle answer in production
   const shuffledAnswers = useMemo(() => {
@@ -186,9 +199,10 @@ const QuestionModal = () => {
                         <Answer
                           status={`answer_${key}` === selectedAnswer ? answerStatus : "pending"}
                           isLoading={isLoading}
-                          isDisabled={isTimeOut}
+                          // isDisabled={isTimeOut}
                           onClick={() => {
-                            if (isLoading || answerStatus !== "pending" || isTimeOut) return
+                            // if (isLoading || answerStatus !== "pending" || isTimeOut) return
+                            if (isLoading || answerStatus !== "pending") return
                             handleAnswering(`answer_${key}`)
                           }}
                           key={key}
@@ -203,7 +217,8 @@ const QuestionModal = () => {
                       key={question?.appears_at}
                       alert
                       onComplete={() => {
-                        if (answerStatus === "pending") setIsTimeOut(true)
+                        // if (answerStatus === "pending") setIsTimeOut(true)
+                        if (answerStatus === "pending") handleTimeout()
                       }}
                       className="rounded-full"
                       date={timeoutDate}
@@ -215,9 +230,9 @@ const QuestionModal = () => {
                     />
                     <audio
                       ref={timeoutAudioRef}
-                      onEnded={(e) => {
-                        setIsTimeOut(false)
-                      }}
+                      // onEnded={(e) => {
+                      //   setIsTimeOut(false)
+                      // }}
                       src={session.data?.user.timeout_audio}
                     />
                   </div>
