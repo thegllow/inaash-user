@@ -441,5 +441,42 @@
   "terms": {
     "title": "Syarat dan Ketentuan",
     "description": "Harap baca syarat ini dengan cermat"
+  },
+  "tour": {
+    "buttons": {
+      "next": "Berikutnya",
+      "skip": "Lewati",
+      "start": "Mulai"
+    },
+    "steps": {
+      "step1": {
+        "title": "Lacak Kemajuan Anda",
+        "content": "Pantau kemajuan Anda saat menonton video."
+      },
+      "step2": {
+        "title": "Jumlah Pertanyaan dan Jawaban",
+        "content": "Lihat berapa banyak pertanyaan yang tersisa dan berapa banyak yang telah Anda jawab dengan benar."
+      },
+      "step3": {
+        "title": "Pertahankan Itu!",
+        "content": "Mulai dengan 5 hati! Kehilangan satu untuk jawaban yang salah, dan dapatkan satu untuk jawaban yang benar."
+      },
+      "step4": {
+        "title": "Waktu Penting!",
+        "content": "Lacak seberapa cepat Anda memilih jawaban yang benar untuk setiap pertanyaan."
+      },
+      "step5": {
+        "title": "Pertanyaan Berbasis Skenario",
+        "content": "Jawab pertanyaan dalam video untuk menguji dan meningkatkan keterampilan Anda untuk situasi kehidupan nyata."
+      },
+      "step6": {
+        "title": "Dapatkan Sertifikat Anda",
+        "content": "Selesaikan program pelatihan untuk mendapatkan sertifikat Anda dan tunjukkan keterampilan Anda!"
+      },
+      "step7": {
+        "title": "Bagikan Hasil",
+        "content": "Opsi untuk berbagi pencapaian Anda dengan orang lain."
+      }
+    }
   }
 }

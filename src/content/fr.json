@@ -442,5 +442,42 @@
   "terms": {
     "title": "Termes et conditions",
     "description": "Veuillez lire attentivement les conditions"
+  },
+  "tour": {
+    "buttons": {
+      "next": "Suivant",
+      "skip": "Passer",
+      "start": "Commencer"
+    },
+    "steps": {
+      "step1": {
+        "title": "Suivez vos progrès",
+        "content": "Suivez vos progrès pendant que vous regardez la vidéo."
+      },
+      "step2": {
+        "title": "Total des questions et réponses",
+        "content": "Voyez combien de questions restent et combien vous en avez répondu correctement."
+      },
+      "step3": {
+        "title": "Gardez le rythme!",
+        "content": "Commencez avec 5 cœurs ! Perdez-en un pour une mauvaise réponse et gagnez-en un pour une réponse correcte."
+      },
+      "step4": {
+        "title": "Le temps compte !",
+        "content": "Suivez la rapidité avec laquelle vous choisissez la bonne réponse pour chaque question."
+      },
+      "step5": {
+        "title": "Questions basées sur des scénarios",
+        "content": "Répondez aux questions de la vidéo pour tester et améliorer vos compétences dans des situations réelles."
+      },
+      "step6": {
+        "title": "Obtenez votre certificat",
+        "content": "Terminez le programme de formation pour obtenir votre certificat et montrer vos compétences !"
+      },
+      "step7": {
+        "title": "Partager les résultats",
+        "content": "Possibilité de partager votre réussite avec les autres."
+      }
+    }
   }
 }

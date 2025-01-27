@@ -443,5 +443,42 @@
   "terms": {
     "title": "Mga Tuntunin at Kundisyon",
     "description": "Pakibasa nang maigi ang mga tuntunin"
+  },
+  "tour": {
+    "buttons": {
+      "next": "Susunod",
+      "skip": "Laktawan",
+      "start": "Simulan"
+    },
+    "steps": {
+      "step1": {
+        "title": "Subaybayan ang Iyong Pag-unlad",
+        "content": "Subaybayan ang iyong pag-unlad habang nanonood ng video."
+      },
+      "step2": {
+        "title": "Kabuuan ng Mga Tanong at Sagot",
+        "content": "Tingnan kung ilan pang tanong ang natitira at kung ilan ang nasagot mo nang tama."
+      },
+      "step3": {
+        "title": "Panatilihin ito!",
+        "content": "Magsimula sa 5 puso! Mawalan ng isa para sa maling sagot, at makakuha ng isa para sa tamang sagot."
+      },
+      "step4": {
+        "title": "Mahalaga ang Oras!",
+        "content": "Subaybayan kung gaano ka kabilis pumili ng tamang sagot sa bawat tanong."
+      },
+      "step5": {
+        "title": "Mga Tanong Batay sa Senaryo",
+        "content": "Sagutin ang mga tanong sa video upang subukan at pahusayin ang iyong mga kasanayan para sa mga totoong sitwasyon."
+      },
+      "step6": {
+        "title": "Kunin ang Iyong Sertipiko",
+        "content": "Kumpletuhin ang programa ng pagsasanay upang makuha ang iyong sertipiko at ipakita ang iyong mga kasanayan!"
+      },
+      "step7": {
+        "title": "Ibahagi ang Mga Resulta",
+        "content": "Opsyon na ibahagi ang iyong nakamit sa iba."
+      }
+    }
   }
 }

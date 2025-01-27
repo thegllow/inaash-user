@@ -442,5 +442,42 @@
   "terms": {
     "title": "Terms and Conditions",
     "description": "Please read the terms carefully"
+  },
+  "tour": {
+    "buttons": {
+      "next": "Next",
+      "skip": "Skip",
+      "start": "Start"
+    },
+    "steps": {
+      "step1": {
+        "title": "Track Your Progress",
+        "content": "Monitor your progress while watching the video."
+      },
+      "step2": {
+        "title": "Total Questions and Answers",
+        "content": "See how many questions are left and how many you answered correctly."
+      },
+      "step3": {
+        "title": "Keep It Up!",
+        "content": "Start with 5 hearts! Lose one for a wrong answer, and gain one for a correct answer."
+      },
+      "step4": {
+        "title": "Time Matters!",
+        "content": "Track how fast you choose the correct answer for each question."
+      },
+      "step5": {
+        "title": "Scenario-Based Questions",
+        "content": "Answer questions in the video to test and improve your skills for real-life situations."
+      },
+      "step6": {
+        "title": "Earn Your Certificate",
+        "content": "Complete the training program to get your certificate and showcase your skills!"
+      },
+      "step7": {
+        "title": "Share Results",
+        "content": "Option to share your achievement with others."
+      }
+    }
   }
 }
