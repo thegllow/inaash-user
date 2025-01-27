@@ -62,7 +62,7 @@ export const siteConfig = {
       },
       {
         label: "",
-        href: "",
+        href: "https://www.tiktok.com/@inaash14?_t=ZS-8tPis739Bgn&_r=1",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>TikTok</title>
@@ -72,7 +72,7 @@ export const siteConfig = {
       },
       {
         label: "",
-        href: "",
+        href: "https://snapchat.com/t/jdWJZkp8",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>Snapchat</title>
