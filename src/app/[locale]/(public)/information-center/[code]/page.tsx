@@ -1,14 +1,15 @@
 import { timeToSeconds } from "@/app/[locale]/(video)/course/[course_id]/utils/time-to-seconds"
 import Certificate from "@/components/common/certificate"
-import Button from "@/components/ui/button"
-import { Link } from "@/lib/i18n/navigation"
+
 import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Chip } from "@nextui-org/chip"
 import { Divider } from "@nextui-org/divider"
 import { Image } from "@nextui-org/image"
-import { CircleArrowLeft, CircleArrowRight, PlayCircle, Timer } from "lucide-react"
+import { PlayCircle, Timer } from "lucide-react"
 import { getTranslations } from "next-intl/server"
+import BackButton from "./components/back-button"
 import { getCertificate } from "./get-certificate"
+import StartCourseButton from "./components/start-course-button"
 
 export const dynamic = "force-dynamic"
 export default async function Page(props: {
@@ -31,15 +32,11 @@ export default async function Page(props: {
         <Card shadow={"none"} className="w-full shrink-0 rounded-xl bg-[#0A090959] p-1">
           <div className="flex items-center justify-between rounded-lg bg-[#1D1B1B] ~p-2/4">
             <h1 className="flex items-center gap-3 ~text-xl/2xl">
-              <CircleArrowLeft strokeWidth={1.2} className="rtl:hidden" />
-              <CircleArrowRight strokeWidth={1.2} className="ltr:hidden" />
+              <BackButton />
+
               {code}
             </h1>
-            <Link href={`/course/${video.id}`}>
-              <Button fullWidth={false} startContent={<PlayCircle />}>
-                {t("start-course-button")}
-              </Button>
-            </Link>
+            <StartCourseButton course={video.id} />
           </div>
         </Card>
         <Card
