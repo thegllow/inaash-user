@@ -36,6 +36,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const { questionsMap, lastQuestion, playing, startTime, setCurrentQuestion, volume, setVideoPlayerRef } =
     useCourseStore((state) => state)
 
+  const hasPassedCourse = currentVideo.certificate_qr_code ? true : false
+
   const [isReady, setIsReady] = useState(false)
   const playerRef = useRef<ReactPlayer>(null)
 
@@ -77,7 +79,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
         onBufferEnd={() => setIsPending(false)}
         onProgress={({ playedSeconds, played }) => {
           const sec = playedSeconds.toFixed()
-          if (sec == lastQuestion) return
+          // do not show last answered question in case user refresh
+          if (sec == lastQuestion && !hasPassedCourse) return
           const question = questionsMap.get(sec)
           if (question) setCurrentQuestion(sec)
         }}
