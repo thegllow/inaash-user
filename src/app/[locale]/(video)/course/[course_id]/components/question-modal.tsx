@@ -41,10 +41,12 @@ const QuestionModal = () => {
   // counter
   const countDownRef = useRef<ReactCountdown | null>(null)
   // const [isTimeOut, setIsTimeOut] = useState(false)
+  const [counter, setCounter] = useState(0)
+
   const timeoutAudioRef = useRef<ComponentRef<"audio">>(null)
   const timeoutDate = useMemo(
     () => Date.now() + timeToSeconds(question?.allowed_time || "0") * 1000,
-    [question?.id],
+    [question?.id, counter, question?.allowed_time],
   )
 
   // answering question
@@ -68,13 +70,13 @@ const QuestionModal = () => {
           return await answerQuestion(variables)
         },
     {
-      onMutate(variables) {
-        // handling playing timeout audio
-        // if (!variables.answer) {
-        // setIsTimeOut(true)
-        //   timeoutAudioRef.current?.play()
-        // }
-      },
+      // onMutate(variables) {
+      // handling playing timeout audio
+      // if (!variables.answer) {
+      // setIsTimeOut(true)
+      //   timeoutAudioRef.current?.play()
+      // }
+      // },
       onSuccess(data, variables) {
         console.log("🚀 ~ onSuccess ~ data:", data)
         if (!hasPassedCourse) {
@@ -87,7 +89,8 @@ const QuestionModal = () => {
           })
         }
 
-        setAnswerStatus(variables.answer ? (data.is_correct ? "correct" : "wrong") : "timeout")
+        // setAnswerStatus(variables.answer ? (data.is_correct ? "correct" : "wrong") : "timeout")
+        setAnswerStatus(data.is_correct ? "correct" : "wrong")
       },
     },
   )
@@ -106,9 +109,9 @@ const QuestionModal = () => {
         setShowExplanation(true)
       }, 1500)
     }
-    if (answerStatus === "timeout") {
-      next()
-    }
+    // if (answerStatus === "timeout") {
+    //   next()
+    // }
 
     return () => {
       clearTimeout(timer)
@@ -131,25 +134,37 @@ const QuestionModal = () => {
   // handling timeout
   const handleTimeout = () => {
     if (!question) return
-    mutate({
-      video_id: course_id,
-      question_id: question!.id,
-      answer: null,
-      answer_time: question!.allowed_time,
-    })
+    setCounter((pre) => ++pre)
+    // mutate({
+    //   video_id: course_id,
+    //   question_id: question!.id,
+    //   answer: null,
+    //   answer_time: question!.allowed_time,
+    // })
   }
 
-  console.log(timeoutDate)
+  useEffect(() => {
+    let timer = setTimeout(
+      () => {
+        timeoutAudioRef.current?.play()
+      },
+      timeToSeconds(question?.allowed_time || "0") * 1000 - 5000,
+    )
 
-  useTimeout(
-    () => {
-      timeoutAudioRef.current?.play()
-    },
-    timeToSeconds(question?.allowed_time || "0") * 1000 - 5000,
-    {
-      autoInvoke: true,
-    },
-  )
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [question?.id, question?.allowed_time, counter])
+
+  // useTimeout(
+  //   () => {
+  //     timeoutAudioRef.current?.play()
+  //   },
+  //   timeToSeconds(question?.allowed_time || "0") * 1000 - 5000,
+  //   {
+  //     autoInvoke: true,
+  //   },
+  // )
 
   // useEffect(() => {
   //   if (isTimeOut && answerStatus === "pending") {
@@ -214,7 +229,7 @@ const QuestionModal = () => {
                   <div>
                     <CountDown
                       ref={countDownRef}
-                      key={question?.appears_at}
+                      key={question?.appears_at + "" + counter}
                       alert
                       onComplete={() => {
                         // if (answerStatus === "pending") setIsTimeOut(true)
