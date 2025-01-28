@@ -396,7 +396,8 @@
   "share-your-success": {
     "title": "شارك نجاحك!",
     "share-button": "شارك النتيجة",
-    "share-with-others": "شارك إنعاش مع الآخرين"
+    "share-with-others": "شارك إنعاش مع الآخرين",
+    "got": "حصلت على {value}%"
   },
   "rating": {
     "title": "ساعدنا على تحسين تجربتك",

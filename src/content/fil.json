@@ -397,7 +397,8 @@
   "share-your-success": {
     "title": "Ibahagi ang iyong tagumpay!",
     "share-button": "Ibahagi ang iyong iskor",
-    "share-with-others": "Ibahagi ang Inaa'sh sa iba"
+    "share-with-others": "Ibahagi ang Inaa'sh sa iba",
+    "got": "Nakuha mo ang {value}%"
   },
   "rating": {
     "title": "Tulungan kaming i-optimize ang iyong karanasan.",

@@ -395,7 +395,8 @@
   "share-your-success": {
     "title": "Bagikan kesuksesan Anda!",
     "share-button": "Bagikan skor Anda",
-    "share-with-others": "Bagikan Inaa'sh dengan orang lain"
+    "share-with-others": "Bagikan Inaa'sh dengan orang lain",
+    "got": "Anda mendapatkan {value}%"
   },
   "rating": {
     "title": "Bantu kami mengoptimalkan pengalaman Anda",

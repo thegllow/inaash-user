@@ -44,7 +44,7 @@ const ShareSuccess = () => {
           <div className="relative overflow-hidden">
             <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
               <div className="flex w-full items-center justify-between gap-4">
-                <h2 className="font-bold text-primary ~text-xl/2xl">حصلت على {grade + "%"}</h2>
+                <h2 className="font-bold text-primary ~text-xl/2xl">{t("got", { value: grade })}</h2>
                 <img src={horizontalLogo.src} alt="Inaash Logo" className="w-20" />
               </div>
               <p className="mb-4 text-default-500">{video.video.title}</p>

@@ -396,7 +396,8 @@
   "share-your-success": {
     "title": "Partagez votre succès!",
     "share-button": "Partagez votre score",
-    "share-with-others": "Partagez Inaa'sh avec d'autres"
+    "share-with-others": "Partagez Inaa'sh avec d'autres",
+    "got": "Vous avez obtenu {value}%"
   },
   "rating": {
     "title": "Aidez-nous à optimiser votre expérience",
