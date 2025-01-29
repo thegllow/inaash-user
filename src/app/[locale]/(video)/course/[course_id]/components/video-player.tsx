@@ -35,7 +35,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const { currentVideo } = useVideos()
   const { questionsMap, lastQuestion, playing, startTime, setCurrentQuestion, volume, setVideoPlayerRef } =
     useCourseStore((state) => state)
-const [lastVQ,setalastVQ]= useState("0")
+const [lastVQ,setLastVQ]= useState("0")
   // const hasPassedCourse = currentVideo.certificate_qr_code ? true : false
 
   const [isReady, setIsReady] = useState(false)
