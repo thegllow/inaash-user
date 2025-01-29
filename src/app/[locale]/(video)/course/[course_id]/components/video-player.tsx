@@ -29,7 +29,7 @@ const ColoredCircle = () => (
     </defs>
   </svg>
 )
-interface VideoPlayerProps {}
+interface VideoPlayerProps { }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const { currentVideo } = useVideos()
