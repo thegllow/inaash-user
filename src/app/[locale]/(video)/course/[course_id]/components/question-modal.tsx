@@ -101,13 +101,13 @@ const QuestionModal = () => {
     if (answerStatus === "correct") {
       timer = setTimeout(() => {
         next()
-      }, 1500)
+      }, 500)
     }
 
     if (answerStatus === "wrong") {
       timer = setTimeout(() => {
         setShowExplanation(true)
-      }, 1500)
+      }, 500)
     }
     // if (answerStatus === "timeout") {
     //   next()
