@@ -43,6 +43,7 @@ function Tooltip({ helpers, step, tooltipProps }: TooltipRenderProps & { helpers
           <Button
             onPress={() => {
               helpers.skip()
+              window.localStorage.setItem("inaash-tour-completed", "true")
             }}
             radius="md"
             size="sm"
