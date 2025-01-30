@@ -35,7 +35,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = () => {
   const { currentVideo } = useVideos()
   const { questionsMap, lastQuestion, playing, startTime, setCurrentQuestion, volume, setVideoPlayerRef } =
     useCourseStore((state) => state)
-const [lastVQ,setalastVQ]= useState(0)
+  const [lastVQ, setLastVQ] = useState("0")
   // const hasPassedCourse = currentVideo.certificate_qr_code ? true : false
 
   const [isReady, setIsReady] = useState(false)
@@ -65,6 +65,18 @@ const [lastVQ,setalastVQ]= useState(0)
       pathname: `/certificate/${currentVideo.video_id}`,
     })
   }
+
+
+  useEffect(() => {
+    if (playerRef.current) {
+      const videoElement = playerRef.current.getInternalPlayer()
+      if (videoElement) {
+        videoElement.controls = false // Disable native controls
+        videoElement.setAttribute('playsinline', true) // Ensure inline playback
+        videoElement.setAttribute('webkit-playsinline', 'true') // iOS-specific
+      }
+    }
+  }, [])
   return (
     <>
       {isPending ? (
@@ -80,7 +92,7 @@ const [lastVQ,setalastVQ]= useState(0)
         onProgress={({ playedSeconds, played }) => {
           const sec = playedSeconds.toFixed()
           // do not show last answered question in case user refresh
-          if (sec == lastQuestion || src == lastVQ) return
+          if (sec == lastQuestion || sec == lastVQ) return
           const question = questionsMap.get(sec)
           if (question) {
             setLastVQ(sec)
@@ -105,6 +117,10 @@ const [lastVQ,setalastVQ]= useState(0)
         url={currentVideo.video.video_url}
         volume={volume}
         onEnded={handleCourseEnding}
+        controls={false}
+        playsinline
+
+
       />
     </>
   )

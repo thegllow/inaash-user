@@ -12,3 +12,24 @@ input[type="number"] {
   -moz-appearance: textfield; /* For Firefox */
   appearance: textfield; /* For other modern browsers */
 }
+
+/* Hide native iOS video controls */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
