@@ -5,7 +5,6 @@ import { Chip } from "@nextui-org/chip"
 import { Image } from "@nextui-org/image"
 import { PlayCircle, Timer } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { useQueryState } from "nuqs"
 
 import Button from "@/components/ui/button"
 import { cn } from "@/lib/cn"
@@ -19,7 +18,7 @@ type Props = {
 }
 
 const ChooseCourse = (props: Props) => {
-  const [selectedCourse, setSelectedCourse] = useQueryState("course")
+  // const [selectedCourse, setSelectedCourse] = useQueryState("course")
   const t = useTranslations("start")
 
   // const session = useSession()
@@ -72,7 +71,7 @@ const ChooseCourse = (props: Props) => {
             key={course.id}
             radius="lg"
             className="group max-w-[390px] flex-grow border-none lg:w-1/2">
-            <CardHeader className="absolute inset-0 z-10 flex-col !items-start gap-3 bg-[#272525E5] p-5 opacity-0 duration-300 group-hover:opacity-100">
+            <CardHeader className="  z-10 flex-col !items-start gap-3 bg-[#272525E5] p-5 opacity-0 duration-300 group-hover:opacity-100">
               <h4 className="text-xl font-semibold text-foreground">{course.title}</h4>
               <p className="text-sm text-foreground">{course.description}</p>
               <Chip className="bg-[#27252570]" startContent={<Timer size={18} />} radius="sm">
@@ -81,14 +80,14 @@ const ChooseCourse = (props: Props) => {
               <Button
                 as={Link}
                 href={`/course/${course.id}`}
-                className="mt-auto"
+                className="mt-auto shrink-0"
                 startContent={<PlayCircle />}>
                 {t("start-course-button")}
               </Button>
             </CardHeader>
             <Image
               removeWrapper
-              className="z-0 h-full w-full object-cover"
+              className="z-0 absolute top-0 h-full w-full object-cover"
               src={course.logo}
               alt={course.title}
             />

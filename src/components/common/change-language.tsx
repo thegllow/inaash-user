@@ -47,6 +47,16 @@ const ChangeLanguage = (props: Props) => {
       setIsLoading(false)
     }
   }
+
+
+  const title = {
+    ar: "أختر اللغة",
+    en: "Choose the language",
+    fr: "Choisir la langue",
+    fil: "Piliin ang Wika",
+    id: "Pilih bahasa",
+    ur: "ہم مندرجہ ذیل ادائیگی کے طریقوں کی حمایت کرتے ہیں",
+  }
   return (
     <Modal
       size="lg"
