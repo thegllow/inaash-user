@@ -1,17 +1,18 @@
 "use client"
 
-import React from "react"
 import Link from "next/link"
-import { useTranslations } from "next-intl"
 import { useQueryState } from "nuqs"
 
 import Button from "@/components/ui/button"
+import { LOCALES } from "@/config"
+import { useParams } from "next/navigation"
 
 type Props = {}
 
 const ChooseLanguageButton = (props: Props) => {
-  const t = useTranslations("choose-language")
-  const [language] = useQueryState("language", { defaultValue: "ar" })
+  const params = useParams() as { locale: (typeof LOCALES)[number] }
+
+  const [language] = useQueryState("language", { defaultValue: params.locale || "ar" })
 
   const text = {
     ar: "التالي",

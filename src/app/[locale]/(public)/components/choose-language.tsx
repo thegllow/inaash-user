@@ -1,21 +1,25 @@
 "use client"
 
-import React from "react"
 import { LOCALES } from "@/config"
 import { Tab, Tabs } from "@nextui-org/tabs"
 import { useTranslations } from "next-intl"
 import { parseAsStringLiteral, useQueryState } from "nuqs"
 
-import { LocaleType } from "@/lib/i18n/types"
-import { cn } from "@/lib/cn"
 import { urdu } from "@/config/fonts"
+import { cn } from "@/lib/cn"
+import { LocaleType } from "@/lib/i18n/types"
+import { useParams } from "next/navigation"
 
 type Props = {}
 
 const ChooseLanguage = (props: Props) => {
   const t = useTranslations("choose-language.tabs")
+  const params = useParams() as { locale: (typeof LOCALES)[number] }
 
-  const [language, setLanguage] = useQueryState("language", parseAsStringLiteral(LOCALES).withDefault("ar"))
+  const [language, setLanguage] = useQueryState(
+    "language",
+    parseAsStringLiteral(LOCALES).withDefault(params.locale || "ar"),
+  )
 
   return (
     <div className="flex justify-center">
