@@ -47,6 +47,24 @@ const ChangeLanguage = (props: Props) => {
       setIsLoading(false)
     }
   }
+
+  const title = {
+    ar: "تغير اللغة",
+    en: "Change the language",
+    fr: "Modifier la langue",
+    fil: "Palitan ang Wika",
+    id: "Ubah bahasa",
+    ur: "زبان تبدیل کریں",
+  } as const
+
+  const button = {
+    ar: "تعديل اللغة",
+    en: "Modify the language",
+    fr: "Modifier la langue",
+    fil: "Baguhin ang Wika",
+    id: "Ubah bahasa",
+    ur: "زبان میں ترمیم کریں",
+  } as const
   return (
     <Modal
       size="lg"
@@ -60,7 +78,7 @@ const ChangeLanguage = (props: Props) => {
           <>
             <ModalBody>
               <div className="~py-6/10">
-                <h4 className="text-center text-lg text-white">{t("title")}</h4>
+                <h4 className="text-center text-lg text-white">{title[language as "ar"]}</h4>
                 <Divider className="mx-auto my-6 w-1/2" />
 
                 <div className="flex justify-center">
@@ -88,7 +106,7 @@ const ChangeLanguage = (props: Props) => {
             <ModalFooter>
               <div className="w-full">
                 <Button size="md" isLoading={isLoading} onClick={onUpdateLanguage}>
-                  {t("update-button")}
+                  {button[language as 'ar']}
                 </Button>
                 {error ? <p className="mt-3 text-sm font-semibold text-danger">{error}</p> : ""}
               </div>
