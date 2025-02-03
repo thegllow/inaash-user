@@ -1,4 +1,5 @@
-import { Fira_Code as FontMono } from "next/font/google"
+import { Fira_Code as FontMono,Noto_Nastaliq_Urdu
+} from "next/font/google"
 import localFont from "next/font/local"
 export const fontSans = localFont({
   src: [
@@ -31,32 +32,36 @@ export const fontSans = localFont({
   ],
   variable: "--font-sans",
 })
-export const urdu = localFont({
-  src: [
-    {
-      path: "../assets/fonts/NotoNastaliqUrdu-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
+// export const urdu = localFont({
+//   src: [
+//     {
+//       path: "../assets/fonts/NotoNastaliqUrdu-Regular.ttf",
+//       weight: "400",
+//       style: "normal",
+//     },
 
-    {
-      path: "../assets/fonts/NotoNastaliqUrdu-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/NotoNastaliqUrdu-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/NotoNastaliqUrdu-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+//     {
+//       path: "../assets/fonts/NotoNastaliqUrdu-Medium.ttf",
+//       weight: "500",
+//       style: "normal",
+//     },
+//     {
+//       path: "../assets/fonts/NotoNastaliqUrdu-SemiBold.ttf",
+//       weight: "600",
+//       style: "normal",
+//     },
+//     {
+//       path: "../assets/fonts/NotoNastaliqUrdu-Bold.ttf",
+//       weight: "700",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-sans",
+// })
+export const urdu = Noto_Nastaliq_Urdu({
   variable: "--font-sans",
 })
+
 
 export const fontMono = FontMono({
   subsets: ["latin"],
