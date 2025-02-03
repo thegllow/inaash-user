@@ -1,5 +1,4 @@
-import { Fira_Code as FontMono,Noto_Nastaliq_Urdu
-} from "next/font/google"
+import { Fira_Code as FontMono, Kufam as Urdu } from "next/font/google"
 import localFont from "next/font/local"
 export const fontSans = localFont({
   src: [
@@ -58,10 +57,11 @@ export const fontSans = localFont({
 //   ],
 //   variable: "--font-sans",
 // })
-export const urdu = Noto_Nastaliq_Urdu({
+export const urdu = Urdu({
+  weight:['400'],
+
   variable: "--font-sans",
 })
-
 
 export const fontMono = FontMono({
   subsets: ["latin"],
