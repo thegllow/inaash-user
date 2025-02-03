@@ -5,7 +5,7 @@ FROM node:20-alpine
 RUN apk add --no-cache python3 make g++ pkgconfig cairo-dev pango-dev libpng-dev fontconfig ttf-dejavu
 
 # Install Kufam font
-RUN wget -O /usr/share/fonts/Kufam.ttf "https://github.com/google/fonts/raw/main/ofl/kufam/Kufam%5Bwdth%2Cwght%5D.ttf" \
+RUN wget -O /usr/share/fonts/Kufam.ttf "https://github.com/google/fonts/raw/main/ofl/kufam/Kufam-Regular.ttf" \
     && fc-cache -f -v
 
 # Set the working directory in the container.
