@@ -1,7 +1,7 @@
 import { Fira_Code as FontMono, Kufam as Urdu } from "next/font/google"
 import localFont from "next/font/local"
 
-export const kufam = Kufam({
+export const Kufam = Kufam({
   subsets: ['arabic', 'latin'],
   weight: ['400', '700'],
   display: 'swap',
