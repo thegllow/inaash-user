@@ -77,7 +77,6 @@ const Certificate = async ({ certificate_qr_code }: { certificate_qr_code: strin
                 fullWidth
                 as="a"
                 href={video.certificate_url!}
-                target="_blank"
                 variant="light"
                 size="md"
                 className="justify-between"

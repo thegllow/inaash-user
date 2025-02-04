@@ -66,7 +66,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
           <p className="text-lg font-semibold">{t("certificates")}</p>
           <div className="flex w-full flex-wrap justify-start gap-5">
             {user.userVideos?.map((video) => {
-                if(video.certificate_number && !video.certificate_url) return (<Card></Card>);
+              if(video.certificate_number && !video.certificate_url)
+                return (<Card></Card>);
                 return (
                   <Card
                     key={video.video_id}
@@ -93,7 +94,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                             fullWidth
                             as="a"
                             href={video.certificate_url || "#"}
-                            target="_blank"
                             download
                             variant="light"
                             size="md"

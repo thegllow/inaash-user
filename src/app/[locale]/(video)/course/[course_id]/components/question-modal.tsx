@@ -100,15 +100,21 @@ const QuestionModal = () => {
 
     let timer: NodeJS.Timeout
     if (answerStatus === "correct") {
-      timer = setTimeout(() => {
-        next()
-      }, 1500)
+      timer = setTimeout(
+        () => {
+          next()
+        },
+        hasPassedCourse ? 1500 : 0,
+      )
     }
 
     if (answerStatus === "wrong") {
-      timer = setTimeout(() => {
-        setShowExplanation(true)
-      }, 1500)
+      timer = setTimeout(
+        () => {
+          setShowExplanation(true)
+        },
+        hasPassedCourse ? 1500 : 0,
+      )
     }
     // if (answerStatus === "timeout") {
     //   next()
