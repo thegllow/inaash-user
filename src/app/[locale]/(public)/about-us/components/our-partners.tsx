@@ -1,7 +1,10 @@
+
 /* eslint-disable @next/next/no-img-element */
 import { firstPartner, partnersBackground, secondPartner, secondPartnerLogo, thirdPartner } from "@/assets"
 import { getTranslations } from "next-intl/server"
 import Image from "next/image"
+import PartnersSlider from "./partners-slider"
+
 
 type Props = {}
 
@@ -22,17 +25,21 @@ const OurPartners = async (props: Props) => {
                 alt="background"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="relative grid grid-cols-3 items-center gap-4 md:flex">
+              <div className="max-md:hidden relative grid grid-cols-3 items-center gap-4 md:flex">
                 <div className="flex aspect-square items-center justify-center rounded-xl bg-white p-2 sm:h-28">
                   <img className="h-full" src={firstPartner.src} alt="partner" />
                 </div>
                 <div className="flex items-center justify-center rounded-xl bg-white p-2 max-md:aspect-square sm:h-28">
-                  <img className="hidden h-full md:block" src={secondPartner.src} alt="partner" />
-                  <img className="h-full md:hidden" src={secondPartnerLogo.src} alt="partner" />
+                  {/* <img className="hidden h-full md:block" src={secondPartner.src} alt="partner" /> */}
+                  <img className="h-full block" src={secondPartner.src} alt="partner" />
                 </div>
                 <div className="flex aspect-square items-center justify-center rounded-xl bg-white p-2 sm:h-28">
                   <img className="h-full" src={thirdPartner.src} alt="partner" />
                 </div>
+              </div>
+              <div className="md:hidden">
+                <PartnersSlider/>
+
               </div>
             </div>
           </div>
