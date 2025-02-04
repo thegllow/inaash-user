@@ -41,7 +41,7 @@ const QuestionModal = () => {
   // counter
   const countDownRef = useRef<ReactCountdown | null>(null)
   // const [isTimeOut, setIsTimeOut] = useState(false)
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState("0")
 
   const timeoutAudioRef = useRef<ComponentRef<"audio">>(null)
   const timeoutDate = useMemo(
@@ -97,17 +97,24 @@ const QuestionModal = () => {
   // closing question modal 3 sec after answering
   useEffect(() => {
     if (!isSuccess) return
+
     let timer: NodeJS.Timeout
     if (answerStatus === "correct") {
-      timer = setTimeout(() => {
-        next()
-      }, 1500)
+      timer = setTimeout(
+        () => {
+          next()
+        },
+        hasPassedCourse ? 1500 : 0,
+      )
     }
 
     if (answerStatus === "wrong") {
-      timer = setTimeout(() => {
-        setShowExplanation(true)
-      }, 1500)
+      timer = setTimeout(
+        () => {
+          setShowExplanation(true)
+        },
+        hasPassedCourse ? 1500 : 0,
+      )
     }
     // if (answerStatus === "timeout") {
     //   next()
@@ -133,8 +140,8 @@ const QuestionModal = () => {
 
   // handling timeout
   const handleTimeout = () => {
-    if (!question) return
-    setCounter((pre) => ++pre)
+    // if (!question) return
+    setCounter(Math.random() + Math.random() + "")
     // mutate({
     //   video_id: course_id,
     //   question_id: question!.id,
@@ -179,6 +186,8 @@ const QuestionModal = () => {
       ? (["a", "b", "c", "d"] as const)
       : shuffleArray(["a", "b", "c", "d"] as const)
   }, [question?.id])
+
+  const randomValue = useMemo(() => Math.random() + "", [question?.id])
 
   return (
     <Modal
@@ -229,7 +238,7 @@ const QuestionModal = () => {
                   <div>
                     <CountDown
                       ref={countDownRef}
-                      key={question?.appears_at + "" + counter}
+                      key={(question?.appears_at || randomValue) + "" + counter}
                       alert
                       onComplete={() => {
                         // if (answerStatus === "pending") setIsTimeOut(true)
