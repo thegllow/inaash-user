@@ -187,7 +187,7 @@ const QuestionModal = () => {
       : shuffleArray(["a", "b", "c", "d"] as const)
   }, [question?.id])
 
-  const randomValue = useMemo(() => Math.random() + "", [question?.id])
+  // const randomValue = useMemo(() => Math.random() + "", [question?.id])
 
   return (
     <Modal
@@ -238,7 +238,7 @@ const QuestionModal = () => {
                   <div>
                     <CountDown
                       ref={countDownRef}
-                      key={(question?.appears_at || randomValue) + "" + counter}
+                      key={question?.appears_at + "" + counter}
                       alert
                       onComplete={() => {
                         // if (answerStatus === "pending") setIsTimeOut(true)
