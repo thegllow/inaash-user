@@ -66,46 +66,48 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
           <p className="text-lg font-semibold">{t("certificates")}</p>
           <div className="flex w-full flex-wrap justify-start gap-5">
             {user.userVideos?.map((video) => {
-              return (
-                <Card
-                  key={video.video_id}
-                  shadow={"none"}
-                  className="w-full max-w-[unset] overflow-hidden rounded-[21px] border border-[#5A4A73] md:max-w-[320px]">
-                  <CardBody className="relative w-full overflow-hidden p-1 rtl:text-right">
-                    <div className="relative mb-3 aspect-[16/7] overflow-hidden rounded-2xl">
-                      <Image
-                        className="h-full w-full object-cover"
-                        src={video.video_id === "1" ? firstCertificate : secondCertificate}
-                        alt="certificate"
-                      />
-                      <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
-                        <div className="h-16 w-full"></div>
-                      </CardHeader>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex gap-3">
-                        <p className="text-foreground">{video.video_title}</p>
+              if(video.certificate_number && !video.certificate_url)
+                return (<Card></Card>);
+                return (
+                  <Card
+                    key={video.video_id}
+                    shadow={"none"}
+                    className="w-full max-w-[unset] overflow-hidden rounded-[21px] border border-[#5A4A73] md:max-w-[320px]">
+                    <CardBody className="relative w-full overflow-hidden p-1 rtl:text-right">
+                      <div className="relative mb-3 aspect-[16/7] overflow-hidden rounded-2xl">
+                        <Image
+                          className="h-full w-full object-cover"
+                          src={video.video_id === "1" ? firstCertificate : secondCertificate}
+                          alt="certificate"
+                        />
+                        <CardHeader className="relative z-10 w-full flex-col !items-start gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">
+                          <div className="h-16 w-full"></div>
+                        </CardHeader>
                       </div>
-                      <Divider />
-                      <div className="w-full px-1 pb-1">
-                        <Button
-                          fullWidth
-                          as="a"
-                          href={video.certificate_url || "#"}
-                          download
-                          variant="light"
-                          size="md"
-                          className="items-center justify-center text-lg text-primary"
-                          endContent={
-                            <img className="mt-1 size-10 shrink-0" src={download.src} alt="download" />
-                          }>
-                          {t2("download-button")}
-                        </Button>
+                      <div className="space-y-3">
+                        <div className="flex gap-3">
+                          <p className="text-foreground">{video.video_title}</p>
+                        </div>
+                        <Divider />
+                        <div className="w-full px-1 pb-1">
+                          <Button
+                            fullWidth
+                            as="a"
+                            href={video.certificate_url || "#"}
+                            download
+                            variant="light"
+                            size="md"
+                            className="items-center justify-center text-lg text-primary"
+                            endContent={
+                              <img className="mt-1 size-10 shrink-0" src={download.src} alt="download" />
+                            }>
+                            {t2("download-button")}
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  </CardBody>
-                </Card>
-              )
+                    </CardBody>
+                  </Card>
+                );
             })}
           </div>
           <div></div>
