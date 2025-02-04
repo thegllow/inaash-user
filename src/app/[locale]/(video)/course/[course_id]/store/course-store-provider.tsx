@@ -20,6 +20,7 @@ export interface CourseStoreProviderProps {
 }
 
 export const CourseStoreProvider = ({ children, video }: CourseStoreProviderProps) => {
+  console.log("🚀 ~ CourseStoreProvider ~ video:", video)
   const storeRef = useRef<CourseStoreApi>(null)
   if (!storeRef.current) {
     const scenesMap = arrayToMapByKey(video.video.scenes, "start_time")
