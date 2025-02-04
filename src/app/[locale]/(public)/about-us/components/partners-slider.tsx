@@ -16,18 +16,18 @@ const PartnersSlider = (props: Props) => {
         slides={[
           <div
             key={"1"}
-            className="embla__slide flex aspect-square shrink-0 items-center justify-center rounded-xl bg-white p-2 sm:h-28">
+            className="embla__slide flex aspect-square shrink-0 items-center justify-center rounded-xl bg-white p-2 h-28">
             <img className="h-full" src={firstPartner.src} alt="partner" />
           </div>,
           <div
             key={2}
-            className="embla__slide flex shrink-0 items-center justify-center rounded-xl bg-white p-2 sm:h-28">
+            className="embla__slide flex shrink-0 items-center justify-center rounded-xl bg-white p-2 h-28">
             {/* <img className="hidden h-full md:block" src={secondPartner.src} alt="partner" /> */}
             <img className="block h-full" src={secondPartner.src} alt="partner" />
           </div>,
           <div
             key={3}
-            className="embla__slide flex aspect-square shrink-0 items-center justify-center rounded-xl bg-white p-2 sm:h-28">
+            className="embla__slide flex aspect-square shrink-0 items-center justify-center rounded-xl bg-white p-2 h-28">
             <img className="h-full" src={thirdPartner.src} alt="partner" />
           </div>,
         ]}
