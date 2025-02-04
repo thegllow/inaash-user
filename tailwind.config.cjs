@@ -31,6 +31,15 @@ module.exports = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 0.9 },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.3s ease-in-out",
+      },
     },
   },
   darkMode: "class",

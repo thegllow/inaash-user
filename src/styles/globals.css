@@ -33,3 +33,20 @@ video::-webkit-media-controls-play-button {
 video::-webkit-media-controls-start-playback-button {
   display: none !important;
 }
+
+/* fade in animation  */
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-duration: 200ms;
+  animation-name: fadeIn;
+  animation-timing-function: ease;
+} */

@@ -5,6 +5,7 @@ import BackgroundImage from "@/components/common/background-image"
 import ChooseCourse from "./components/choose-course"
 import { getVideos } from "@/services/utils/get-videos"
 import SuccessAnimation from "@/components/common/success-animation"
+import DynamicBg from "./components/dynamic-bg"
 
 type Props = {
   params: Promise<{
@@ -22,7 +23,7 @@ const Page = async (props: Props) => {
 
   return (
     <main className="container mx-auto max-w-7xl flex-grow px-6 ~pt-5/10">
-      <BackgroundImage src={startBackground} />
+      <DynamicBg />
 
       <section className="relative flex items-center justify-center gap-4 ~/md:~py-16/24">
         <div className="w-full space-y-10">

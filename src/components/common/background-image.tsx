@@ -12,7 +12,7 @@ const BackgroundImage = ({ src }: Props) => {
     <div className="fixed inset-0 flex items-center justify-center">
       {src ? <div className="absolute inset-0 bg-[#030303D4]"></div> : null}
       <Image
-        className={src ? "h-full w-full object-cover" : "object-contain"}
+        className={src ? "h-full w-full bg-center object-cover" : "object-contain"}
         src={src || background}
         alt="inaash background"
       />
