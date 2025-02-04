@@ -58,8 +58,8 @@ export const fontSans = localFont({
 //   variable: "--font-sans",
 // })
 export const urdu = Urdu({
-  weight:['400'],
-
+  weight: ["400"],
+  subsets: ["arabic", "latin"],
   variable: "--font-sans",
 })
 
