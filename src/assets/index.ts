@@ -17,6 +17,7 @@ import thirdPartner from "./third-partner.svg"
 import secondPartnerLogo from "./second-partner-logo.svg"
 import shareYourSuccess from "./share-your-success.png"
 import wrongIcon from "./wrong-icon.svg"
+
 export {
   background,
   logo,
