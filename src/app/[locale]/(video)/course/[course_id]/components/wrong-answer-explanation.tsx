@@ -46,7 +46,7 @@ const WrongAnswerExplanation = (props: Props) => {
       </div>
       <div className="flex flex-col items-center justify-center space-y-3 rounded bg-[#292929] py-4 ~px-8/10">
         <p className="text-center text-white">{t("description")}</p>
-        <AudioPlayer isDisabled={!hasPassedCourse} onEnd={handleAudioEnding} src={src} name={t("reason")} />
+        <AudioPlayer isDisabled={true} onEnd={handleAudioEnding} src={src} name={t("reason")} />
       </div>
       {showSubtitle && (
         <div className="!mt-1 rounded bg-[#292929] ~p-3/4">
