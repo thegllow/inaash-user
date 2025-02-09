@@ -20,8 +20,8 @@ import { useTimeout } from "@mantine/hooks"
 
 const QuestionModal = () => {
   // state
-  const session = useSession()
-  const { course_id } = useParams() as { course_id: string }
+
+  const { course_id ,locale} = useParams() as { course_id: string,locale:string }
   const { currentVideo } = useVideos()
   const hasPassedCourse = currentVideo.certificate_qr_code ? true : false
   const {
@@ -257,7 +257,7 @@ const QuestionModal = () => {
                       // onEnded={(e) => {
                       //   setIsTimeOut(false)
                       // }}
-                      src={session.data?.user.timeout_audio}
+                      src={`https://api.inaash.edu.sa/timeout/${locale}.mp3`}
                     />
                   </div>
                 </ModalBody>
