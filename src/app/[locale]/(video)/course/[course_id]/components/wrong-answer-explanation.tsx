@@ -26,7 +26,7 @@ const WrongAnswerExplanation = (props: Props) => {
     setHasEnded(true)
   }
 
-  const { currentVideo } = useVideos()
+  // const { currentVideo } = useVideos()
   // const hasPassedCourse = currentVideo.is_rated ? true : false
 
   // show wrong answer explanation text
