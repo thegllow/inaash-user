@@ -27,7 +27,7 @@ const WrongAnswerExplanation = (props: Props) => {
   }
 
   const { currentVideo } = useVideos()
-  const hasPassedCourse = currentVideo.is_rated ? true : false
+  // const hasPassedCourse = currentVideo.is_rated ? true : false
 
   // show wrong answer explanation text
   const showSubtitle = useCourseStore((state) => state.showSubtitle)
