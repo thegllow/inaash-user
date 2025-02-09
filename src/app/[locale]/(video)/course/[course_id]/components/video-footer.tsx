@@ -15,7 +15,7 @@ const VideoFooter = (props: Props) => {
   const [showSubtitle, toggle] = useCourseStore((state) => [state.showSubtitle, state.toggleSubtitle])
   return (
     <footer className="fixed inset-x-0 bottom-0 z-50 bg-[#252323]">
-      <div className="grid grid-cols-[200px_1fr_200px] py-2 ~px-4/6">
+      <div className="grid grid-cols-[200px_1fr_200px]  landscape:py-0.5 portrait:py-2 ~px-4/6">
         <div className="flex items-center ~gap-4/10">
           <Tooltip color="foreground" placement={"top"} content={t("subtitle-tooltip")}>
             <div>
