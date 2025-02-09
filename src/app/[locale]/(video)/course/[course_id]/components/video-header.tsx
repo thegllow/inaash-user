@@ -20,7 +20,7 @@ const VideoHeader = (props: Props) => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#0A090994] backdrop-blur-2xl">
-      <div className="grid landscape:grid-cols-[50px_1fr_50px]  portrait:grid-cols-[100px_1fr_100px] landscape:gap-1 portrait:gap-2 landscape:px-1 portrait:~px-4/6 ~md/lg:~py-1/2">
+      <div className="grid grid-cols-[100px_1fr_100px] gap-2 ~px-4/6 ~md/lg:~py-1/2">
         <div className="flex items-center">
           <Button onClick={() => Router.push("/start")} isIconOnly variant="light">
             <CircleArrowRight strokeWidth={1.2} className="~md/lg:~size-5/6 ltr:hidden" />
@@ -28,7 +28,7 @@ const VideoHeader = (props: Props) => {
           </Button>
         </div>
 
-        <div className="flex items-center justify-center landscape:gap-2 portrait:~md/xl:~gap-4/10">
+        <div className="flex items-center justify-center ~md/xl:~gap-4/10">
           <ProgressSlider progress={Number(state.progress)} />
           <Divider orientation="vertical" />
           <Score

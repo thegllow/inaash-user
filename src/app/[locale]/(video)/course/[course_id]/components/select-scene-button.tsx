@@ -37,10 +37,10 @@ const SelectSceneButton = (props: Props) => {
         radius="md"
         variant="bordered"
         color="primary"
-        className=" landscape:border-1.5 portrait:border-2 landscape:px-2.5 portrait:px-4 landscape:py-0.5 portrait:py-2" >
+        className="border-2 px-4 py-2">
         <div className="flex items-center gap-7">
-          <span className="block ps-2 landscape:text-[11px] portrait:text-xs ">{props.children}</span>
-          <ChevronUp className={cn("duration-150 landscape:text-[10px] portrait:text-xs", isOpen && "rotate-180")} />
+          <span className="block ps-2 text-sm">{props.children}</span>
+          <ChevronUp className={cn("duration-150", isOpen && "rotate-180")} />
         </div>
       </Button>
       <Modal

@@ -10,13 +10,11 @@ type Props = {
 const Speed = (props: Props) => {
   const t = useTranslations("course.course-header")
   return (
-    <div id="step4" className="flex items-center portrait:gap-2 landscape:gap-1">
-      <span className="text-default-500 portrait:text-xs landscape:text-[10px]">
-        {t("average-answer-time")}
-      </span>
+    <div id="step4" className="flex items-center gap-2">
+      <span className="text-xs text-default-500">{t("average-answer-time")}</span>
       <Chip
-        startContent={<Timer size={16} />}
-        className="bg-[#3C3C3C] py-1 backdrop-blur-xl portrait:px-2 portrait:py-1 landscape:px-1 landscape:py-0.5"
+        startContent={<Timer size={18} />}
+        className="bg-[#3C3C3C] px-2 py-1 backdrop-blur-xl"
         radius="sm">
         {props.time}
       </Chip>
