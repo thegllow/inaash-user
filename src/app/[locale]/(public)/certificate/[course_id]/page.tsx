@@ -1,12 +1,12 @@
 import ShareSuccess from "./components/share-your-success"
 import Button from "@/components/ui/button"
-import { Link } from "@/lib/i18n/navigation"
 import { Card, CardBody, CardHeader } from "@nextui-org/card"
 import { Divider } from "@nextui-org/divider"
 import { getTranslations } from "next-intl/server"
 import { useVideo } from "./context/video-context"
 import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user-video"
 import { timeToSeconds } from "@/app/[locale]/(video)/course/[course_id]/utils/time-to-seconds"
+import ContinueButton from "./components/continue-button"
 
 const Page = async (props: { params: Promise<{ course_id: string }> }) => {
   const params = await props.params
@@ -49,9 +49,7 @@ const Page = async (props: { params: Promise<{ course_id: string }> }) => {
                     </CardBody>
                   </Card>
                 </div>
-                <Button>
-                  <Link href={`/certificate/${params.course_id}/claim`}>{t("continue")}</Link>
-                </Button>
+                <ContinueButton course_id={params.course_id} />
               </div>
               <div>
                 <Divider className="shrink-0 self-stretch max-lg:hidden" orientation="vertical" />
