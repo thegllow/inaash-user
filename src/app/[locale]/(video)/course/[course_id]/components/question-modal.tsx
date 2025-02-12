@@ -21,7 +21,7 @@ import { useTimeout } from "@mantine/hooks"
 const QuestionModal = () => {
   // state
 
-  const { course_id ,locale} = useParams() as { course_id: string,locale:string }
+  const { course_id, locale } = useParams() as { course_id: string; locale: string }
   const { currentVideo } = useVideos()
   const hasPassedCourse = currentVideo.certificate_qr_code ? true : false
   const {
@@ -151,6 +151,7 @@ const QuestionModal = () => {
   }
 
   useEffect(() => {
+    if (question?.allowed_time === "00:00:00") return
     let timer = setTimeout(
       () => {
         timeoutAudioRef.current?.play()
