@@ -29,9 +29,9 @@ const ChangeProgramButton = (props: Props) => {
         radius="md"
         variant="bordered"
         color="primary"
-        className="border-2 px-4 py-2">
+        className="border-2 px-4 py-2 small-padding-x">
         <div className="flex items-center gap-7">
-          <span className="block ps-2 text-sm">{props.children}</span>
+          <span className="block ps-2 text-sm small-text">{props.children}</span>
           <ChevronUp className={cn("duration-150", isOpen && "rotate-180")} />
         </div>
       </Button>

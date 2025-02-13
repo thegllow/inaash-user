@@ -7,7 +7,7 @@ type Props = {
 
 const ProgressSlider = ({ progress }: Props) => {
   return (
-    <div id="step1" className="w-full max-w-[120px] shrink-0 md:max-w-[155px] lg:max-w-[175px]" dir="ltr">
+    <div id="step1" className="w-full max-w-[100px] shrink-0 md:max-w-[125px] lg:max-w-[175px]" dir="ltr">
       <Slider
         value={progress}
         isDisabled
@@ -21,8 +21,8 @@ const ProgressSlider = ({ progress }: Props) => {
         renderThumb={(props) => (
           <div
             {...props}
-            className="group top-1/2 flex cursor-grab items-center justify-center rounded bg-primary px-3 py-1">
-            <span className="block text-sm text-foreground">{progress}%</span>
+            className="group top-1/2 flex cursor-grab items-center justify-center rounded bg-primary small-padding-x px-3 py-1">
+            <span className="block small-text  text-sm text-foreground">{progress}%</span>
           </div>
         )}
       />
