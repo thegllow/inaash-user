@@ -20,11 +20,11 @@ const VideoHeader = (props: Props) => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#0A090994] backdrop-blur-2xl">
-      <div className="grid grid-cols-[100px_1fr_100px] gap-2 ~px-4/6 ~md/lg:~py-1/2">
+      <div className="grid landscape-header grid-cols-[100px_1fr_100px] gap-2 ~px-4/6 ~md/lg:~py-1/2">
         <div className="flex items-center">
           <Button onClick={() => Router.push("/start")} isIconOnly variant="light">
-            <CircleArrowRight strokeWidth={1.2} className="~md/lg:~size-5/6 ltr:hidden" />
-            <CircleArrowLeft strokeWidth={1.2} className="~md/lg:~size-5/6 rtl:hidden" />
+            <CircleArrowRight strokeWidth={1.2} className="small-icon ~md/lg:~size-5/6 ltr:hidden" />
+            <CircleArrowLeft strokeWidth={1.2} className="small-icon ~md/lg:~size-5/6 rtl:hidden" />
           </Button>
         </div>
 

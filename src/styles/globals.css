@@ -1,6 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Adjust header styles for mobile landscape */
+
+@layer utilities {
+  @media screen and (orientation: landscape) and (max-device-width: 926px) {
+    .landscape-header {
+      @apply grid-cols-[50px_1fr_50px] px-2 text-[10px];
+    }
+    .small-icon {
+      @apply size-4
+    }
+    .small-text {
+      @apply text-[10px]
+    }
+    .small-padding-x {
+      @apply px-2 py-0.5
+    }
+    .small-padding-y {
+      @apply  py-1
+    }
+
+  }
+}
 /* Hide controls for most modern browsers */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

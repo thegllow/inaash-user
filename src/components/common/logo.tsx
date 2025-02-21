@@ -10,7 +10,7 @@ type Props = Omit<ImageProps, "src" | "alt"> & {
 
 const Logo = ({ variant = "vertical", ...props }: Props) => {
   return (
-    <Link href={"/"}>
+    <Link href={"/start"}>
       <Image src={variant === "horizontal" ? horizontalLogo : logo} alt="inaash logo" {...props} />
     </Link>
   )
