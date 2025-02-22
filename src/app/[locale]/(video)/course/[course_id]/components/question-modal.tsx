@@ -154,6 +154,7 @@ const QuestionModal = () => {
     if (question?.allowed_time === "00:00:00") return
     let timer = setTimeout(
       () => {
+        if(!question?.allowed_time) return
         timeoutAudioRef.current?.play()
       },
       timeToSeconds(question?.allowed_time || "0") * 1000 - 5000,
