@@ -32,7 +32,7 @@ export const siteConfig = {
     socials: [
       {
         label: "",
-        href: "https://www.instagram.com/inaash_edu?igsh=MXU5M2ZobmF5cmw1ag%3D%3D&utm_source=qr",
+        href: "https://www.instagram.com/edu_inaash?igsh=MXU5M2ZobmF5cmw1ag%3D%3D&utm_source=qr",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>Instagram</title>
@@ -42,7 +42,7 @@ export const siteConfig = {
       },
       {
         label: "",
-        href: "https://x.com/inaash_edu?s=21",
+        href: "https://x.com/edu_inaash?s=11&t=AiSsQBLGYjXiUnIajCTAew",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>X</title>
@@ -72,7 +72,7 @@ export const siteConfig = {
       },
       {
         label: "",
-        href: "https://snapchat.com/t/jdWJZkp8",
+        href: "https://snapchat.com/t/bC5nR9ix",
         icon: (
           <svg fill="#ffffff" width={24} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>Snapchat</title>
